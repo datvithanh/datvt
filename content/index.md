@@ -1,0 +1,17 @@
+---
+title: Home
+enableToc: false
+---
+dat has a billion interests and no particular talent. this website is for him to explore all of those interests publicly :D
+
+dat recently rediscovered his passion for (data) visualization and found out (last week of 2023, thanks to threads) that he likes to model stuff as complex systems
+
+currently working on
+- this website
+- ...
+
+currently reading
+- no bad parts, a book on [[internal family system]]
+- [[non-violent communication]]
+- something something database
+- ...
