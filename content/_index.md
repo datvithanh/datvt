@@ -1,27 +1,24 @@
 ---
-title: 🪴 Quartz 3.3
+title: Dat
 enableToc: false
+tags:
+  - "#publish"
 ---
 
-Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
+this is a change yay
 
-1. Extremely fast natural-language [[notes/search]]
-2. Customizable and hackable design based on [Hugo](https://gohugo.io/)
-3. Automatically generated backlinks, link previews, and local graph
-4. Built-in [[notes/CJK + Latex Support (测试) | CJK + Latex Support]] and [[notes/callouts | Admonition-style callouts]]
-5. Support for both Markdown Links and Wikilinks
+Hi! I'm Dat. 
 
-Check out some of the [amazing gardens that community members](notes/showcase.md) have published with Quartz or read about [why I made Quartz](notes/philosophy.md) to begin with.
+I'm busy making lists, what's up
 
-## Get Started
-> 📚 Step 1: [Setup your own digital garden using Quartz](notes/setup.md)
+Dat's MOC
+- [[Word Vomit]]
 
-Returning user? Figure out how to [[notes/updating|update]] your existing Quartz garden.
+Some random quotes lol i'll break it off later.
+- May you be strong enough to be gentle
+- May you be powerful enough to be humble
+- May you be whole enough to serve others
+- May you be self-assured enough not to take yourself too seriously
+testing for build
 
-If you prefer browsing the contents of this site through a list instead of a graph, you see a list of all [setup-related notes](/tags/setup).
-
-### Troubleshooting
-- 🚧 [Troubleshooting and FAQ](notes/troubleshooting.md)
-- 🐛 [Submit an Issue](https://github.com/jackyzha0/quartz/issues)
-- 👀 [Discord Community](https://discord.gg/cRFFHYye7t)
-
+![[02AC4317-1DAB-4C91-B0F0-8BCD29DF2215.png|300]]
