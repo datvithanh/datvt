@@ -1,8 +1,7 @@
 ---
-title: untitled
+title: systems
 enableToc: false
 ---
-#publish
 
 although systems are hard, i like them
 
