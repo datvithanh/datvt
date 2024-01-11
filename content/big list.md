@@ -1,0 +1,33 @@
+---
+title: untitled
+enableToc: false
+---
+
+- relationships
+	- self
+		- exploration
+		- modeling
+	- partner(s)
+	- family, close friends
+	- friend groups, work, communities
+	- society
+- interactions
+	- making request
+	- bid of connection
+	- collaborate
+- qualities
+	- integrity
+	- ambition
+	- love
+	- curiosity
+	- fun
+	- excitement
+	- empowerment
+- dichotomies
+	- boundary - intimacy
+- where to put?
+	- reward
+		- short-term
+		- long-term
+	- feedback
+	- outcome

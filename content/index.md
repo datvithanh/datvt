@@ -12,8 +12,18 @@ currently working on
 - this website
 - ...
 
+inner work stack
+- IFS
+- Meditation
+- like once a month
+
+productivity stack
+- coffee
+
 currently reading
 - no bad parts, a book on [[internal family system]]
 - [[non-violent communication]]
 - something something database
 - ...
+
+wait the more i stare at this website the more i realize that i have nothing to write. [[big list]]
