@@ -2,7 +2,6 @@
 title: untitled
 enableToc: false
 ---
-
 - relationships
 	- self
 		- exploration
@@ -24,10 +23,22 @@ enableToc: false
 	- excitement
 	- empowerment
 - dichotomies
-	- boundary - intimacy
+	- order - chaos
+	- meaningful - meaningless
+	- eternalism - nihilism
+	- monoism - dualism
+	- religious - secularism
+- creation
+	- software
+	- art
+	- writing
+	- pew pew pew
 - where to put?
 	- reward
 		- short-term
 		- long-term
 	- feedback
 	- outcome
+- Death
+- responsibility
+- needs
