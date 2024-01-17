@@ -2,6 +2,8 @@
 title: untitled
 enableToc: false
 ---
+- Addiction
+	- [Rat Park - Wikipedia](https://en.wikipedia.org/wiki/Rat_Park) rats in healthy social environments were found to consume less morphine (19 times????) than rats in isolated cages
 - relationships
 	- self
 		- exploration
@@ -25,7 +27,7 @@ enableToc: false
 - dichotomies
 	- order - chaos
 	- meaningful - meaningless
-	- eternalism - nihilism
+	- eternalism - nihilism (nihilistic depression - [[kegan's Levels]] 4.5)
 	- monoism - dualism
 	- religious - secularism
 - creation
@@ -42,3 +44,5 @@ enableToc: false
 - Death
 - responsibility
 - needs
+- infantilization
+- [[kegan's Levels]]

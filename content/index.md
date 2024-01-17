@@ -2,7 +2,7 @@
 title: Home
 enableToc: false
 ---
-dat has a billion interests and no particular talent. this website is for him to explore all of those interests publicly :D
+ dat has a billion interests and no particular talent. this website is for him to explore all of those interests publicly :D
 
 last 2 years
 - working on and learning about distributed systems at 9-5
@@ -16,6 +16,12 @@ rekindling his love with prototyping, building software products
 currently working on
 - this website
 - ...
+
+Communities
+- Online communities
+	- 
+- Offline communities
+	- 
 
 inner work stack
 - IFS
