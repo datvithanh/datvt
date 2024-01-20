@@ -4,9 +4,9 @@ enableToc: false
 ---
 Hi! 
 
-It's Dat, I'm currently working as a backend engineer in Order team at Shopee.
+It's Dat, I'm currently working as a backend engineer in Order team at Shopee
 
-In 2024, I'm rekindling my interest in prototyping and building products
+I'm rekindling my interest in prototyping and building products. One of my goals in 2024 is to publish some kind of product or software :D
 
 In the last 2 years
 - I've been working on and learning about large-scale software development and distributed systems at Shopee
