@@ -2,7 +2,6 @@
 title: list - hobbies + interests
 enableToc: false
 ---
-#publish
 
 Hobbies
 - Physical

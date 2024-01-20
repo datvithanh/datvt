@@ -2,7 +2,6 @@
 title: Developer productivity
 enableToc: false
 ---
-#publish
 
 References 
 - [Measuring Developer Productivity: Real-World Examples](https://newsletter.pragmaticengineer.com/p/measuring-developer-productivity-bae)

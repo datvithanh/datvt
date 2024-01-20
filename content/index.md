@@ -19,5 +19,3 @@ I'm a big fan of lists, it's how I keep track of my things ([[Unsorted list]])
 - [[list - experiments]]
 - [[list - books I'm reading]]
 - [[list - hobbies + interests]]
-
-There's a `my` prefix because I have a filter in Obsidian (I'm editing this website in Obsidian) that lists out all of `my` notes lol. I often scan and update them
