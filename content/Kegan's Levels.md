@@ -10,6 +10,7 @@ links
 		- Wait maybe i'm still at stage 3
 - [Developing ethical, social, and cognitive competence | Vividness](https://vividness.live/developing-ethical-social-and-cognitive-competence)
 	- Romantic relationships tend toward fusion, eliminating any emotional separation or difference in values.
+- [Natural misunderstandings of adult stage theory | Meaningness](https://meaningness.com/misunderstanding-stage-theory)
 
 [[meta-rationalism]]
 
