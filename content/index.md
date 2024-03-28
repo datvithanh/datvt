@@ -2,16 +2,15 @@
 title: Home
 enableToc: false
 ---
-Hi! 
+dat has a billion interests and no particular talent. this website is for him to explore all of those interests publicly :D
 
-It's Dat, I'm currently working as a backend engineer in Order team at Shopee
+dat recently rediscovered his passion for (data) visualization and found out (on the last week of 2023, thanks to threads) that he likes to model stuff as complex systems
 
-I'm rekindling my interest in prototyping and building products. One of my goals in 2024 is to publish some kind of product or software :D
+rekindling his love with prototyping, building software products
 
-In the last 2 years
-- I've been working on and learning about large-scale software development and distributed systems at Shopee
-	- Before this, I was a Machine Learning Engineer 
-- Outside of my 9-5, I have been doing some inner work, finding communities, connecting to people, and trying to foster [deep okayness](https://sashachapin.substack.com/p/how-i-attained-persistent-self-love) and confidence. I've met a lot of amazing friends along the way and I'm grateful for all of them
+currently working on
+- this website
+- ...
 
 inner work stack
 - IFS
