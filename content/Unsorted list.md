@@ -1,0 +1,49 @@
+---
+title: Unsorted list
+enableToc: false
+---
+- Addiction
+	- [Rat Park - Wikipedia](https://en.wikipedia.org/wiki/Rat_Park) rats in healthy social environments were found to consume less morphine (19 times????) than rats in isolated cages
+- relationships
+	- self
+		- exploration
+		- modeling
+	- partner(s)
+	- family, close friends
+	- friend groups, work, communities
+	- society
+- interactions
+	- making request
+	- bid of connection
+	- collaborate
+- qualities
+	- integrity
+	- ambition
+	- love
+	- curiosity
+	- fun
+	- excitement
+	- empowerment
+- dichotomies
+	- order - chaos
+	- meaningful - meaningless
+	- eternalism - nihilism (nihilistic depression - [[Kegan's levels]] 4.5)
+	- monoism - dualism
+	- religious - secularism
+- creation
+	- software
+	- art
+	- writing
+	- pew pew pew
+- where to put?
+	- reward
+		- short-term
+		- long-term
+	- feedback
+	- outcome
+- Death
+- responsibility
+- needs
+- infantilization
+- [[Kegan's levels]]
+- [[developer productivity]]
