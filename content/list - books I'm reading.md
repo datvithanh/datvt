@@ -1,5 +1,5 @@
 ---
-title: books I'm reading
+title: list - books I'm reading
 enableToc: false
 ---
 If you're reading this and you're also on Goodreads, shoot me an invite at [My Goodreads](https://www.goodreads.com/user/show/149656605-dat-vi-thanh)

@@ -1,5 +1,5 @@
 ---
-title: Conflict resolution
+title: conflict resolution
 enableToc: false
 ---
 scales

@@ -1,5 +1,5 @@
 ---
-title: untitled
+title: Do 100 things, 100 times
 enableToc: false
 ---
 OG blog [Do 100 things](https://www.visakanv.com/blog/do100things/)

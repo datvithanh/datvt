@@ -1,4 +1,4 @@
 ---
-title: Non-violent communication
+title: non-violent communication
 enableToc: false
 ---
