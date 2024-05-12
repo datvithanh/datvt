@@ -12,3 +12,5 @@ Anyways, this is the list
 			- Configurable: tag, content folder, attachment folder
 		- 3. sync this folder with [folder](https://github.com/datvithanh/datvt/tree/v4/content) along with attachments
 		- 4. need to go to local repo to push
+	- I wonder if i can automate this whole process with github action, because i do backup my main vault with a private repo
+		- This would probably takes way too much time and my priority for this website is to put things into words
