@@ -1,6 +1,5 @@
 ---
-title: untitled
+title: meditation
 enableToc: false
 ---
-#publish
 

@@ -19,6 +19,3 @@ I'm a big fan of lists, it's how I keep track of my things ([[Unsorted list]])
 - [[list - experiments]]
 - [[list - books I'm reading]]
 - [[list - hobbies + interests]]
-
-
-![[Untitled.canvas|Untitled]]
