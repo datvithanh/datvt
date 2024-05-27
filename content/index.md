@@ -2,20 +2,28 @@
 title: Home
 enableToc: false
 ---
-Welcome to my slop texts (?), a front row seat to me losing my mind!
+ur literally crawling in my mind if you're reading this lol
 
-It's Dat, I'm currently working as a backend engineer in Order team at Shopee
+i'm pointing myself towards a couple of things. that's a softer way to say that i'm trying to be better at these things. currently, i think i'm not deliberately trying to be good at anything, i'd just show up and enjoy the things i'm doing, the better-ing will happen itself. anyways here's the list
 
-I'm rekindling my interest in prototyping and building products. One of my goals in 2024 is to publish some kind of product or software :D
+- Programming
+	- Scoping 
+	- Systems
+	- nvim?
+	- thinking in system
+		- hmm these are not actionable enough...
+- Mind
+	- IFS
+	- Focusing
+	- Meditation
+		- Mark's meditation book
+		- Vajrayana mostly through vividness dot live (? is it even meditation idk yet)
+- Body
+	- Contact improv
+		- at least once a month via the monthly sigma jam
+	- Bouldering
+		- at least once a week at fitbloc :D
 
-In the last 2 years
-- I've been working on and learning about large-scale software development and distributed systems at Shopee
-	- Before this, I was a Machine Learning Engineer 
-- Outside of my 9-5, I have been doing some inner work, finding communities, connecting to people, and trying to foster [deep okayness](https://sashachapin.substack.com/p/how-i-attained-persistent-self-love) and confidence. I've met a lot of amazing friends along the way and I'm grateful for all of them
 
-I'm a big fan of lists, it's how I keep track of my things ([[Unsorted list]])
-- [[list - projects]]
-- [[list - tech]]
-- [[list - experiments]]
-- [[list - books I'm reading]]
-- [[list - hobbies + interests]]
+writing to me, is hard. but it's getting easier
+writing bs is not that hard. writing good stuff is hard
