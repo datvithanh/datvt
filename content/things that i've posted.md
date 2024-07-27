@@ -1,8 +1,7 @@
 ---
-title: systems
+title: things that i've posted
 enableToc: false
 ---
-
 microdosing fear is not talked about enough. existing outside of your comfort zone all the time is exhausting, and the natural reaction when you are exhausted is to retreat to your comfort zone.
 
 this pendulum will swing back and forth throughout your life unless you find a psychological sweet spot of having just enough amount of fear to fuel your growth
