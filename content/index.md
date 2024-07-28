@@ -27,3 +27,5 @@ i'm pointing myself towards a couple of things. that's a softer way to say that 
 
 writing to me, is hard. but it's getting easier
 writing bs is not that hard. writing good stuff is hard
+
+![[Drawing 2024-07-28 15.06.52.excalidraw]]
