@@ -1,1 +1,3 @@
-npx quartz sync
+git aa
+git cm -m "update"
+git p
