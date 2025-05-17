@@ -28,3 +28,7 @@ i'm pointing myself towards a couple of things. that's a softer way to say that 
 writing to me, is hard. but it's getting easier
 
 writing bs is not that hard. writing good stuff is hard
+
+i'm putting my threads here haha
+- [[small talk is good, actually]]
+- [[judgement is limiting, duh]]
