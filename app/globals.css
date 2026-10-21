@@ -1,0 +1,426 @@
+@import "tailwindcss";
+
+/* ===== Dark/Light Mode Color System ===== */
+/* Dark mode inspired by NotebookLM screenshot — deep charcoal with warm amber glow */
+:root {
+  --bg-primary: #111114;
+  --bg-secondary: #18181c;
+  --bg-tertiary: #1e1e23;
+  --bg-surface: #242429;
+
+  --text-primary: #f5f2eb;
+  --text-secondary: #e0dbd0;
+  --text-muted: #b0a99f;
+
+  --border: #303038;
+  --border-subtle: #242430;
+
+  --accent: #c4a35a;
+  --accent-muted: rgba(196, 163, 90, 0.1);
+  --accent-hover: #d4b36a;
+
+  --selection-bg: rgba(196, 163, 90, 0.3);
+  --selection-text: #dcd6cc;
+
+  /* Cool neutral counterpart to --accent, for CTAs that should read quieter
+     than gold without going invisible. */
+  --silver: #979ba1;
+  --silver-hover: #b6bac0;
+}
+
+/* Light mode — warm parchment, scholarly */
+[data-theme="light"] {
+  --bg-primary: #f7f4ee;
+  --bg-secondary: #efeae2;
+  --bg-tertiary: #e7e2d8;
+  --bg-surface: #ffffff;
+
+  --text-primary: #1a1714;
+  --text-secondary: #4a453e;
+  --text-muted: #8a8478;
+
+  --border: #d8d2c8;
+  --border-subtle: #e8e2d8;
+
+  --accent: #996b1d;
+  --accent-muted: rgba(153, 107, 29, 0.1);
+  --accent-hover: #7d5516;
+
+  --selection-bg: rgba(138, 115, 64, 0.2);
+  --selection-text: #1a1714;
+
+  --silver: #6b7078;
+  --silver-hover: #474b52;
+}
+
+/* ===== Tailwind Theme Tokens ===== */
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-surface: var(--bg-surface);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-hover: var(--accent-hover);
+
+  /* Typography: beyondallextremes-inspired */
+  --font-heading: 'Rubik', system-ui, -apple-system, sans-serif;
+  --font-body: 'Courier Prime', 'Courier New', Courier, monospace;
+  --font-sans: 'Rubik', system-ui, -apple-system, sans-serif;
+
+  --font-size-xs: 0.9375rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1.0625rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+  --font-size-6xl: 4.5rem;
+
+  --line-height-base: 1.75;
+  --line-height-lg: 1.7;
+  --line-height-xl: 1.5;
+  --line-height-2xl: 1.4;
+  --line-height-3xl: 1.3;
+  --line-height-4xl: 1.2;
+  --line-height-5xl: 1.1;
+
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(196, 163, 90, 0.06);
+}
+
+/* ===== Base Styles ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle noise texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Prose (article/lesson content) ===== */
+.prose {
+  max-width: calc(48rem - 20px); /* 10px inside the 48rem hero image on each side */
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  overflow-wrap: break-word; /* long words / URLs wrap instead of overflowing the viewport */
+}
+
+/* Inline images and embeds never exceed their column on any screen */
+.prose img,
+.prose video,
+.prose iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lesson pages: widen the text column so it sits 10px inside the infographic
+   on each side. The text fills the wider lesson wrapper, and the infographic
+   bleed shrinks to 10px so the image keeps its full width while the text grows
+   right up to it. Scoped to .lesson-content so articles are unaffected. */
+.lesson-content .prose {
+  max-width: 100%;
+}
+.lesson-content .infographic-bleed {
+  margin-inline: -10px;
+}
+
+/* Code blocks scroll internally rather than pushing the page wide */
+.prose pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.prose h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.prose h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin: 2rem 0 0.5rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.prose p { margin: 1rem 0; }
+
+.prose blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: var(--font-size-base);
+}
+
+.prose strong { font-weight: 700; }
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+.prose ul { padding-left: 1.5rem; margin: 1rem 0; list-style: disc; }
+.prose ol { padding-left: 1.5rem; margin: 1rem 0; list-style: decimal; }
+.prose li { margin: 0.5rem 0; padding-left: 0.25rem; }
+.prose li::marker { color: var(--accent); }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.prose thead th {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-align: left;
+  padding: 0 1.25rem 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.prose td {
+  padding: 0.7rem 1.25rem 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text-secondary);
+}
+.prose tbody td:first-child {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.prose tbody tr:last-child td { border-bottom: none; }
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--accent-hover); }
+
+/* ===== Special blocks ===== */
+.practice-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.reflection-block {
+  background: var(--accent-muted);
+  border-left: 2px solid var(--accent);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.closing-insight {
+  text-align: center;
+  font-style: italic;
+  font-size: var(--font-size-lg);
+  color: var(--accent);
+  padding: 2.5rem 1rem;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== Hero image placeholder gradients ===== */
+.hero-placeholder {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(196, 163, 90, 0.08) 0%, transparent 60%);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Button Styles ===== */
+.btn-primary {
+  display: inline-block;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0.125rem;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: rgba(196, 163, 90, 0.08);
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: rgba(138, 115, 64, 0.06);
+}
+
+/* Silver variant — identical to btn-primary, cool neutral instead of gold. */
+.btn-silver {
+  display: inline-block;
+  background: transparent;
+  color: var(--silver);
+  border: 1px solid var(--silver);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0.125rem;
+  transition: all 0.25s ease;
+}
+
+.btn-silver:hover {
+  background: rgba(151, 155, 161, 0.08);
+  color: var(--silver-hover);
+  border-color: var(--silver-hover);
+}
+
+[data-theme="light"] .btn-silver:hover {
+  background: rgba(107, 112, 120, 0.06);
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease-out; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+
+/* Horizontally scrollable rows (e.g. the bootcamp section nav) stay swipeable on
+   small screens but hide the scrollbar chrome — and the vertical scrollbar that
+   overflow-x:auto otherwise pulls in. */
+.no-scrollbar {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / legacy Edge */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;               /* WebKit */
+}
+
+/* ===== Mobile text size boost ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.125rem;
+  }
+  .prose {
+    font-size: 1.0625rem;
+  }
+  /* Wide tables scroll inside their own box instead of widening the page */
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Let the label column wrap so the table can shrink to fit */
+  .prose tbody td:first-child {
+    white-space: normal;
+  }
+}
+
+/* ===== Article with author rail: stop full-bleed figures colliding with the sidebar =====
+   InfographicImage bleeds out of the prose with negative margins on both sides.
+   In the two-column (author rail) layout, the LEFT bleed overlaps the sidebar.
+   At lg+ (where the rail appears), drop the left bleed but keep the right bleed. */
+@media (min-width: 1024px) {
+  .article-body-railed figure {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

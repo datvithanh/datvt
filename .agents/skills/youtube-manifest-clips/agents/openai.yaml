@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube Manifest Clips"
+  short_description: "Add and audit YouTube clips in cc-content-site media manifests."
+  default_prompt: "Add YouTube clips to the cc-content-site media manifests and wire them into the relevant page."

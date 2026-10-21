@@ -1,0 +1,27 @@
+[build]
+  base = "."
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22.16.0"
+  CC_ASSET_ORIGIN = "https://poetic-tapioca-bc92a4.netlify.app"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect v2 subdomain to main domain
+[[redirects]]
+  from = "https://v2.mindtraining.cc/*"
+  to = "https://mindtraining.cc/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # This repository is a temporary public CC preview, not its canonical origin.
+    X-Robots-Tag = "noindex, follow"

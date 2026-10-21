@@ -1,0 +1,191 @@
+/* Desktop density: 80% geometry with compensated, rem-based typography.
+   At >=1024px, the former 1280px content cap becomes 1024px and major spacing
+   is 80%. Body/UI type stays around 90–100% with readable label floors.
+   No browser zoom, transform scaling, or changes to mobile/deep learning pages. */
+@media (min-width:64rem){
+.field-guide:not(.fg-legacy-chrome){--desktop-content:64rem;--desktop-gutter:5.625rem;font-size:.875rem}
+.field-guide:not(.fg-legacy-chrome) .wrap{width:min(var(--desktop-content),calc(100% - var(--desktop-gutter)))}
+.field-guide:not(.fg-legacy-chrome) .header{height:6.5rem}
+.field-guide:not(.fg-legacy-chrome) .brand{gap:.9rem}
+.field-guide:not(.fg-legacy-chrome) .brand-mark{width:3.3rem;height:3.4rem}
+.field-guide:not(.fg-legacy-chrome) .brand-name{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .header nav{font-size:.75rem;gap:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .header nav a{display:inline-flex;align-items:center;min-height:2.75rem}
+.field-guide:not(.fg-legacy-chrome) .button{min-height:2.75rem;padding:.75rem 1.1rem;gap:1.4rem;font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .text-link{font-size:.75rem}
+.field-guide:not(.fg-legacy-chrome) .eyebrow,
+.field-guide:not(.fg-legacy-chrome) .program-type,
+.field-guide:not(.fg-legacy-chrome) .course-meta,
+.field-guide:not(.fg-legacy-chrome) .course-art figcaption,
+.field-guide:not(.fg-legacy-chrome) .timezone-label,
+.field-guide:not(.fg-legacy-chrome) .cohort-stamp,
+.field-guide:not(.fg-legacy-chrome) .flyer-offer-end{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) h1{overflow-wrap:anywhere}
+.field-guide:not(.fg-legacy-chrome) h2,
+.field-guide:not(.fg-legacy-chrome) h3{overflow-wrap:break-word}
+.field-guide:not(.fg-legacy-chrome) .section{padding-block:4.8rem}
+.field-guide:not(.fg-legacy-chrome).home-page .section{padding-block:2.4rem}
+.field-guide:not(.fg-legacy-chrome) .section h2{font-size:clamp(1.875rem,3vw,2.5rem)}
+.field-guide:not(.fg-legacy-chrome) .section-heading{gap:2.5rem;margin-bottom:2.25rem}
+.field-guide:not(.fg-legacy-chrome) .section-heading h2{margin-top:1rem}
+.field-guide:not(.fg-legacy-chrome) .section-intro{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .guide-hero{padding-block:2.7rem 2.4rem;gap:7%}
+.field-guide:not(.fg-legacy-chrome) .guide-hero h1{font-size:clamp(3.75rem,calc(3.5rem + 2.5vw),5.75rem);margin-bottom:1.25rem}
+.field-guide:not(.fg-legacy-chrome) .guide-hero .hero-description{font-size:1.125rem;max-width:18.75rem}
+.field-guide:not(.fg-legacy-chrome) .guide-hero .button{margin-top:1.3rem}
+.field-guide:not(.fg-legacy-chrome) .artifact{height:19rem}
+.field-guide:not(.fg-legacy-chrome) .artifact img{width:9.5rem}
+.field-guide:not(.fg-legacy-chrome) .artifact-ring{width:14rem;height:14rem}
+.field-guide:not(.fg-legacy-chrome) .artifact figcaption{font-size:.625rem;left:1.25rem;bottom:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-introduction{gap:3rem;padding-block:1.2rem 2.1rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-introduction h2{font-size:1.625rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-about,
+.field-guide:not(.fg-legacy-chrome) .flyer-willingness{font-size:.875rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-willingness{margin-top:.85rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offerings{gap:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer{padding:1.5rem 1.6rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer h3{font-size:1.625rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer p{font-size:.875rem;margin-top:.7rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer .program-type{font-size:.6875rem;margin-bottom:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer-end{font-size:.6875rem;padding-top:.85rem;margin-top:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .story-editorial{gap:1.5rem}
+.field-guide:not(.fg-legacy-chrome).home-page .flyer-stories .section-heading{margin-bottom:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .story-editorial blockquote{font-size:1.1875rem;margin-top:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .story-editorial figcaption{padding-top:.7rem;margin-top:.9rem;gap:.6rem}
+.field-guide:not(.fg-legacy-chrome) .story-editorial figcaption>span{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .person-story figcaption a{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) .programs-overview{padding-block:3.25rem 4rem}
+.field-guide:not(.fg-legacy-chrome) .programs-overview>h1,
+.field-guide:not(.fg-legacy-chrome) .bootcamp-hero h1,
+.field-guide:not(.fg-legacy-chrome) .mini-hero h1,
+.field-guide:not(.fg-legacy-chrome) .resource-title{font-size:clamp(3rem,calc(2.5rem + 2.5vw),4.5rem)}
+.field-guide:not(.fg-legacy-chrome) .programs-overview-deck{font-size:.9375rem;margin-block:1.4rem 2.25rem}
+.field-guide:not(.fg-legacy-chrome) .programs-help{padding-top:1.6rem}
+.field-guide:not(.fg-legacy-chrome) .bootcamp-hero{padding-block:2.75rem 3.5rem;gap:3rem}
+.field-guide:not(.fg-legacy-chrome) .mini-hero{padding-block:3.25rem 4.25rem;gap:3rem}
+.field-guide:not(.fg-legacy-chrome) .bootcamp-hero .program-lead,
+.field-guide:not(.fg-legacy-chrome) .mini-hero .program-lead{font-size:1.25rem}
+.field-guide:not(.fg-legacy-chrome) .bootcamp-hero p,
+.field-guide:not(.fg-legacy-chrome) .mini-hero p,
+.field-guide:not(.fg-legacy-chrome) .approach-grid p,
+.field-guide:not(.fg-legacy-chrome) .fit-layout p,
+.field-guide:not(.fg-legacy-chrome) .schedule-summary p,
+.field-guide:not(.fg-legacy-chrome) .application-section p,
+.field-guide:not(.fg-legacy-chrome) .tuition-layout p{font-size:.875rem}
+.field-guide:not(.fg-legacy-chrome) .bootcamp-art .artifact{height:18rem}
+.field-guide:not(.fg-legacy-chrome) .hero-actions{gap:1.1rem;margin-top:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .program-sections{padding-block:1.2rem;gap:2rem;font-size:.75rem}
+.field-guide:not(.fg-legacy-chrome) .people-quotes{gap:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .person-story blockquote{font-size:1.1875rem}
+.field-guide:not(.fg-legacy-chrome) .approach-grid{gap:2rem}
+.field-guide:not(.fg-legacy-chrome) .approach-grid article{padding-top:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .approach-grid h3,
+.field-guide:not(.fg-legacy-chrome) .schedule-summary h3{font-size:1.4375rem;margin-bottom:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .fit-layout,
+.field-guide:not(.fg-legacy-chrome) .schedule-layout,
+.field-guide:not(.fg-legacy-chrome) .tuition-layout,
+.field-guide:not(.fg-legacy-chrome) .application-section{gap:4.5rem}
+.field-guide:not(.fg-legacy-chrome) .community-wide figcaption{font-size:1.3125rem}
+.field-guide:not(.fg-legacy-chrome) .tuition-layout .tuition-price{font-size:3.75rem}
+.field-guide:not(.fg-legacy-chrome) .fg-faq h3{font-size:1.0625rem}
+.field-guide:not(.fg-legacy-chrome) .fg-faq h2{margin-bottom:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .resource-intro{padding-top:2rem;padding-bottom:2rem}
+.field-guide:not(.fg-legacy-chrome) .resource-title{margin-block:0 1.4rem}
+.field-guide:not(.fg-legacy-chrome) .resource-deck{font-size:.9375rem;max-width:26rem}
+.field-guide:not(.fg-legacy-chrome) .resource-columns{gap:2.1rem;padding-bottom:3.2rem}
+.field-guide:not(.fg-legacy-chrome) .resource-course,
+.field-guide:not(.fg-legacy-chrome) .resource-blog{padding-top:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .resource-course>h2,
+.field-guide:not(.fg-legacy-chrome) .resource-blog>h2{font-size:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery{margin-top:1.3rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-image{min-height:13rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-copy{padding:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-copy .eyebrow{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-copy h3{font-size:1.875rem;margin-block:.8rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-copy h3+p{font-size:.875rem}
+.field-guide:not(.fg-legacy-chrome) .course-discovery-copy .button{margin-top:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .resource-blog>p{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .resource-readings{margin-top:1.4rem}
+.field-guide:not(.fg-legacy-chrome) .resource-reading{grid-template-columns:4rem minmax(0,1fr);gap:.9rem;padding-block:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .resource-reading img{width:4rem}
+.field-guide:not(.fg-legacy-chrome) .resource-reading .eyebrow{font-size:.625rem}
+.field-guide:not(.fg-legacy-chrome) .resource-reading h3{font-size:1.1875rem}
+.field-guide:not(.fg-legacy-chrome) .resource-reading h3+p{font-size:.75rem}
+.field-guide:not(.fg-legacy-chrome) .media-columns{gap:2.4rem;padding-bottom:3.2rem}
+.field-guide:not(.fg-legacy-chrome) .media-section-heading{gap:1rem;padding-bottom:1.1rem;margin-bottom:1.3rem}
+.field-guide:not(.fg-legacy-chrome) .media-section-heading h2{font-size:2rem}
+.field-guide:not(.fg-legacy-chrome) .show-latest h3{font-size:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .show-episode h3{font-size:1.25rem}
+.field-guide:not(.fg-legacy-chrome) .show-latest>.eyebrow,
+.field-guide:not(.fg-legacy-chrome) .show-episode>.eyebrow{margin-top:1rem}
+.field-guide:not(.fg-legacy-chrome) .show-earlier{gap:1.3rem;padding-top:1.5rem;margin-top:1.6rem}
+.field-guide:not(.fg-legacy-chrome) .media-sidebar{gap:1.8rem}
+.field-guide:not(.fg-legacy-chrome) .past-media-list{gap:1.3rem}
+.field-guide:not(.fg-legacy-chrome) .past-media-item{padding-bottom:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .past-media-item h3{font-size:1.0625rem}
+.field-guide:not(.fg-legacy-chrome) .media-sidebar .instagram-panel{padding:1.4rem}
+.field-guide:not(.fg-legacy-chrome) .media-sidebar .instagram-panel h2{font-size:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .media-sidebar .instagram-panel p{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero{gap:4.5rem;padding-block:1.75rem 1.6rem}
+.field-guide:not(.fg-legacy-chrome) .course-art{padding:1.25rem}
+.field-guide:not(.fg-legacy-chrome) .course-art-label{margin-bottom:2rem;gap:1rem}
+.field-guide:not(.fg-legacy-chrome) .course-art-label .eyebrow{font-size:.625rem}
+.field-guide:not(.fg-legacy-chrome) .course-art figcaption{font-size:.625rem;margin-top:1.1rem;gap:.5rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup{margin-top:1.3rem;max-width:none}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .course-signup-note{font-size:.8125rem;margin-bottom:.9rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .newsletter-form{display:block}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .fg-name-field{margin-bottom:.7rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup label{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .input-row{gap:.7rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .fg-name-field input,
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .input-row input{height:2.75rem;font-size:.875rem}
+.field-guide:not(.fg-legacy-chrome) .course-hero-signup .input-row button{min-height:2.75rem;font-size:.8125rem;padding:.65rem .8rem}
+.field-guide:not(.fg-legacy-chrome) .course-meta{margin-top:1.3rem}
+.field-guide:not(.fg-legacy-chrome) .course-outline{gap:5rem;padding-block:3.75rem}
+.field-guide:not(.fg-legacy-chrome) .course-outline h2{font-size:2rem}
+.field-guide:not(.fg-legacy-chrome) .outline-intro>p:not(.eyebrow){font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-list{gap:.6rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline summary{grid-template-columns:1.4rem minmax(0,1fr) 1.75rem;gap:.8rem;padding:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline summary strong{font-size:1.125rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline summary small{font-size:.8125rem;margin-top:.35rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline .lesson-toggle{width:1.75rem;height:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline .lesson-detail{margin-inline:3.3rem 1.2rem;padding-block:1rem 1.3rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline .lesson-detail>p:not(.eyebrow),
+.field-guide:not(.fg-legacy-chrome) .lesson-outline .lesson-detail ul{font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .lesson-outline .lesson-detail>.eyebrow{font-size:.6875rem;margin-top:1.2rem}
+.field-guide:not(.fg-legacy-chrome) .journal-intro{padding-bottom:2.75rem}
+.field-guide:not(.fg-legacy-chrome) .journal-library{padding-bottom:4rem}
+.field-guide:not(.fg-legacy-chrome) .journal-controls{gap:1.75rem;padding-block:1.1rem}
+.field-guide:not(.fg-legacy-chrome) .topic-filters button{font-size:.6875rem;min-height:2.5rem}
+.field-guide:not(.fg-legacy-chrome) .journal-grid{gap:2.25rem 1.75rem}
+.field-guide:not(.fg-legacy-chrome) .journal-card-copy h2{font-size:1.625rem}
+.field-guide:not(.fg-legacy-chrome) .journal-card-copy>p:not(.eyebrow){font-size:.8125rem}
+.field-guide:not(.fg-legacy-chrome) .featured-reading{gap:2.25rem;padding-bottom:1.75rem}
+.field-guide:not(.fg-legacy-chrome) .featured-reading h2{font-size:2.5rem}
+.field-guide:not(.fg-legacy-chrome) .article-heading{max-width:50rem;padding-block:1.5rem}
+.field-guide:not(.fg-legacy-chrome) .article-heading h1{font-size:clamp(2.375rem,4.5vw,3.875rem);margin-block:1.15rem 1.25rem}
+.field-guide:not(.fg-legacy-chrome) .article-deck{font-size:1rem}
+.field-guide:not(.fg-legacy-chrome) .article-cover{max-width:50rem}
+.field-guide:not(.fg-legacy-chrome) .fg-article-body{max-width:47.5rem;padding-block:1rem 3rem}
+.field-guide:not(.fg-legacy-chrome) .fg-article-body:has(.fg-author-rail){grid-template-columns:11rem minmax(0,1fr);gap:2rem;max-width:58.4rem}
+.field-guide:not(.fg-legacy-chrome) .fg-native-article .prose{font-size:1rem}
+.field-guide:not(.fg-legacy-chrome) .fg-native-article .prose h2{font-size:1.6875rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document{max-width:45rem;padding-block:2.6rem 4rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document-inner{max-width:38rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document-title{font-size:clamp(2.375rem,4vw,3.25rem);margin-block:1.4rem .9rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document-body{font-size:.9375rem;margin-top:2.2rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document-body h2{font-size:1.375rem;margin-block:1.8rem .7rem}
+.field-guide:not(.fg-legacy-chrome) .legal-document-body h3{font-size:1.0625rem;margin-block:1.3rem .5rem}
+.field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter{padding-block:1.9rem;gap:3rem}
+.field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter h2{font-size:1.5625rem}
+.field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter p{font-size:.75rem}
+.field-guide:not(.fg-legacy-chrome) .newsletter-form label{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) .input-row input{font-size:.875rem;padding-block:.8rem}
+.field-guide:not(.fg-legacy-chrome) .input-row button{font-size:.75rem;min-height:2.75rem}
+.field-guide:not(.fg-legacy-chrome) .fg-name-field{margin-bottom:.9rem}
+.field-guide:not(.fg-legacy-chrome) .footer-details{padding-block:1.9rem 1.7rem}
+.field-guide:not(.fg-legacy-chrome) .footer-layout{gap:1.8rem}
+.field-guide:not(.fg-legacy-chrome) .footer-name{font-size:.75rem}
+.field-guide:not(.fg-legacy-chrome) .footer-identity p{font-size:.6875rem}
+.field-guide:not(.fg-legacy-chrome) .footer-company{font-size:.6875rem;margin-top:1.5rem}
+}

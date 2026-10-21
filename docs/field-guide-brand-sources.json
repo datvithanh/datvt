@@ -1,0 +1,158 @@
+{
+  "status": "Local Field Guide refinement; not deployed",
+  "logo": {
+    "source": "Crossfit Logo Guide.pdf",
+    "page": 2,
+    "object": "/fzFrm0 /fullpage",
+    "paths": 28,
+    "method": "Original PDF vector path operands converted to SVG; no tracing or redesign. Original SVG coordinate system restored.",
+    "asset": "assets/cc-logo-guide.svg",
+    "source_sha256": "d38e57898d3fef6ec1cdbc40758ff80c4d78de2f2a6ba725e7730492642c15c5"
+  },
+  "typography": {
+    "source": "Crossfit Logo Guide.pdf",
+    "page": 4,
+    "roles": {
+      "wordmark": "Archivo Black",
+      "display": "Archivo 800",
+      "headings_actions": "Archivo 600",
+      "body": "Archivo 400",
+      "emphasis": "Archivo Italic 500",
+      "labels": "IBM Plex Mono 500",
+      "data": "IBM Plex Mono 400"
+    },
+    "archivo_variable_source": "https://github.com/google/fonts/tree/main/ofl/archivo",
+    "archivo_black_and_plex_source": "/Users/datvithanh/Project/design/library/type",
+    "licenses": "assets/licenses/"
+  },
+  "treatment": {
+    "source": "Crossfit Treatment Application Guide.pdf",
+    "pages": [
+      2,
+      4,
+      16,
+      25,
+      26
+    ],
+    "status": "Proposed guidance. Flat identity, quiet fields, original artifact, light paper texture; no invented motif geometry.",
+    "paper_source": "/Users/datvithanh/Project/design/library/styles/source/paper-02.png",
+    "palette_status": "Implementation values; named palette supplied but no numeric palette specification in the guides."
+  },
+  "transcript_decisions": [
+    {
+      "source": "website meeting.vtt",
+      "time": "00:34:05-00:36:42",
+      "decision": "Keep Live in practice and community positioning. Do not treat the non-separation draft as final literal copy."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "00:37:15-00:38:48",
+      "decision": "Reuse invitation, skin in the practice, and willingness sentence from recovered Training Club copy. Drop sophisticated."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "00:48:22-00:49:12",
+      "decision": "Combine community and participant stories."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "00:50:06-00:50:29",
+      "decision": "Frame self-emptiness as aim rather than promise; bring aim into Bootcamp value copy."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "01:10:14-01:11:14",
+      "decision": "Tuition ends the Bootcamp details; absent from homepage."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "01:18:54-01:19:55",
+      "decision": "Retain container and momentum to integrate spiritual insights into life."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "01:23:56-01:24:16",
+      "decision": "Withhold Basecamp, superseding the earlier coming-soon suggestion."
+    },
+    {
+      "source": "website meeting.vtt",
+      "time": "01:28:18-01:29:14",
+      "decision": "Separate Media from formal Resources; selected homepage recording, not a feed."
+    },
+    {
+      "source": "Operator web.vtt",
+      "time": "00:06:19-00:08:28",
+      "decision": "Maturity, consequence and curiosity inform restrained atmosphere; not literal monastery copy."
+    },
+    {
+      "source": "Operator web.vtt",
+      "time": "00:25:46-00:27:51",
+      "decision": "Short digital flyer homepage and separate program/resource detail."
+    },
+    {
+      "source": "Operator web.vtt",
+      "time": "01:02:48-01:03:25",
+      "decision": "Willingness and earnestness over achievement-based elitism."
+    },
+    {
+      "source": "Operator web.vtt",
+      "time": "01:08:44-01:08:55",
+      "decision": "Application form pending. No fabricated registration destination."
+    }
+  ],
+  "not_adopted": [
+    "90-day realization guarantee",
+    "Basecamp announcement",
+    "deposit policy and deadlines discussed as operating ideas",
+    "restoring long homepage",
+    "unapproved glowing or material logo treatments"
+  ],
+  "remaining": [
+    "New application URL",
+    "Standalone original logo master for archival comparison (current embedded vector faithfully extracted)",
+    "Numeric approved palette and full motif/glyph master inventory not supplied"
+  ],
+  "recovered_copy": {
+    "path": "copy-recovery/02-training-club-first-copy.txt",
+    "source_commit": "1e2531ecbb13934cb54d03845ebcb4f57b1a9119",
+    "treatment": "Selected exact lines and concise editorial adaptations; no restoration of historical page structure, Basecamp, or outdated facts."
+  },
+  "participant_thumbnails": [
+    {
+      "name": "Kristen",
+      "video": "https://www.youtube.com/watch?v=RYwjMy_SID8",
+      "source": "https://i.ytimg.com/vi/RYwjMy_SID8/maxresdefault.jpg",
+      "asset": "public/brand/stories/RYwjMy_SID8.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "treatment": "Original YouTube thumbnail bytes; full composition displayed without cropping.",
+      "sha256": "4d863fd5b1bf150e78ab13c6be57b6ae6a8334ebadf518d2be7efed9e7e57c97"
+    },
+    {
+      "name": "Ryan",
+      "video": "https://www.youtube.com/watch?v=NrObMSAiNQQ",
+      "source": "https://i.ytimg.com/vi/NrObMSAiNQQ/maxresdefault.jpg",
+      "asset": "public/brand/stories/NrObMSAiNQQ.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "treatment": "Original YouTube thumbnail bytes; full composition displayed without cropping.",
+      "sha256": "41ffc58fbdd788fe1774f5d80369a43486b019852680ee730d576cd16a5b393a"
+    },
+    {
+      "name": "James",
+      "video": "https://www.youtube.com/watch?v=YEpNqEyG3AE",
+      "source": "https://i.ytimg.com/vi/YEpNqEyG3AE/maxresdefault.jpg",
+      "asset": "public/brand/stories/YEpNqEyG3AE.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "treatment": "Original YouTube thumbnail bytes; full composition displayed without cropping.",
+      "sha256": "043859d6da737b57874ae1cbf43b62814612c5a5ab550dc59eef9175946b61fa"
+    }
+  ]
+}

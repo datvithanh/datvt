@@ -1,1 +1,3 @@
-* text=auto eol=lf
+# Keep binary PDF offsets intact and preserve the approved Markdown hard breaks.
+*.pdf binary
+docs/website-redesign-decisions.md whitespace=-blank-at-eol

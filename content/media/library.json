@@ -1,0 +1,178 @@
+{
+  "id": "library",
+  "title": "Video Library",
+  "topic": "library",
+  "packages": [
+    {
+      "id": "transmission-101-staying-present",
+      "subPrefix": "T101"
+    }
+  ],
+  "videos": [
+    {
+      "id": "embodiment-workshop-2-guided-meditation",
+      "title": "Guided Meditation — Riding the Breath, Finding the Edge",
+      "summary": "The guided meditation from Embodiment Workshop II, led by John Le: establishing honest posture from the ground up, letting gravity stack the body, and riding the breath to the edges of sensation — tightness, restriction, and the places that have gone quiet.",
+      "youtubeId": "gxBNB0X86GA",
+      "kind": "talk",
+      "sub": "Embodiment Workshop II",
+      "group": "Embodiment Workshop II",
+      "duration": 7588,
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "embodiment-meditation-missing-piece",
+      "title": "Embodiment Meditation - The Missing Piece After Awakening",
+      "summary": "The guided embodiment meditation from Embodiment Workshop I, led by John Le. Establishing honest posture from the ground up: contact with the earth, gravity stacking the posture, and riding the breath to the edges of sensation.",
+      "youtubeId": "Fd_ykwwsaQc",
+      "kind": "talk",
+      "sub": "Embodiment Workshop I",
+      "group": "Embodiment",
+      "duration": 4435,
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "integration-after-awakening",
+      "title": "Integration After Awakening (Beyond Disembodied Non-Duality)",
+      "summary": "Frank Yang interviews John Le on embodiment: how awakening without embodiment becomes another form of escape, how identifying as consciousness turns into one more identity, and why the body is not an obstacle to realization but its fullest expression.",
+      "youtubeId": "WMaNb2gi5Qg",
+      "kind": "talk",
+      "sub": "Frank Yang interviews John Le",
+      "group": "Embodiment",
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "embodiment-workshop-1-presentation",
+      "title": "Embodiment Workshop I — Presentation",
+      "summary": "The presentation from Embodiment Workshop I, led by John Le: disembodied nonduality as the central problem for modern practitioners, and what addresses it directly.",
+      "youtubeId": "YjNBgffq9M0",
+      "kind": "talk",
+      "sub": "Embodiment Workshop I",
+      "group": "Embodiment Workshop I",
+      "duration": 4502,
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "embodiment-workshop-1-qa",
+      "title": "Embodiment Meditation Q&A: The Art of Staying With Yourself",
+      "summary": "The live Q&A from Embodiment Workshop I, led by John Le with Frank Yang and Khan — working through the practice challenges registrants brought to the session.",
+      "youtubeId": "dCtCX_tBOKg",
+      "kind": "talk",
+      "sub": "Embodiment Workshop I",
+      "group": "Embodiment Workshop I",
+      "duration": 2459,
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "embodiment-workshop-2-meditation",
+      "title": "Guided Meditation - Riding the Breath, Finding the Edge",
+      "summary": "The guided embodiment meditation from Embodiment Workshop II, led by John Le — riding the breath through the body and working the edges of sensation where attention usually slides off.",
+      "youtubeId": "gxBNB0X86GA",
+      "kind": "talk",
+      "sub": "Embodiment Workshop II",
+      "group": "Embodiment Workshop II",
+      "duration": 7588,
+      "tags": ["embodiment"]
+    },
+    {
+      "id": "bootcamp-intro",
+      "title": "Intro to the CC Bootcamp",
+      "summary": "What the 90-day bootcamp is, who it's for, and how the training works — the overview shown on the bootcamp page.",
+      "youtubeId": "M3jvMPOQzJ0",
+      "kind": "talk",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "enlightenment-team-sport",
+      "title": "Why Enlightenment Is A Team Sport (90-Day Bootcamp Breakthroughs)",
+      "summary": "Frank Yang on why practice stalls when it stays solo: breakthroughs from the 90-day bootcamp, and what changes when you train with people who can see the patterns you can't.",
+      "youtubeId": "NCYL4JZKBLM",
+      "kind": "talk",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-john",
+      "title": "John — Bootcamp Testimonial",
+      "summary": "It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual. What we're talking about is the one that's undoing, stretching my mind, opening my horizons.",
+      "youtubeId": "WoQbN-CnHJg",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-tom",
+      "title": "Tom — Bootcamp Testimonial",
+      "summary": "A shell fell off me... It wasn't just like I'm imagining that happening. It was like an actual something left me, fell off. My relationship, my life was cleaning up, I was maturing — that wasn't a goal. But it never happened at that kind of pace before.",
+      "youtubeId": "mTZIjfB5BZ8",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-ryan",
+      "title": "Ryan — Bootcamp Testimonial",
+      "summary": "Once I made that clear commitment, it was later that night that I had this stream entry moment... Before that it felt like poking around in the dark, now it finally feels like I can train properly.",
+      "youtubeId": "zcrvJoSpfYs",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-tyson",
+      "title": "Tyson — Bootcamp Testimonial",
+      "summary": "Realization fitness is like a transformation of your relationship to resistance. I was fully cooking myself every way that I could. I was letting go of my identity and even my physical training... and that was like a really core one.",
+      "youtubeId": "tHBd3sCOjWk",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-kristen",
+      "title": "Kristen — Bootcamp Testimonial",
+      "summary": "The amplification of your efforts being in this group is unbelievable. People here are full of integrity — they want progress for themselves, but they want it for each other.",
+      "youtubeId": "RYwjMy_SID8",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-ryan-2",
+      "title": "Ryan — Bootcamp Testimonial",
+      "summary": "I felt like I was completely lost and spinning — but I didn't even know it. A lot of my path was built on ignoring and feeling safe. CC was a course correction. I'd rather be aware that I'm lost than think I know what's going on.",
+      "youtubeId": "NrObMSAiNQQ",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-james",
+      "title": "James — Bootcamp Testimonial",
+      "summary": "The support is 24/7 — not like other courses where you get help on one scheduled day. You're going to get looked after. No man left behind. Everyone's just trying to work it all out together.",
+      "youtubeId": "YEpNqEyG3AE",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    },
+    {
+      "id": "testimonial-adrian",
+      "title": "Adrian — Bootcamp Testimonial",
+      "summary": "There was something cryptic, something mysterious beyond the form. What drew me in was the culture of being yourself — welcoming all sides, including the parts I'd cast away.",
+      "youtubeId": "-uMMTet2FP8",
+      "kind": "testimonial",
+      "sub": "CC Bootcamp",
+      "group": "Bootcamp",
+      "tags": ["bootcamp"]
+    }
+  ]
+}
