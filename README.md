@@ -61,7 +61,9 @@ schema URLs remain on `https://mindtraining.cc`. `CC_ASSET_ORIGIN` sets the orig
 for relative social-image/icon metadata to this Netlify host, so the new shared
 preview image resolves before the redesign reaches mindtraining.cc. Historical
 article-specific image URLs remain canonical. The response header
-`X-Robots-Tag: noindex, follow` keeps this temporary copy out of search results.
+`X-Robots-Tag: noindex, follow` is applied by both Netlify configuration and the
+Next runtime while `CC_ASSET_ORIGIN` is set, keeping this temporary copy out of
+search results.
 Remove that staging header deliberately if this repository is ever promoted to
 canonical CC production. GA4 still requires a production build **and** exact
 origin `https://mindtraining.cc`; it stays off on datvt.com and Netlify domains.

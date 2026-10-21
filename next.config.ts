@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+  async headers() {
+    // Netlify serves Next responses through its runtime; apply staging SEO here too.
+    return process.env.CC_ASSET_ORIGIN ? [{
+      source: '/:path*',
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }],
+    }] : []
+  },
   async redirects() {
     return [
       { source: '/field-guide/journal/:path*', destination: '/articles/:path*', permanent: true },

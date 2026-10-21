@@ -27,7 +27,9 @@ class Page(HTMLParser):
   if tag=='main':self.main=False
 
 def read(path):
- with urlopen(BASE+path,timeout=45) as response:return response.status,response.read().decode()
+ with urlopen(BASE+path,timeout=45) as response:
+  if os.environ.get('CC_ASSET_ORIGIN'):assert 'noindex' in response.headers.get('X-Robots-Tag','').lower(),(path,'temporary host must return noindex')
+  return response.status,response.read().decode()
 public=['/','/programs','/bootcamp','/mini-bootcamp','/resources','/media','/transmission-101','/articles','/terms','/privacy','/refund-policy','/articles/topics/practice']
 articles=[p.stem for p in Path('content/articles').rglob('*.mdx')]
 paths=public+[f'/articles/{slug}' for slug in articles]
