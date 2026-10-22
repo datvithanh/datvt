@@ -1,5 +1,6 @@
 import { getLibraryVideos } from '@/lib/media'
 import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
+import { NextStep } from './NextStep'
 
 // Video IDs and titles verified against YouTube oEmbed on 2026-10-17.
 const showEpisodes = [
@@ -51,5 +52,6 @@ export function MediaContent() {
         </section>
       </aside>
     </div>
+    <NextStep />
   </>
 }

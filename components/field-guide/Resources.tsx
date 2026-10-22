@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getFieldGuideArticles } from '@/lib/field-guide-content'
+import { NextStep } from './NextStep'
 
 export function ResourcesContent() {
   const articles = getFieldGuideArticles().slice(0, 6)
@@ -17,5 +18,6 @@ export function ResourcesContent() {
         </Link>)}</div>
       </section>
     </div>
+    <NextStep />
   </>
 }
