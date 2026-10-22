@@ -21,6 +21,7 @@ and IBM Plex Mono resources; no font files or license files were removed.
 downscaled to 720 × 900, mirrored 2 × 2 so it tiles without seams, with the dark flecks filled
 from a local median so none read as dirt at web scale.
 
-`hero-placeholder.webp` (home hero) is a **placeholder**: yamabushi walking a cedar-forest path,
-a recent photograph found via Pinterest (from a travel feature), rights unknown and not cleared.
-Replace it with a licensed or public-domain image before mindtraining.cc goes live.
+`hero-mongaku.webp` (home hero) is *Mongaku's austerity* (文覚荒行之図) from a Hokusai picture
+collection (北斎画集), a Meiji-era woodblock print after a Hokusai design, dated 1885 in its colophon:
+public domain. 1000 × 1423 from a scan found via Pinterest (no museum page attached). Swap in a
+museum scan when one is to hand. No on-page credit, by request.
