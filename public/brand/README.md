@@ -21,7 +21,6 @@ and IBM Plex Mono resources; no font files or license files were removed.
 downscaled to 720 × 900, mirrored 2 × 2 so it tiles without seams, with the dark flecks filled
 from a local median so none read as dirt at web scale.
 
-`pilgrims-waterfall.webp` (home hero) is Utagawa Kuniyoshi's woodblock print of pilgrims at the
-great waterfall of Sekison, Ōyama (cartouche 大山石尊大瀧之圖, signed 一勇斎国芳画), 1830s–40s:
-public domain. Resized to 1600 px from a 2975 × 2067 scan found via Pinterest (no museum page
-attached; Wikimedia Commons was rate-limited when fetched). Swap in a museum scan when one is to hand.
+`hero-placeholder.webp` (home hero) is a **placeholder**: yamabushi walking a cedar-forest path,
+a recent photograph found via Pinterest (from a travel feature), rights unknown and not cleared.
+Replace it with a licensed or public-domain image before mindtraining.cc goes live.
