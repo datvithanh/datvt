@@ -15,3 +15,13 @@ inspection at the site's 650px texture scale showed no visible appearance change
 Legacy Rubik and Courier Prime font resources remain because retained course
 pages still use them. Public UI uses the existing Archivo, Archivo Black wordmark,
 and IBM Plex Mono resources; no font files or license files were removed.
+
+`bone-paper.webp` is the material ground from the CC Instagram system
+(`mindtraining-cc/design`, `library/textures/bone-paper/sheet.png`): one slide-sized cell,
+downscaled to 720 × 900, mirrored 2 × 2 so it tiles without seams, with the dark flecks filled
+from a local median so none read as dirt at web scale.
+
+`wheel-of-life.webp` (home hero) is a detail of *Yama holding the wheel of life*, Wellcome
+Collection [L0069368](https://wellcomecollection.org/works/ek2zbyqa), Public Domain Mark. It is the
+same crop as the cover of Instagram post 08 (`post/instagram/08-death-at-bay/source/cover.jpg`),
+resized to 880 px wide.

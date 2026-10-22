@@ -1,0 +1,44 @@
+/* Material layer: the feel of the CC Instagram carousels (mindtraining-cc/design) on the site's own
+   layouts and Oct 6 type system. Woven bone paper you can see, blue-black ink, burnt orange for CC's
+   own words, worn imagery multiplied into the paper, rules instead of colour slabs. Loaded last;
+   the legacy dark chrome is left alone. The logo keeps its flat master colour. */
+.field-guide:not(.fg-legacy-chrome){
+  --paper:#ece3cf;--ink:#2a3d56;--muted:#4f5b6b;--line:#2a3d5633;
+  --orange:#c45428;--gold-line:#d5c48f;
+  --blue:var(--ink);--accent:var(--orange);--clay:#a8452f;--sage:#56705a;--marigold:#c98a32;
+  background:#ece3cf url('/brand/bone-paper.webp') repeat;background-size:720px auto
+}
+
+/* CC's own words: the italic half of each headline, in burnt orange. */
+.field-guide:not(.fg-legacy-chrome) :is(h1,h2) em{color:var(--orange)!important}
+
+/* Actions stay solid, in ink rather than royal blue. */
+.field-guide:not(.fg-legacy-chrome) .button,.field-guide:not(.fg-legacy-chrome) .guide-hero .button{background:var(--ink);color:var(--paper)}
+.field-guide:not(.fg-legacy-chrome) .button:hover{background:#1f2e42;filter:none}
+.field-guide:not(.fg-legacy-chrome) :is(.text-link,.header nav a):hover{color:var(--orange)}
+.field-guide:not(.fg-legacy-chrome) .text-link{border-color:var(--gold-line)}
+.field-guide:not(.fg-legacy-chrome) .nav-submenu{background:#ece3cf url('/brand/bone-paper.webp');background-size:720px auto}
+
+/* Surfaces: paper with a fine ink rule, not colour slabs and tinted bands. */
+.field-guide:not(.fg-legacy-chrome) :is(.paid-offer,.free-offer){background:transparent;--ink:#2a3d56;--muted:#4f5b6b;--line:#2a3d5633;color:var(--ink);border:1px solid #2a3d5666;border-radius:2px}
+.field-guide:not(.fg-legacy-chrome) .flyer-offer:hover{border-color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .offer-facts li:before{background:var(--orange)}
+.field-guide:not(.fg-legacy-chrome) :is(.flyer-stories,.stories,.tuition-section,.fit-section){background:transparent;border-color:var(--line)}
+.field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:1.5px solid var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .cohort-stamp{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .phase-band{opacity:.88;mix-blend-mode:multiply}
+
+/* Imagery sits in the paper: multiplied and warmed, never boxed. Loud video thumbnails are muted. */
+.field-guide:not(.fg-legacy-chrome) .artifact{background:transparent;border:0;box-shadow:none}
+.field-guide:not(.fg-legacy-chrome) :is(.artifact-ring,.artifact-ring:before){border-color:#2a3d5630}
+.field-guide:not(.fg-legacy-chrome) .artifact>img{filter:sepia(.15) contrast(1.05)}
+.field-guide:not(.fg-legacy-chrome) :is(.community-wide,.course-discovery-image,.resource-reading,.journal-image,.mini-photo) img{filter:sepia(.3) saturate(.7) contrast(.95);mix-blend-mode:multiply}
+.field-guide:not(.fg-legacy-chrome) .story-image{background:var(--paper);border-color:#f3ebd9;box-shadow:1px 3px 10px #2a3d561f}
+.field-guide:not(.fg-legacy-chrome) .story-image img{filter:sepia(.35) saturate(.6) contrast(.92) brightness(1.04)}
+.field-guide:not(.fg-legacy-chrome) .story-image-play{background:#2a3d56df}
+.field-guide:not(.fg-legacy-chrome) .site-footer{background:transparent}
+.field-guide .plate{margin:0;align-self:center}
+.field-guide .plate img{display:block;width:100%;height:auto;max-height:600px;object-fit:cover;mix-blend-mode:multiply;filter:sepia(.08)}
+.field-guide .plate figcaption{margin-top:12px;font-size:12px;line-height:1.6;color:var(--muted)}
+.field-guide .plate figcaption a{border-bottom:1px solid var(--gold-line)}
+@media(max-width:760px){.field-guide .plate{margin-top:36px}.field-guide .plate img{max-height:440px}}
