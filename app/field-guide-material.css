@@ -42,3 +42,13 @@
 .field-guide .plate figcaption{margin-top:12px;font-size:12px;line-height:1.6;color:var(--muted)}
 .field-guide .plate figcaption a{border-bottom:1px solid var(--gold-line)}
 @media(max-width:760px){.field-guide .plate{margin-top:36px}.field-guide .plate img{max-height:440px}}
+
+/* Home hero with a landscape print: headline above, the image across the full measure. */
+.field-guide .guide-hero.hero-wide{display:block;padding-block:48px 40px;min-height:0}
+.field-guide .hero-wide .guide-heading{display:grid;grid-template-columns:auto 1fr;column-gap:56px;align-items:end}
+.field-guide .hero-wide .guide-heading h1{grid-row:span 2;margin:0}
+.field-guide .hero-wide .hero-description{margin:0;max-width:340px}
+.field-guide .hero-wide .button{margin-top:22px;justify-self:start}
+.field-guide .plate-wide{margin-top:44px}
+.field-guide .plate-wide img{max-height:none}
+@media(max-width:760px){.field-guide .hero-wide .guide-heading{display:block}.field-guide .hero-wide .hero-description{margin-top:18px}.field-guide .plate-wide{margin-top:32px}}

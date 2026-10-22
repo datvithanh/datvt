@@ -21,7 +21,7 @@ and IBM Plex Mono resources; no font files or license files were removed.
 downscaled to 720 × 900, mirrored 2 × 2 so it tiles without seams, with the dark flecks filled
 from a local median so none read as dirt at web scale.
 
-`wheel-of-life.webp` (home hero) is a detail of *Yama holding the wheel of life*, Wellcome
-Collection [L0069368](https://wellcomecollection.org/works/ek2zbyqa), Public Domain Mark. It is the
-same crop as the cover of Instagram post 08 (`post/instagram/08-death-at-bay/source/cover.jpg`),
-resized to 880 px wide.
+`pilgrims-waterfall.webp` (home hero) is Utagawa Kuniyoshi's woodblock print of pilgrims at the
+great waterfall of Sekison, Ōyama (cartouche 大山石尊大瀧之圖, signed 一勇斎国芳画), 1830s–40s:
+public domain. Resized to 1600 px from a 2975 × 2067 scan found via Pinterest (no museum page
+attached; Wikimedia Commons was rate-limited when fetched). Swap in a museum scan when one is to hand.
