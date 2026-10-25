@@ -72,3 +72,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The four phase bars are an orange progress line (¼, ½, ¾, full) instead of four unrelated colours.
 - Bootcamp sections sit closer together on desktop.
 - Why: Dat, Oct 25, after comparing with mindtraining.cc: team transcript asks for real faces and quotes everywhere; the bluish button on the yellow paper looked off. **Provisional:** weekly event times are copied from the live site; phase names still placeholders.
+
+### 2026-10-25 · Bootcamp: fit, tuition, application and FAQ from mindtraining.cc
+- Fit: under "Sophisticated on the cushion. Reactive by noon." come the four "This is for you if…" cards and the "This may not be the right time if…" list. The old third paragraph ("We look at fit together…") is gone; the application section now says it in full.
+- Tuition is now "Four components. One container.": 180 live training sessions, 180 reflection sessions, many-on-one mentoring, direct transmission from Meicheng, next to the price; plus an "Also included" list (Discord, weekly events, Meicheng's private teachings, alumni access), the payment terms and the 10% referral discount.
+- Application is now "Honest about fit.": ten written questions, a 10-minute video, about two weeks for a decision, and what happens if it isn't the right time; Cohort 11 dates and the priority-registration deadline come from `lib/cohort.ts`. The button goes to the mailing list ("Get application updates") rather than promising the application by email, because our signup is the general newsletter form; "Ask the team" stays as a mail link.
+- FAQ shows all 17 questions (heading "Common questions."). Order is now tuition → apply → FAQ; the section nav gains Apply and FAQ.
+- Why: Dat, Oct 25, after the mindtraining.cc comparison. Copy is ported from the live Bootcamp page with light punctuation edits. **Provisional:** payment terms (one week, live) vs Adrian's 10-day deposit plan; the referral discount and early bird need Adrian/Cheng; the FAQ answer "The transformation is reliably magical when you put in the work" is a results claim the brand memo would want evidence for.

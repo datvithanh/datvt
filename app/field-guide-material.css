@@ -68,3 +68,25 @@
 .field-guide:not(.fg-legacy-chrome) .face-thumb .play-mark:after{left:13px;top:10px;border-width:7px 0 7px 11px}
 .field-guide:not(.fg-legacy-chrome) .schedule-weekly{margin-top:40px}
 @media(min-width:761px){.field-guide:not(.fg-legacy-chrome).program-page .section{padding-block:3.5rem}.field-guide:not(.fg-legacy-chrome).program-page .program-sections{margin-bottom:.5rem}}
+
+/* Bootcamp fit, tuition and application detail (ported from mindtraining.cc). */
+.field-guide:not(.fg-legacy-chrome) .fit-detail{margin-top:56px}
+.field-guide:not(.fg-legacy-chrome) .fit-label{font:400 11px/1.6 'CC Plex',monospace;letter-spacing:.02em;color:var(--muted);margin:0 0 18px}
+.field-guide:not(.fg-legacy-chrome) .fit-cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.field-guide:not(.fg-legacy-chrome) .fit-cards h3{font-size:1.25rem;margin-bottom:14px}
+.field-guide:not(.fg-legacy-chrome) .fit-not{margin-top:56px;max-width:760px}
+.field-guide:not(.fg-legacy-chrome) .fit-not ul{list-style:none;margin:0;padding:0}
+.field-guide:not(.fg-legacy-chrome) .fit-not li{position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:14px;line-height:1.7;color:var(--muted)}
+.field-guide:not(.fg-legacy-chrome) .fit-not li:before{content:'—';position:absolute;left:0;color:var(--orange)}
+.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included){margin:28px 0 0}
+.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included)>div{display:block;border-top:1px solid var(--line);padding:16px 0}
+.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included) dt{font:600 15px/1.35 'CC Archivo',Arial,sans-serif;color:var(--ink);margin-bottom:6px}
+.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included) dd{margin:0;text-align:left;font-size:13px;line-height:1.75;color:var(--muted)}
+.field-guide:not(.fg-legacy-chrome) .tuition-included{margin-top:0}
+.field-guide:not(.fg-legacy-chrome) .tuition-included dt{font-size:13px;margin-bottom:2px}
+.field-guide:not(.fg-legacy-chrome) .tuition-layout .fit-label{margin-top:30px}
+.field-guide:not(.fg-legacy-chrome) .application-dates{color:var(--ink)!important;font-weight:600}
+.field-guide:not(.fg-legacy-chrome) .application-section .hero-actions{margin-top:25px}
+.field-guide:not(.fg-legacy-chrome) .application-section .hero-actions .button{margin-top:0}
+@media(max-width:1100px){.field-guide:not(.fg-legacy-chrome) .fit-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.field-guide:not(.fg-legacy-chrome) .fit-cards{grid-template-columns:1fr;gap:24px}.field-guide:not(.fg-legacy-chrome) .fit-detail,.field-guide:not(.fg-legacy-chrome) .fit-not{margin-top:36px}}
