@@ -42,3 +42,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 
 ### 2026-10-25 · Start this ledger
 - Added this file and a `CLAUDE.md` rule to append an entry with every site commit. No visitor-facing change.
+
+### 2026-10-25 · Copy: first decided rows from the copy sheet
+- Home subline: "Build a practice that can meet your life, with people who train alongside you." (brand memo's working message).
+- Home hero button: "Explore the Bootcamp".
+- Home community body: "CC is a community for serious contemplative training: guidance from teachers, structured daily practice, study that sharpens understanding, and people who train alongside you."
+- Bootcamp card (Home and Programs share it): "Twelve weeks of intensive training for practitioners ready for transmission and relational feedback."
+- Bootcamp hero: method line plus the promise, "Built for one outcome: self-emptiness realization, held in your life." (replaces "Daily transmission, live reflection… The aim is…").
+- Bootcamp "who it's for" heading: "Sophisticated on the cushion. Reactive by noon."
+- Why: Dat's picks in the "CC Website — Copy Decisions" sheet, rows 2, 3, 5, 7, 10, 13, 14 (status Decided (provisional)); options shaped by the Oct 24 brand memo. **Provisional:** all of these; rows still Open or Needs team are not applied.
