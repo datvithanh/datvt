@@ -26,11 +26,12 @@
 .field-guide:not(.fg-legacy-chrome) .offer-facts li:before{background:var(--orange)}
 .field-guide:not(.fg-legacy-chrome) :is(.flyer-stories,.stories,.tuition-section,.fit-section){background:transparent;border-color:var(--line)}
 .field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:1.5px solid var(--ink)}
-.field-guide:not(.fg-legacy-chrome) .cohort-stamp{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .cohort-stamp{background:transparent;border:0;border-top:1px solid var(--line);padding:14px 0 0;color:var(--ink)}
 .field-guide:not(.fg-legacy-chrome) .phase-band{opacity:.88;mix-blend-mode:multiply}
 
 /* Imagery sits in the paper: multiplied and warmed, never boxed. Loud video thumbnails are muted. */
 .field-guide:not(.fg-legacy-chrome) .artifact{background:transparent;border:0;box-shadow:none}
+.field-guide:not(.fg-legacy-chrome) .artifact figcaption{left:0;right:0;bottom:0;text-align:center}
 .field-guide:not(.fg-legacy-chrome) :is(.artifact-ring,.artifact-ring:before){border-color:#2a3d5630}
 .field-guide:not(.fg-legacy-chrome) .artifact>img{filter:sepia(.15) contrast(1.05)}
 .field-guide:not(.fg-legacy-chrome) :is(.community-wide,.course-discovery-image,.resource-reading,.journal-image,.mini-photo) img{filter:sepia(.3) saturate(.7) contrast(.95);mix-blend-mode:multiply}
@@ -44,3 +45,6 @@
 .field-guide .plate figcaption a{border-bottom:1px solid var(--gold-line)}
 @media(max-width:760px){.field-guide .plate{margin-top:36px}.field-guide .plate img{max-height:440px}}
 
+
+/* Home hero fits one laptop screen: the print scales with viewport height and is never cropped. */
+@media(min-width:761px){.field-guide:not(.fg-legacy-chrome) .guide-hero{padding-block:1rem 2.25rem}.field-guide:not(.fg-legacy-chrome) .guide-hero h1{font-size:clamp(3.5rem,min(calc(3.5rem + 2.5vw),11svh),5.75rem)}.field-guide:not(.fg-legacy-chrome) .guide-hero .plate{justify-self:end}.field-guide:not(.fg-legacy-chrome) .guide-hero .plate img{width:auto;max-width:100%;max-height:clamp(340px,calc(100svh - 250px),520px);object-fit:contain}}

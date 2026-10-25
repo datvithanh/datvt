@@ -58,3 +58,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Mobile menu unchanged apart from the new date lines (no chevron there; the items are always listed).
 - Why: Dat, Oct 25.
 - Fixed the mobile menu: the program items no longer sit in a half-width paper box.
+
+### 2026-10-25 · Compact home hero; Bootcamp hero cleanup
+- Home hero fits one laptop screen: the print scales with window height (capped at 520px, never cropped), the headline shrinks on short windows, and the top padding is tighter. On a 1440×780 window the hero now ends at 676px instead of 762px, so the next section peeks in. Desktop only; mobile unchanged.
+- Bootcamp hero: the cohort date strip is a single ink rule again (the material layer had boxed it, leaving the text sitting on the bottom border), and "A practice carried into life." is centred under the artifact.
+- Why: Dat, Oct 25 ("only full hero at 80%", "main hero bootcamp looks weird").
