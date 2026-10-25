@@ -79,3 +79,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Application is now "Honest about fit.": ten written questions, a 10-minute video, about two weeks for a decision, and what happens if it isn't the right time; Cohort 11 dates and the priority-registration deadline come from `lib/cohort.ts`. The button goes to the mailing list ("Get application updates") rather than promising the application by email, because our signup is the general newsletter form; "Ask the team" stays as a mail link.
 - FAQ shows all 17 questions (heading "Common questions."). Order is now tuition → apply → FAQ; the section nav gains Apply and FAQ.
 - Why: Dat, Oct 25, after the mindtraining.cc comparison. Copy is ported from the live Bootcamp page with light punctuation edits. **Provisional:** payment terms (one week, live) vs Adrian's 10-day deposit plan; the referral discount and early bird need Adrian/Cheng; the FAQ answer "The transformation is reliably magical when you put in the work" is a results claim the brand memo would want evidence for.
+
+### 2026-10-25 · Spell Meicheng consistently
+- The FAQ answer to "What's a transmission holder?" now says "Meicheng", matching the rest of the site.
+- Why: Dat, Oct 25: Meicheng is the correct spelling.
