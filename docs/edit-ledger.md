@@ -51,3 +51,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Bootcamp hero: method line plus the promise, "Built for one outcome: self-emptiness realization, held in your life." (replaces "Daily transmission, live reflection… The aim is…").
 - Bootcamp "who it's for" heading: "Sophisticated on the cushion. Reactive by noon."
 - Why: Dat's picks in the "CC Website — Copy Decisions" sheet, rows 2, 3, 5, 7, 10, 13, 14 (status Decided (provisional)); options shaped by the Oct 24 brand memo. **Provisional:** all of these; rows still Open or Needs team are not applied.
+
+### 2026-10-25 · Programs menu shows dates and a dropdown cue
+- "Programs" in the header now has a small chevron that flips when the menu opens.
+- Each menu item shows its next run under the name: "12 weeks · starts January 25, 2027" and "Free · December 14–18". Dates come from `lib/cohort.ts`, so they roll with each cohort.
+- Mobile menu unchanged apart from the new date lines (no chevron there; the items are always listed).
+- Why: Dat, Oct 25.
+- Fixed the mobile menu: the program items no longer sit in a half-width paper box.

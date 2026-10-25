@@ -1061,7 +1061,12 @@
 .field-guide .nav-group{position:relative;display:flex;align-items:center}
 .field-guide .nav-submenu{display:none;position:absolute;top:100%;left:-16px;z-index:10;flex-direction:column;min-width:220px;padding:10px 16px;background:var(--paper);border:1px solid var(--line)}
 .field-guide .nav-group:hover .nav-submenu,.field-guide .nav-group:focus-within .nav-submenu{display:flex}
-.field-guide .header .nav-submenu a,.field-guide:not(.fg-legacy-chrome) .header .nav-submenu a{min-height:2.25rem;white-space:nowrap}
+.field-guide .header .nav-submenu a,.field-guide:not(.fg-legacy-chrome) .header .nav-submenu a{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:0;padding-block:8px;white-space:nowrap}
+.field-guide .nav-submenu{min-width:250px}
+.field-guide .nav-item-meta{font:400 11px/1.4 'CC Plex',monospace;letter-spacing:.02em;color:var(--muted)}
+.field-guide .header .nav-parent,.field-guide:not(.fg-legacy-chrome) .header .nav-parent{display:inline-flex;align-items:center;gap:6px}
+.field-guide .nav-caret{flex-shrink:0;transition:transform .2s}
+.field-guide .nav-group:hover .nav-caret,.field-guide .nav-group:focus-within .nav-caret{transform:rotate(180deg)}
 .field-guide .phase-lanes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 6px}
 .field-guide .phase-lanes li{min-width:0;padding-right:28px}
 .field-guide .phase-band{display:block;height:14px;margin-bottom:24px;background:var(--lane)}
@@ -1077,4 +1082,4 @@
 .field-guide .next-step p{margin-top:12px;max-width:520px;font-size:13px;color:var(--muted)}
 .field-guide .next-step .button{flex-shrink:0}
 @media(max-width:1100px){.field-guide .phase-lanes{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){.field-guide .nav-group{flex-direction:column;align-items:start;gap:12px}.field-guide .nav-submenu{display:flex;position:static;min-width:0;padding:0 0 0 14px;border:0;background:none;gap:12px;font-size:14px}.field-guide .phase-lanes{grid-template-columns:1fr;gap:36px}.field-guide .phase-band{height:10px;margin-bottom:18px}.field-guide .next-step{display:block;margin-block:50px 0}.field-guide .next-step .button{margin-top:22px}}
+@media(max-width:760px){.field-guide .nav-caret{display:none}.field-guide .nav-group{flex-direction:column;align-items:start;gap:12px}.field-guide .nav-submenu{display:flex;position:static;min-width:0;padding:0 0 0 14px;border:0;background:none;gap:12px;font-size:14px}.field-guide .phase-lanes{grid-template-columns:1fr;gap:36px}.field-guide .phase-band{height:10px;margin-bottom:18px}.field-guide .next-step{display:block;margin-block:50px 0}.field-guide .next-step .button{margin-top:22px}}
