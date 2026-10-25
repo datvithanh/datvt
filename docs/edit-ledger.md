@@ -98,3 +98,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-10-25 · Drop the BFF talk show from the schedule
 - The Bootcamp "Each week" list now shows the Saturday weekly review and Discord only; the Friday 6:00 pm BFF talk show row is gone (also from the unused legacy `SchedulePanel.tsx`).
 - Why: Dat, Oct 25.
+
+### 2026-10-25 · Bootcamp "who it's for" section stands out
+- "Reactive by noon." is now orange, like the other split headlines.
+- The section sits on a slightly deeper paper band. The four "This is for you if…" items are paper cards (orange top rule, orange 01–04, 2×2 on desktop) whose last line is set in bold ink: "The isolation is.", "won't close on its own", "Spiritual over here, regular life over there.", "You need systematic deconstruction…". Same words as before, split into body and punchline.
+- Why: Dat, Oct 25: "something to make this section pop?"
