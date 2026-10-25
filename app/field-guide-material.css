@@ -111,3 +111,11 @@
 .field-guide:not(.fg-legacy-chrome) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+4){--tone:#2f5a45;--tone-text:#2f5a45}
 .field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:3px solid var(--tone)}
 .field-guide:not(.fg-legacy-chrome) .phase-index{color:var(--tone-text)}
+
+/* Boxed panels sit on the paper as warm paper cards with an ink rule, never cool grey or sage slabs. */
+.field-guide:not(.fg-legacy-chrome) :is(.course-discovery,.instagram-panel,.course-art){background:#f3ebd9b3;border:1px solid var(--line);color:var(--ink);box-shadow:1px 3px 10px #2a3d5614}
+.field-guide:not(.fg-legacy-chrome) .instagram-panel{--line:#2a3d5633}
+.field-guide:not(.fg-legacy-chrome) .instagram-panel h2{color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .instagram-panel>p{color:var(--muted)}
+.field-guide:not(.fg-legacy-chrome) .instagram-panel .text-link{color:var(--ink);border-color:var(--gold-line)}
+.field-guide:not(.fg-legacy-chrome) .course-art :is(span,p,small){color:var(--muted)}

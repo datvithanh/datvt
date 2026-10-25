@@ -107,3 +107,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-10-25 · Four-tone accents for card groups
 - Groups of headed items now rotate through blue (#34537b), orange (as designed), maroon (#7d2f3b) and dark green (#2f5a45) instead of all orange: the Bootcamp "This is for you if…" cards (top rule and number), the four phase bars and numbers, and the three-item card rows on Bootcamp ("When insight meets the rest of your life") and Mini Bootcamp. Orange numbers use a deeper #a8452f for contrast. Headline orange is unchanged.
 - Why: Dat, Oct 25: "too orange dominant… balance the color schemes for multi headers stuff."
+
+### 2026-10-25 · Warm panels instead of grey and sage slabs
+- The Transmission 101 card on Resources (was cool grey), the "On Instagram." panel on Media (was sage green with green text) and the course card on /transmission-101 (was pale blue with royal-blue labels) are now warm paper cards with an ink rule and ink/muted text, matching the Bootcamp cards. A crawl of the main pages finds no other cool-toned panels; /coaching and /embodiment still use the legacy chrome.
+- Why: Dat, Oct 25: "color combination not the best."
