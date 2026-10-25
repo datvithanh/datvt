@@ -83,3 +83,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-10-25 · Spell Meicheng consistently
 - The FAQ answer to "What's a transmission holder?" now says "Meicheng", matching the rest of the site.
 - Why: Dat, Oct 25: Meicheng is the correct spelling.
+
+### 2026-10-25 · Calmer Bootcamp tuition section
+- Left: the four components with one short line each. Right: one price card with the price, "12 weeks · Live online", the extras as a short list, "How to apply", and a single fine-print line for payment terms, payment plans and the referral discount.
+- Cut from the ported copy: the long component descriptions (including the "100,000 prostrations" line), the per-item descriptions of the extras, and the two payment paragraphs (now one line).
+- Why: Dat, Oct 25: "this is very busy, make it clear and clean."

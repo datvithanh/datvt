@@ -78,13 +78,20 @@
 .field-guide:not(.fg-legacy-chrome) .fit-not ul{list-style:none;margin:0;padding:0}
 .field-guide:not(.fg-legacy-chrome) .fit-not li{position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:14px;line-height:1.7;color:var(--muted)}
 .field-guide:not(.fg-legacy-chrome) .fit-not li:before{content:'—';position:absolute;left:0;color:var(--orange)}
-.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included){margin:28px 0 0}
-.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included)>div{display:block;border-top:1px solid var(--line);padding:16px 0}
-.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included) dt{font:600 15px/1.35 'CC Archivo',Arial,sans-serif;color:var(--ink);margin-bottom:6px}
-.field-guide:not(.fg-legacy-chrome) :is(.tuition-components,.tuition-included) dd{margin:0;text-align:left;font-size:13px;line-height:1.75;color:var(--muted)}
-.field-guide:not(.fg-legacy-chrome) .tuition-included{margin-top:0}
-.field-guide:not(.fg-legacy-chrome) .tuition-included dt{font-size:13px;margin-bottom:2px}
-.field-guide:not(.fg-legacy-chrome) .tuition-layout .fit-label{margin-top:30px}
+.field-guide:not(.fg-legacy-chrome) .tuition-components{margin:32px 0 0}
+.field-guide:not(.fg-legacy-chrome) .tuition-components>div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:baseline;border-top:1px solid var(--line);padding:16px 0}
+.field-guide:not(.fg-legacy-chrome) .tuition-components dt{font:600 15px/1.35 'CC Archivo',Arial,sans-serif;color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .tuition-components dd{margin:0;font-size:13px;line-height:1.6;color:var(--muted);text-align:left}
+.field-guide:not(.fg-legacy-chrome) .tuition-card{align-self:start;border:1px solid var(--line);background:#f3ebd966;padding:36px 36px 30px}
+.field-guide:not(.fg-legacy-chrome) .tuition-card .tuition-price{margin-bottom:6px}
+.field-guide:not(.fg-legacy-chrome) .tuition-card .tuition-term{color:var(--ink)!important;margin:0}
+.field-guide:not(.fg-legacy-chrome) .tuition-card .fit-label{margin:28px 0 10px}
+.field-guide:not(.fg-legacy-chrome) .tuition-included{list-style:none;margin:0;padding:0}
+.field-guide:not(.fg-legacy-chrome) .tuition-included li{position:relative;padding:5px 0 5px 20px;font-size:13px;line-height:1.5;color:var(--ink)}
+.field-guide:not(.fg-legacy-chrome) .tuition-included li:before{content:'+';position:absolute;left:0;color:var(--gold)}
+.field-guide:not(.fg-legacy-chrome) .tuition-card .button{margin-top:28px}
+.field-guide:not(.fg-legacy-chrome) .tuition-card .fineprint{margin-top:16px;font-size:11px;line-height:1.6;max-width:340px}
+@media(max-width:760px){.field-guide:not(.fg-legacy-chrome) .tuition-components>div{grid-template-columns:1fr;gap:4px}.field-guide:not(.fg-legacy-chrome) .tuition-card{padding:26px 22px}}
 .field-guide:not(.fg-legacy-chrome) .application-dates{color:var(--ink)!important;font-weight:600}
 .field-guide:not(.fg-legacy-chrome) .application-section .hero-actions{margin-top:25px}
 .field-guide:not(.fg-legacy-chrome) .application-section .hero-actions .button{margin-top:0}
