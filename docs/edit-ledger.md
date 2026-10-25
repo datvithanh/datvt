@@ -94,3 +94,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - FAQ "What happens after the 12 weeks?" no longer promises lifetime access to materials or ongoing community access; it says many practitioners join consecutive cohorts.
 - The unused legacy `components/bootcamp/PricingPanel.tsx` gets the same correction so it can't resurface.
 - Why: Dat, Oct 25: the extra is an internal podcast, access is only for the interim period, and each cohort's material is sealed for the next cohort.
+
+### 2026-10-25 · Drop the BFF talk show from the schedule
+- The Bootcamp "Each week" list now shows the Saturday weekly review and Discord only; the Friday 6:00 pm BFF talk show row is gone (also from the unused legacy `SchedulePanel.tsx`).
+- Why: Dat, Oct 25.

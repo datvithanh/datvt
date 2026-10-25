@@ -42,10 +42,9 @@ export function SchedulePanel() {
         {/* Weekly Community Events */}
         <div className="mt-12">
           <h3 className="font-heading text-xs uppercase tracking-[0.15em] text-accent mb-4">Weekly Community Events</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
               { label: 'Weekly Review', time: '10:00am EDT', day: 'Saturday' },
-              { label: 'BFF Weekly Talkshow', time: '6:00pm EDT', day: 'Friday' },
               { label: 'Community Events', time: 'Various', day: 'Throughout the program' },
             ].map((s, i) => (
               <div key={i} className="p-5 border border-border/40 rounded-sm text-center hover:border-accent/20 transition-colors">
