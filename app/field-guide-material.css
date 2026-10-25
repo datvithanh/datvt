@@ -4,7 +4,7 @@
    the legacy dark chrome is left alone. The logo keeps its flat master colour. */
 .field-guide:not(.fg-legacy-chrome){
   --paper:#ece3cf;--ink:#2a3d56;--muted:#4f5b6b;--line:#2a3d5633;
-  --orange:#c45428;--gold-line:#d5c48f;
+  --orange:#c45428;--gold-line:#d5c48f;--gold:#8a6d3e;--gold-ink:#6b4f22;--gold-deep:#76592a;
   --blue:var(--ink);--accent:var(--orange);--clay:#a8452f;--sage:#56705a;--marigold:#c98a32;
   background:#ece3cf url('/brand/bone-paper.webp') repeat;background-size:720px auto
 }
@@ -12,9 +12,9 @@
 /* CC's own words: the italic half of each headline, in burnt orange. */
 .field-guide:not(.fg-legacy-chrome) :is(h1,h2) em{color:var(--orange)!important}
 
-/* Actions stay solid, in ink rather than royal blue. */
-.field-guide:not(.fg-legacy-chrome) .button,.field-guide:not(.fg-legacy-chrome) .guide-hero .button{background:var(--ink);color:var(--paper)}
-.field-guide:not(.fg-legacy-chrome) .button:hover{background:#1f2e42;filter:none}
+/* Actions take the carousels' gold CTA tag: outlined gold on the paper, filled on hover. */
+.field-guide:not(.fg-legacy-chrome) .button,.field-guide:not(.fg-legacy-chrome) .guide-hero .button{background:transparent;color:var(--gold-ink);border:1.5px solid var(--gold)}
+.field-guide:not(.fg-legacy-chrome) .button:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--paper);filter:none}
 .field-guide:not(.fg-legacy-chrome) :is(.text-link,.header nav a):hover{color:var(--orange)}
 .field-guide:not(.fg-legacy-chrome) .text-link{border-color:var(--gold-line)}
 .field-guide:not(.fg-legacy-chrome) .nav-submenu{background:#ece3cf url('/brand/bone-paper.webp');background-size:720px auto}
@@ -27,7 +27,12 @@
 .field-guide:not(.fg-legacy-chrome) :is(.flyer-stories,.stories,.tuition-section,.fit-section){background:transparent;border-color:var(--line)}
 .field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:1.5px solid var(--ink)}
 .field-guide:not(.fg-legacy-chrome) .cohort-stamp{background:transparent;border:0;border-top:1px solid var(--line);padding:14px 0 0;color:var(--ink)}
-.field-guide:not(.fg-legacy-chrome) .phase-band{opacity:.88;mix-blend-mode:multiply}
+/* Phases read as progress through the twelve weeks, in CC's orange on an ink rule. */
+.field-guide:not(.fg-legacy-chrome) .phase-band{height:4px;background:linear-gradient(90deg,var(--orange) var(--fill),var(--line) var(--fill))}
+.field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(1){--fill:25%}
+.field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(2){--fill:50%}
+.field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(3){--fill:75%}
+.field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(4){--fill:100%}
 
 /* Imagery sits in the paper: multiplied and warmed, never boxed. Loud video thumbnails are muted. */
 .field-guide:not(.fg-legacy-chrome) .artifact{background:transparent;border:0;box-shadow:none}
@@ -48,3 +53,18 @@
 
 /* Home hero fits one laptop screen: the print scales with viewport height and is never cropped. */
 @media(min-width:761px){.field-guide:not(.fg-legacy-chrome) .guide-hero{padding-block:1rem 2.25rem}.field-guide:not(.fg-legacy-chrome) .guide-hero h1{font-size:clamp(3.5rem,min(calc(3.5rem + 2.5vw),11svh),5.75rem)}.field-guide:not(.fg-legacy-chrome) .guide-hero .plate{justify-self:end}.field-guide:not(.fg-legacy-chrome) .guide-hero .plate img{width:auto;max-width:100%;max-height:clamp(340px,calc(100svh - 250px),520px);object-fit:contain}}
+
+/* Bootcamp: real faces. The hero carries the participants' film; each quote carries its person. */
+.field-guide:not(.fg-legacy-chrome) .faces-film{margin:0 0 22px}
+.field-guide:not(.fg-legacy-chrome) :is(.faces-film,.face-thumb) a,.field-guide:not(.fg-legacy-chrome) .face-thumb{position:relative;display:block}
+.field-guide:not(.fg-legacy-chrome) .faces-film img,.field-guide:not(.fg-legacy-chrome) .face-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:5px solid #f3ebd9;box-shadow:1px 3px 10px #2a3d561f;filter:sepia(.12) saturate(.9)}
+.field-guide:not(.fg-legacy-chrome) .faces-film figcaption{margin-top:10px;font:400 11px/1.6 'CC Plex',monospace;letter-spacing:.02em;color:var(--muted)}
+.field-guide:not(.fg-legacy-chrome) .play-mark{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#76592ae6;box-shadow:0 2px 8px #0003;transition:transform .2s}
+.field-guide:not(.fg-legacy-chrome) .play-mark:after{content:'';position:absolute;left:18px;top:14px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #f3ebd9}
+.field-guide:not(.fg-legacy-chrome) :is(.faces-film a,.face-thumb):hover .play-mark{transform:scale(1.08)}
+.field-guide:not(.fg-legacy-chrome) .face-stories .person-story{border-top:0;padding-top:0}
+.field-guide:not(.fg-legacy-chrome) .face-thumb{margin-bottom:18px}
+.field-guide:not(.fg-legacy-chrome) .face-thumb .play-mark{width:34px;height:34px;margin:-17px 0 0 -17px}
+.field-guide:not(.fg-legacy-chrome) .face-thumb .play-mark:after{left:13px;top:10px;border-width:7px 0 7px 11px}
+.field-guide:not(.fg-legacy-chrome) .schedule-weekly{margin-top:40px}
+@media(min-width:761px){.field-guide:not(.fg-legacy-chrome).program-page .section{padding-block:3.5rem}.field-guide:not(.fg-legacy-chrome).program-page .program-sections{margin-bottom:.5rem}}

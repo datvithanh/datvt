@@ -63,3 +63,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Home hero fits one laptop screen: the print scales with window height (capped at 520px, never cropped), the headline shrinks on short windows, and the top padding is tighter. On a 1440×780 window the hero now ends at 676px instead of 762px, so the next section peeks in. Desktop only; mobile unchanged.
 - Bootcamp hero: the cohort date strip is a single ink rule again (the material layer had boxed it, leaving the text sitting on the bottom border), and "A practice carried into life." is centred under the artifact.
 - Why: Dat, Oct 25 ("only full hero at 80%", "main hero bootcamp looks weird").
+
+### 2026-10-25 · Bootcamp shows its people; gold buttons; phase colours
+- Bootcamp hero: the carved serpent is replaced by Frank Yang's participant-faces film ("Why Enlightenment Is A Team Sport"), linking to YouTube, with the cohort date strip underneath.
+- Bootcamp stories: every quote now carries that person's story thumbnail (Kristen, Adrian, Ryan, Tom, James, John) with a play mark; the dark Zoom still is gone from this page. Thumbnails are CC's own YouTube covers, kept in `public/brand/stories/full/`.
+- Bootcamp schedule adds the weekly community rhythm from mindtraining.cc: Saturday review, Friday BFF talk show, Discord every day.
+- Buttons site-wide are now the carousels' gold CTA: outlined gold, filled on hover, instead of blue-black on the paper.
+- The four phase bars are an orange progress line (¼, ½, ¾, full) instead of four unrelated colours.
+- Bootcamp sections sit closer together on desktop.
+- Why: Dat, Oct 25, after comparing with mindtraining.cc: team transcript asks for real faces and quotes everywhere; the bluish button on the yellow paper looked off. **Provisional:** weekly event times are copied from the live site; phase names still placeholders.
