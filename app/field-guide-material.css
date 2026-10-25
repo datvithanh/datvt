@@ -1,6 +1,6 @@
 /* Material layer: the feel of the CC Instagram carousels (mindtraining-cc/design) on the site's own
    layouts and Oct 6 type system. Woven bone paper you can see, blue-black ink, burnt orange for CC's
-   own words, worn imagery multiplied into the paper, rules instead of colour slabs. Loaded last;
+   own words, original image colours, rules instead of colour slabs. Loaded last;
    the legacy dark chrome is left alone. The logo keeps its flat master colour. */
 .field-guide:not(.fg-legacy-chrome){
   --paper:#ece3cf;--ink:#2a3d56;--muted:#4f5b6b;--line:#2a3d5633;
@@ -34,14 +34,14 @@
 .field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(3){--fill:75%}
 .field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(4){--fill:100%}
 
-/* Imagery sits in the paper: multiplied and warmed, never boxed. Loud video thumbnails are muted. */
+/* Pictures keep their original colours; the paper treatment stays on surrounding surfaces. */
 .field-guide:not(.fg-legacy-chrome) .artifact{background:transparent;border:0;box-shadow:none}
 .field-guide:not(.fg-legacy-chrome) .artifact figcaption{left:0;right:0;bottom:0;text-align:center}
 .field-guide:not(.fg-legacy-chrome) :is(.artifact-ring,.artifact-ring:before){border-color:#2a3d5630}
 .field-guide:not(.fg-legacy-chrome) .artifact>img{filter:sepia(.15) contrast(1.05)}
-.field-guide:not(.fg-legacy-chrome) :is(.community-wide,.course-discovery-image,.resource-reading,.journal-image,.mini-photo) img{filter:sepia(.3) saturate(.7) contrast(.95);mix-blend-mode:multiply}
+.field-guide:not(.fg-legacy-chrome) :is(.community-wide,.community-photo,.course-discovery-image,.course-art,.resource-reading,.journal-image,.mini-photo) img{filter:none;mix-blend-mode:normal}
 .field-guide:not(.fg-legacy-chrome) .story-image{background:var(--paper);border-color:#f3ebd9;box-shadow:1px 3px 10px #2a3d561f}
-.field-guide:not(.fg-legacy-chrome) .story-image img{filter:sepia(.35) saturate(.6) contrast(.92) brightness(1.04)}
+.field-guide:not(.fg-legacy-chrome) .story-image img{filter:none;mix-blend-mode:normal}
 .field-guide:not(.fg-legacy-chrome) .story-image-play{background:#2a3d56df}
 .field-guide:not(.fg-legacy-chrome) .site-footer{background:transparent}
 .field-guide .plate{margin:0;align-self:center}
@@ -57,7 +57,7 @@
 /* Bootcamp: real faces. The hero carries the participants' film; each quote carries its person. */
 .field-guide:not(.fg-legacy-chrome) .faces-film{margin:0 0 22px}
 .field-guide:not(.fg-legacy-chrome) :is(.faces-film,.face-thumb) a,.field-guide:not(.fg-legacy-chrome) .face-thumb{position:relative;display:block}
-.field-guide:not(.fg-legacy-chrome) .faces-film img,.field-guide:not(.fg-legacy-chrome) .face-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:5px solid #f3ebd9;box-shadow:1px 3px 10px #2a3d561f;filter:sepia(.12) saturate(.9)}
+.field-guide:not(.fg-legacy-chrome) .faces-film img,.field-guide:not(.fg-legacy-chrome) .face-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:5px solid #f3ebd9;box-shadow:1px 3px 10px #2a3d561f;filter:none;mix-blend-mode:normal}
 .field-guide:not(.fg-legacy-chrome) .faces-film figcaption{margin-top:10px;font:400 11px/1.6 'CC Plex',monospace;letter-spacing:.02em;color:var(--muted)}
 .field-guide:not(.fg-legacy-chrome) .play-mark{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#76592ae6;box-shadow:0 2px 8px #0003;transition:transform .2s}
 .field-guide:not(.fg-legacy-chrome) .play-mark:after{content:'';position:absolute;left:18px;top:14px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #f3ebd9}
