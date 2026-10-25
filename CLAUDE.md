@@ -3,6 +3,11 @@
 This migrated checkout deploys from `datvithanh/datvt` branch `v4`; follow the
 root README and push `v4`, not `main`. The upstream CC source stays separate.
 
+**Edit ledger:** every commit that changes the site appends an entry to
+`docs/edit-ledger.md` in the same commit: date, a short title, what a visitor
+would notice, why (meeting, doc or person), and anything still provisional.
+Append at the bottom; never rewrite earlier entries.
+
 ## Writing Content
 
 When writing articles, course lessons, or any teaching content for this site, you MUST follow the CC Writing Style Guide at `docs/references/cc_writing_style_guide.md`. Read it before writing any content.
