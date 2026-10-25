@@ -45,6 +45,6 @@ export const faqItems = [
       </>
     ),
   },
-  { q: "What happens after the 12 weeks?", a: "Many practitioners join multiple consecutive cohorts to deepen their practice. You'll have lifetime access to materials and can stay connected with the community." },
+  { q: "What happens after the 12 weeks?", a: "Many practitioners join consecutive cohorts to keep deepening their practice." },
   { q: "Is financial aid available?", a: "We offer payment plans for committed participants who need timing flexibility. Apply and tell us your situation. If you are committed and the money is the obstacle, say so — we would rather solve it with you than lose you over it." },
 ]

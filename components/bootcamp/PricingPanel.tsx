@@ -29,12 +29,8 @@ const includedBonuses = [
     desc: 'Recap, surface what came up, build relational sangha.',
   },
   {
-    title: 'Meicheng\'s private teachings',
-    desc: 'Weekly talk shows with senior members. New teaching dropped every week.',
-  },
-  {
-    title: 'Continued access after bootcamp',
-    desc: 'Alumni network with ongoing transmission from Taylor at lower cadence.',
+    title: 'Internal podcast',
+    desc: 'From Meicheng and team members.',
   },
 ]
 

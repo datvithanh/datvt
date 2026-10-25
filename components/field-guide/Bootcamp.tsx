@@ -43,7 +43,7 @@ const components = [
   { title: 'Direct transmission from Meicheng', text: 'Daily. Online. For ninety days.' },
 ]
 
-const included = ['Discord: training logs and daily connection', 'Weekly community events', "Meicheng's weekly private teachings", 'Alumni access after the Bootcamp']
+const included = ['Discord: training logs and daily connection', 'Weekly community events', 'Internal podcast from Meicheng and team members']
 
 export function BootcampContent() {
   return <>

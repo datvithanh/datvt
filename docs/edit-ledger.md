@@ -88,3 +88,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Left: the four components with one short line each. Right: one price card with the price, "12 weeks · Live online", the extras as a short list, "How to apply", and a single fine-print line for payment terms, payment plans and the referral discount.
 - Cut from the ported copy: the long component descriptions (including the "100,000 prostrations" line), the per-item descriptions of the extras, and the two payment paragraphs (now one line).
 - Why: Dat, Oct 25: "this is very busy, make it clear and clean."
+
+### 2026-10-25 · Correct what the Bootcamp includes
+- "Also included" now lists Discord, weekly community events, and the internal podcast from Meicheng and team members. Removed "Meicheng's weekly private teachings" and "Alumni access after the Bootcamp", which were not accurate.
+- FAQ "What happens after the 12 weeks?" no longer promises lifetime access to materials or ongoing community access; it says many practitioners join consecutive cohorts.
+- The unused legacy `components/bootcamp/PricingPanel.tsx` gets the same correction so it can't resurface.
+- Why: Dat, Oct 25: the extra is an internal podcast, access is only for the interim period, and each cohort's material is sealed for the next cohort.
