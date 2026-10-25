@@ -103,3 +103,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Reactive by noon." is now orange, like the other split headlines.
 - The section sits on a slightly deeper paper band. The four "This is for you if…" items are paper cards (orange top rule, orange 01–04, 2×2 on desktop) whose last line is set in bold ink: "The isolation is.", "won't close on its own", "Spiritual over here, regular life over there.", "You need systematic deconstruction…". Same words as before, split into body and punchline.
 - Why: Dat, Oct 25: "something to make this section pop?"
+
+### 2026-10-25 · Four-tone accents for card groups
+- Groups of headed items now rotate through blue (#34537b), orange (as designed), maroon (#7d2f3b) and dark green (#2f5a45) instead of all orange: the Bootcamp "This is for you if…" cards (top rule and number), the four phase bars and numbers, and the three-item card rows on Bootcamp ("When insight meets the rest of your life") and Mini Bootcamp. Orange numbers use a deeper #a8452f for contrast. Headline orange is unchanged.
+- Why: Dat, Oct 25: "too orange dominant… balance the color schemes for multi headers stuff."

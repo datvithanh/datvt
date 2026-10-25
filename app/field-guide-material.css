@@ -27,8 +27,8 @@
 .field-guide:not(.fg-legacy-chrome) :is(.flyer-stories,.stories,.tuition-section,.fit-section){background:transparent;border-color:var(--line)}
 .field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:1.5px solid var(--ink)}
 .field-guide:not(.fg-legacy-chrome) .cohort-stamp{background:transparent;border:0;border-top:1px solid var(--line);padding:14px 0 0;color:var(--ink)}
-/* Phases read as progress through the twelve weeks, in CC's orange on an ink rule. */
-.field-guide:not(.fg-legacy-chrome) .phase-band{height:4px;background:linear-gradient(90deg,var(--orange) var(--fill),var(--line) var(--fill))}
+/* Phases read as progress through the twelve weeks, each in its own tone on an ink rule. */
+.field-guide:not(.fg-legacy-chrome) .phase-band{height:4px;background:linear-gradient(90deg,var(--tone) var(--fill),var(--line) var(--fill))}
 .field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(1){--fill:25%}
 .field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(2){--fill:50%}
 .field-guide:not(.fg-legacy-chrome) .phase-lanes li:nth-child(3){--fill:75%}
@@ -75,8 +75,8 @@
 /* Who it's for: its own deeper paper band; four cards whose last line lands in bold ink. */
 .field-guide:not(.fg-legacy-chrome) .fit-section{background:#2a3d560d;border-block:1px solid var(--line)}
 .field-guide:not(.fg-legacy-chrome) .fit-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.field-guide:not(.fg-legacy-chrome) .fit-cards article{position:relative;background:#f3ebd9b3;border:1px solid var(--line);border-top:3px solid var(--orange);padding:28px 30px 30px;box-shadow:1px 3px 10px #2a3d5614}
-.field-guide:not(.fg-legacy-chrome) .fit-index{display:block;font:400 11px/1 'CC Plex',monospace;letter-spacing:.04em;color:var(--orange);margin-bottom:14px}
+.field-guide:not(.fg-legacy-chrome) .fit-cards article{position:relative;background:#f3ebd9b3;border:1px solid var(--line);border-top:3px solid var(--tone);padding:28px 30px 30px;box-shadow:1px 3px 10px #2a3d5614}
+.field-guide:not(.fg-legacy-chrome) .fit-index{display:block;font:400 11px/1 'CC Plex',monospace;letter-spacing:.04em;color:var(--tone-text);margin-bottom:14px}
 .field-guide:not(.fg-legacy-chrome) .fit-cards h3{font:600 1.375rem/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;color:var(--ink);margin:0 0 12px}
 .field-guide:not(.fg-legacy-chrome) .fit-cards p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
 .field-guide:not(.fg-legacy-chrome) .fit-cards .fit-punch{margin-top:14px;font:600 15px/1.5 'CC Archivo',Arial,sans-serif;color:var(--ink)}
@@ -102,3 +102,12 @@
 .field-guide:not(.fg-legacy-chrome) .application-section .hero-actions{margin-top:25px}
 .field-guide:not(.fg-legacy-chrome) .application-section .hero-actions .button{margin-top:0}
 @media(max-width:760px){.field-guide:not(.fg-legacy-chrome) .fit-cards{grid-template-columns:1fr;gap:16px}.field-guide:not(.fg-legacy-chrome) .fit-cards article{padding:24px 22px}.field-guide:not(.fg-legacy-chrome) .fit-detail,.field-guide:not(.fg-legacy-chrome) .fit-not{margin-top:36px}}
+
+/* Groups of headed items rotate through four tones so no single accent dominates:
+   blue, orange (as designed), maroon, dark green. Orange text uses a deeper shade for contrast. */
+.field-guide:not(.fg-legacy-chrome) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+1){--tone:#34537b;--tone-text:#34537b}
+.field-guide:not(.fg-legacy-chrome) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+2){--tone:var(--orange);--tone-text:#a8452f}
+.field-guide:not(.fg-legacy-chrome) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+3){--tone:#7d2f3b;--tone-text:#7d2f3b}
+.field-guide:not(.fg-legacy-chrome) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+4){--tone:#2f5a45;--tone-text:#2f5a45}
+.field-guide:not(.fg-legacy-chrome) .approach-grid article{border-top:3px solid var(--tone)}
+.field-guide:not(.fg-legacy-chrome) .phase-index{color:var(--tone-text)}
