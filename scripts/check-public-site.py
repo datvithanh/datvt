@@ -50,7 +50,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
   assert page.meta.get('og:url')=='https://mindtraining.cc'+('' if path=='/' else path),(path,'contextual social URL')
   for key in ['og:image','twitter:image']:
    assert (Path('public')/urlsplit(page.meta[key]).path.lstrip('/')).is_file(),(path,'missing social image',page.meta[key])
-  assert '<title>Contemplative CrossFit</title>' in source,(path,'browser identity')
+  assert '<title>Contemplative Crossfit</title>' in source,(path,'browser identity')
   assert 'fields[first_name]' in page.names and 'email_address' in page.names,(path,'Kit fields')
   assert page.forms==1,(path,'form count',page.forms)
   for href in page.links:

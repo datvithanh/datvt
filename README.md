@@ -1,4 +1,4 @@
-# Contemplative CrossFit preview — datvt v4
+# Contemplative Crossfit preview — datvt v4
 
 The production website remains this Next.js 16 App Router application. Netlify
 builds the repository root with `npm run build`, publishes `.next`, and uses its existing

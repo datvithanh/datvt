@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lesson: s
       title: `Day ${lesson.meta.day}: ${lesson.meta.title}`,
       description: lesson.meta.subtitle,
       type: 'article',
-      siteName: 'Contemplative CrossFit',
+      siteName: 'Contemplative Crossfit',
       images: lesson.meta.image ? [{
         url: `${siteUrl}${lesson.meta.image}`,
         width: 1200,

@@ -25,25 +25,25 @@ export const metadata: Metadata = {
     apple: [{ url: '/brand/apple-touch-icon.png', sizes: '180x180' }],
   },
   title: {
-    default: 'Contemplative CrossFit',
+    default: 'Contemplative Crossfit',
     // Keep the approved browser identity; H1, Open Graph and schema remain contextual.
-    template: 'Contemplative CrossFit',
+    template: 'Contemplative Crossfit',
   },
   description: 'Rigorous mind training for serious practitioners. Free teachings, courses, and resources for those who\'ve exhausted the solo path.',
   keywords: ['meditation', 'mind training', 'contemplative practice', 'dharma', 'bootcamp', 'samadhi', 'purification', 'realization'],
-  authors: [{ name: 'Contemplative CrossFit' }],
+  authors: [{ name: 'Contemplative Crossfit' }],
   openGraph: {
     type: 'website',
-    siteName: 'Contemplative CrossFit',
+    siteName: 'Contemplative Crossfit',
     url: siteUrl,
-    title: 'Contemplative CrossFit — Rigorous Mind Training',
+    title: 'Contemplative Crossfit — Rigorous Mind Training',
     description: 'Rigorous mind training for serious practitioners. Free teachings, courses, and resources for those who\'ve exhausted the solo path.',
     images: [SOCIAL_PREVIEW_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     images: [SOCIAL_PREVIEW_IMAGE.url],
-    title: 'Contemplative CrossFit',
+    title: 'Contemplative Crossfit',
     description: 'Rigorous mind training for serious practitioners.',
   },
   robots: {

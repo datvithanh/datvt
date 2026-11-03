@@ -1,4 +1,4 @@
-# Tagline Options for Contemplative CrossFit
+# Tagline Options for Contemplative Crossfit
 
 Replacing: "A union of practice, pedagogy, and realization"
 

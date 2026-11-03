@@ -120,9 +120,9 @@
 .field-guide:not(.fg-legacy-chrome) .instagram-panel .text-link{color:var(--ink);border-color:var(--gold-line)}
 .field-guide:not(.fg-legacy-chrome) .course-art :is(span,p,small){color:var(--muted)}
 
-/* Brand assets v1 lockup: mask 56 px tall on desktop, 40 px on mobile; the wordmark is part of the SVG. */
+/* Brand assets v1 lockup in the header: mask 56 px tall on desktop, 40 px on mobile; the wordmark is part of the SVG.
+   The footer carries the favicon mark (the nose on an ink tile). */
 .field-guide .brand-lockup{display:block;height:56px;width:auto;max-width:none}
-.field-guide .footer-name .brand-lockup{height:40px}
-@media(max-width:760px){.field-guide .brand-lockup{height:40px}.field-guide .footer-name .brand-lockup{height:34px}}
+@media(max-width:760px){.field-guide .brand-lockup{height:40px}}
 [data-theme="dark"] .fg-legacy-chrome .brand-lockup{filter:invert(1)}
-.field-guide .footer-name .brand-lockup{margin-bottom:10px}
+.field-guide .footer-mark{display:block;width:44px;height:44px;margin-bottom:12px}

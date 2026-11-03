@@ -218,7 +218,7 @@ export type Byline = { name: string; href: string | null; avatar: string | null 
 
 // Byline for any article. When `author` matches an initiate slug, use the initiate's
 // canonical name + avatar (photo); link to the /lineage hub only once the bio is
-// published (so e.g. "Albert" links once live, "Contemplative CrossFit" never does).
+// published (so e.g. "Albert" links once live, "Contemplative Crossfit" never does).
 // A free-text author (no matching record) shows as written, with no avatar and no link.
 export function resolveByline(author?: string): Byline | null {
   if (!author) return null

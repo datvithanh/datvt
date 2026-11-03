@@ -233,7 +233,7 @@ export default function EmbodimentWorkshopLanding() {
       { '@type': 'Person', name: 'Frank Yang' },
       { '@type': 'Person', name: 'Khan' },
     ],
-    organizer: { '@type': 'Organization', name: 'Contemplative CrossFit', url: SITE },
+    organizer: { '@type': 'Organization', name: 'Contemplative Crossfit', url: SITE },
     offers: {
       '@type': 'Offer',
       price: '0',

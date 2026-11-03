@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!article) return { title: 'Not Found' }
   const siteUrl = 'https://mindtraining.cc'
   return {
-    title: { absolute: 'Contemplative CrossFit' },
+    title: { absolute: 'Contemplative Crossfit' },
     description: article.meta.excerpt,
     openGraph: {
       title: article.meta.title,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       publishedTime: article.meta.date,
       url: `${siteUrl}/articles/${slug}`,
-      siteName: 'Contemplative CrossFit',
+      siteName: 'Contemplative Crossfit',
       images: article.meta.image ? [{
         url: `${siteUrl}${article.meta.image}`,
         width: 1200,
@@ -85,12 +85,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     datePublished: article.meta.date,
     author: {
       '@type': 'Organization',
-      name: 'Contemplative CrossFit',
+      name: 'Contemplative Crossfit',
       url: siteUrl,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Contemplative CrossFit',
+      name: 'Contemplative Crossfit',
       url: siteUrl,
     },
     ...(article.meta.image && {

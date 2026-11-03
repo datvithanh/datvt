@@ -54,7 +54,7 @@ on a prototype, or additional deployment project in the final change.
   Article canonical/OG/Twitter/schema data and course structured data are retained.
   Mini Bootcamp Event schema retains the free scheduled event and omits the old
   InStock claim while registration is marked closed. Browser titles use the
-  approved Contemplative CrossFit identity; visible headings and social metadata
+  approved Contemplative Crossfit identity; visible headings and social metadata
   provide page context.
 
 ## Approved experience retained

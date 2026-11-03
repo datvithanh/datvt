@@ -5,7 +5,7 @@ import { InitiateRosterItem } from '@/components/team/InitiateRosterItem'
 export const metadata: Metadata = {
   title: 'Team',
   description:
-    'The people who carry Contemplative CrossFit — the initiates and transmission holders who teach, mentor, and hold the practice.',
+    'The people who carry Contemplative Crossfit — the initiates and transmission holders who teach, mentor, and hold the practice.',
 }
 
 export default function TeamPage() {

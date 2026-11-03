@@ -20,19 +20,19 @@ export async function generateMetadata({ params }: { params: Promise<{ initiate:
   const { meta } = found
   return {
     title: meta.name,
-    description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative CrossFit.`,
+    description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative Crossfit.`,
     openGraph: {
       title: meta.name,
-      description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative CrossFit.`,
+      description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative Crossfit.`,
       type: 'profile',
       url: `${siteUrl}/team/${meta.slug}`,
-      siteName: 'Contemplative CrossFit',
+      siteName: 'Contemplative Crossfit',
       images: meta.photo ? [{ url: `${siteUrl}${meta.photo}`, alt: meta.name }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: meta.name,
-      description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative CrossFit.`,
+      description: meta.blurb || `${meta.name} — ${meta.role} at Contemplative Crossfit.`,
       images: meta.photo ? [`${siteUrl}${meta.photo}`] : undefined,
     },
     alternates: { canonical: `${siteUrl}/team/${meta.slug}` },

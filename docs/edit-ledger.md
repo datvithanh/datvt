@@ -119,3 +119,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Social preview card rebuilt: v1 ink lockup on bone `#F2ECDC`.
 - Not yet applied: the kit's palette (ink #0E0E0C, bone #F2ECDC, marigold, clay, sage, mineral blue), glyphs, leaves and stepped-key ornaments. The compact-nose lockup is "not approved for use" and is not used.
 - Why: Dat, Nov 3, with CC_brand_assets_v1 (4 Nov 2026).
+
+### 2026-11-03 · "Crossfit", and the favicon mark in the footer
+- "Contemplative CrossFit" is now "Contemplative Crossfit" everywhere the site says it: browser title, social and search metadata, structured data, team pages, image alt text, header/footer labels, docs and the public-site check. Unchanged on purpose: the YouTube channel URL (`@ContemplativeCrossFit`, a link) and Transmission 101 lesson 3's "the CrossFit analogy", which refers to the CrossFit fitness method. The generated `output/pdf/website-redesign-decisions.pdf` is left as it was.
+- The footer shows the favicon mark (the nose on an ink tile, 44 px) above the tagline instead of the full lockup; the header keeps the lockup.
+- Why: Dat, Nov 3.

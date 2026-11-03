@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       url: COACHING_IMAGE,
       width: 1080,
       height: 1350,
-      alt: 'Coaching Season — Contemplative CrossFit. You got 99 problems on the path? Lacking feedback doesn’t have to be one. Get coached.',
+      alt: 'Coaching Season — Contemplative Crossfit. You got 99 problems on the path? Lacking feedback doesn’t have to be one. Get coached.',
     }],
   },
   twitter: {
@@ -143,7 +143,7 @@ export default function CoachingCallLanding() {
     description:
       'A free 20-minute 1-on-1 coaching call for committed practitioners: map your practice, identify the bottleneck, and plan the next step.',
     image: `${SITE}${COACHING_IMAGE}`,
-    provider: { '@type': 'Organization', name: 'Contemplative CrossFit', url: SITE },
+    provider: { '@type': 'Organization', name: 'Contemplative Crossfit', url: SITE },
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -191,7 +191,7 @@ export default function CoachingCallLanding() {
             <div className="rounded-sm overflow-hidden border border-border/40 max-w-md mx-auto lg:max-w-none w-full">
               <img
                 src={COACHING_IMAGE}
-                alt="Coaching Season — Contemplative CrossFit. Caricature figurines of the CC core team gathered around a seated Buddha on a film set. You got 99 problems on the path? Lacking feedback doesn't have to be one. Get coached."
+                alt="Coaching Season — Contemplative Crossfit. Caricature figurines of the CC core team gathered around a seated Buddha on a film set. You got 99 problems on the path? Lacking feedback doesn't have to be one. Get coached."
                 className="w-full"
               />
             </div>

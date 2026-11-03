@@ -112,7 +112,7 @@ export const courseJsonLd = {
     url: `${SITE}/transmission-101`,
     inLanguage: 'en',
     isAccessibleForFree: true,
-    provider: { '@type': 'Organization', name: 'Contemplative CrossFit', url: SITE },
+    provider: { '@type': 'Organization', name: 'Contemplative Crossfit', url: SITE },
     about: [
       'meditation is not working anymore',
       'meditation plateau',
@@ -136,6 +136,6 @@ export const courseJsonLd = {
       '@type': 'Course',
       name: l.title,
       description: l.description.join(' '),
-      provider: { '@type': 'Organization', name: 'Contemplative CrossFit', url: SITE },
+      provider: { '@type': 'Organization', name: 'Contemplative Crossfit', url: SITE },
     })),
   }
