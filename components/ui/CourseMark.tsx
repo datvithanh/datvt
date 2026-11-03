@@ -34,7 +34,7 @@ export function CourseMark({
         }`}
         aria-hidden="true"
       >
-        <img src="/images/cc-emblem.png" alt="" className={`${emblem} ${showScrim ? '' : 'opacity-90'}`} />
+        <img src="/brand/cc-mark-bone-512.png" alt="" className={`${emblem} ${showScrim ? '' : 'opacity-90'}`} />
       </div>
 
       {showScrim && (

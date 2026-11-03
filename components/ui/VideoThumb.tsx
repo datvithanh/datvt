@@ -34,7 +34,7 @@ export function VideoThumb({
       <div className={`bg-bg-secondary ${className}`} role="img" aria-label={alt}>
         <div className="relative w-full h-full flex items-center justify-center">
           <img
-            src="/images/cc-emblem.png"
+            src="/brand/cc-mark-bone-512.png"
             alt=""
             className="w-1/5 min-w-12 max-w-20 opacity-70"
           />

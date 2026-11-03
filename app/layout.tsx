@@ -15,7 +15,15 @@ const assetOrigin = process.env.CC_ASSET_ORIGIN || siteUrl
 
 export const metadata: Metadata = {
   metadataBase: new URL(assetOrigin),
-  icons: { icon: [{ url: '/brand/cc-logo-guide.svg', type: 'image/svg+xml' }] },
+  // Brand assets v1 (Nov 4): the favicon is the CC nose on an ink tile; app/favicon.ico covers older browsers.
+  icons: {
+    icon: [
+      { url: '/brand/favicon.svg', type: 'image/svg+xml' },
+      { url: '/brand/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/brand/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [{ url: '/brand/apple-touch-icon.png', sizes: '180x180' }],
+  },
   title: {
     default: 'Contemplative CrossFit',
     // Keep the approved browser identity; H1, Open Graph and schema remain contextual.

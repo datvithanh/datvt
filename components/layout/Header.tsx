@@ -17,8 +17,7 @@ export function Header() {
     <a className="skip" href="#main">Skip to content</a>
     <header className="header wrap">
       <Link href="/" className="brand" aria-label="Contemplative CrossFit home" onClick={close}>
-        <img className="brand-mark" src="/brand/cc-logo-guide.svg" width="66" height="68" alt="" />
-        <span className="brand-name">CONTEMPLATIVE<br />CROSSFIT</span>
+        <img className="brand-lockup" src="/brand/cc-lockup-stacked-ink.svg" width="553" height="100" alt="" />
       </Link>
       <button className="menu-toggle" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>Menu <span aria-hidden="true">+</span></button>
       <nav id="navigation" className={open ? 'is-open' : ''} aria-label="Main navigation">

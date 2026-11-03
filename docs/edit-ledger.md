@@ -111,3 +111,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-10-25 · Warm panels instead of grey and sage slabs
 - The Transmission 101 card on Resources (was cool grey), the "On Instagram." panel on Media (was sage green with green text) and the course card on /transmission-101 (was pale blue with royal-blue labels) are now warm paper cards with an ink rule and ink/muted text, matching the Bootcamp cards. A crawl of the main pages finds no other cool-toned panels; /coaching and /embodiment still use the legacy chrome.
 - Why: Dat, Oct 25: "color combination not the best."
+
+### 2026-11-03 · Brand assets v1: favicon, lockup, logo
+- Favicon is the v1 "nose" on an ink tile (`public/brand/favicon.svg`), with `app/favicon.ico` (16/32/48), 192/512 px icons and a 180 px Apple touch icon exported from it unchanged. Replaces the old roundel favicon and the mask-as-favicon SVG.
+- Header and footer now use the v1 primary lockup (mask + stacked wordmark as one SVG) instead of the old mask image beside typed text. Header mask is 56 px on desktop (lockup 310 × 56) and 40 px on mobile (221 × 40), per the lockup README; footer 40 px (34 px mobile). Dark legacy pages invert it.
+- The old multicolour roundel emblem (`cc-emblem.png`) is replaced by the v1 bone logo master on the video-thumbnail fallback; `cc-logo-guide.svg` is retired.
+- Social preview card rebuilt: v1 ink lockup on bone `#F2ECDC`.
+- Not yet applied: the kit's palette (ink #0E0E0C, bone #F2ECDC, marigold, clay, sage, mineral blue), glyphs, leaves and stepped-key ornaments. The compact-nose lockup is "not approved for use" and is not used.
+- Why: Dat, Nov 3, with CC_brand_assets_v1 (4 Nov 2026).
