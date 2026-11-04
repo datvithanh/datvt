@@ -145,3 +145,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The homepage header now floats: it stays pinned to the top on a full-width bone bar while scrolling, with a soft shadow that fades in once the page moves. Its ends sit on the same margins as the homepage sections (1280 px max width, 40 px sides; 20 px on phones), so the lockup lines up with the hero text and "Join the Bootcamp" with the right edge of the content. The Programs dropdown and the phone menu are not clipped.
 - Removed the "REALISATION FITNESS" eyebrow above "LIVE IN PRACTICE".
 - Why: Dat, Nov 4. Preview: https://deploy-preview-1--poetic-tapioca-bc92a4.netlify.app
+
+### 2026-11-04 · Lanes homepage: hero scales to the screen height (`home-04-lanes` only)
+- On desktop the whole first section now scales with the screen's height as well as its width, so the bottom of the first screen always lands just past the lower band's bend down (about 885 of the hero's 1490 units): the bend peeks in and hints at the phases below. "LIVE IN PRACTICE" stays on the 40 px content margin, in line with the header lockup. Phones keep their stacked layout.
+- Why: Dat, Nov 4: "make the whole first section smaller so the bend leading down is slightly visible."
