@@ -161,3 +161,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The homepage header is 30% thinner: 73 px on desktop (was 104) and 62 px on phones (was 88). The lockup is 44 px / 36 px tall (was 56 / 40) to keep the kit's 0.25 H clear space; "Join the Bootcamp" fits inside the bar. The phone menu now hangs from the bar's bottom edge, anchor links and the hero's fold sizing account for the new height. Other pages keep the 104 px header.
 - The header lockup URL carries `?v=1.1` so browsers that cached the old lockup fetch the smaller-wordmark v1.1 file (already on this branch since the `v4` merge).
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: one button style (`home-04-lanes` only)
+- Every homepage button now follows the hero "Explore the Bootcamp" button: Archivo SemiBold, 19 units (scales with the hero; 17 px on phones), 18 × 28 units of padding, square corners, soft shadow, 14 px gap before the arrow. Ink with bone text on bone backgrounds ("Explore the Bootcamp", "Save a spot", header "Join the Bootcamp", which were outlined before); bone with ink text on black ("Explore" on the Bootcamp card, "Join the mailing list" in the footer). Hover: clay on ink buttons, marigold on bone ones.
+- The header links (Programs, Resources, Media) use the same type size. The phone menu keeps its own size.
+- Why: Dat, Nov 4.
