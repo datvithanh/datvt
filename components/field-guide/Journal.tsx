@@ -18,7 +18,7 @@ export function FieldGuideJournal({ articles }: { articles: JournalArticle[] }) 
       <p className="journal-results eyebrow" aria-live="polite">{visible.length} {visible.length === 1 ? 'ESSAY' : 'ESSAYS'} TO EXPLORE</p>
       <div className="journal-grid">{visible.map((article,index) => <Link className={`journal-card ${index === 0 ? 'featured-reading' : ''}`} href={`/articles/${article.slug}`} key={article.slug}>
         <div className="journal-image">{article.image && <img src={article.image} alt="" loading="lazy" />}<span className="reading-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span></div>
-        <div className="journal-card-copy"><p className="eyebrow">{article.tags[0]} / {article.readingTime} MIN READ</p><h2>{article.title}</h2><p>{article.excerpt}</p><span className="reading-link">Read the article <span aria-hidden="true">↗</span></span></div>
+        <div className="journal-card-copy"><p className="eyebrow">{article.tags[0]} / {article.readingTime} MIN READ</p><h2>{article.title}</h2><p>{article.excerpt}</p></div>
       </Link>)}</div>
       {visible.length === 0 && <div className="journal-empty"><h2>No essays match that search</h2><p>Try another phrase or return to all topics.</p><button type="button" onClick={() => {setQuery('');setTopic('all')}}>Show all essays ↗</button></div>}
     </section>

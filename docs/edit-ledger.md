@@ -254,3 +254,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Resources: the Transmission 101 card runs the full content width (image and copy side by side); "Notes from practice" sits under it with the six essays three across (two on tablets, one on phones). "Free courses" and "Notes from practice" are section headlines.
 - Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, heading overflow, sub-13 px text or page errors.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Every page on the header's edges; outlined header button; tidier Resources and Articles (`home-04-lanes` only)
+- Every page's content now lines up with the header: 1200 px wide inside 40 px side margins (20 px on phones), the same frame as the homepage. Before, the field-guide pages sat in a 1024 px column and the older pages in Tailwind columns from 608 to 1024 px, centred. On the older pages the outer column fills the frame, narrower inner columns start at the left edge, and centred text is left-aligned. Legal pages keep a 46 rem reading column, left-aligned. Topic pages (/articles/topics/…) are treated as older pages. Lesson infographics no longer bleed 10 px past the edges. Checked all 32 routes at 1440 and 390 wide.
+- Header "Join the Bootcamp" is a secondary button: ink outline, ink text, no fill (fills ink on hover), so page buttons keep the top of the hierarchy.
+- The "Ready to train?" band is removed from Resources, Media, Articles and every article (the header carries the CTA).
+- Articles: each essay image fills its frame (cover crop, no grey bands); the "Read the article" links are gone (the card is the link); the "23 essays to explore" count is hidden (kept for screen readers, which announce it when filtering).
+- Resources: "Free courses" and "Notes from practice" drop a level, to card titles (SemiBold, sentence case, 44 units; 32 px on phones), under the page title.
+- Why: Dat, Nov 4.

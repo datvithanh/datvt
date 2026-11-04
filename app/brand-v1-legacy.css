@@ -75,3 +75,44 @@
 :root .field-guide.legacy-page main .sticky nav a:not(.btn-primary){font:500 13px/1.3 'CC Plex',monospace;letter-spacing:.1em;text-transform:uppercase}
 /* List and card titles a step smaller on phones. */
 @media(max-width:900px){:root .field-guide.legacy-page main h3{font-size:19px}}
+
+/* Page edges (Dat, Nov 4): every page's content lines up with the header's, 1200 px wide inside 40 px margins
+   (20 px on phones), the same as the homepage. The old .wrap was 1024 px; Tailwind pages centred their own
+   max-w-* columns. Outer columns now fill the frame; any narrower column inside starts at the left edge. */
+:root .field-guide main .wrap{width:min(1200px,calc(100% - 80px));max-width:none;margin-inline:auto}
+:root .field-guide.legacy-page main [class*="max-w-"].mx-auto{width:min(1200px,calc(100% - 80px));max-width:none;margin-inline:auto;padding-inline:0}
+:root .field-guide.legacy-page main [class*="max-w-"].mx-auto [class*="max-w-"].mx-auto{width:auto;max-width:revert-layer;margin-left:0;margin-right:auto}
+@media(max-width:900px){
+  :root .field-guide main .wrap,
+  :root .field-guide.legacy-page main [class*="max-w-"].mx-auto{width:calc(100% - 40px)}
+  :root .field-guide.legacy-page main [class*="max-w-"].mx-auto [class*="max-w-"].mx-auto{width:auto}
+}
+/* Centred text on the older pages is left-aligned, like the rest of the site. */
+:root .field-guide.legacy-page main .text-center{text-align:left}
+:root .field-guide.legacy-page main :is(.items-center.flex-col,.justify-center.flex-col){align-items:flex-start}
+/* Legal pages: the document spans the frame; its reading column starts at the left edge. */
+:root .field-guide:not(.fg-legacy-chrome) .legal-document{width:min(1200px,calc(100% - 80px));max-width:none}
+:root .field-guide:not(.fg-legacy-chrome) .legal-document-inner{max-width:46rem;margin-left:0;margin-right:auto;padding-inline:0}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) .legal-document{width:calc(100% - 40px)}}
+
+/* Header "Join the Bootcamp" (Dat, Nov 4): a secondary button, ink outline and ink text, no fill, so the page's
+   own primary buttons keep the top of the hierarchy. Hover fills it ink. */
+:root .field-guide:not(.fg-legacy-chrome) .header nav .nav-cta{background:transparent;color:var(--ink);border:2px solid var(--ink);box-shadow:none;padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px)}
+:root .field-guide:not(.fg-legacy-chrome) .header nav .nav-cta:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+/* Lesson infographics stay inside the page edges (they used to bleed 10 px past the text column). */
+:root .field-guide main .lesson-content .infographic-bleed{margin-inline:0}
+
+/* Articles (Notes from practice): each essay image fills its frame, cropped from the centre (was letterboxed). */
+:root .field-guide main .journal-image{background:transparent;border-radius:0}
+:root .field-guide main .journal-image img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+:root .field-guide main .featured-reading .journal-image{height:100%}
+:root .field-guide main .featured-reading .journal-image img{aspect-ratio:auto;min-height:100%;height:100%}
+@media(max-width:760px){:root .field-guide main :is(.journal-image img,.featured-reading .journal-image img){aspect-ratio:16/9;height:auto}}
+
+/* Articles: the essay count is for screen readers only (it announces filter results); not shown. */
+:root .field-guide main .journal-results{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0}
+
+/* Resources: "Free courses" and "Notes from practice" sit one level under the page title: card-title role
+   (Archivo SemiBold, sentence case, 44 units; 32 px on phones). */
+:root .field-guide:not(.fg-legacy-chrome) main :is(.resource-course,.resource-blog)>h2{font-weight:600!important;letter-spacing:-.01em!important;text-transform:none;line-height:1.08;font-size:calc(44 * var(--ln-u))!important}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) main :is(.resource-course,.resource-blog)>h2{font-size:32px!important}}
