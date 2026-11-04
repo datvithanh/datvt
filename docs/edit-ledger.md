@@ -140,3 +140,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lockup v1.1: smaller wordmark
 - The header lockup's wordmark is 23% smaller against the mask (cap height 0.23 of the mask, was 0.30; mask-to-type gap 0.16, was 0.18), so the mask leads. The mask stays 56 px tall on desktop and 40 px on mobile, so the lockup is now about 251 × 56 px (was 310 × 56). Same change in the bone lockup and the social preview card.
 - Why: Dat, Nov 4: the text was "too big"; picked option B of three.
+
+### 2026-11-04 · ↗ arrows no longer turn into emoji on iPhones
+- Archivo has no diagonal-arrow glyphs (U+2196–2199), so iOS fell back to the colour ↗ emoji on buttons and links. Those four characters now come from IBM Plex Mono Medium (already loaded by the site) through a `unicode-range` face on the "CC Archivo" family. All 25 arrows site-wide are covered with no markup change; checked that every arrow on Home, Bootcamp and Resources renders from the web font, not a system fallback.
+- Why: Dat, Nov 4 (arrows showing as emoji on iPhone).
