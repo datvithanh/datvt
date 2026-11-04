@@ -166,3 +166,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Every homepage button now follows the hero "Explore the Bootcamp" button: Archivo SemiBold, 19 units (scales with the hero; 17 px on phones), 18 × 28 units of padding, square corners, soft shadow, 14 px gap before the arrow. Ink with bone text on bone backgrounds ("Explore the Bootcamp", "Save a spot", header "Join the Bootcamp", which were outlined before); bone with ink text on black ("Explore" on the Bootcamp card, "Join the mailing list" in the footer). Hover: clay on ink buttons, marigold on bone ones.
 - The header links (Programs, Resources, Media) use the same type size. The phone menu keeps its own size.
 - Why: Dat, Nov 4.
+### 2026-11-04 · Lanes homepage: worn-press key frame on the Mini Bootcamp card (`home-04-lanes` only)
+- In "Ways to train", the Mini Bootcamp card's black outline is replaced by the O3 stepped-key border in clay with a worn-press print treatment (rails stay straight; uneven ink and small drop-outs). It is a 9-slice border image (`public/brand/home/card-frame-worn.png`), so the four key corners keep their size and the rails repeat to fit the card on any screen.
+- The clay O3 corner key inside the black Illumination Bootcamp card is removed (and its asset `key-corner-o3-clay.svg`).
+- Why: Dat, Nov 4: worn press "as a frame for this block… dont use it for the outer block"; "remove the corner key border within the illumination bootcamp as well."
+
+### 2026-11-04 · Lanes homepage: phases in a 2×2 grid with glyphs (`home-04-lanes` only)
+- "Realisation as a fitness" now shows the four phases in two rows of two (Absorption · Purification, then Recognition · Integration). The lower band's lanes turn into the rows in pairs on shared, concentric curves: marigold and clay into the first row, sage and blue into the second.
+- Each phase has its glyph in its lane colour: Contact (Absorption), Flame (Purification, new glyph 19), Wisdom (Recognition), Integration (new glyph 20). Descriptions wrap within their column; the hero stage is 120 units shorter (1370) since the phases take less height. Phones keep the single list, now with the glyphs.
+- Why: Dat, Nov 4: reorganise the section into pairs with glyphs; approved the mock ("yep this is good push it").

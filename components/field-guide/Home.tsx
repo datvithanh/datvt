@@ -8,10 +8,10 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 // in docs/design/hero-bands-reference.png. See docs/design/README.md.
 
 const phases = [
-  { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', top: 1030 },
-  { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', top: 1140 },
-  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', top: 1250 },
-  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the cushion.', tone: 'blue', top: 1360 },
+  { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption', left: 460, top: 1040 },
+  { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', glyph: 'purification', left: 870, top: 1040 },
+  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition', left: 460, top: 1200 },
+  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the cushion.', tone: 'blue', glyph: 'integration', left: 870, top: 1200 },
 ]
 
 const stories = [
@@ -38,9 +38,10 @@ export function HomeContent() {
     </div>
     <h2 className="ln-phases-title">Realisation<br />as a fitness</h2>
     <ol className="ln-phases">
-      {phases.map(p => <li key={p.n} className={`tone-${p.tone}`} style={{ top: u(p.top) }}>
-        <h3><span className="ln-num">{p.n}</span><span>{p.name}</span></h3>
-        <p>{p.text}</p>
+      {phases.map(p => <li key={p.n} className={`tone-${p.tone}`} style={{ top: u(p.top), left: u(p.left) }}>
+        <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
+        <div><h3><span className="ln-num">{p.n}</span><span>{p.name}</span></h3>
+        <p>{p.text}</p></div>
       </li>)}
     </ol>
   </div>
@@ -51,7 +52,6 @@ export function HomeContent() {
     <h2 id="ln-ways">Ways to train</h2>
     <div className="ln-ways-grid">
       <Link className="ln-card ln-card-paid" href="/bootcamp">
-        <img className="ln-corner" src="/brand/home/key-corner-o3-clay.svg" alt="" width="64" height="56" />
         <span className="ln-card-eyebrow tone-marigold">Paid · 12 weeks · Live online</span>
         <span className="ln-card-title">Illumination Bootcamp</span>
         <span className="ln-card-text">Twelve weeks of intensive training for practitioners ready for transmission and relational feedback.</span>
