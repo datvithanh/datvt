@@ -131,3 +131,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The homepage header gets SemiBold 18 nav and an outlined "Join the Bootcamp" button (hidden on other pages for now). Other pages are unchanged.
 - Provisional: the first bend (U-fold) of the lower band does not match the reference yet; see `docs/design/README.md` and `docs/design/hero-bands-reference.png`. Phone layout is a first pass (copy, cropped art, phases as a list).
 - Why: Dat, Nov 4: "push it to claude code first… inform that the bend is not right still, send the original reference. also push updates on the page including the typography, buttons and everything else."
+
+### 2026-11-04 · Revert the "04 Lanes" homepage (kept on its own branch)
+- Home is back to the version before `cb88ce9`: "Realization fitness." with the Mongaku print, the paper/ink material layer and no "Join the Bootcamp" header button. The brand-kit favicon, lockup and "Crossfit" spelling stay.
+- The "04 Lanes" homepage is preserved unchanged on branch `home-04-lanes` (commit `cb88ce9`), including its `docs/design/` notes and references. Its ledger entry above is kept as written.
+- Why: Dat, Nov 4: revert it and keep it on a separate branch.
