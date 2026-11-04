@@ -189,4 +189,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: community transition and reformatted community intro (`home-04-lanes` only)
 - Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above the heading is removed.
 - The heading sets on two lines: "YOU'VE FOUND THE MAPS." / "FIND YOUR PEOPLE." The intro is now a lead-in line plus a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The clay italic line sits beside the list.
+### 2026-11-04 · Videos play on the page; marigold selection and focus
+- Every participant video now plays in place: the Bootcamp hero film, the six Bootcamp story thumbnails and the homepage story images are click-to-play posters that swap for a youtube-nocookie embed in the same box (`components/ui/InlineVideo.tsx`). The separate "Watch their story" / "Watch the full story" links are removed; each poster is the one control ("Play Kristen's story", …). The footer link to the YouTube channel stays.
+- Selected text is ink on marigold (was a near-invisible light-on-beige highlight inherited from the old site).
+- Focus outlines on links, buttons, fields and video posters are marigold; the email field's red (clay) focus box read as an error.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: stories play in place (`home-04-lanes` only)
+- The three homepage story images (Kristen, Ryan, James) are click-to-play posters with a play mark; the video plays in the same 4:3 box. Their "Watch their story" links are removed. Brings in the `v4` inline-video, marigold selection and marigold focus changes.
 - Why: Dat, Nov 4.

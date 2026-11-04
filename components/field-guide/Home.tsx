@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { InlineVideo } from '@/components/ui/InlineVideo'
 import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 
 // "04 Lanes" homepage (design canvas, Nov 2026). The hero is drawn on a 1280-unit stage:
@@ -86,11 +87,12 @@ export function HomeContent() {
     </div>
     <div className="ln-stories">
       {stories.map(s => <figure key={s.id}>
-        <a className={`ln-story-image tone-bg-${s.tone}`} href={`https://www.youtube.com/watch?v=${s.id}`} aria-label={`Watch ${s.name}’s full story`}>
+        <InlineVideo className={`ln-story-image tone-bg-${s.tone}`} videoId={s.id} title={`${s.name}’s story`} ratio="4 / 3">
           <img src={`/brand/stories/${s.id}.jpg`} width="1280" height="720" alt="" loading="lazy" />
-        </a>
+          <span className="play-mark" aria-hidden="true" />
+        </InlineVideo>
         <blockquote>“{s.quote}”</blockquote>
-        <figcaption><span>{s.name}</span><a href={`https://www.youtube.com/watch?v=${s.id}`}>Watch their story <span aria-hidden="true">↗</span></a></figcaption>
+        <figcaption><span>{s.name}</span></figcaption>
       </figure>)}
     </div>
     <Link className="ln-more" href="/bootcamp#stories">More participant stories <span aria-hidden="true">↗</span></Link>
