@@ -185,3 +185,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: one heading style (`home-04-lanes` only)
 - "Realisation as a fitness", "Ways to train", "You've found the maps. Find your people." and "Stay close to the practice." now share one style: Archivo ExtraBold (800) caps at the phases-title size (56 units, scaling with the hero; 34–48 px fluid on phones), line height 1, letter-spacing −0.02em. Before, all four rendered SemiBold (600) because a site-wide `.field-guide h2` rule forces 600 with `!important`, and their sizes differed (52.5 / 64 / 64 / 56 px at 1440 × 900). Other pages keep their headings.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: community transition and reformatted community intro (`home-04-lanes` only)
+- Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above the heading is removed.
+- The heading sets on two lines: "YOU'VE FOUND THE MAPS." / "FIND YOUR PEOPLE." The intro is now a lead-in line plus a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The clay italic line sits beside the list.
+- Why: Dat, Nov 4.
