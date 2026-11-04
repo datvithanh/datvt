@@ -84,14 +84,14 @@
 .ln-ways-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 .field-guide .ln-card{position:relative;display:flex;flex-direction:column;box-sizing:border-box}
 .field-guide .ln-card-paid{background:var(--ink);color:var(--bone);padding:44px;gap:18px;min-height:360px}
-.field-guide .ln-card-free{border:2px solid var(--ink);padding:34px;gap:14px}
-.field-guide .ln-corner{position:absolute;right:22px;top:22px;width:64px;height:56px;transform:scaleX(-1)}
+.field-guide .ln-card-free{padding:42px 40px 40px;gap:14px}
+/* Worn-press O3 key frame in clay, 9-slice: corners stay fixed, the rails repeat to fit the card. */
+.field-guide .ln-card-free::before{content:"";position:absolute;inset:0;border:34px solid transparent;border-image:url('/brand/home/card-frame-worn.png') 68 round;pointer-events:none}
 .field-guide .ln-card-eyebrow{font:500 14px/1.3 'CC Plex',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--tone)}
 .field-guide .ln-card-title{font:600 44px/1.08 'CC Archivo',Arial,sans-serif}
 .field-guide .ln-card-title-sm{font-size:30px;line-height:1.15}
 .field-guide .ln-card-text{font-size:20px;line-height:1.5;max-width:40ch}
 .field-guide .ln-card-paid .ln-card-text{color:#d8d1c0}
-.field-guide .ln-card-paid .ln-card-eyebrow{padding-right:72px}
 .field-guide .ln-card-free .ln-card-text{font-size:19px}
 .field-guide .ln-card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #3a3a36;padding-top:18px;font-size:15px}
 .field-guide .ln-button-bone{background:var(--bone);color:var(--ink);font-size:18px;padding:12px 20px;box-shadow:none}
@@ -159,12 +159,11 @@
   .ln-ways-grid,.ln-community-head,.ln-stories{grid-template-columns:1fr}
   .ln-community-head{gap:24px}
   .field-guide .ln-card-paid{padding:28px;min-height:0}
-  .field-guide .ln-card-free{padding:26px}
+  .field-guide .ln-card-free{padding:34px 30px 30px}
   .field-guide .ln-card-title{font-size:32px}
   .field-guide .ln-card-title-sm{font-size:26px}
   .field-guide .ln-card-text{font-size:18px}
   .field-guide .ln-card-foot{flex-wrap:wrap}
-  .field-guide .ln-corner{width:48px;height:42px;right:16px;top:16px}
   :root .field-guide.home-page .site-footer .footer-newsletter{padding:64px 20px;gap:28px}
   :root .field-guide.home-page .site-footer .footer-details{padding-inline:20px}
   :root .field-guide.home-page .site-footer .footer-newsletter h2{font-size:clamp(34px,9vw,48px)}

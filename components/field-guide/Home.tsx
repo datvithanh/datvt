@@ -51,7 +51,6 @@ export function HomeContent() {
     <h2 id="ln-ways">Ways to train</h2>
     <div className="ln-ways-grid">
       <Link className="ln-card ln-card-paid" href="/bootcamp">
-        <img className="ln-corner" src="/brand/home/key-corner-o3-clay.svg" alt="" width="64" height="56" />
         <span className="ln-card-eyebrow tone-marigold">Paid · 12 weeks · Live online</span>
         <span className="ln-card-title">Illumination Bootcamp</span>
         <span className="ln-card-text">Twelve weeks of intensive training for practitioners ready for transmission and relational feedback.</span>

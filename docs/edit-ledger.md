@@ -161,3 +161,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The homepage header is 30% thinner: 73 px on desktop (was 104) and 62 px on phones (was 88). The lockup is 44 px / 36 px tall (was 56 / 40) to keep the kit's 0.25 H clear space; "Join the Bootcamp" fits inside the bar. The phone menu now hangs from the bar's bottom edge, anchor links and the hero's fold sizing account for the new height. Other pages keep the 104 px header.
 - The header lockup URL carries `?v=1.1` so browsers that cached the old lockup fetch the smaller-wordmark v1.1 file (already on this branch since the `v4` merge).
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: worn-press key frame on the Mini Bootcamp card (`home-04-lanes` only)
+- In "Ways to train", the Mini Bootcamp card's black outline is replaced by the O3 stepped-key border in clay with a worn-press print treatment (rails stay straight; uneven ink and small drop-outs). It is a 9-slice border image (`public/brand/home/card-frame-worn.png`), so the four key corners keep their size and the rails repeat to fit the card on any screen.
+- The clay O3 corner key inside the black Illumination Bootcamp card is removed (and its asset `key-corner-o3-clay.svg`).
+- Why: Dat, Nov 4: worn press "as a frame for this block… dont use it for the outer block"; "remove the corner key border within the illumination bootcamp as well."
