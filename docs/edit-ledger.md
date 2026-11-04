@@ -202,3 +202,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Undo the community transition and intro change (`home-04-lanes` only)
 - Reverts `e2b609d` and `9d71016` (the community-glyph divider, which went up with it by mistake under a "mock, not pushed" message): the community section is back to the version before them (thick rule above, Community glyph above the heading, one-paragraph intro). The `e2b609d` entry above is kept as written; both changes are held as a local mock for review.
 - Why: Dat, Nov 4: pushed before he had approved it; "yeah undo".
+
+### 2026-11-04 · Lanes homepage: phases section rebuilt to the mock-up (`home-04-lanes` only)
+- "REALISATION AS A FITNESS" is one line, sitting just above the phases and starting at the glyph column. It keeps the section-headline size unless that would cross the right margin, then shrinks just enough to fit (full size at 1440 × 800; about 4% smaller at 1440 × 900, 14% at 1920 wide). Phones wrap it.
+- The rows are 120 units apart (tops 1040 and 1160, was 1200): the green and blue lanes in `bands-lower.svg` turn into row 2 forty units earlier (vertical ends 1180 → 1140, same arcs). The hero stage is 50 units shorter (1320).
+- "beyond the cushion": "the" and "cushion" are joined by a no-break space so "the" never ends a line.
+- Why: Dat, Nov 4 (mock-up of the section).

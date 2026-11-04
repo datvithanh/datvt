@@ -11,8 +11,8 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 const phases = [
   { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption', top: 1040 },
   { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', glyph: 'purification', top: 1040 },
-  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition', top: 1200 },
-  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the cushion.', tone: 'blue', glyph: 'integration', top: 1200 },
+  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition', top: 1160 },
+  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration', top: 1160 },
 ]
 
 const stories = [
@@ -37,7 +37,7 @@ export function HomeContent() {
       <p className="ln-lede">Build a practice that can meet your life, with people who train alongside you.</p>
       <Link className="ln-button" href="/bootcamp">Explore the Bootcamp <span aria-hidden="true">↗</span></Link>
     </div>
-    <h2 className="ln-phases-title">Realisation<br />as a fitness</h2>
+    <h2 className="ln-phases-title">Realisation as a fitness</h2>
     <ol className="ln-phases">
       {phases.map(p => <li key={p.n} className={`tone-${p.tone}`} style={{ top: u(p.top) }}>
         <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
