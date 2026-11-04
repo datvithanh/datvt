@@ -239,3 +239,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Checked at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors.
 - Not yet restyled: the older pages built on the previous site (Team, Coaching, Embodiment, course library and lessons, Videos, Essays, Cohort, Spotlight, View), which keep their own body styles under the new header and footer.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Every remaining page rebuilt on brand v1 (`home-04-lanes` only)
+- The pages still built on the previous site now sit in the same shell as the rest (floating header, ink footer) and wear the kit: Team and each initiate page, Coaching, Embodiment, Cohort, Spotlight, View, Essays, Videos, the course library, Illumination 101 and its lessons, the Transmission 101 course, its lessons and debrief, the video library, each video and each playlist, article topic pages, and the lab page.
+- How: `SiteShell` renders them inside the field-guide wrapper (marked `legacy-page`; the old dark-mode theme toggle is gone from the footer), and `app/brand-v1-legacy.css` maps the old design tokens and utility classes onto the kit: bone and ink instead of charcoal and gold, Archivo and Plex Mono instead of Rubik and Courier Prime, square corners; filled accent buttons become the primary ink button and outlined ones (including the old `.btn-primary`) the clay secondary; small uppercase labels become Plex eyebrows; group labels (Browse, Search, Collections, Watch next, Lessons, video groups) are eyebrows rather than headlines; section headlines are 44 px on these denser pages; the sticky section tab bars sit under the 73 / 62 px header. The three section navs that forced a 10 px button size no longer do.
+- Footer sign-up heading: "Stay close to the practice" and "Get the free course" without the full stop.
+- Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors; public-site, Kit form and video-manifest checks pass.
+- Why: Dat, Nov 4 ("rebuild every page"; remove the full stop).

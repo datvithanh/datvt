@@ -64,7 +64,7 @@ export function CoachingNav() {
         {/* The season is between runs — scroll back up to the hero email capture. */}
         <a
           href="#newsletter"
-          className="btn-primary px-3 sm:px-5 py-1.5 text-[0.65rem]! sm:text-xs! whitespace-nowrap shrink-0"
+          className="btn-primary px-3 sm:px-5 py-1.5 whitespace-nowrap shrink-0"
         >
           Get Notified
         </a>
