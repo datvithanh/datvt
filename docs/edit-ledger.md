@@ -222,3 +222,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The intro is a lead-in, "CC is a community for serious contemplative training:", followed by a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The block sits beside the heading, top-aligned, with its text left-aligned and its longest line ending on the right margin; on phones it drops below the heading.
 - The clay line "You bring the willingness. The training gives it somewhere to go." is removed.
 - Why: Dat, Nov 4, approved the mock ("push it yes").
+
+### 2026-11-04 · Lanes homepage: American spelling, no "More participant stories", top-aligned sign-up (`home-04-lanes` only)
+- "Realisation as a fitness" is now "Realization as a fitness" (American English, matching John's quote). A sweep of the homepage's rendered text, labels and metadata found no other British spellings.
+- The "More participant stories ↗" link under the stories is removed (all six stories are on the homepage now).
+- The footer sign-up band is top-aligned: "STAY CLOSE TO THE PRACTICE." and the form start at the same height (was bottom-aligned).
+- Why: Dat, Nov 4.

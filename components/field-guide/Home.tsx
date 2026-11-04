@@ -40,7 +40,7 @@ export function HomeContent() {
       <p className="ln-lede">Build a practice that can meet your life, with people who train alongside you.</p>
       <Link className="ln-button" href="/bootcamp">Explore the Bootcamp <span aria-hidden="true">↗</span></Link>
     </div>
-    <h2 className="ln-phases-title">Realisation as a fitness</h2>
+    <h2 className="ln-phases-title">Realization as a fitness</h2>
     <ol className="ln-phases">
       {phases.map(p => <li key={p.n} className={`tone-${p.tone}`} style={{ top: u(p.top) }}>
         <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
@@ -97,7 +97,6 @@ export function HomeContent() {
         <figcaption><span>{s.name}</span></figcaption>
       </figure>)}
     </div>
-    <Link className="ln-more" href="/bootcamp#stories">More participant stories <span aria-hidden="true">↗</span></Link>
   </div>
 </section>
   </>

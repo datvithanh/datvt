@@ -144,14 +144,11 @@
 .field-guide .ln-story-image:hover img{transform:scale(1.03)}
 .field-guide .ln-stories blockquote{margin:0;font-size:21px;line-height:1.45;font-weight:500;font-style:italic}
 .field-guide .ln-stories figcaption{display:flex;justify-content:space-between;gap:12px;font:400 13px/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase}
-.field-guide .ln-stories figcaption a,.field-guide .ln-more{text-decoration:underline;text-underline-offset:3px}
-.field-guide .ln-stories figcaption a:hover,.field-guide .ln-more:hover{color:var(--clay)}
-.field-guide .ln-more{align-self:flex-start;font:400 15px/1.4 'CC Plex',monospace;letter-spacing:.06em}
 
 /* ── Footer on the homepage: ink band with the mailing list. ───────────────── */
 :root .field-guide.home-page .site-footer{background:var(--ink);color:var(--bone);border-top:0;--ink-on:#F2ECDC}
 :root .field-guide.home-page .site-footer a:hover{color:var(--marigold)}
-:root .field-guide.home-page .site-footer .footer-newsletter{max-width:1280px;margin:0 auto;width:auto;padding:90px 40px;gap:56px;align-items:end;border-bottom:1px solid #3a3a36}
+:root .field-guide.home-page .site-footer .footer-newsletter{max-width:1280px;margin:0 auto;width:auto;padding:90px 40px;gap:56px;align-items:start;border-bottom:1px solid #3a3a36}
 :root .field-guide.home-page .site-footer .footer-details{width:auto;max-width:1280px;margin:0 auto;padding-inline:40px}
 :root .field-guide.home-page .site-footer .footer-newsletter h2{font:800 56px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em!important;text-transform:uppercase;color:var(--bone);margin:0 0 18px}
 :root .field-guide.home-page .site-footer .footer-newsletter h2 br{display:inline}
