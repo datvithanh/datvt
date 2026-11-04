@@ -9,6 +9,7 @@ import './field-guide.css'
 import './field-guide-desktop.css'
 import './field-guide-material.css'
 import './lanes-home.css'
+import './brand-v1.css'
 
 const siteUrl = 'https://mindtraining.cc'
 // Temporary-host asset URLs may differ; canonical and schema URLs remain CC's.

@@ -232,3 +232,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: card buttons on the left (`home-04-lanes` only)
 - "Ways to train": "Explore" now sits on the left of the Illumination Bootcamp card's footer with "Starts January 25, 2027" on the right; "Save a spot" sits bottom-left on the Mini Bootcamp card (still the clay secondary button).
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Brand v1 style on every field-guide page (`home-04-lanes` only)
+- The homepage's chrome now runs across Programs, Bootcamp, Mini Bootcamp, Resources, Media, Transmission 101, the Articles index and each article, and the Terms, Privacy and Refund pages: the floating thin header with the lockup, 19 px nav and "Join the Bootcamp" button; flat bone background; kit ink; the ink mailing-list footer.
+- Their text follows the CC Website Typography Guide (Claude Docs) through `app/brand-v1.css`: one display headline per page (ExtraBold caps; smaller for article and legal titles), section headlines ExtraBold caps 56 px, card titles and subheads SemiBold sentence case (30 / 44 px), lede 22 px, body 18–19 px (17 px in cards), quotes Archivo Medium Italic 21 px, eyebrows Plex Medium caps 14 px, data Plex 15 px, captions and labels Plex caps 13 px, fine print 13 px; nothing below 13 px. Buttons are the primary ink button (19 px, 18 × 28); text links are underlined Plex. Card accents use the kit lane colours (mineral blue, marigold, clay, sage). Headline halves are no longer orange.
+- Checked at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors.
+- Not yet restyled: the older pages built on the previous site (Team, Coaching, Embodiment, course library and lessons, Videos, Essays, Cohort, Spotlight, View), which keep their own body styles under the new header and footer.
+- Why: Dat, Nov 4.

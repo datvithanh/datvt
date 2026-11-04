@@ -1,0 +1,93 @@
+/* Brand v1 type system on every field-guide page except the homepage (which carries it in lanes-home.css).
+   Source: "CC Website Typography Guide" (Claude Docs, Nov 4 2026). Roles, not sizes: display, section headline,
+   card title, subhead, lede, body, quote, button/nav, eyebrow, data, caption/meta, fine print. Never below 13 px.
+   The base field-guide sheets set several heading properties with !important, so the overrides here must too.
+   Loaded last. */
+
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page){
+  --ln-u:1px;--btn-font:19px;--btn-pad-y:18px;--btn-pad-x:28px;
+  --line:rgba(14,14,12,.2);--gold-line:rgba(14,14,12,.35);--orange:#A63A2E;--accent:#A63A2E;
+  font:400 18px/1.5 'CC Archivo',Arial,sans-serif
+}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome):not(.home-page){--btn-font:17px;--btn-pad-y:15px;--btn-pad-x:22px}}
+
+/* Accents on card groups: the kit's lane colours (were blue / orange / maroon / green). */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+1){--tone:#456B86;--tone-text:#456B86}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+2){--tone:#D98F2B;--tone-text:#9a6418}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+3){--tone:#A63A2E;--tone-text:#A63A2E}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+4){--tone:#4C6B54;--tone-text:#4C6B54}
+
+/* Display: the one page headline. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h1{font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase;line-height:.95;color:var(--ink);font-size:clamp(44px,5vw,80px);overflow-wrap:normal}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(h1,h2,h3) em{color:inherit!important;font-style:normal}
+
+/* Long page titles (articles, legal documents) use a smaller display size. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.fg-article-title,.legal-document-title){font-size:clamp(40px,4.4vw,64px);line-height:1}
+
+/* Section headline. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h2{font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase;line-height:1;color:var(--ink);font-size:56px}
+
+/* Card title / subhead (sentence case, SemiBold): h2s that title a card or a document section, and every h3. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.journal-card-copy,.resource-course,.resource-blog,.instagram-panel,.legal-document-body,.prose,.media-section-heading,.course-discovery-copy) h2,
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h3{font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;letter-spacing:0!important;text-transform:none;line-height:1.15;color:var(--ink);font-size:30px}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.flyer-offer h3,.journal-card:first-child .journal-card-copy h2){font-size:44px;line-height:1.08}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.legal-document-body h2,.past-media-item h3,.show-episode h3,.resource-reading h3,.lesson-summary-copy strong){font-size:24px}
+
+/* Lede and body. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(p,li,dd,td){font-size:18px;line-height:1.5}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.program-lead,.resource-deck,.programs-overview-deck,.article-deck,.hero-description){font-size:22px;line-height:1.5;color:var(--ink)}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.fit-cards p,.approach-grid p,.phase-lanes p,.offer-facts li,.tuition-components dd,.tuition-included li,.journal-card-copy p,.resource-reading p,.lesson-detail,.lesson-practice,.fit-not li,.flyer-offer p){font-size:17px}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .prose :is(p,li){font-size:19px;line-height:1.6}
+
+/* The tuition price is a figure, not running text. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .tuition-price{font:800 72px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .tuition-price span{font-size:18px;letter-spacing:0}
+
+/* Quote. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main blockquote{font:italic 500 21px/1.45 'CC Archivo',Arial,sans-serif;letter-spacing:0;color:var(--ink)}
+
+/* Eyebrow: Plex Mono Medium caps, tracked. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.eyebrow,.program-type,.fit-label,.timezone-label,.course-meta,.journal-results,.legal-document-date,.tuition-card .fit-label){font:500 14px/1.3 'CC Plex',monospace;letter-spacing:.12em;text-transform:uppercase}
+
+/* Data: numbers and dates in Plex Mono. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.fit-index,.phase-index,.lesson-n,.reading-number,.flyer-offer-end,.event-date,.cohort-stamp strong,.cohort-stamp span,.tuition-term,.course-meta span){font:400 15px/1.4 'CC Plex',monospace;letter-spacing:0;text-transform:none}
+
+/* Caption / meta: Plex caps, small. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(figcaption,label,.story-note,.topic-filters button,.journal-search label){font:400 13px/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .person-story figcaption{font-size:13px}
+
+/* Fine print. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.fineprint,.form-status,.course-signup-note,small){font:400 13px/1.5 'CC Archivo',Arial,sans-serif;letter-spacing:0;text-transform:none}
+
+/* Buttons: the primary from the homepage (ink fill, bone text, 600 at 19 px, 18 × 28, square, soft shadow; hover clay). */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.button,.course-hero .button,.input-row button){display:inline-flex;align-items:center;gap:14px;min-height:0;border:0;border-radius:0;background:var(--ink);color:var(--bone);font:600 var(--btn-font)/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:0;text-transform:none;padding:var(--btn-pad-y) var(--btn-pad-x);box-shadow:0 6px 14px rgba(14,14,12,.18);transition:background .15s}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.button,.input-row button):hover{background:var(--clay);color:var(--bone);border-color:var(--clay)}
+
+/* Text links: Plex Mono, underlined with a 3 px offset, hover clay. Section nav: the nav role. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.text-link,.reading-link,.legal-back-link){font:400 15px/1.4 'CC Plex',monospace;letter-spacing:0;text-transform:none;border-bottom:0;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.text-link,.reading-link,.legal-back-link):hover{color:var(--clay)}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .program-sections a{font:600 17px/1.2 'CC Archivo',Arial,sans-serif}
+
+/* Phones. */
+@media(max-width:900px){
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h1{font-size:clamp(34px,9.5vw,84px);hyphens:auto;overflow-wrap:break-word}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.fg-article-title,.legal-document-title){font-size:clamp(28px,7.5vw,40px)}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h2{font-size:clamp(34px,9vw,48px)}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.journal-card-copy,.resource-course,.resource-blog,.instagram-panel,.legal-document-body,.prose,.media-section-heading,.course-discovery-copy) h2,
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h3{font-size:24px}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.flyer-offer h3,.journal-card:first-child .journal-card-copy h2){font-size:32px}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(p,li,dd,td,.fit-cards p,.approach-grid p,.phase-lanes p,.offer-facts li,.tuition-components dd,.tuition-included li,.journal-card-copy p,.resource-reading p,.fit-not li,.flyer-offer p){font-size:17px}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.program-lead,.resource-deck,.programs-overview-deck,.article-deck,.hero-description){font-size:18px}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main blockquote{font-size:19px}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.eyebrow,.program-type,.fit-label,.timezone-label,.course-meta,.journal-results,.legal-document-date){font-size:12px}
+}
+
+/* Older components inside these pages (article meta, tag chips, tables, video badges, event dates): raise to the 13 px floor. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(time,th,.event-date,.px-2,span.block,span.absolute){font-family:'CC Plex',monospace;font-size:13px;letter-spacing:.02em}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .event-date{font-size:15px!important}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main nav a{font:400 13px/1.5 'CC Plex',monospace;letter-spacing:.02em}
+
+/* Cards that used to carry their own ink (blue-black) take the kit ink. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.paid-offer,.free-offer,.resource-door){--ink:#0E0E0C;--muted:#4a4740;color:var(--ink)}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .lesson-outline .lesson-detail > p:not(.eyebrow){font-size:17px;line-height:1.6;max-width:62ch}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .lesson-outline .lesson-summary-copy small{font-size:15px}

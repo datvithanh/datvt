@@ -1,53 +1,53 @@
 /* "04 Lanes" homepage (design canvas, Nov 2026), on the v1 brand kit: ink #0E0E0C on flat bone
    #F2ECDC, Archivo (800 caps headlines, 600 titles/buttons, 400 body, 500 italic quotes), IBM Plex
-   Mono for eyebrows and data, lane colours marigold / clay / sage / mineral blue. Scoped to the
-   homepage; the header CTA rules at the bottom are the only shared chrome. Loaded last. */
+   Mono for eyebrows and data, lane colours marigold / clay / sage / mineral blue. The tokens, header, buttons and
+   footer apply to every field-guide page (Nov 4); the hero and sections are homepage-only. brand-v1.css loads after. */
 
-:root .field-guide.home-page{
+:root .field-guide:not(.fg-legacy-chrome){
   --bone:#F2ECDC;--ink:#0E0E0C;--paper:#F2ECDC;--muted:#4a4740;--line:#0E0E0C;
   --marigold:#D98F2B;--clay:#A63A2E;--sage:#4C6B54;--mblue:#456B86;--accent:var(--clay);
   background:#F2ECDC;color:#0E0E0C;font-family:'CC Archivo',Arial,sans-serif
 }
-:root .field-guide.home-page :is(.tone-marigold){--tone:#D98F2B}
-:root .field-guide.home-page :is(.tone-clay){--tone:#A63A2E}
-:root .field-guide.home-page :is(.tone-sage){--tone:#4C6B54}
-:root .field-guide.home-page :is(.tone-blue){--tone:#456B86}
+:root .field-guide:not(.fg-legacy-chrome) :is(.tone-marigold){--tone:#D98F2B}
+:root .field-guide:not(.fg-legacy-chrome) :is(.tone-clay){--tone:#A63A2E}
+:root .field-guide:not(.fg-legacy-chrome) :is(.tone-sage){--tone:#4C6B54}
+:root .field-guide:not(.fg-legacy-chrome) :is(.tone-blue){--tone:#456B86}
 
 /* Header on the homepage: Bible nav type (SemiBold 18) and the outlined CTA. */
-:root .field-guide.home-page .header{border-bottom:0}
+:root .field-guide:not(.fg-legacy-chrome) .header{border-bottom:0}
 
 /* One button spec for the whole homepage, taken from the hero button: Archivo 600 at 19 units, 18 × 28 units of
    padding, square, soft shadow. Ink on bone; bone on black. --ln-u is the hero's unit (desktop: width and height). */
 :root .field-guide.home-page{--ln-u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 93px) / 860)));--btn-font:calc(19 * var(--ln-u));--btn-pad-y:calc(18 * var(--ln-u));--btn-pad-x:calc(28 * var(--ln-u))}
 @media(max-width:900px){:root .field-guide.home-page{--btn-font:17px;--btn-pad-y:15px;--btn-pad-x:22px}}
-:root .field-guide.home-page :is(.ln-button,.ln-button-outline,.header .nav-cta,.site-footer .input-row button){display:inline-flex;align-items:center;gap:14px;min-height:0;border:0;border-radius:0;background:var(--ink);color:var(--bone);font:600 var(--btn-font)/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:0;padding:var(--btn-pad-y) var(--btn-pad-x);box-shadow:0 6px 14px rgba(14,14,12,.18);transition:background .15s}
-:root .field-guide.home-page :is(.ln-button,.ln-button-outline,.header .nav-cta):hover,:root .field-guide.home-page .ln-card-free:hover .ln-button-outline{background:var(--clay);color:var(--bone);border-color:var(--clay)}
-:root .field-guide.home-page :is(.ln-button-bone,.site-footer .input-row button){background:var(--bone);color:var(--ink);box-shadow:none}
-:root .field-guide.home-page :is(.ln-button-bone:hover,.ln-card-paid:hover .ln-button-bone,.site-footer .input-row button:hover){background:var(--marigold);color:var(--ink)}
+:root .field-guide:not(.fg-legacy-chrome) :is(.ln-button,.ln-button-outline,.header .nav-cta,.site-footer .input-row button){display:inline-flex;align-items:center;gap:14px;min-height:0;border:0;border-radius:0;background:var(--ink);color:var(--bone);font:600 var(--btn-font)/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:0;padding:var(--btn-pad-y) var(--btn-pad-x);box-shadow:0 6px 14px rgba(14,14,12,.18);transition:background .15s}
+:root .field-guide:not(.fg-legacy-chrome) :is(.ln-button,.ln-button-outline,.header .nav-cta):hover,:root .field-guide:not(.fg-legacy-chrome) .ln-card-free:hover .ln-button-outline{background:var(--clay);color:var(--bone);border-color:var(--clay)}
+:root .field-guide:not(.fg-legacy-chrome) :is(.ln-button-bone,.site-footer .input-row button){background:var(--bone);color:var(--ink);box-shadow:none}
+:root .field-guide:not(.fg-legacy-chrome) :is(.ln-button-bone:hover,.ln-card-paid:hover .ln-button-bone,.site-footer .input-row button:hover){background:var(--marigold);color:var(--ink)}
 @media(min-width:761px){
-  :root .field-guide.home-page .header nav{font-size:var(--btn-font);gap:40px;font-weight:600}
+  :root .field-guide:not(.fg-legacy-chrome) .header nav{font-size:var(--btn-font);gap:40px;font-weight:600}
 }
-:root .field-guide.home-page .header nav a:hover{color:var(--clay)}
+:root .field-guide:not(.fg-legacy-chrome) .header nav a:hover{color:var(--clay)}
 .field-guide .header .nav-cta{display:none}
 
 /* Floating header: pinned to the top on a full-bleed bone bar, its ends on the same 1280 / 40 px
    margins as the homepage sections (20 px on phones). A hairline shadow fades in once the page scrolls. */
-:root .field-guide.home-page{scroll-padding-top:90px;overflow-x:clip}
-:root .field-guide.home-page .header.wrap{position:sticky;top:0;z-index:40;width:auto;max-width:1280px;margin-inline:auto;padding-inline:40px;background:transparent}
-:root .field-guide.home-page .header.wrap::before{content:'';position:absolute;inset:0 -100vmax;z-index:-1;background:var(--bone);pointer-events:none}
+:root .field-guide:not(.fg-legacy-chrome){scroll-padding-top:90px;overflow-x:clip}
+:root .field-guide:not(.fg-legacy-chrome) .header.wrap{position:sticky;top:0;z-index:40;width:auto;max-width:1280px;margin-inline:auto;padding-inline:40px;background:transparent}
+:root .field-guide:not(.fg-legacy-chrome) .header.wrap::before{content:'';position:absolute;inset:0 -100vmax;z-index:-1;background:var(--bone);pointer-events:none}
 @supports (animation-timeline:scroll()){
-  :root .field-guide.home-page .header.wrap::before{animation:ln-header-lift linear both;animation-timeline:scroll(root);animation-range:0 120px}
+  :root .field-guide:not(.fg-legacy-chrome) .header.wrap::before{animation:ln-header-lift linear both;animation-timeline:scroll(root);animation-range:0 120px}
   @keyframes ln-header-lift{to{box-shadow:0 1px 0 rgba(14,14,12,.12),0 10px 18px -10px rgba(14,14,12,.3)}}
 }
-@media(max-width:900px){:root .field-guide.home-page .header.wrap{padding-inline:20px}}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) .header.wrap{padding-inline:20px}}
 /* Thinner bar (30% under the site's 104 / 88 px): 73 px desktop, 62 px phones. The lockup drops to 44 / 36 px
    to keep the kit's 0.25 H clear space; the phone menu hangs from the bar's bottom edge whatever its height. */
-:root .field-guide.home-page .header{height:73px}
-:root .field-guide.home-page .header .brand-lockup{height:44px}
+:root .field-guide:not(.fg-legacy-chrome) .header{height:73px}
+:root .field-guide:not(.fg-legacy-chrome) .header .brand-lockup{height:44px}
 @media(max-width:760px){
-  :root .field-guide.home-page .header{height:62px}
-  :root .field-guide.home-page .header .brand-lockup{height:36px}
-  :root .field-guide.home-page .header nav{top:100%;left:0;right:0}
+  :root .field-guide:not(.fg-legacy-chrome) .header{height:62px}
+  :root .field-guide:not(.fg-legacy-chrome) .header .brand-lockup{height:36px}
+  :root .field-guide:not(.fg-legacy-chrome) .header nav{top:100%;left:0;right:0}
 }
 
 /* ── Hero stage: 1280 × 1490 units. --u is one unit in px. ─────────────────────── */
@@ -146,20 +146,20 @@
 .field-guide .ln-stories figcaption{display:flex;justify-content:space-between;gap:12px;font:400 13px/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase}
 
 /* ── Footer on the homepage: ink band with the mailing list. ───────────────── */
-:root .field-guide.home-page .site-footer{background:var(--ink);color:var(--bone);border-top:0;--ink-on:#F2ECDC}
-:root .field-guide.home-page .site-footer a:hover{color:var(--marigold)}
-:root .field-guide.home-page .site-footer .footer-newsletter{max-width:1280px;margin:0 auto;width:auto;padding:90px 40px;gap:56px;align-items:start;border-bottom:1px solid #3a3a36}
-:root .field-guide.home-page .site-footer .footer-details{width:auto;max-width:1280px;margin:0 auto;padding-inline:40px}
-:root .field-guide.home-page .site-footer .footer-newsletter h2{font:800 56px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em!important;text-transform:uppercase;color:var(--bone);margin:0 0 18px}
-:root .field-guide.home-page .site-footer .footer-newsletter h2 br{display:inline}
-:root .field-guide.home-page .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:20px;line-height:1.5;color:#d8d1c0;max-width:34ch}
-:root .field-guide.home-page .site-footer .newsletter-form label{font:400 12px/1.3 'CC Plex',monospace;letter-spacing:.1em;text-transform:uppercase;color:#d8d1c0}
-:root .field-guide.home-page .site-footer .input-row{border:1px solid #5a5a54;flex-wrap:nowrap}
-:root .field-guide.home-page .site-footer .input-row input{font-size:18px;padding:14px;background:transparent;color:var(--bone);border:0}
-:root .field-guide.home-page .site-footer :is(.form-status,.fineprint){font-size:13px;color:#a8a191}
-:root .field-guide.home-page .site-footer .fg-name-field input{background:transparent;color:var(--bone);border:1px solid #5a5a54;font-size:18px;padding:14px}
-:root .field-guide.home-page .site-footer :is(.footer-details,.footer-company,.footer-identity p){color:#a8a191}
-:root .field-guide.home-page .site-footer :is(.footer-legal a,.footer-social a){color:var(--bone)}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer{background:var(--ink);color:var(--bone);border-top:0;--ink-on:#F2ECDC}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer a:hover{color:var(--marigold)}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter{max-width:1280px;margin:0 auto;width:auto;padding:90px 40px;gap:56px;align-items:start;border-bottom:1px solid #3a3a36}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-details{width:auto;max-width:1280px;margin:0 auto;padding-inline:40px}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter h2{font:800 56px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em!important;text-transform:uppercase;color:var(--bone);margin:0 0 18px}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter h2 br{display:inline}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:20px;line-height:1.5;color:#d8d1c0;max-width:34ch}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .newsletter-form label{font:400 12px/1.3 'CC Plex',monospace;letter-spacing:.1em;text-transform:uppercase;color:#d8d1c0}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .input-row{border:1px solid #5a5a54;flex-wrap:nowrap}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .input-row input{font-size:18px;padding:14px;background:transparent;color:var(--bone);border:0}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer :is(.form-status,.fineprint){font-size:13px;color:#a8a191}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer .fg-name-field input{background:transparent;color:var(--bone);border:1px solid #5a5a54;font-size:18px;padding:14px}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer :is(.footer-details,.footer-company,.footer-identity p){color:#a8a191}
+:root .field-guide:not(.fg-legacy-chrome) .site-footer :is(.footer-legal a,.footer-social a){color:var(--bone)}
 
 /* ── Phone and narrow tablet: the stage unstacks; the art becomes a cropped band. ── */
 @media(max-width:900px){
@@ -191,17 +191,17 @@
   .field-guide .ln-card-title-sm{font-size:26px}
   .field-guide .ln-card-text{font-size:18px}
   .field-guide .ln-card-foot{flex-wrap:wrap}
-  :root .field-guide.home-page .site-footer .footer-newsletter{padding:64px 20px;gap:28px}
-  :root .field-guide.home-page .site-footer .footer-details{padding-inline:20px}
-  :root .field-guide.home-page .site-footer .footer-newsletter h2{font-size:clamp(34px,9vw,48px)}
-  :root .field-guide.home-page .site-footer .input-row{flex-wrap:wrap}
-  :root .field-guide.home-page .site-footer .input-row button{width:100%}
+  :root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter{padding:64px 20px;gap:28px}
+  :root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-details{padding-inline:20px}
+  :root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter h2{font-size:clamp(34px,9vw,48px)}
+  :root .field-guide:not(.fg-legacy-chrome) .site-footer .input-row{flex-wrap:wrap}
+  :root .field-guide:not(.fg-legacy-chrome) .site-footer .input-row button{width:100%}
 }
 
 /* Section headings, one level: Archivo ExtraBold caps at the phases-title size (56 units, scaling with the hero;
    fluid on phones). Site-wide rules force h2 to 600 and section h2s to 31 px on phones with !important, so these do too. */
-:root .field-guide.home-page :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:calc(56 * var(--ln-u));line-height:1;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase}
-@media(max-width:900px){:root .field-guide.home-page :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:clamp(34px,9vw,48px)!important}}
+:root .field-guide:not(.fg-legacy-chrome) :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:calc(56 * var(--ln-u));line-height:1;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:clamp(34px,9vw,48px)!important}}
 /* The one-line phases title keeps the section-headline size unless that would cross the right margin: it is 13.9 em
    wide, so it never exceeds (margin − glyph column) / 14. Desktop only; phones wrap it. */
 @media(min-width:901px){:root .field-guide.home-page .ln-hero h2.ln-phases-title{font-size:min(calc(56 * var(--ln-u)),calc((min(100vw,1280px) - 80px - 532 * var(--ln-u)) / 14))}}
