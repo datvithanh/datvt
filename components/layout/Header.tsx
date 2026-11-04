@@ -26,6 +26,7 @@ export function Header() {
           <div className="nav-submenu">{programs.map(item => <Link key={item.href} href={item.href} onClick={close}><span className="nav-item-name">{item.label}</span><span className="nav-item-meta">{item.meta}</span></Link>)}</div>
         </div>
         {['Resources','Media'].map(label => <Link key={label} href={`/${label.toLowerCase()}`} onClick={close}>{label}</Link>)}
+        <Link className="nav-cta" href="/bootcamp" onClick={close}>Join the Bootcamp</Link>
       </nav>
     </header>
   </>

@@ -136,3 +136,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Home is back to the version before `cb88ce9`: "Realization fitness." with the Mongaku print, the paper/ink material layer and no "Join the Bootcamp" header button. The brand-kit favicon, lockup and "Crossfit" spelling stay.
 - The "04 Lanes" homepage is preserved unchanged on branch `home-04-lanes` (commit `cb88ce9`), including its `docs/design/` notes and references. Its ledger entry above is kept as written.
 - Why: Dat, Nov 4: revert it and keep it on a separate branch.
+
+### 2026-11-04 · "04 Lanes" homepage re-applied on `home-04-lanes` for preview
+- This branch carries the "04 Lanes" homepage (`cb88ce9`) on top of the current `v4`, so it can be previewed and worked on through a draft pull request without changing the main preview. `v4` itself still has the previous homepage.
+- Why: Dat, Nov 4: preview and keep working on the lanes branch.
