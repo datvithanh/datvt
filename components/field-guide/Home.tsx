@@ -19,6 +19,9 @@ const stories = [
   { id: 'RYwjMy_SID8', name: 'Kristen', tone: 'clay', quote: 'People here are full of integrity — they want progress for themselves, but they want it for each other.' },
   { id: 'NrObMSAiNQQ', name: 'Ryan', tone: 'marigold', quote: 'CC was a course correction.' },
   { id: 'YEpNqEyG3AE', name: 'James', tone: 'sage', quote: 'Everyone’s just trying to work it all out together.' },
+  { id: '-uMMTet2FP8', name: 'Adrian', tone: 'blue', quote: 'What drew me in was the culture of being yourself — welcoming all sides, including the parts I’d cast away.' },
+  { id: 'mTZIjfB5BZ8', name: 'Tom', tone: 'clay', quote: 'My relationship, my life was cleaning up, I was maturing — that wasn’t a goal. But it never happened at that kind of pace before.' },
+  { id: 'WoQbN-CnHJg', name: 'John', tone: 'marigold', quote: 'It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual.' },
 ]
 
 const u = (n: number) => `calc(${n} * var(--u))`

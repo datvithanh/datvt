@@ -212,3 +212,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: community glyph transition (`home-04-lanes` only)
 - Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above "You've found the maps" is removed. The heading and intro are unchanged (their rework is still a mock).
 - Why: Dat, Nov 4: "push the border change first".
+
+### 2026-11-04 · Lanes homepage: all six participant stories (`home-04-lanes` only)
+- The homepage stories now show all six from the Bootcamp page: Kristen, Ryan and James as before, plus Adrian (mineral blue), Tom (clay) and John (marigold), with the same quotes as on Bootcamp. Two rows of three on desktop, stacked on phones; each plays in place. Their 1280 × 720 covers are added to `public/brand/stories/` (noted in its README).
+- Why: Dat, Nov 4.

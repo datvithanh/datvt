@@ -4,6 +4,8 @@ Participant story images, downloaded unchanged from the verified YouTube story I
 - `NrObMSAiNQQ.jpg`: https://i.ytimg.com/vi/NrObMSAiNQQ/hq3.jpg — Ryan; CSS shows the participant panel of the recording frame.
 - `YEpNqEyG3AE.jpg`: https://i.ytimg.com/vi/YEpNqEyG3AE/hq2.jpg — James; CSS shows the participant panel of the recording frame.
 
+Adrian (`-uMMTet2FP8.jpg`), Tom (`mTZIjfB5BZ8.jpg`) and John (`WoQbN-CnHJg.jpg`) were added on 2026-11-04 for the homepage: unchanged `maxresdefault.jpg` covers (1280×720), the same files as their `full/` WebPs.
+
 Ryan and James frames are the original 480x360 automatic YouTube frames; the participant panels have lower source resolution than Kristen’s thumbnail.
 
 `full/` holds the full participant-story thumbnails used on the Bootcamp page, downloaded from
