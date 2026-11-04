@@ -140,3 +140,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · "04 Lanes" homepage re-applied on `home-04-lanes` for preview
 - This branch carries the "04 Lanes" homepage (`cb88ce9`) on top of the current `v4`, so it can be previewed and worked on through a draft pull request without changing the main preview. `v4` itself still has the previous homepage.
 - Why: Dat, Nov 4: preview and keep working on the lanes branch.
+
+### 2026-11-04 · Lanes homepage: floating header, no hero eyebrow (`home-04-lanes` only)
+- The homepage header now floats: it stays pinned to the top on a full-width bone bar while scrolling, with a soft shadow that fades in once the page moves. Its ends sit on the same margins as the homepage sections (1280 px max width, 40 px sides; 20 px on phones), so the lockup lines up with the hero text and "Join the Bootcamp" with the right edge of the content. The Programs dropdown and the phone menu are not clipped.
+- Removed the "REALISATION FITNESS" eyebrow above "LIVE IN PRACTICE".
+- Why: Dat, Nov 4. Preview: https://deploy-preview-1--poetic-tapioca-bc92a4.netlify.app

@@ -32,7 +32,6 @@ export function HomeContent() {
       <img className="ln-bands" src="/brand/home/bands-lower.svg" alt="" width="3880" height="1700" />
     </div>
     <div className="ln-copy">
-      <p className="ln-eyebrow">Realisation fitness</p>
       <h1 id="ln-hero-title">Live in<br />practice</h1>
       <p className="ln-lede">Build a practice that can meet your life, with people who train alongside you.</p>
       <Link className="ln-button" href="/bootcamp">Explore the Bootcamp <span aria-hidden="true">↗</span></Link>

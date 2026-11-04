@@ -23,6 +23,18 @@
 :root .field-guide.home-page .header .nav-cta{display:inline-flex;align-items:center;border:2px solid currentColor;border-radius:6px;padding:10px 22px;min-height:0;line-height:1.2}
 :root .field-guide.home-page .header .nav-cta:hover{color:var(--bone);background:var(--ink);border-color:var(--ink)}
 
+/* Floating header: pinned to the top on a full-bleed bone bar, its ends on the same 1280 / 40 px
+   margins as the homepage sections (20 px on phones). A hairline shadow fades in once the page scrolls. */
+:root .field-guide.home-page{scroll-padding-top:120px;overflow-x:clip}
+:root .field-guide.home-page .header.wrap{position:sticky;top:0;z-index:40;width:auto;max-width:1280px;margin-inline:auto;padding-inline:40px;background:transparent}
+:root .field-guide.home-page .header.wrap::before{content:'';position:absolute;inset:0 -100vmax;z-index:-1;background:var(--bone);pointer-events:none}
+@supports (animation-timeline:scroll()){
+  :root .field-guide.home-page .header.wrap::before{animation:ln-header-lift linear both;animation-timeline:scroll(root);animation-range:0 120px}
+  @keyframes ln-header-lift{to{box-shadow:0 1px 0 rgba(14,14,12,.12),0 10px 18px -10px rgba(14,14,12,.3)}}
+}
+@media(max-width:900px){:root .field-guide.home-page .header.wrap{padding-inline:20px}}
+@media(max-width:760px){:root .field-guide.home-page .header nav{left:0;right:0}}
+
 /* ── Hero stage: 1280 × 1490 units. --u is one unit in px. ─────────────────────── */
 .ln-hero{--u:calc(min(100vw,1280px) / 1280);overflow-x:clip;position:relative}
 .ln-stage{position:relative;width:calc(1280 * var(--u));height:calc(1490 * var(--u));margin:0 auto}
