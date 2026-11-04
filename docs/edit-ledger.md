@@ -228,3 +228,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The "More participant stories ↗" link under the stories is removed (all six stories are on the homepage now).
 - The footer sign-up band is top-aligned: "STAY CLOSE TO THE PRACTICE." and the form start at the same height (was bottom-aligned).
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: card buttons on the left (`home-04-lanes` only)
+- "Ways to train": "Explore" now sits on the left of the Illumination Bootcamp card's footer with "Starts January 25, 2027" on the right; "Save a spot" sits bottom-left on the Mini Bootcamp card (still the clay secondary button).
+- Why: Dat, Nov 4.

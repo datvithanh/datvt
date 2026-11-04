@@ -59,7 +59,7 @@ export function HomeContent() {
         <span className="ln-card-eyebrow tone-marigold">Paid · 12 weeks · Live online</span>
         <span className="ln-card-title">Illumination Bootcamp</span>
         <span className="ln-card-text">Twelve weeks of intensive training for practitioners ready for transmission and relational feedback.</span>
-        <span className="ln-card-foot"><span className="ln-mono">Starts {NEXT_COHORT_START}</span><span className="ln-button ln-button-bone">Explore <span aria-hidden="true">↗</span></span></span>
+        <span className="ln-card-foot"><span className="ln-button ln-button-bone">Explore <span aria-hidden="true">↗</span></span><span className="ln-mono">Starts {NEXT_COHORT_START}</span></span>
       </Link>
       <Link className="ln-card ln-card-free" href="/mini-bootcamp">
         <span className="ln-card-eyebrow tone-sage">Free · 5 days</span>

@@ -121,7 +121,7 @@
 .field-guide .ln-card-paid .ln-card-text{color:#d8d1c0}
 .field-guide .ln-card-free .ln-card-text{font-size:19px}
 .field-guide .ln-card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #3a3a36;padding-top:18px;font-size:15px}
-.field-guide .ln-button-outline{margin-top:auto;align-self:flex-end}
+.field-guide .ln-button-outline{margin-top:auto;align-self:flex-start}
 /* Secondary button: same type and size as the primary, clay outline (inside the same footprint), no fill, clay text. */
 :root .field-guide.home-page .ln-card.ln-card-free .ln-button-outline{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);box-shadow:none}
 
