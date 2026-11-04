@@ -126,8 +126,13 @@
 :root .field-guide.home-page .ln-card.ln-card-free .ln-button-outline{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);box-shadow:none}
 
 .ln-community .ln-wrap{gap:48px}
-.ln-community-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
-.ln-community-head>div{display:flex;flex-direction:column;gap:22px}
+.ln-community-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.ln-community-body{display:flex;flex-direction:column;gap:14px;justify-self:end;text-align:left}
+@media(max-width:900px){.ln-community-body{justify-self:start}}
+.field-guide .ln-h2-accent{color:var(--clay)}
+.field-guide .ln-community-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:20px;line-height:1.4}
+.field-guide .ln-community-list li{display:flex;align-items:baseline;gap:14px}
+.field-guide .ln-community-list li::before{content:"";flex:none;width:8px;height:8px;background:var(--clay);transform:translateY(-3px)}
 .field-guide .ln-glyph{width:52px;height:52px}
 .field-guide .ln-community-text{font-size:20px;line-height:1.5}
 .field-guide .ln-quote-line{font-size:21px;line-height:1.45;font-weight:500;font-style:italic;color:var(--clay)}

@@ -76,12 +76,15 @@ export function HomeContent() {
 <section id="stories" className="ln-section ln-community" aria-labelledby="ln-community">
   <div className="ln-wrap">
     <div className="ln-community-head">
-      <div>
-        <h2 id="ln-community">You’ve found the maps. Find your people.</h2>
-      </div>
-      <div>
-        <p className="ln-community-text">CC is a community for serious contemplative training: guidance from teachers, structured daily practice, study that sharpens understanding, and people who train alongside you.</p>
-        <p className="ln-quote-line">You bring the willingness. The training gives it somewhere to go.</p>
+      <h2 id="ln-community">You’ve found<br />the maps<br /><span className="ln-h2-accent">Find your people</span></h2>
+      <div className="ln-community-body">
+        <p className="ln-community-text">CC is a community for serious contemplative training:</p>
+        <ul className="ln-community-list">
+          <li>guidance from teachers</li>
+          <li>structured daily practice</li>
+          <li>study that sharpens understanding</li>
+          <li>people who train alongside you</li>
+        </ul>
       </div>
     </div>
     <div className="ln-stories">

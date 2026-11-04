@@ -216,3 +216,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: all six participant stories (`home-04-lanes` only)
 - The homepage stories now show all six from the Bootcamp page: Kristen, Ryan and James as before, plus Adrian (mineral blue), Tom (clay) and John (marigold), with the same quotes as on Bootcamp. Two rows of three on desktop, stacked on phones; each plays in place. Their 1280 × 720 covers are added to `public/brand/stories/` (noted in its README).
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: community heading and intro reworked (`home-04-lanes` only)
+- The community heading sets on three lines with no full stops: "YOU'VE FOUND" / "THE MAPS" / "FIND YOUR PEOPLE", the last line in clay.
+- The intro is a lead-in, "CC is a community for serious contemplative training:", followed by a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The block sits beside the heading, top-aligned, with its text left-aligned and its longest line ending on the right margin; on phones it drops below the heading.
+- The clay line "You bring the willingness. The training gives it somewhere to go." is removed.
+- Why: Dat, Nov 4, approved the mock ("push it yes").
