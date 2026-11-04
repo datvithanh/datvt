@@ -187,3 +187,8 @@
   :root .field-guide.home-page .site-footer .input-row{flex-wrap:wrap}
   :root .field-guide.home-page .site-footer .input-row button{width:100%}
 }
+
+/* Section headings, one level: Archivo ExtraBold caps at the phases-title size (56 units, scaling with the hero;
+   fluid on phones). Site-wide rules force h2 to 600 and section h2s to 31 px on phones with !important, so these do too. */
+:root .field-guide.home-page :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:calc(56 * var(--ln-u));line-height:1;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase}
+@media(max-width:900px){:root .field-guide.home-page :is(.ln-phases-title,.ln-section h2,.site-footer .footer-newsletter h2){font-size:clamp(34px,9vw,48px)!important}}

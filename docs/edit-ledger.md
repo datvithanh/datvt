@@ -181,3 +181,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "REALISATION AS A FITNESS" and the first phases column start where "PRACTICE" ends (572 units); the lower bands slide right by the same 112 units so their lanes still meet the glyphs. The two phase columns now run to the right content margin. Each phase's body text runs the full column width (glyph 40 units, body 17 units), so no phase takes more than two lines.
 - "Save a spot" on the Mini Bootcamp card is a secondary button in the card's lower-right corner: clay outline, no fill, clay text, same type and size as the primary; it fills clay on hover.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: one heading style (`home-04-lanes` only)
+- "Realisation as a fitness", "Ways to train", "You've found the maps. Find your people." and "Stay close to the practice." now share one style: Archivo ExtraBold (800) caps at the phases-title size (56 units, scaling with the hero; 34–48 px fluid on phones), line height 1, letter-spacing −0.02em. Before, all four rendered SemiBold (600) because a site-wide `.field-guide h2` rule forces 600 with `!important`, and their sizes differed (52.5 / 64 / 64 / 56 px at 1440 × 900). Other pages keep their headings.
+- Why: Dat, Nov 4.
