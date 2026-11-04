@@ -144,3 +144,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · ↗ arrows no longer turn into emoji on iPhones
 - Archivo has no diagonal-arrow glyphs (U+2196–2199), so iOS fell back to the colour ↗ emoji on buttons and links. Those four characters now come from IBM Plex Mono Medium (already loaded by the site) through a `unicode-range` face on the "CC Archivo" family. All 25 arrows site-wide are covered with no markup change; checked that every arrow on Home, Bootcamp and Resources renders from the web font, not a system fallback.
 - Why: Dat, Nov 4 (arrows showing as emoji on iPhone).
+
+### 2026-11-04 · Videos play on the page; marigold selection and focus
+- Every participant video now plays in place: the Bootcamp hero film, the six Bootcamp story thumbnails and the homepage story images are click-to-play posters that swap for a youtube-nocookie embed in the same box (`components/ui/InlineVideo.tsx`). The separate "Watch their story" / "Watch the full story" links are removed; each poster is the one control ("Play Kristen's story", …). The footer link to the YouTube channel stays.
+- Selected text is ink on marigold (was a near-invisible light-on-beige highlight inherited from the old site).
+- Focus outlines on links, buttons, fields and video posters are marigold; the email field's red (clay) focus box read as an error.
+- Why: Dat, Nov 4.

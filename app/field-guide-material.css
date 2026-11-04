@@ -56,12 +56,12 @@
 
 /* Bootcamp: real faces. The hero carries the participants' film; each quote carries its person. */
 .field-guide:not(.fg-legacy-chrome) .faces-film{margin:0 0 22px}
-.field-guide:not(.fg-legacy-chrome) :is(.faces-film,.face-thumb) a,.field-guide:not(.fg-legacy-chrome) .face-thumb{position:relative;display:block}
+.field-guide:not(.fg-legacy-chrome) :is(.faces-film,.face-thumb) a,.field-guide:not(.fg-legacy-chrome) :is(.faces-film-play,.face-thumb){position:relative;display:block}
 .field-guide:not(.fg-legacy-chrome) .faces-film img,.field-guide:not(.fg-legacy-chrome) .face-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:5px solid #f3ebd9;box-shadow:1px 3px 10px #2a3d561f;filter:none;mix-blend-mode:normal}
 .field-guide:not(.fg-legacy-chrome) .faces-film figcaption{margin-top:10px;font:400 11px/1.6 'CC Plex',monospace;letter-spacing:.02em;color:var(--muted)}
 .field-guide:not(.fg-legacy-chrome) .play-mark{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#76592ae6;box-shadow:0 2px 8px #0003;transition:transform .2s}
 .field-guide:not(.fg-legacy-chrome) .play-mark:after{content:'';position:absolute;left:18px;top:14px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #f3ebd9}
-.field-guide:not(.fg-legacy-chrome) :is(.faces-film a,.face-thumb):hover .play-mark{transform:scale(1.08)}
+.field-guide:not(.fg-legacy-chrome) :is(.faces-film-play,.face-thumb):hover .play-mark{transform:scale(1.08)}
 .field-guide:not(.fg-legacy-chrome) .face-stories .person-story{border-top:0;padding-top:0}
 .field-guide:not(.fg-legacy-chrome) .face-thumb{margin-bottom:18px}
 .field-guide:not(.fg-legacy-chrome) .face-thumb .play-mark{width:34px;height:34px;margin:-17px 0 0 -17px}
@@ -126,3 +126,14 @@
 @media(max-width:760px){.field-guide .brand-lockup{height:40px}}
 [data-theme="dark"] .fg-legacy-chrome .brand-lockup{filter:invert(1)}
 .field-guide .footer-mark{display:block;width:44px;height:44px;margin-bottom:12px}
+
+/* Inline video posters are buttons: strip the browser's button look (zero specificity, so each poster's own class wins). */
+:where(.field-guide button.inline-video){display:block;width:100%;padding:0;border:0;background:transparent;font:inherit;color:inherit;text-align:inherit;cursor:pointer}
+.field-guide .inline-video.is-playing{display:block;width:100%;background:#0e0e0c}
+
+/* Selected text: ink on marigold, readable on bone and on ink. */
+.field-guide ::selection,.field-guide::selection{background:#D98F2B;color:#0E0E0C}
+
+/* Focus: marigold, never red (red reads as an error). One ring for links, buttons, fields and posters. */
+.field-guide :is(a,button,input,textarea,select,summary,[tabindex]):focus-visible,
+.field-guide .video-poster:focus-visible,.field-guide .lesson-outline summary:focus-visible{outline:2px solid #D98F2B;outline-offset:2px}
