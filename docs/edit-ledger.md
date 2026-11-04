@@ -124,3 +124,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Contemplative CrossFit" is now "Contemplative Crossfit" everywhere the site says it: browser title, social and search metadata, structured data, team pages, image alt text, header/footer labels, docs and the public-site check. Unchanged on purpose: the YouTube channel URL (`@ContemplativeCrossFit`, a link) and Transmission 101 lesson 3's "the CrossFit analogy", which refers to the CrossFit fitness method. The generated `output/pdf/website-redesign-decisions.pdf` is left as it was.
 - The footer shows the favicon mark (the nose on an ink tile, 44 px) above the tagline instead of the full lockup; the header keeps the lockup.
 - Why: Dat, Nov 3.
+
+### 2026-11-04 · New homepage: "04 Lanes"
+- The homepage is rebuilt on the v1 brand kit: flat bone #F2ECDC with ink #0E0E0C (no paper texture), Archivo 800 caps headlines, SemiBold 600 titles and buttons, Plex Mono eyebrows. Hero "LIVE IN / PRACTICE" with a seated figure made of CC glyphs, two four-lane bands (mineral blue, sage, clay, marigold) and the four phases Absorption, Purification, Recognition, Integration, each led by its lane: "REALISATION AS A FITNESS".
+- Then "WAYS TO TRAIN" (black Bootcamp card with the O3 stepped-key corner, outlined Mini Bootcamp card), "YOU'VE FOUND THE MAPS. FIND YOUR PEOPLE." (community glyph, the community paragraph and three story cards tinted clay / marigold / sage), and an ink "STAY CLOSE TO THE PRACTICE." mailing-list band with the footer.
+- The homepage header gets SemiBold 18 nav and an outlined "Join the Bootcamp" button (hidden on other pages for now). Other pages are unchanged.
+- Provisional: the first bend (U-fold) of the lower band does not match the reference yet; see `docs/design/README.md` and `docs/design/hero-bands-reference.png`. Phone layout is a first pass (copy, cropped art, phases as a list).
+- Why: Dat, Nov 4: "push it to claude code first… inform that the bend is not right still, send the original reference. also push updates on the page including the typography, buttons and everything else."
