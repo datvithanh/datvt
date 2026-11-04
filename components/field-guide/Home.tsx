@@ -67,6 +67,8 @@ export function HomeContent() {
   </div>
 </section>
 
+<div className="ln-divider" aria-hidden="true"><span /><img src="/brand/home/glyph-community-ink.svg" alt="" width="40" height="40" /><span /></div>
+
 <section id="stories" className="ln-section ln-community" aria-labelledby="ln-community">
   <div className="ln-wrap">
     <div className="ln-community-head">
