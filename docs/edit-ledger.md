@@ -262,3 +262,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Articles: each essay image fills its frame (cover crop, no grey bands); the "Read the article" links are gone (the card is the link); the "23 essays to explore" count is hidden (kept for screen readers, which announce it when filtering).
 - Resources: "Free courses" and "Notes from practice" drop a level, to card titles (SemiBold, sentence case, 44 units; 32 px on phones), under the page title.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · FAQ title and question size (`home-04-lanes` only)
+- Bootcamp's "Common questions" heading is now "FAQ".
+- FAQ questions drop one level: Archivo SemiBold, sentence case, 20 units (about 19 px at 1440 × 900; 17 px on phones), down from the 28 px subhead size; answers are body text with a 68-character measure. Applies to every page that uses the FAQ accordion.
+- Why: Dat, Nov 4.
