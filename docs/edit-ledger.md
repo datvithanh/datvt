@@ -208,3 +208,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The rows are 120 units apart (tops 1040 and 1160, was 1200): the green and blue lanes in `bands-lower.svg` turn into row 2 forty units earlier (vertical ends 1180 → 1140, same arcs). The hero stage is 50 units shorter (1320).
 - "beyond the cushion": "the" and "cushion" are joined by a no-break space so "the" never ends a line.
 - Why: Dat, Nov 4 (mock-up of the section).
+
+### 2026-11-04 · Lanes homepage: community glyph transition (`home-04-lanes` only)
+- Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above "You've found the maps" is removed. The heading and intro are unchanged (their rework is still a mock).
+- Why: Dat, Nov 4: "push the border change first".
