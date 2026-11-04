@@ -175,3 +175,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Realisation as a fitness" now shows the four phases in two rows of two (Absorption · Purification, then Recognition · Integration). The lower band's lanes turn into the rows in pairs on shared, concentric curves: marigold and clay into the first row, sage and blue into the second.
 - Each phase has its glyph in its lane colour: Contact (Absorption), Flame (Purification, new glyph 19), Wisdom (Recognition), Integration (new glyph 20). Descriptions wrap within their column; the hero stage is 120 units shorter (1370) since the phases take less height. Phones keep the single list, now with the glyphs.
 - Why: Dat, Nov 4: reorganise the section into pairs with glyphs; approved the mock ("yep this is good push it").
+
+### 2026-11-04 · Lanes homepage: hero alignment, secondary button (`home-04-lanes` only)
+- The figure's head now sits under the gap between "Programs" and "Resources" in the header, at every desktop size (the head is the middle of the figure art; the gap's offset from the right margin was measured as 368.6 units + 100 px).
+- "REALISATION AS A FITNESS" and the first phases column start where "PRACTICE" ends (572 units); the lower bands slide right by the same 112 units so their lanes still meet the glyphs. The two phase columns now run to the right content margin. Each phase's body text runs the full column width (glyph 40 units, body 17 units), so no phase takes more than two lines.
+- "Save a spot" on the Mini Bootcamp card is a secondary button in the card's lower-right corner: clay outline, no fill, clay text, same type and size as the primary; it fills clay on hover.
+- Why: Dat, Nov 4.

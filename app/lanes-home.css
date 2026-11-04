@@ -21,7 +21,7 @@
 :root .field-guide.home-page{--ln-u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 93px) / 860)));--btn-font:calc(19 * var(--ln-u));--btn-pad-y:calc(18 * var(--ln-u));--btn-pad-x:calc(28 * var(--ln-u))}
 @media(max-width:900px){:root .field-guide.home-page{--btn-font:17px;--btn-pad-y:15px;--btn-pad-x:22px}}
 :root .field-guide.home-page :is(.ln-button,.ln-button-outline,.header .nav-cta,.site-footer .input-row button){display:inline-flex;align-items:center;gap:14px;min-height:0;border:0;border-radius:0;background:var(--ink);color:var(--bone);font:600 var(--btn-font)/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:0;padding:var(--btn-pad-y) var(--btn-pad-x);box-shadow:0 6px 14px rgba(14,14,12,.18);transition:background .15s}
-:root .field-guide.home-page :is(.ln-button,.ln-button-outline,.header .nav-cta):hover,:root .field-guide.home-page .ln-card-free:hover .ln-button-outline{background:var(--clay);color:var(--bone)}
+:root .field-guide.home-page :is(.ln-button,.ln-button-outline,.header .nav-cta):hover,:root .field-guide.home-page .ln-card-free:hover .ln-button-outline{background:var(--clay);color:var(--bone);border-color:var(--clay)}
 :root .field-guide.home-page :is(.ln-button-bone,.site-footer .input-row button){background:var(--bone);color:var(--ink);box-shadow:none}
 :root .field-guide.home-page :is(.ln-button-bone:hover,.ln-card-paid:hover .ln-button-bone,.site-footer .input-row button:hover){background:var(--marigold);color:var(--ink)}
 @media(min-width:761px){
@@ -64,6 +64,12 @@
 @media(min-width:901px){
   .ln-hero{--u:var(--ln-u)}
   .ln-stage{margin-left:calc(max(40px,(100% - 1280px) / 2 + 40px) - 40 * var(--u));margin-right:auto}
+  /* Alignment (Dat, Nov 4). "PRACTICE" ends at 572 units: the phases title and first column start there and the lower
+     band slides right 112 units so its lanes still meet the glyphs; the columns run to the right content margin.
+     The figure's head (the middle of its 799-unit art) sits under the gap between Programs and Resources: that gap
+     is 368.6 units + 100 px left of the right margin, the margin is min(100vw,1280px) - 80px + 40 units from the stage. */
+  .field-guide .ln-art .ln-figure{left:calc(min(100vw,1280px) - 180px - 728.1 * var(--u))}
+  .field-guide .ln-art .ln-bands:last-child{transform:translateX(calc(112 * var(--u)))}
 }
 
 .ln-copy{position:absolute;left:calc(40 * var(--u));top:calc(60 * var(--u));width:calc(640 * var(--u));display:flex;flex-direction:column;gap:calc(24 * var(--u))}
@@ -73,14 +79,20 @@
 
 .field-guide .ln-button{position:relative;z-index:2;align-self:flex-start}
 
-.field-guide .ln-phases-title{position:absolute;left:calc(460 * var(--u));top:calc(826 * var(--u));font:800 calc(56 * var(--u))/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.field-guide .ln-phases-title{position:absolute;left:calc(572 * var(--u));top:calc(826 * var(--u));font:800 calc(56 * var(--u))/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
 .ln-phases{list-style:none;margin:0;padding:0}
-.ln-phases li{position:absolute;width:calc(380 * var(--u));display:grid;grid-template-columns:calc(48 * var(--u)) 1fr;column-gap:calc(18 * var(--u));align-items:start}
-.ln-phases li>div{display:flex;flex-direction:column;gap:calc(6 * var(--u))}
-.field-guide .ln-phase-glyph{width:calc(48 * var(--u));height:calc(48 * var(--u))}
+.ln-phases li{--ph-span:calc(min(100vw,1280px) - 80px - 532 * var(--u));position:absolute;width:calc((var(--ph-span) - 24 * var(--u)) / 2);display:grid;grid-template-columns:calc(40 * var(--u)) 1fr;column-gap:calc(14 * var(--u));align-items:start}
+.ln-phases li:nth-child(odd){left:calc(572 * var(--u))}
+.ln-phases li:nth-child(even){left:calc(572 * var(--u) + (var(--ph-span) + 24 * var(--u)) / 2)}
+.ln-phases li{row-gap:calc(6 * var(--u))}
+/* The body text runs the full column width (under the glyph too), so each phase fits in two lines at most. */
+.ln-phases li>div{display:contents}
+.field-guide .ln-phases li h3{grid-column:2;align-self:center}
+.field-guide .ln-phases li p{grid-column:1 / -1}
+.field-guide .ln-phase-glyph{width:calc(40 * var(--u));height:calc(40 * var(--u))}
 .field-guide .ln-phases h3{display:flex;gap:14px;align-items:baseline;font:600 calc(30 * var(--u))/1.15 'CC Archivo',Arial,sans-serif;letter-spacing:0;color:var(--ink)}
 .field-guide .ln-num{font:400 calc(20 * var(--u))/1 'CC Plex',monospace;color:var(--tone)}
-.field-guide .ln-phases p{font-size:calc(19 * var(--u));line-height:1.5}
+.field-guide .ln-phases p{font-size:calc(17 * var(--u));line-height:1.5}
 
 /* ── Sections ──────────────────────────────────────────────────────────────── */
 .ln-section{border-top:2px solid var(--ink)}
@@ -101,7 +113,9 @@
 .field-guide .ln-card-paid .ln-card-text{color:#d8d1c0}
 .field-guide .ln-card-free .ln-card-text{font-size:19px}
 .field-guide .ln-card-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #3a3a36;padding-top:18px;font-size:15px}
-.field-guide .ln-button-outline{margin-top:auto;align-self:flex-start}
+.field-guide .ln-button-outline{margin-top:auto;align-self:flex-end}
+/* Secondary button: same type and size as the primary, clay outline (inside the same footprint), no fill, clay text. */
+:root .field-guide.home-page .ln-card.ln-card-free .ln-button-outline{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);box-shadow:none}
 
 .ln-community .ln-wrap{gap:48px}
 .ln-community-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
