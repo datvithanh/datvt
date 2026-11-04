@@ -156,3 +156,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · ↗ arrows no longer turn into emoji on iPhones
 - Archivo has no diagonal-arrow glyphs (U+2196–2199), so iOS fell back to the colour ↗ emoji on buttons and links. Those four characters now come from IBM Plex Mono Medium (already loaded by the site) through a `unicode-range` face on the "CC Archivo" family. All 25 arrows site-wide are covered with no markup change; checked that every arrow on Home, Bootcamp and Resources renders from the web font, not a system fallback.
 - Why: Dat, Nov 4 (arrows showing as emoji on iPhone).
+
+### 2026-11-04 · Lanes homepage: header 30% thinner, lockup v1.1 cache-busted (`home-04-lanes` only)
+- The homepage header is 30% thinner: 73 px on desktop (was 104) and 62 px on phones (was 88). The lockup is 44 px / 36 px tall (was 56 / 40) to keep the kit's 0.25 H clear space; "Join the Bootcamp" fits inside the bar. The phone menu now hangs from the bar's bottom edge, anchor links and the hero's fold sizing account for the new height. Other pages keep the 104 px header.
+- The header lockup URL carries `?v=1.1` so browsers that cached the old lockup fetch the smaller-wordmark v1.1 file (already on this branch since the `v4` merge).
+- Why: Dat, Nov 4.

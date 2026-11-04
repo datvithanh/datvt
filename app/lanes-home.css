@@ -25,7 +25,7 @@
 
 /* Floating header: pinned to the top on a full-bleed bone bar, its ends on the same 1280 / 40 px
    margins as the homepage sections (20 px on phones). A hairline shadow fades in once the page scrolls. */
-:root .field-guide.home-page{scroll-padding-top:120px;overflow-x:clip}
+:root .field-guide.home-page{scroll-padding-top:90px;overflow-x:clip}
 :root .field-guide.home-page .header.wrap{position:sticky;top:0;z-index:40;width:auto;max-width:1280px;margin-inline:auto;padding-inline:40px;background:transparent}
 :root .field-guide.home-page .header.wrap::before{content:'';position:absolute;inset:0 -100vmax;z-index:-1;background:var(--bone);pointer-events:none}
 @supports (animation-timeline:scroll()){
@@ -33,7 +33,16 @@
   @keyframes ln-header-lift{to{box-shadow:0 1px 0 rgba(14,14,12,.12),0 10px 18px -10px rgba(14,14,12,.3)}}
 }
 @media(max-width:900px){:root .field-guide.home-page .header.wrap{padding-inline:20px}}
-@media(max-width:760px){:root .field-guide.home-page .header nav{left:0;right:0}}
+/* Thinner bar (30% under the site's 104 / 88 px): 73 px desktop, 62 px phones. The lockup drops to 44 / 36 px
+   to keep the kit's 0.25 H clear space; the phone menu hangs from the bar's bottom edge whatever its height. */
+:root .field-guide.home-page .header{height:73px}
+:root .field-guide.home-page .header .brand-lockup{height:44px}
+:root .field-guide.home-page .header .nav-cta{padding:8px 20px}
+@media(max-width:760px){
+  :root .field-guide.home-page .header{height:62px}
+  :root .field-guide.home-page .header .brand-lockup{height:36px}
+  :root .field-guide.home-page .header nav{top:100%;left:0;right:0}
+}
 
 /* ── Hero stage: 1280 × 1490 units. --u is one unit in px. ─────────────────────── */
 .ln-hero{--u:calc(min(100vw,1280px) / 1280);overflow-x:clip;position:relative}
@@ -47,7 +56,7 @@
 /* Desktop: the stage also scales with screen height, so the lower band's bend down (about 860 units into
    the stage) peeks in above the fold. The stage is anchored so the copy stays on the 40 px content margin. */
 @media(min-width:901px){
-  .ln-hero{--u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 124px) / 860)))}
+  .ln-hero{--u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 93px) / 860)))}
   .ln-stage{margin-left:calc(max(40px,(100% - 1280px) / 2 + 40px) - 40 * var(--u));margin-right:auto}
 }
 
