@@ -198,3 +198,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-04 · Lanes homepage: stories play in place (`home-04-lanes` only)
 - The three homepage story images (Kristen, Ryan, James) are click-to-play posters with a play mark; the video plays in the same 4:3 box. Their "Watch their story" links are removed. Brings in the `v4` inline-video, marigold selection and marigold focus changes.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Undo the community transition and intro change (`home-04-lanes` only)
+- Reverts `e2b609d` and `9d71016` (the community-glyph divider, which went up with it by mistake under a "mock, not pushed" message): the community section is back to the version before them (thick rule above, Community glyph above the heading, one-paragraph intro). The `e2b609d` entry above is kept as written; both changes are held as a local mock for review.
+- Why: Dat, Nov 4: pushed before he had approved it; "yeah undo".

@@ -96,12 +96,6 @@
 
 /* ── Sections ──────────────────────────────────────────────────────────────── */
 .ln-section{border-top:2px solid var(--ink)}
-/* Section transition: hairline, community glyph, hairline (replaces the rule above the community section). */
-.ln-divider{max-width:1280px;margin:0 auto;padding:8px 40px;display:flex;align-items:center;gap:36px}
-.ln-divider span{flex:1;height:1.5px;background:var(--ink)}
-.field-guide .ln-divider img{width:40px;height:40px}
-.ln-divider+.ln-section{border-top:0}
-@media(max-width:900px){.ln-divider{padding:4px 20px;gap:22px}.field-guide .ln-divider img{width:32px;height:32px}}
 .ln-wrap{max-width:1280px;margin:0 auto;padding:100px 40px;display:flex;flex-direction:column;gap:40px}
 .field-guide .ln-section h2{font:800 64px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
 .ln-mono{font-family:'CC Plex',monospace}
@@ -124,13 +118,9 @@
 :root .field-guide.home-page .ln-card.ln-card-free .ln-button-outline{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);box-shadow:none}
 
 .ln-community .ln-wrap{gap:48px}
-.ln-community-head{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;row-gap:32px;align-items:end}
-.ln-community-head h2{grid-column:1/-1}
-.ln-community-body{display:flex;flex-direction:column;gap:14px}
-.field-guide .ln-community-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:20px;line-height:1.4}
-.field-guide .ln-community-list li{display:flex;align-items:baseline;gap:14px}
-.field-guide .ln-community-list li::before{content:"";flex:none;width:8px;height:8px;background:var(--clay);transform:translateY(-3px)}
-.field-guide .ln-community-head .ln-quote-line{max-width:28ch}
+.ln-community-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.ln-community-head>div{display:flex;flex-direction:column;gap:22px}
+.field-guide .ln-glyph{width:52px;height:52px}
 .field-guide .ln-community-text{font-size:20px;line-height:1.5}
 .field-guide .ln-quote-line{font-size:21px;line-height:1.45;font-weight:500;font-style:italic;color:var(--clay)}
 .ln-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
