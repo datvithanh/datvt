@@ -18,8 +18,8 @@
 
 /* One button spec for the whole homepage, taken from the hero button: Archivo 600 at 19 units, 18 × 28 units of
    padding, square, soft shadow. Ink on bone; bone on black. --ln-u is the hero's unit (desktop: width and height). */
-:root .field-guide.home-page{--ln-u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 93px) / 860)));--btn-font:calc(19 * var(--ln-u));--btn-pad-y:calc(18 * var(--ln-u));--btn-pad-x:calc(28 * var(--ln-u))}
-@media(max-width:900px){:root .field-guide.home-page{--btn-font:17px;--btn-pad-y:15px;--btn-pad-x:22px}}
+:root .field-guide{--ln-u:max(0.55px,min(calc(min(100vw,1280px) / 1280),calc((100svh - 93px) / 860)));--btn-font:calc(19 * var(--ln-u));--btn-pad-y:calc(18 * var(--ln-u));--btn-pad-x:calc(28 * var(--ln-u))}
+@media(max-width:900px){:root .field-guide{--btn-font:17px;--btn-pad-y:15px;--btn-pad-x:22px}}
 :root .field-guide:not(.fg-legacy-chrome) :is(.ln-button,.ln-button-outline,.header .nav-cta,.site-footer .input-row button){display:inline-flex;align-items:center;gap:14px;min-height:0;border:0;border-radius:0;background:var(--ink);color:var(--bone);font:600 var(--btn-font)/1.2 'CC Archivo',Arial,sans-serif;letter-spacing:0;padding:var(--btn-pad-y) var(--btn-pad-x);box-shadow:0 6px 14px rgba(14,14,12,.18);transition:background .15s}
 :root .field-guide:not(.fg-legacy-chrome) :is(.ln-button,.ln-button-outline,.header .nav-cta):hover,:root .field-guide:not(.fg-legacy-chrome) .ln-card-free:hover .ln-button-outline{background:var(--clay);color:var(--bone);border-color:var(--clay)}
 :root .field-guide:not(.fg-legacy-chrome) :is(.ln-button-bone,.site-footer .input-row button){background:var(--bone);color:var(--ink);box-shadow:none}

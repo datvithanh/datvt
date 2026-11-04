@@ -246,3 +246,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Footer sign-up heading: "Stay close to the practice" and "Get the free course" without the full stop.
 - Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors; public-site, Kit form and video-manifest checks pass.
 - Why: Dat, Nov 4 ("rebuild every page"; remove the full stop).
+
+### 2026-11-04 · Other pages sized like the homepage; no full stops in headings; Resources in one column (`home-04-lanes` only)
+- Every page now uses the homepage's size unit (`--ln-u`, which scales with screen width and, on desktop, height), so type matches the homepage at any screen size: page titles and section headlines are the size of "Realization as a fitness" / "Ways to train" (56 units: 53 px at 1440 × 900, 46 px at 1440 × 800), subheads 30 units (28 px), body 17 units (16 px, never under 15), ledes 22 units; on phones the homepage's 35 px headlines, 24 px subheads, 17 px body. Before, other pages had 72–80 px titles, 56 px headlines and 18 px body at every size.
+- Full stops removed from all 25 h1–h3 headings that had them (e.g. "Ways to train", "Illumination Bootcamp", "You've found the maps / Find your people", "Common questions", "Notes from practice").
+- The footer's "Join the mailing list" is the homepage's bone button on every page (other pages were turning it ink on ink).
+- Resources: the Transmission 101 card runs the full content width (image and copy side by side); "Notes from practice" sits under it with the six essays three across (two on tablets, one on phones). "Free courses" and "Notes from practice" are section headlines.
+- Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, heading overflow, sub-13 px text or page errors.
+- Why: Dat, Nov 4.
