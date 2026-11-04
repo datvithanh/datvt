@@ -136,3 +136,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Home is back to the version before `cb88ce9`: "Realization fitness." with the Mongaku print, the paper/ink material layer and no "Join the Bootcamp" header button. The brand-kit favicon, lockup and "Crossfit" spelling stay.
 - The "04 Lanes" homepage is preserved unchanged on branch `home-04-lanes` (commit `cb88ce9`), including its `docs/design/` notes and references. Its ledger entry above is kept as written.
 - Why: Dat, Nov 4: revert it and keep it on a separate branch.
+
+### 2026-11-04 · Lockup v1.1: smaller wordmark
+- The header lockup's wordmark is 23% smaller against the mask (cap height 0.23 of the mask, was 0.30; mask-to-type gap 0.16, was 0.18), so the mask leads. The mask stays 56 px tall on desktop and 40 px on mobile, so the lockup is now about 251 × 56 px (was 310 × 56). Same change in the bone lockup and the social preview card.
+- Why: Dat, Nov 4: the text was "too big"; picked option B of three.
