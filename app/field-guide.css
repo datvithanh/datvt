@@ -635,6 +635,9 @@
    working recommendations; color values below are implementation choices. */
 @font-face{font-family:'CC Archivo';src:url('/brand/fonts/archivo-variable.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'CC Archivo';src:url('/brand/fonts/archivo-italic.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap}
+/* Archivo has no diagonal arrows (U+2196–2199), so iPhones fell back to the ↗ emoji. Take those glyphs from IBM Plex Mono instead. */
+@font-face{font-family:'CC Archivo';src:url('/brand/fonts/plex-mono-medium.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+2196-2199}
+@font-face{font-family:'CC Archivo';src:url('/brand/fonts/plex-mono-medium.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+2196-2199}
 @font-face{font-family:'CC Wordmark';src:url('/brand/fonts/archivo.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'CC Plex';src:url('/brand/fonts/plex-mono-regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'CC Plex';src:url('/brand/fonts/plex-mono-medium.ttf') format('truetype');font-weight:500;font-display:swap}
