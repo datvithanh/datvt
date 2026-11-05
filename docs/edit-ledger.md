@@ -267,3 +267,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Bootcamp's "Common questions" heading is now "FAQ".
 - FAQ questions drop one level: Archivo SemiBold, sentence case, 20 units (about 19 px at 1440 × 900; 17 px on phones), down from the 28 px subhead size; answers are body text with a 68-character measure. Applies to every page that uses the FAQ accordion.
 - Why: Dat, Nov 4.
+
+### 2026-11-05 · Mini Bootcamp hero copy (`home-04-lanes` only)
+- Title "A taste of the training" → "MINI BOOTCAMP"; the small "Mini Bootcamp" line under it is removed.
+- Description is now "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore." (was "Meet CC by practicing with us…").
+- Date line is "Next run: December 14–18, 2026" with the date in clay red (was "December 14–18, 2026 · Live online").
+- Why: Dat, Nov 5.
