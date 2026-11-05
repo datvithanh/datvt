@@ -294,6 +294,6 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The "Enter together" section no longer repeats "A free introduction to the practice and the community…"; the sentence stays as the hero description.
 - Why: Dat, Nov 5.
 
-### 2026-11-04 · Mini Bootcamp: "Five days of training" with leaves (`home-04-lanes` only)
+### 2026-11-05 · Mini Bootcamp: "Five days of training" with leaves (`home-04-lanes` only)
 - The "Enter together" section on /mini-bootcamp is now "FIVE DAYS OF TRAINING": three items, each led by an upright leaf in its colour with a small Plex label above the title. Live meditation sessions (blue soft-lance leaf, "Daily"; was "Live daily sits", same body), Mentor-led discussions (marigold soft-lance leaf, "Daily"; was "Mentor breakouts", new body: "Share your meditation experience and be mirrored by CC mentors and other practitioners."), Community campfire (clay nested leaf, "Closing", same body). Three across on desktop, stacked on phones; the coloured top rules are gone.
 - Why: Dat, Nov 5, approved the mock.
