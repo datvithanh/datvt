@@ -17,7 +17,7 @@ const phases = [
 
 const stories = [
   { id: 'tHBd3sCOjWk', name: 'Tyson', image: '/brand/stories/tyson-headshot.jpg', tone: 'clay', quote: 'Realization fitness is like a transformation of your relationship to resistance.' },
-  { id: 'NrObMSAiNQQ', name: 'Ryan M.', tone: 'marigold', quote: 'CC was a course correction.' },
+  { id: 'M4tPoR5-n40', name: 'Taylor', image: '/brand/stories/taylor-headshot.jpg', tone: 'marigold', quote: 'True realization is not the destruction of intelligence. It is the liberation and embodiment of intelligence.' },
   { id: 'zcrvJoSpfYs', name: 'Ryan', image: '/brand/stories/ryan-headshot.jpg', tone: 'sage', quote: 'Before that it felt like poking around in the dark. Now it finally feels like I can train properly.' },
   { id: '-uMMTet2FP8', name: 'Adrian', image: '/brand/stories/adrian-headshot.jpg', tone: 'blue', quote: 'What drew me in was the culture of being yourself — welcoming all sides, including the parts I’d cast away.' },
   { id: 'mTZIjfB5BZ8', name: 'Tom', image: '/brand/stories/tom-headshot.jpg', tone: 'clay', quote: 'My relationship, my life was cleaning up, I was maturing — that wasn’t a goal. But it never happened at that kind of pace before.' },

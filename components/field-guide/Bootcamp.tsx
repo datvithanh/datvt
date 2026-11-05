@@ -16,7 +16,7 @@ const phases = [
 const stories = [
   { name: 'Tyson', id: 'tHBd3sCOjWk', image: '/brand/stories/full/tyson-headshot.webp', quote: 'Realization fitness is like a transformation of your relationship to resistance. I was fully cooking myself every way that I could. I was letting go of my identity and even my physical training.' },
   { name: 'Adrian', id: '-uMMTet2FP8', image: '/brand/stories/full/adrian-headshot.webp', quote: "What drew me in was the culture of being yourself — welcoming all sides, including the parts I'd cast away." },
-  { name: 'Ryan M.', id: 'NrObMSAiNQQ', quote: "CC was a course correction. I'd rather be aware that I'm lost than think I know what's going on." },
+  { name: 'Taylor', id: 'M4tPoR5-n40', image: '/brand/stories/full/taylor-headshot.webp', quote: 'True realization is not the destruction of intelligence. It is the liberation and embodiment of intelligence.' },
   { name: 'Tom', id: 'mTZIjfB5BZ8', image: '/brand/stories/full/tom-headshot.webp', quote: "My relationship, my life was cleaning up, I was maturing — that wasn't a goal. But it never happened at that kind of pace before." },
   { name: 'Ryan', id: 'zcrvJoSpfYs', image: '/brand/stories/full/ryan-headshot.webp', quote: 'Once I made that clear commitment, it was later that night that I had this stream entry moment. Before that it felt like poking around in the dark. Now it finally feels like I can train properly.' },
   { name: 'John', id: 'WoQbN-CnHJg', image: '/brand/stories/full/john-headshot.webp', quote: 'It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual.' },

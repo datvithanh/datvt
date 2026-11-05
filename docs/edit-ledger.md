@@ -307,3 +307,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The story cards on the homepage and /bootcamp now use real headshots for Adrian, Tyson, Tom, John and Ryan instead of YouTube covers, each cropped with the face centered (4:3 on the homepage, 16:9 on Bootcamp).
 - Tyson replaces Kristen (video `tHBd3sCOjWk`, quote from the original testimonials). Ryan (`zcrvJoSpfYs`, stream-entry story) replaces James. The other Ryan (`NrObMSAiNQQ`) is now labelled "Ryan M." and keeps his YouTube cover.
 - Why: Dat, Nov 5, supplied the headshots.
+
+### 2026-11-05 · Stories: Taylor replaces Ryan M.; story photos in full colour (`home-04-lanes` only)
+- The "Ryan M." card on the homepage and /bootcamp is now Taylor, with his headshot (face centered), video `M4tPoR5-n40` and the quote "True realization is not the destruction of intelligence. It is the liberation and embodiment of intelligence."
+- Why: Dat, Nov 5.
+- The homepage story photos now show in full colour: the grayscale + colour-tint treatment is removed from the six story cards.
+- Why: Dat, Nov 5.

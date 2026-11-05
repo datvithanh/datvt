@@ -15,8 +15,10 @@ Kristen `RYwjMy_SID8`, Adrian `-uMMTet2FP8`, Ryan `NrObMSAiNQQ`, Tom `mTZIjfB5BZ
 James `YEpNqEyG3AE`, John `WoQbN-CnHJg`. James's thumbnail is CC's published illustration, not a photo.
 
 Headshots supplied by Dat on 2026-11-05 replace the YouTube covers as story images for Adrian, Tyson, Tom, John and
-Ryan (`zcrvJoSpfYs`, the stream-entry story). He is a different person from Ryan M. (`NrObMSAiNQQ`), who keeps his YouTube cover.
+Ryan (`zcrvJoSpfYs`, the stream-entry story).
 Each is cropped with the face centered horizontally: `<name>-headshot.jpg` is 4:3 at 1200 × 900 for the homepage
 cards, `full/<name>-headshot.webp` is 16:9 at 800 × 450 for the Bootcamp page. The crops drop the phone UI bars in
 Tyson's, Ryan's and John's screenshots. Tyson (`tHBd3sCOjWk`) replaces Kristen and Ryan (`zcrvJoSpfYs`) replaces
 James; their quotes come from the original `components/bootcamp/Testimonials.tsx`.
+`taylor-headshot.jpg` / `full/taylor-headshot.webp` (same crops) are Taylor's headshot, supplied by Dat on 2026-11-05.
+Taylor (`M4tPoR5-n40`) replaces Ryan M. (`NrObMSAiNQQ`); the quote was given by Dat.
