@@ -136,3 +136,11 @@
   :root .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *){font-size:30px!important}
   :root .field-guide.course-page main .prose :is(h2,h3){font-size:21px!important}
 }
+
+/* List and row titles the old code set at text-sm / text-base (video rows, discussion rooms): subhead at 20 units. */
+:root .field-guide.legacy-page main h3:is(.text-sm,.text-base,.text-xs){font-size:max(17px,calc(20 * var(--ln-u)));line-height:1.25}
+/* Lesson header: the subtitle sits a clear step under the title. */
+:root .field-guide.legacy-page main header h1 + p{margin-top:12px}
+
+/* Breadcrumbs: every part (links, the current page, the "/" separators) in IBM Plex Mono caps. */
+:root .field-guide main nav[aria-label="Breadcrumb"],:root .field-guide main nav[aria-label="Breadcrumb"] :is(a,span){font-family:'CC Plex',monospace;font-weight:400;font-size:13px;letter-spacing:.1em;text-transform:uppercase}

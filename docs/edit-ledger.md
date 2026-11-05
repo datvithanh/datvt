@@ -278,3 +278,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Course pages (Transmission 101 course, lessons and debrief; Illumination 101 and its lessons; course videos) are marked `course-page`. Their reading text (`.prose`) now starts at the left page edge instead of sitting in a centred column.
 - Heading levels: 1 the page title ("STAYING PRESENT"); 2 section headings ("Before you begin", "The five lessons", "Reading material", "Go back through it", "So how does this survive your day?") in Archivo SemiBold, sentence case, 44 units (41 px at 1440 × 900, 30 px on phones); 3 headings inside the lesson text ("Welcome", "What Is Transmission?") SemiBold 26 units (24 px; 21 px on phones). Those page-level section headings were changed to sentence case in the code; headings inside the lesson MDX keep their original wording.
 - Why: Dat, Nov 5.
+
+### 2026-11-05 · Spacing restored on older components; Plex breadcrumbs (`home-04-lanes` only)
+- A base field-guide reset (`h1, h2, h3, p, figure { margin: 0 }`) was overriding the Tailwind spacing classes (`mt-3`, `mb-6`, …) on every page rebuilt from the previous site, so titles, subtitles, section intros and paragraphs sat flush against each other (e.g. the lesson subtitle under "THE ACT OF LEAVING", the intro under "Discussion"). The reset no longer applies on those pages, and on the other pages it skips elements that carry their own margin classes (fixes Mini Bootcamp's "Watch next" titles touching their meta line).
+- Video and discussion row titles (text-sm/base) are 20 units (≈19 px at 1440 × 900).
+- Breadcrumbs are IBM Plex Mono throughout (the current page and the "/" separators were Archivo).
+- Checked all 32 routes at 1440 and 390 wide for headings sitting under 6 px from the text below and for overlapping text (closed accordions excluded): none left except the intentional name/role pair on Team cards.
+- Why: Dat, Nov 5.
