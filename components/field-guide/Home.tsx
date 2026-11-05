@@ -16,12 +16,12 @@ const phases = [
 ]
 
 const stories = [
-  { id: 'RYwjMy_SID8', name: 'Kristen', tone: 'clay', quote: 'People here are full of integrity — they want progress for themselves, but they want it for each other.' },
-  { id: 'NrObMSAiNQQ', name: 'Ryan', tone: 'marigold', quote: 'CC was a course correction.' },
-  { id: 'YEpNqEyG3AE', name: 'James', tone: 'sage', quote: 'Everyone’s just trying to work it all out together.' },
-  { id: '-uMMTet2FP8', name: 'Adrian', tone: 'blue', quote: 'What drew me in was the culture of being yourself — welcoming all sides, including the parts I’d cast away.' },
-  { id: 'mTZIjfB5BZ8', name: 'Tom', tone: 'clay', quote: 'My relationship, my life was cleaning up, I was maturing — that wasn’t a goal. But it never happened at that kind of pace before.' },
-  { id: 'WoQbN-CnHJg', name: 'John', tone: 'marigold', quote: 'It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual.' },
+  { id: 'tHBd3sCOjWk', name: 'Tyson', image: '/brand/stories/tyson-headshot.jpg', tone: 'clay', quote: 'Realization fitness is like a transformation of your relationship to resistance.' },
+  { id: 'NrObMSAiNQQ', name: 'Ryan M.', tone: 'marigold', quote: 'CC was a course correction.' },
+  { id: 'zcrvJoSpfYs', name: 'Ryan', image: '/brand/stories/ryan-headshot.jpg', tone: 'sage', quote: 'Before that it felt like poking around in the dark. Now it finally feels like I can train properly.' },
+  { id: '-uMMTet2FP8', name: 'Adrian', image: '/brand/stories/adrian-headshot.jpg', tone: 'blue', quote: 'What drew me in was the culture of being yourself — welcoming all sides, including the parts I’d cast away.' },
+  { id: 'mTZIjfB5BZ8', name: 'Tom', image: '/brand/stories/tom-headshot.jpg', tone: 'clay', quote: 'My relationship, my life was cleaning up, I was maturing — that wasn’t a goal. But it never happened at that kind of pace before.' },
+  { id: 'WoQbN-CnHJg', name: 'John', image: '/brand/stories/john-headshot.jpg', tone: 'marigold', quote: 'It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual.' },
 ]
 
 const u = (n: number) => `calc(${n} * var(--u))`
@@ -90,7 +90,7 @@ export function HomeContent() {
     <div className="ln-stories">
       {stories.map(s => <figure key={s.id}>
         <InlineVideo className={`ln-story-image tone-bg-${s.tone}`} videoId={s.id} title={`${s.name}’s story`} ratio="4 / 3">
-          <img src={`/brand/stories/${s.id}.jpg`} width="1280" height="720" alt="" loading="lazy" />
+          <img src={(s as { image?: string }).image ?? `/brand/stories/${s.id}.jpg`} width="1280" height="720" alt="" loading="lazy" />
           <span className="play-mark" aria-hidden="true" />
         </InlineVideo>
         <blockquote>“{s.quote}”</blockquote>

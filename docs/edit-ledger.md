@@ -302,3 +302,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Five days of training" and the closing heading sit one level under "MINI BOOTCAMP": Archivo SemiBold, sentence case, 44 units (41 px at 1440 × 900; 32 px on phones), was ExtraBold caps at the title size.
 - "Begin exploring now" is now "Can't wait? Begin exploring now".
 - Why: Dat, Nov 5.
+
+### 2026-11-05 · Participant headshots; Tyson and Ryan join the stories (`home-04-lanes` only)
+- The story cards on the homepage and /bootcamp now use real headshots for Adrian, Tyson, Tom, John and Ryan instead of YouTube covers, each cropped with the face centered (4:3 on the homepage, 16:9 on Bootcamp).
+- Tyson replaces Kristen (video `tHBd3sCOjWk`, quote from the original testimonials). Ryan (`zcrvJoSpfYs`, stream-entry story) replaces James. The other Ryan (`NrObMSAiNQQ`) is now labelled "Ryan M." and keeps his YouTube cover.
+- Why: Dat, Nov 5, supplied the headshots.
