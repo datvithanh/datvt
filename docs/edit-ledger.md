@@ -285,3 +285,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Breadcrumbs are IBM Plex Mono throughout (the current page and the "/" separators were Archivo).
 - Checked all 32 routes at 1440 and 390 wide for headings sitting under 6 px from the text below and for overlapping text (closed accordions excluded): none left except the intentional name/role pair on Team cards.
 - Why: Dat, Nov 5.
+
+### 2026-11-05 · Mini Bootcamp: clips section removed (`home-04-lanes` only)
+- "A taste of the practice" (the Transmission 101 clip player and "Watch next" row) is removed from the Mini Bootcamp page; those clips belong to the email-walled Transmission 101 course. The component file stays in the repo, unused.
+- Why: Dat, Nov 5.
