@@ -289,3 +289,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-05 · Mini Bootcamp: clips section removed (`home-04-lanes` only)
 - "A taste of the practice" (the Transmission 101 clip player and "Watch next" row) is removed from the Mini Bootcamp page; those clips belong to the email-walled Transmission 101 course. The component file stays in the repo, unused.
 - Why: Dat, Nov 5.
+
+### 2026-11-05 · Mini Bootcamp: duplicate intro removed (`home-04-lanes` only)
+- The "Enter together" section no longer repeats "A free introduction to the practice and the community…"; the sentence stays as the hero description.
+- Why: Dat, Nov 5.
