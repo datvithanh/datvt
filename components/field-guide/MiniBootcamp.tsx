@@ -13,6 +13,6 @@ export function MiniBootcampContent() {
     <article className="mw-row tone-clay"><img className="mw-row-leaf" src="/brand/home/leaf-nested-clay.svg" alt="" width="35" height="100" /><div><p className="mw-label">Closing</p><h3>Community campfire</h3><p>Close the week with stories from practitioners, conversation, and open questions.</p></div></article>
   </div>
 </section>
-<section className="section mini-next wrap"><h2>Begin exploring now</h2><p>Transmission 101 offers five free lessons you can work through at your own pace.</p><Link className="button" href="/transmission-101">Explore the free course <span aria-hidden="true">↗</span></Link></section>
+<section className="section mini-next wrap"><h2>Can’t wait? Begin exploring now</h2><p>Transmission 101 offers five free lessons you can work through at your own pace.</p><Link className="button" href="/transmission-101">Explore the free course <span aria-hidden="true">↗</span></Link></section>
   </>
 }
