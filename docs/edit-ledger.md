@@ -273,3 +273,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Description is now "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore." (was "Meet CC by practicing with us…").
 - Date line is "Next run: December 14–18, 2026" with the date in clay red (was "December 14–18, 2026 · Live online").
 - Why: Dat, Nov 5.
+
+### 2026-11-05 · Course pages: left-aligned, three heading levels (`home-04-lanes` only)
+- Course pages (Transmission 101 course, lessons and debrief; Illumination 101 and its lessons; course videos) are marked `course-page`. Their reading text (`.prose`) now starts at the left page edge instead of sitting in a centred column.
+- Heading levels: 1 the page title ("STAYING PRESENT"); 2 section headings ("Before you begin", "The five lessons", "Reading material", "Go back through it", "So how does this survive your day?") in Archivo SemiBold, sentence case, 44 units (41 px at 1440 × 900, 30 px on phones); 3 headings inside the lesson text ("Welcome", "What Is Transmission?") SemiBold 26 units (24 px; 21 px on phones). Those page-level section headings were changed to sentence case in the code; headings inside the lesson MDX keep their original wording.
+- Why: Dat, Nov 5.

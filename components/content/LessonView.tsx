@@ -146,7 +146,7 @@ export function LessonView({
         ) : null}
 
         <div id="reading" className="mt-16 pt-10 border-t border-border-subtle scroll-mt-32">
-          <h2 className="font-heading text-xl sm:text-2xl text-text-primary uppercase tracking-wide mb-6">Reading Material</h2>
+          <h2 className="font-heading text-xl sm:text-2xl text-text-primary uppercase tracking-wide mb-6">Reading material</h2>
           <div className="prose">
             <MDXRemote source={content} components={mdxComponents} />
           </div>
