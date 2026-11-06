@@ -229,3 +229,7 @@
   .field-guide .mini-week .mw-row h3{font-size:24px}
   .field-guide .mini-week .mw-row p:not(.mw-label){font-size:17px}
 }
+
+/* Homepage body text: one size, the hero lede's (22 units desktop, 18px phones). Dat, Nov 6 */
+.field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:calc(22 * var(--ln-u));line-height:1.5}
+@media(max-width:900px){.field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:18px}}

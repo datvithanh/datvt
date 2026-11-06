@@ -324,3 +324,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "See the schedule" and the caption under the video are removed. On desktop the video is wider (about 616 px at 1440, was about 500) and its top lines up with the "Paid program" line.
 - The section shortcuts drop "Phases", since phases sit inside Course details.
 - Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: one body-text size; community list removed (`home-04-lanes` only)
+- Body text on the homepage now matches the hero line "Build a practice that can meet your life…": 22 units (about 21 px at 1440 × 900), 18 px on phones. This covers the two "Ways to train" card descriptions (were 20 px and 19 px) and the "Stay close to the practice" sign-up text in the footer (was 20 px; the footer is shared, so every page gets it).
+- Removed "CC is a community for serious contemplative training:" and its four-item list next to "You've found the maps / Find your people".
+- Provisional: the four phase descriptions under "Realization as a fitness" stay at 17 units. At the larger size they collide with the next row at 1024 px, because each row is pinned to where its colored line ends. Story quotes, fine print, labels and footer small print are unchanged. Waiting on Dat for both.
+- Why: Dat, Nov 6.
