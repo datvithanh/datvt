@@ -334,3 +334,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-06 · Homepage: story quotes at the body-text size (`home-04-lanes` only)
 - The italic quotes under the participant photos now use the same size as the rest of the homepage body text: 22 units (21 px at 1440 × 900, about 17.5 px in a 1440 × 780 window), 18 px on phones. They were a fixed 21 px (19 px on phones), so they looked bigger than the body text in shorter windows.
 - Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: lower band turns one 90° corner; no rule above "Ways to train" (`home-04-lanes` only)
+- The lower band (blue, sage, clay, marigold) now runs level under the figure and turns a single rounded right-angle corner, then drops straight down beside the phases. The lanes end flat and staggered, marigold shortest and blue longest. The old U-fold, the S-bend and the turns into each phase row are gone.
+- "Realization as a fitness" and its four phases move up. The gap from the band down to the title equals the gap from the end of the phase text down to "Ways to train" (100 units, 94 px at 1440 × 900). The black rule between the hero and "Ways to train" is removed.
+- The four phases now sit in a normal 2 × 2 grid, so a description that wraps to three lines pushes the second row down instead of running into it.
+- Why: Dat, Nov 6, with a mock-up of the corner.

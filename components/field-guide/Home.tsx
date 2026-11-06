@@ -5,14 +5,14 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 // "04 Lanes" homepage (design canvas, Nov 2026). The hero is drawn on a 1280-unit stage:
 // every position below is in stage units (see --u in app/lanes-home.css), so the bands,
 // the glyph figure and the copy stay locked together as the page scales.
-// PROVISIONAL: the first bend (U-fold) of the lower band does not yet match the reference
-// in docs/design/hero-bands-reference.png. See docs/design/README.md.
+// The lower band runs in under the figure, turns one rounded 90° corner and drops down beside
+// the phases (Dat, Nov 6). See docs/design/README.md.
 
 const phases = [
-  { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption', top: 1040 },
-  { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', glyph: 'purification', top: 1040 },
-  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition', top: 1160 },
-  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration', top: 1160 },
+  { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption' },
+  { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', glyph: 'purification' },
+  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition' },
+  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration' },
 ]
 
 const stories = [
@@ -23,8 +23,6 @@ const stories = [
   { id: 'mTZIjfB5BZ8', name: 'Tom', image: '/brand/stories/tom-headshot.jpg', tone: 'clay', quote: 'My relationship, my life was cleaning up, I was maturing — that wasn’t a goal. But it never happened at that kind of pace before.' },
   { id: 'WoQbN-CnHJg', name: 'John', image: '/brand/stories/john-headshot.jpg', tone: 'marigold', quote: 'It locked in the Realization... it gave me a physical visceral understanding. Before, maybe I thought Anatta was something more conceptual.' },
 ]
-
-const u = (n: number) => `calc(${n} * var(--u))`
 
 export function HomeContent() {
   return <>
@@ -42,7 +40,7 @@ export function HomeContent() {
     </div>
     <h2 className="ln-phases-title">Realization as a fitness</h2>
     <ol className="ln-phases">
-      {phases.map(p => <li key={p.n} className={`tone-${p.tone}`} style={{ top: u(p.top) }}>
+      {phases.map(p => <li key={p.n} className={`tone-${p.tone}`}>
         <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
         <div><h3><span className="ln-num">{p.n}</span><span>{p.name}</span></h3>
         <p>{p.text}</p></div>
