@@ -142,8 +142,8 @@
 .field-guide .tone-bg-clay{background:#A63A2E}.field-guide .tone-bg-marigold{background:#D98F2B}.field-guide .tone-bg-sage{background:#4C6B54}.field-guide .tone-bg-blue{background:#456B86}
 .field-guide .ln-story-image img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .field-guide .ln-story-image:hover img{transform:scale(1.03)}
-.field-guide .ln-stories blockquote{margin:0;font-size:21px;line-height:1.45;font-weight:400;font-style:italic}
-@media(max-width:900px){.field-guide .ln-stories blockquote{font-size:19px}}
+.field-guide .ln-stories blockquote{margin:0;font-size:calc(22 * var(--ln-u));line-height:1.5;font-weight:400;font-style:italic}
+@media(max-width:900px){.field-guide .ln-stories blockquote{font-size:18px}}
 /* Story play button: a small bone disc in the bottom-right corner, clear of the face; ink on hover. */
 .field-guide:not(.fg-legacy-chrome) .ln-story-image .play-mark{left:auto;top:auto;right:14px;bottom:14px;width:40px;height:40px;margin:0;border-radius:50%;background:var(--bone);box-shadow:0 2px 8px rgba(14,14,12,.22);transform:none;transition:background .15s}
 .field-guide:not(.fg-legacy-chrome) .ln-story-image .play-mark:after{left:15px;top:12px;border-width:8px 0 8px 12px;border-color:transparent transparent transparent var(--ink)}

@@ -330,3 +330,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Removed "CC is a community for serious contemplative training:" and its four-item list next to "You've found the maps / Find your people".
 - Provisional: the four phase descriptions under "Realization as a fitness" stay at 17 units. At the larger size they collide with the next row at 1024 px, because each row is pinned to where its colored line ends. Story quotes, fine print, labels and footer small print are unchanged. Waiting on Dat for both.
 - Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: story quotes at the body-text size (`home-04-lanes` only)
+- The italic quotes under the participant photos now use the same size as the rest of the homepage body text: 22 units (21 px at 1440 × 900, about 17.5 px in a 1440 × 780 window), 18 px on phones. They were a fixed 21 px (19 px on phones), so they looked bigger than the body text in shorter windows.
+- Why: Dat, Nov 6.
