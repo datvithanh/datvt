@@ -348,3 +348,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Realization as a fitness" and the four phases move left to sit beside the lanes, with the title and glyphs starting 84 units right of the marigold lane, and run to the right margin. The 100-unit gaps above the title and above "Ways to train" are kept.
 - "04 Integration" no longer sits lower than "03 Recognition" when the description beside it wraps.
 - Why: Dat, Nov 6, with a rough sketch ("don't follow exactly") and a crop of the corner.
+
+### 2026-11-06 · Homepage phases: Mini Bootcamp row format, body-size text (`home-04-lanes` only)
+- Each of the four phases now uses the Mini Bootcamp row layout.
+  - The glyph sits in its own column, centered vertically on the text block (Mini Bootcamp's leaves sit at the top).
+  - A small colored Plex number ("01") sits above the title, then the description.
+- The descriptions use the page's body size: 22 units (21 px at 1440 × 900), 18 px on phones. They were 17 units.
+- The rows are 44 units apart.
+- On phones the colored rule down the left of each phase is gone, matching Mini Bootcamp.
+- The band's vertical lanes are 88 units longer, so blue still ends level with the bottom of the phases.
+- Why: Dat, Nov 6.

@@ -41,7 +41,7 @@ export function HomeContent() {
     <ol className="ln-phases">
       {phases.map(p => <li key={p.n} className={`tone-${p.tone}`}>
         <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
-        <div><h3><span className="ln-num">{p.n}</span><span>{p.name}</span></h3>
+        <div><span className="ln-num">{p.n}</span><h3>{p.name}</h3>
         <p>{p.text}</p></div>
       </li>)}
     </ol>
