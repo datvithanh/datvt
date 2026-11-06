@@ -340,3 +340,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - "Realization as a fitness" and its four phases move up. The gap from the band down to the title equals the gap from the end of the phase text down to "Ways to train" (100 units, 94 px at 1440 × 900). The black rule between the hero and "Ways to train" is removed.
 - The four phases now sit in a normal 2 × 2 grid, so a description that wraps to three lines pushes the second row down instead of running into it.
 - Why: Dat, Nov 6, with a mock-up of the corner.
+
+### 2026-11-06 · Homepage hero: one band (`home-04-lanes` only)
+- The hero has a single band. The second band that crossed behind "Explore the Bootcamp" and the figure is gone.
+- The band comes in from the upper right and sweeps down behind the figure, whose glow fades it as it passes. It runs level under the figure and turns one rounded right-angle corner at the left. Blue's outer edge lines up with the left edge of "LIVE IN PRACTICE".
+- The lanes keep an even spacing through every bend.
+- "Realization as a fitness" and the four phases move left to sit beside the lanes, with the title and glyphs starting 84 units right of the marigold lane, and run to the right margin. The 100-unit gaps above the title and above "Ways to train" are kept.
+- "04 Integration" no longer sits lower than "03 Recognition" when the description beside it wraps.
+- Why: Dat, Nov 6, with a rough sketch ("don't follow exactly") and a crop of the corner.

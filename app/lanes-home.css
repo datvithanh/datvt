@@ -52,11 +52,10 @@
 
 /* ── Hero stage: 1280 × 1490 units. --u is one unit in px. ─────────────────────── */
 .ln-hero{--u:calc(min(100vw,1280px) / 1280);overflow-x:clip;position:relative}
-.ln-stage{position:relative;width:calc(1280 * var(--u));margin:0 auto;padding:calc(926 * var(--u)) 0 calc(100 * var(--u));box-sizing:border-box}
+.ln-stage{position:relative;width:calc(1280 * var(--u));margin:0 auto;padding:calc(858 * var(--u)) 0 calc(100 * var(--u));box-sizing:border-box}
 .ln-art{display:contents}
 .field-guide .ln-art img{position:absolute;max-width:none;pointer-events:none;user-select:none}
 .field-guide .ln-art .ln-bands{left:calc(-1300 * var(--u));top:calc(-200 * var(--u));width:calc(3880 * var(--u));height:calc(1700 * var(--u));clip-path:inset(calc(200 * var(--u)) 0 0 0)}
-.field-guide .ln-art .ln-bands:last-child{z-index:1}
 .field-guide .ln-art .ln-figure{left:calc(462 * var(--u));top:calc(-122 * var(--u));width:calc(799 * var(--u));height:calc(822 * var(--u))}
 
 /* Desktop: the stage also scales with screen height, so the lower band's bend down (about 860 units into
@@ -64,12 +63,9 @@
 @media(min-width:901px){
   .ln-hero{--u:var(--ln-u)}
   .ln-stage{margin-left:calc(max(40px,(100% - 1280px) / 2 + 40px) - 40 * var(--u));margin-right:auto}
-  /* Alignment (Dat, Nov 4). "PRACTICE" ends at 572 units: the phases title and first column start there and the lower
-     band slides right 112 units so its lanes still meet the glyphs; the columns run to the right content margin.
-     The figure's head (the middle of its 799-unit art) sits under the gap between Programs and Resources: that gap
+  /* Alignment (Dat, Nov 4). The figure's head (the middle of its 799-unit art) sits under the gap between Programs and Resources: that gap
      is 368.6 units + 100 px left of the right margin, the margin is min(100vw,1280px) - 80px + 40 units from the stage. */
   .field-guide .ln-art .ln-figure{left:calc(min(100vw,1280px) - 180px - 728.1 * var(--u))}
-  .field-guide .ln-art .ln-bands:last-child{transform:translateX(calc(112 * var(--u)))}
 }
 
 .ln-copy{position:absolute;left:calc(40 * var(--u));top:calc(60 * var(--u));width:calc(640 * var(--u));display:flex;flex-direction:column;gap:calc(24 * var(--u))}
@@ -79,11 +75,13 @@
 
 .field-guide .ln-button{position:relative;z-index:2;align-self:flex-start}
 
-/* Phases (Dat, Nov 6): title 100 units below the band's last lane (marigold, bottom edge at 726), rows in a 2 × 2 grid
-   from 926 units; the stage ends 100 units below the rows, so the same gap sits above "Ways to train". */
-.field-guide .ln-phases-title{position:absolute;left:calc(572 * var(--u));top:calc(826 * var(--u));white-space:nowrap;font:800 calc(56 * var(--u))/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
-.ln-phases{--ph-span:calc(min(100vw,1280px) - 80px - 532 * var(--u));list-style:none;margin:0 0 0 calc(572 * var(--u));padding:0;width:var(--ph-span);display:grid;grid-template-columns:1fr 1fr;column-gap:calc(24 * var(--u));row-gap:calc(23 * var(--u))}
-.ln-phases li{min-height:calc(97 * var(--u));display:grid;grid-template-columns:calc(40 * var(--u)) 1fr;column-gap:calc(14 * var(--u));align-items:start}
+/* Phases (Dat, Nov 6): they sit beside the band's vertical lanes (marigold's right edge at 116 units; title and glyph
+   column from 200) and run to the right content margin. The title starts 100 units below marigold's bottom edge
+   on the level run (658); rows form a 2 × 2 grid from 858; the stage ends 100 units below them, the same gap
+   above "Ways to train". */
+.field-guide .ln-phases-title{position:absolute;left:calc(200 * var(--u));top:calc(758 * var(--u));white-space:nowrap;font:800 calc(56 * var(--u))/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.ln-phases{--ph-span:calc(min(100vw,1280px) - 80px - 160 * var(--u));list-style:none;margin:0 0 0 calc(200 * var(--u));padding:0;width:var(--ph-span);display:grid;grid-template-columns:1fr 1fr;column-gap:calc(24 * var(--u));row-gap:calc(23 * var(--u))}
+.ln-phases li{min-height:calc(97 * var(--u));display:grid;align-content:start;grid-template-columns:calc(40 * var(--u)) 1fr;column-gap:calc(14 * var(--u));align-items:start}
 .ln-phases li{row-gap:calc(6 * var(--u))}
 /* The body text runs the full column width (under the glyph too), so each phase fits in two lines at most. */
 .ln-phases li>div{display:contents}

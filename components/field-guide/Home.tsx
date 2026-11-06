@@ -5,8 +5,8 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 // "04 Lanes" homepage (design canvas, Nov 2026). The hero is drawn on a 1280-unit stage:
 // every position below is in stage units (see --u in app/lanes-home.css), so the bands,
 // the glyph figure and the copy stay locked together as the page scales.
-// The lower band runs in under the figure, turns one rounded 90° corner and drops down beside
-// the phases (Dat, Nov 6). See docs/design/README.md.
+// One band (Dat, Nov 6): it comes in from the right behind the figure, runs level under it, turns one
+// rounded 90° corner on the left margin and drops down beside the phases. See docs/design/README.md.
 
 const phases = [
   { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption' },
@@ -29,9 +29,8 @@ export function HomeContent() {
 <section className="ln-hero" aria-labelledby="ln-hero-title">
   <div className="ln-stage">
     <div className="ln-art" aria-hidden="true">
-      <img className="ln-bands" src="/brand/home/bands-upper.svg" alt="" width="3880" height="1700" />
+      <img className="ln-bands" src="/brand/home/bands.svg" alt="" width="3880" height="1700" />
       <img className="ln-figure" src="/brand/home/hero-figure.svg" alt="" width="799" height="822" />
-      <img className="ln-bands" src="/brand/home/bands-lower.svg" alt="" width="3880" height="1700" />
     </div>
     <div className="ln-copy">
       <h1 id="ln-hero-title">Live in<br />practice</h1>
