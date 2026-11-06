@@ -370,3 +370,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - names in Plex caps, directly under each quote (they used to drop to the bottom of the row).
 - The Bootcamp photos keep their 16:9 frame.
 - Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: new Purification line (`home-04-lanes` only)
+- The "02 Purification" phase on the homepage now reads "Patterns met fully begin to unwind, freeing you to choose anew." (was "Learn to meet your patterns as you hold and become them.").
+- Why: Dat, Nov 6.

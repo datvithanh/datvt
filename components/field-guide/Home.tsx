@@ -10,7 +10,7 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 
 const phases = [
   { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption' },
-  { n: '02', name: 'Purification', text: 'Learn to meet your patterns as you hold and become them.', tone: 'clay', glyph: 'purification' },
+  { n: '02', name: 'Purification', text: 'Patterns met fully begin to unwind, freeing you to choose anew.', tone: 'clay', glyph: 'purification' },
   { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition' },
   { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration' },
 ]
