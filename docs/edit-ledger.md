@@ -362,3 +362,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-06 · Homepage: band lanes run further down (`home-04-lanes` only)
 - The four vertical lanes beside the phases are 60 units longer. Blue now stops 40 units (about 38 px at 1440 × 900) above "Ways to train", and the others step up from it in 30-unit stages, marigold shortest.
 - Why: Dat, Nov 6, after the phases grew taller.
+
+### 2026-11-06 · Bootcamp stories: same treatment as the homepage (`home-04-lanes` only)
+- The six participant cards on /bootcamp now match the homepage's:
+  - a bone play disc in the bottom-right corner of each photo (ink on hover), not a brown one over the face;
+  - quotes in Archivo Regular italic at the body size (21 px at 1440 × 900, 18 px on phones);
+  - names in Plex caps, directly under each quote (they used to drop to the bottom of the row).
+- The Bootcamp photos keep their 16:9 frame.
+- Why: Dat, Nov 6.
