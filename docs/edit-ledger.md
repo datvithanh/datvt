@@ -358,3 +358,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - On phones the colored rule down the left of each phase is gone, matching Mini Bootcamp.
 - The band's vertical lanes are 88 units longer, so blue still ends level with the bottom of the phases.
 - Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: band lanes run further down (`home-04-lanes` only)
+- The four vertical lanes beside the phases are 60 units longer. Blue now stops 40 units (about 38 px at 1440 × 900) above "Ways to train", and the others step up from it in 30-unit stages, marigold shortest.
+- Why: Dat, Nov 6, after the phases grew taller.

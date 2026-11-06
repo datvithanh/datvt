@@ -14,8 +14,8 @@ left it turns **one rounded 90° corner** and drops straight down beside the pha
 - The four lanes are true offsets of one centreline (20.5-unit pitch, 14.5 stroke), so the gaps never
   pinch or widen through a bend. The corner radii are blue 100.75, sage 80.25, clay 59.75 and
   marigold 39.25.
-- The lanes end flat and staggered, marigold shortest (ends at 1073 / 1103 / 1133 / 1163, marigold
-  to blue; blue ends level with the bottom of the phases). They don't turn into the phase rows.
+- The lanes end flat and staggered, marigold shortest (ends at 1133 / 1163 / 1193 / 1223, marigold
+  to blue; blue stops 40 units above "Ways to train"). They don't turn into the phase rows.
 - Spacing:
   - "Realization as a fitness" starts 100 units below marigold's bottom edge on the level run (658).
   - "Ways to train" starts 100 units below the phase rows, with no rule between them.

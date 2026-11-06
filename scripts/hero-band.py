@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Generates public/brand/home/bands.svg, the homepage hero band (see docs/design/README.md).
-# Usage: python3 scripts/hero-band.py 620 1163,1133,1103,1073 public/brand/home/bands.svg
+# Usage: python3 scripts/hero-band.py 620 1223,1193,1163,1133 public/brand/home/bands.svg
 import math,sys
 # Single four-lane band, stage units (desktop). Centreline runs right -> left, then turns down.
 H=float(sys.argv[1]) if len(sys.argv)>1 else 620   # centreline y of the level run
@@ -8,7 +8,7 @@ XV=40+7.25+30.75   # centreline x of the vertical drop: blue's outer edge on the
 RC=70              # centreline corner radius (blue 100.75, marigold 39.25)
 PITCH=20.5; SW=14.5
 lanes=[('#456B86',1.5),('#4C6B54',.5),('#A63A2E',-.5),('#D98F2B',-1.5)]  # + = right of travel (top / outside)
-ENDS=[float(v) for v in sys.argv[2].split(",")] if len(sys.argv)>2 else [1163,1133,1103,1073]
+ENDS=[float(v) for v in sys.argv[2].split(",")] if len(sys.argv)>2 else [1223,1193,1163,1133]
 def cubic(p0,p1,p2,p3,n=160):
     return [tuple((1-t)**3*a+3*(1-t)**2*t*b+3*(1-t)*t*t*c+t**3*d for a,b,c,d in zip(p0,p1,p2,p3)) for t in (i/n for i in range(n+1))]
 pts=[(2600,140),(1500,140)]
