@@ -104,3 +104,6 @@
   :root .field-guide:not(.fg-legacy-chrome) .resource-columns .course-discovery-copy{padding:24px}
   :root .field-guide:not(.fg-legacy-chrome) .resource-readings{grid-template-columns:1fr}
 }
+
+/* Bootcamp hero: video widened and top-aligned with the text column (Dat, Nov 6) */
+@media(min-width:761px){:root .field-guide:not(.fg-legacy-chrome) .bootcamp-hero{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start}:root .field-guide:not(.fg-legacy-chrome) .bootcamp-hero .faces-film{margin:0}}

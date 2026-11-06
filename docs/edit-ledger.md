@@ -313,3 +313,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Why: Dat, Nov 5.
 - The homepage story photos now show in full colour: the grayscale + colour-tint treatment is removed from the six story cards.
 - Why: Dat, Nov 5.
+
+### 2026-11-06 · Bootcamp hero: date line, wider video, no Phases shortcut (`home-04-lanes` only)
+- The hero now reads "Next cohort: January 25, 2027 · 12 weeks" under the description, with the date in clay, matching Mini Bootcamp's "Next run" line. The date strip under the video is gone.
+- "See the schedule" and the caption under the video are removed. On desktop the video is wider (about 616 px at 1440, was about 500) and its top lines up with the "Paid program" line.
+- The section shortcuts drop "Phases", since phases sit inside Course details.
+- Why: Dat, Nov 6.
