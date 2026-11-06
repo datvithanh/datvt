@@ -313,3 +313,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Why: Dat, Nov 5.
 - The homepage story photos now show in full colour: the grayscale + colour-tint treatment is removed from the six story cards.
 - Why: Dat, Nov 5.
+
+### 2026-11-06 · Lanes homepage: story play button and lighter quotes (`home-04-lanes` only)
+- The play button on the participant story photos moves off the face: a small bone disc (40 px) with an ink triangle in the bottom-right corner, turning ink on hover. Was a brown 46 px disc in the centre, which covered the nose.
+- Story quotes are Archivo Regular 400 italic (was Medium 500 italic), 21 px on desktop and 19 px on phones (was 21 px everywhere), as in the typography guide.
+- Why: Dat, Nov 6: picked option B of three play buttons and Regular italic of two quote weights.
