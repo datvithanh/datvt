@@ -81,7 +81,7 @@ Paste this into a new thread to pick up the work. The owner is Dat. Communicatio
     - The play button is a bone corner disc. Quotes are Archivo Regular italic.
   - No "Ready to train?" band on any page; the header CTA covers it.
 - **Bootcamp (/bootcamp):**
-  - Hero: "Paid program · Live online · 12 weeks", then ILLUMINATION BOOTCAMP, lead, description, "Next cohort: **January 25, 2027** · 12 weeks" (date in clay), and "Application information" button.
+  - Hero: "Paid program · Live online · 12 weeks", then ILLUMINATION BOOTCAMP, lead, description, "Next cohort: **January 25, 2027** · 12 weeks" (date in clay), and "Apply for Cohort 11" button linking to the Zoom application.
   - On the right, the Frank Yang faces video (`NCYL4JZKBLM`), wider and top-aligned with the eyebrow, no caption.
   - Section shortcuts: Participant stories, Course details, Schedule, Tuition, Apply, FAQ (Phases removed; phases live inside Course details).
   - Same six stories, with longer quotes.
@@ -108,7 +108,7 @@ Paste this into a new thread to pick up the work. The owner is Dat. Communicatio
 - Whether to sentence-case the headings inside lesson MDX files.
 - The legal pages' reading width (currently a narrower reading column).
 - When to bring `home-04-lanes` to `v4`/production. Nothing has been merged; wait for Dat to say.
-- The Bootcamp application on other pages is deferred. A spot is saved for it as a secondary button.
+- Cohort 11 application is live at https://s.zoom.us/m/bPlPelXHc (`COHORT_NEXT_APPLICATION_URL` in `lib/cohort.ts`). The Bootcamp hero, tuition, and application-section buttons link there. The form asks ten questions, allows about 30 minutes, then invites applicants to schedule a brief Zoom introduction.
 
 ## Verification quick reference
 

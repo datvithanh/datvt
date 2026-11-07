@@ -426,3 +426,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Original phase layout and clearance below the track are retained.
 - Why: Dat, Nov 7, corrected the request to keep numbers on the phase elements.
 - Provisional: none.
+
+### 2026-11-07 · Connect Cohort 11 application (`home-04-lanes` only)
+- The Bootcamp hero, tuition card, and application section now offer Apply for Cohort 11 and open Dat's Zoom application, replacing the newsletter placeholder.
+- Application instructions match the verified destination: ten questions, about 30 uninterrupted minutes, followed by an invitation to schedule a brief Zoom introduction.
+- Stores the exact supplied link in lib/cohort.ts. Mini Bootcamp registration and newsletter signup stay unchanged.
+- Why: Dat, Nov 7, supplied https://s.zoom.us/m/bPlPelXHc as the Cohort 11 registration link.
+- Provisional: none. No application was filled or submitted during verification.
