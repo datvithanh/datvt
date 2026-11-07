@@ -52,11 +52,11 @@
 <rect x="101.50" y="1131.50" width="14.5" height="1.5" fill="#D98F2B" stroke="none"/>
 </g>
 <path d="M40.00 1032.25h14.5 M42.00 1063.25h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>
-<text x="47.25" y="1058.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">1</text>
+<text x="47.25" y="1058.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">4</text>
 <path d="M60.50 1002.25h14.5 M62.50 1033.25h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>
-<text x="67.75" y="1028.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">2</text>
+<text x="67.75" y="1028.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">3</text>
 <path d="M81.00 972.25h14.5 M83.00 1003.25h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>
-<text x="88.25" y="998.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">3</text>
+<text x="88.25" y="998.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">2</text>
 <path d="M101.50 942.25h14.5 M103.50 973.25h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>
-<text x="108.75" y="968.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">4</text>
+<text x="108.75" y="968.25" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">1</text>
 </svg>

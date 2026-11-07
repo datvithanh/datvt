@@ -413,3 +413,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The colors, running-track grain, curves, lane widths, and overall staggered endpoint positions stay unchanged.
 - Why: Dat, Nov 7, clarified to add the numbered treatment as well, not replace the striped treatment.
 - Provisional: none.
+
+### 2026-11-07 · Track numbers follow phase colors (`home-04-lanes` only)
+- Track labels now map yellow to 1, red to 2, green to 3, and blue to 4. Numbered finish markings and tapering stripes both remain.
+- Removed the duplicate 01–04 labels above Absorption, Purification, Recognition, and Integration on the homepage. Names, icons, and descriptions are unchanged.
+- Why: Dat, Nov 7, specified the color-number order and asked to remove numbers from the elements.
+- Provisional: none.

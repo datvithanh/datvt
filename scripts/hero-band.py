@@ -43,7 +43,9 @@ svg.append('''<defs>
 </defs>
 <g filter="url(#track-grain)">''')
 labels=[]
-for number, ((col,k),end) in enumerate(zip(lanes,ENDS), start=1):
+lane_numbers = {'#D98F2B': 1, '#A63A2E': 2, '#4C6B54': 3, '#456B86': 4}
+for (col,k),end in zip(lanes,ENDS):
+    number = lane_numbers[col]
     o=offset(k*PITCH)
     # Combine numbered finish boxes with progressively thinner striped terminals.
     thicknesses = [13, 11, 9, 7, 5, 3.5, 2, 1.5]

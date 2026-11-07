@@ -50,8 +50,10 @@ extra lane stripes, or filter on text, buttons, or the figure is introduced.
 
 ## Numbered finish boxes and striped terminals (Dat, Nov 7)
 
-Both reference details are combined: upright bone-colored numbers 1–4 sit on the solid lanes,
+Both reference details are combined: upright bone-colored numbers (yellow 1, red 2, green 3, blue 4) sit on the solid lanes,
 with a cross-line above and a short underline below; eight separated bars then progressively
 thin toward each staggered tip. Markings sit outside the rubber-grain filter to stay crisp.
 Lane widths, colors, curves, and overall endpoint positions remain unchanged. Mobile keeps
 the existing cropped artwork.
+
+The phase descriptions no longer repeat 01–04 above their names; numbering lives on the track.
