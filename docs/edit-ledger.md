@@ -471,3 +471,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Bootcamp phase colors now match home and the numbered track: Absorption yellow, Purification red, Recognition green, Integration blue. Fit-card colors are unchanged; the existing darker yellow text variant is retained.
 - Why: Dat, Nov 7, authorized fixes to QA findings 2 and 3 and selected the homepage phase-color mapping for Bootcamp too.
 - Provisional: the separate contrast finding is not addressed by this change.
+
+### 2026-11-07 · Remove track starting numbers and marks (`home-04-lanes` only)
+- Removed lane numbers 1–4 and the white starting/underline marks from the homepage track. Colored lanes, curve geometry, endpoint lengths and rubber grain are unchanged. Phase labels 01–04 remain.
+- Why: Dat, Nov 7, requested a temporary Netlify review and clarified removal of both the numbers and lines.
+- Provisional: this is the temporary preview only; canonical production is not changed.
