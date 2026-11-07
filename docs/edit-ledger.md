@@ -446,3 +446,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - January 25, 2027 and December 14–18 are highlighted in the brand's clay red; duration and Free labels stay muted. Phone menu retains its existing flat layout and also highlights dates.
 - Why: Dat, Nov 7, asked for track texture in the dropdown and red dates.
 - Provisional: none.
+
+### 2026-11-07 · Mini Bootcamp leaves use track grain (`home-04-lanes` only)
+- The blue, marigold, and clay leaf icons under Five days of training now use the same fine procedural running-track texture as the hero lanes.
+- Shapes, colors, transparent veins/cutouts, icon sizes, text, and layout stay unchanged. No bitmap textures added.
+- Why: Dat, Nov 7, supplied the three-icon section and asked to make these track texture.
+- Provisional: none.
