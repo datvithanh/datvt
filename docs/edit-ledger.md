@@ -440,3 +440,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Keeps running-track grain, curve geometry, widths, spacing, and the 01–04 phase labels. Cohort 11 application links stay unchanged.
 - Why: Dat, Nov 7, preferred the version without the Olympic element and specified lane 1 on the outside/left.
 - Provisional: none.
+
+### 2026-11-07 · Programs menu: track grain and red dates (`home-04-lanes` only)
+- The desktop Programs dropdown uses a tiny procedural running-track grain overlay on bone instead of the paper photograph.
+- January 25, 2027 and December 14–18 are highlighted in the brand's clay red; duration and Free labels stay muted. Phone menu retains its existing flat layout and also highlights dates.
+- Why: Dat, Nov 7, asked for track texture in the dropdown and red dates.
+- Provisional: none.

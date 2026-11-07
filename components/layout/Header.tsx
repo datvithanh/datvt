@@ -6,8 +6,8 @@ import { COHORT_NEXT_START_DISPLAY, COHORT_NEXT_YEAR, MINI_BOOTCAMP_NEXT_DISPLAY
 
 // Basecamp joins this list when it is announced. Dates come from lib/cohort so the menu rolls with each cohort.
 const programs = [
-  { href: '/bootcamp', label: 'Illumination Bootcamp', meta: `12 weeks · starts ${COHORT_NEXT_START_DISPLAY}, ${COHORT_NEXT_YEAR}` },
-  { href: '/mini-bootcamp', label: 'Mini Bootcamp', meta: `Free · ${MINI_BOOTCAMP_NEXT_DISPLAY}` },
+  { href: '/bootcamp', label: 'Illumination Bootcamp', meta: '12 weeks · starts ', date: `${COHORT_NEXT_START_DISPLAY}, ${COHORT_NEXT_YEAR}` },
+  { href: '/mini-bootcamp', label: 'Mini Bootcamp', meta: 'Free · ', date: MINI_BOOTCAMP_NEXT_DISPLAY },
 ]
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
       <nav id="navigation" className={open ? 'is-open' : ''} aria-label="Main navigation">
         <div className="nav-group">
           <Link className="nav-parent" href="/#ln-ways" onClick={close}>Programs<svg className="nav-caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></Link>
-          <div className="nav-submenu">{programs.map(item => <Link key={item.href} href={item.href} onClick={close}><span className="nav-item-name">{item.label}</span><span className="nav-item-meta">{item.meta}</span></Link>)}</div>
+          <div className="nav-submenu">{programs.map(item => <Link key={item.href} href={item.href} onClick={close}><span className="nav-item-name">{item.label}</span><span className="nav-item-meta">{item.meta}<span className="nav-item-date">{item.date}</span></span></Link>)}</div>
         </div>
         {['Resources','Media'].map(label => <Link key={label} href={`/${label.toLowerCase()}`} onClick={close}>{label}</Link>)}
         <Link className="nav-cta" href="/bootcamp" onClick={close}>Join the Bootcamp</Link>
