@@ -37,3 +37,11 @@ The older references (two bands, U-fold) are kept for history:
   ends are set at the top of the script.
 - `public/brand/home/hero-figure.svg`: seated figure built from the v1 CC glyphs, glyph-like marks
   along the contour, dots outside, and a faint bone glow.
+
+## Worn-ink lines (Dat, Nov 7)
+
+The four hero lanes and the community divider use a fine worn-print texture, matching the
+Mini Bootcamp card's distressed frame. The hero generator includes a seeded SVG filter for
+irregular edges and paper flecks; its paths, stroke widths, lane spacing, and colors are unchanged.
+The divider uses `public/brand/home/rule-worn.svg` as a repeating mask, so the grain stays at a
+fixed scale instead of stretching with the line. No filter is applied to text, buttons, or the figure.

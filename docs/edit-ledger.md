@@ -374,3 +374,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-06 · Homepage: new Purification line (`home-04-lanes` only)
 - The "02 Purification" phase on the homepage now reads "Patterns met fully begin to unwind, freeing you to choose anew." (was "Learn to meet your patterns as you hold and become them.").
 - Why: Dat, Nov 6.
+
+### 2026-11-07 · Homepage: worn-ink texture on the lines (`home-04-lanes` only)
+- The four colored hero lanes and the horizontal community divider now have irregular printed edges and fine paper flecks, echoing the Mini Bootcamp card frame in Dat's reference.
+- The hero paths, colors, spacing, and staggered ends are unchanged. Text, buttons, and the figure remain untouched.
+- Why: Dat, Nov 7, supplied the textured card reference and asked to use that texture for the lines too.
+- Provisional: none.

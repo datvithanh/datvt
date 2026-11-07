@@ -25,10 +25,21 @@ def offset(d):
         out.append((x-ty*d, y+tx*d))   # right-hand normal in y-down coords
     return out
 svg=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1300 -200 3880 1700" width="3880" height="1700" fill="none" stroke-width="14.5" stroke-linejoin="round">']
+# Worn printing: small edge irregularities and sparse paper flecks, not a blurred stroke.
+# User-space units keep the grain consistent along the straight runs and the bends.
+svg.append('''<defs>
+  <filter id="worn-ink" filterUnits="userSpaceOnUse" x="30" y="95" width="2580" height="1140" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.42" numOctaves="3" seed="17" result="grain"/>
+    <feDisplacementMap in="SourceGraphic" in2="grain" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  10 0 0 0 -2.4" result="ink"/>
+    <feComposite in="rough" in2="ink" operator="in"/>
+  </filter>
+</defs>
+<g filter="url(#worn-ink)">''')
 for (col,k),end in zip(lanes,ENDS):
     o=offset(k*PITCH)
     d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{end:.1f}'
     svg.append(f'<path d="{d}" stroke="{col}"/>')
     print(col,'vertical x',round(o[-1][0],2),'left edge',round(o[-1][0]-SW/2,2),'level y',round(offset(k*PITCH)[pts.index((850,H))][1],2),'corner R',round(RC+k*PITCH,2))
-svg.append('</svg>')
+svg.append('</g></svg>')
 open(sys.argv[3] if len(sys.argv)>3 else 'bands.svg','w').write('\n'.join(svg)+'\n')
