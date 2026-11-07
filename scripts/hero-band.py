@@ -25,17 +25,23 @@ def offset(d):
         out.append((x-ty*d, y+tx*d))   # right-hand normal in y-down coords
     return out
 svg=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1300 -200 3880 1700" width="3880" height="1700" fill="none" stroke-width="14.5" stroke-linejoin="round">']
-# Worn printing: small edge irregularities and sparse paper flecks, not a blurred stroke.
-# User-space units keep the grain consistent along the straight runs and the bends.
+# Running-track rubber: fine grayscale noise blended into opaque, clean-edged lanes.
+# Clip the grain to SourceAlpha; no displacement or paper holes in the strokes.
 svg.append('''<defs>
-  <filter id="worn-ink" filterUnits="userSpaceOnUse" x="30" y="95" width="2580" height="1140" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.42" numOctaves="3" seed="17" result="grain"/>
-    <feDisplacementMap in="SourceGraphic" in2="grain" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="rough"/>
-    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  10 0 0 0 -2.4" result="ink"/>
-    <feComposite in="rough" in2="ink" operator="in"/>
+  <filter id="track-grain" filterUnits="userSpaceOnUse" x="30" y="95" width="2580" height="1140" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="17" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
+    <feComponentTransfer in="gray" result="rubber">
+      <feFuncR type="linear" slope="0.85" intercept="0.075"/>
+      <feFuncG type="linear" slope="0.85" intercept="0.075"/>
+      <feFuncB type="linear" slope="0.85" intercept="0.075"/>
+      <feFuncA type="linear" slope="0" intercept="1"/>
+    </feComponentTransfer>
+    <feComposite in="rubber" in2="SourceAlpha" operator="in" result="clipped-grain"/>
+    <feBlend in="clipped-grain" in2="SourceGraphic" mode="overlay"/>
   </filter>
 </defs>
-<g filter="url(#worn-ink)">''')
+<g filter="url(#track-grain)">''')
 for (col,k),end in zip(lanes,ENDS):
     o=offset(k*PITCH)
     d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{end:.1f}'

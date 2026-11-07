@@ -387,3 +387,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The section heading clears the floating header when reached by its anchor.
 - Why: Dat, Nov 7, asked not to keep Programs as a separate page.
 - Provisional: none.
+
+### 2026-11-07 · Lines use running-track grain (`home-04-lanes` only)
+- The colored hero lanes have fine rubber-like tonal grain and clean, solid edges, replacing the rough printed edges and paper holes. Their paths, colors, widths, spacing, and staggered ends are unchanged.
+- The horizontal divider also switches to fine tonal grain. The Mini Bootcamp card's frame stays unchanged.
+- Uses procedural SVG noise and blending, without bitmap textures or extra lane stripes.
+- Why: Dat, Nov 7, supplied the running-track noise/blend treatment and preferred it over the frame's style.
+- Provisional: none.
