@@ -407,3 +407,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Replaces the immediately preceding striped-terminal interpretation. Lane colors, grain, widths, curves, spacing, and staggered endpoints stay unchanged.
 - Why: Dat, Nov 7, supplied a close-up of numbered running-track finish boxes.
 - Provisional: none.
+
+### 2026-11-07 · Combine numbers and striped track ends (`home-04-lanes` only)
+- Keeps both requested reference details: 1–4 finish markings on the solid lanes, followed by the progressively thinning stripes.
+- The colors, running-track grain, curves, lane widths, and overall staggered endpoint positions stay unchanged.
+- Why: Dat, Nov 7, clarified to add the numbered treatment as well, not replace the striped treatment.
+- Provisional: none.

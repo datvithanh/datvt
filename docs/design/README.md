@@ -48,10 +48,10 @@ The community divider uses `public/brand/home/rule-track.svg` as a tiny repeatin
 with subtle tonal grain. The Mini Bootcamp card retains its distressed frame. No bitmap texture,
 extra lane stripes, or filter on text, buttons, or the figure is introduced.
 
-## Numbered finish-line terminals (Dat, Nov 7)
+## Numbered finish boxes and striped terminals (Dat, Nov 7)
 
-Dat's follow-up reference replaced the striped-tip interpretation with numbered track ends.
-The lower tips stay solid and staggered, with upright bone-colored numbers 1–4 from left to
-right, a cross-line above each number, and a short underline below. Markings sit outside the
-rubber-grain filter to stay crisp. Lane widths, colors, curves, and endpoint positions remain
-unchanged. Mobile keeps the existing cropped artwork.
+Both reference details are combined: upright bone-colored numbers 1–4 sit on the solid lanes,
+with a cross-line above and a short underline below; eight separated bars then progressively
+thin toward each staggered tip. Markings sit outside the rubber-grain filter to stay crisp.
+Lane widths, colors, curves, and overall endpoint positions remain unchanged. Mobile keeps
+the existing cropped artwork.

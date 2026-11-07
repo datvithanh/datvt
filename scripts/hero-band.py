@@ -45,12 +45,19 @@ svg.append('''<defs>
 labels=[]
 for number, ((col,k),end) in enumerate(zip(lanes,ENDS), start=1):
     o=offset(k*PITCH)
-    # Numbered finish boxes: solid lane tips, white cross-lines, upright 1–4 labels.
-    d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{end:.1f}'
+    # Combine numbered finish boxes with progressively thinner striped terminals.
+    thicknesses = [13, 11, 9, 7, 5, 3.5, 2, 1.5]
+    pitch = 20
+    first_center = end - thicknesses[-1] / 2 - pitch * (len(thicknesses) - 1)
+    solid_end = first_center - 15
+    d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{solid_end:.2f}'
     svg.append(f'<path d="{d}" stroke="{col}"/>')
     x = o[-1][0]
-    labels.append(f'<path d="M{x-SW/2:.2f} {end-35:.2f}h{SW} M{x-5.25:.2f} {end-4:.2f}h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>')
-    labels.append(f'<text x="{x:.2f}" y="{end-9:.2f}" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">{number}</text>')
+    for i, thickness in enumerate(thicknesses):
+        y = first_center + i * pitch - thickness / 2
+        svg.append(f'<rect x="{x-SW/2:.2f}" y="{y:.2f}" width="{SW}" height="{thickness}" fill="{col}" stroke="none"/>')
+    labels.append(f'<path d="M{x-SW/2:.2f} {solid_end-35:.2f}h{SW} M{x-5.25:.2f} {solid_end-4:.2f}h10.5" fill="none" stroke="#F2ECDC" stroke-width="1.5"/>')
+    labels.append(f'<text x="{x:.2f}" y="{solid_end-9:.2f}" fill="#F2ECDC" stroke="none" font-family="Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle">{number}</text>')
     print(col,'vertical x',round(o[-1][0],2),'left edge',round(o[-1][0]-SW/2,2),'level y',round(offset(k*PITCH)[pts.index((850,H))][1],2),'corner R',round(RC+k*PITCH,2))
 svg.append('</g>')
 svg.extend(labels)  # Keep the finish markings crisp, outside the rubber-grain filter.
