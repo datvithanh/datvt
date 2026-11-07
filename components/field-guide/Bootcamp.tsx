@@ -9,7 +9,7 @@ const phases = [
   { name: 'Absorption', text: 'Daily practice builds capacity. Attention steadies, and your patterns start to show in real time.' },
   { name: 'Purification', text: 'Under the daily pressure of the container, old patterns surface. You meet them with your mentor and cohort, not alone.' },
   { name: 'Recognition', text: 'Direct pointing. You see how a self is being constructed, directly rather than conceptually.' },
-  { name: 'Realization', text: 'Coming down from the peak, insight lands in daily life. The wall between spiritual life and actual life stops holding.' },
+  { name: 'Integration', text: 'Coming down from the peak, insight lands in daily life. The wall between spiritual life and actual life stops holding.' },
 ]
 
 // Quotes are excerpts from CC's published story videos; thumbnails are the unchanged YouTube covers (public/brand/stories/README.md).

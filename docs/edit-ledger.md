@@ -459,3 +459,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Photos, videos, neutral body copy, and already-textured hero lanes/leaves stay unchanged; decorative grain is disabled for printing/forced colors.
 - Why: Dat, Nov 7, asked to extend track grain to all primary colors, including text and hover.
 - Provisional: none.
+
+### 2026-11-07 · Bootcamp phase 04 is Integration (`home-04-lanes` only)
+- Renamed the fourth phase under Twelve weeks / Four phases on /bootcamp from Realization to Integration, matching the homepage. Its description is unchanged.
+- Why: Dat, Nov 7, selected Integration to resolve the audit's naming mismatch.
+- Provisional: none.
