@@ -1,0 +1,53 @@
+/* Brand material: the four lane colors share one seeded, procedural rubber grain.
+   Type gets a finer contrast range; opaque colored surfaces use the tile overlay.
+   Never filter a page, photo, video, or whole navigation/card container. */
+.brand-grain-defs{position:absolute;pointer-events:none;overflow:hidden}
+.field-guide{--brand-grain:url('/brand/track-grain.svg')}
+
+/* Colored type and standalone glyphs, including the older course/article system. */
+.field-guide :is(
+  .brand-grain,.ln-h2-accent,.ln-num,.ln-card-eyebrow,.ln-quote-line,
+  .mw-label,.nav-item-date,.event-date-value,.fit-index,.phase-index,
+  .lesson-n,.reading-number,.quote-mark,.door-symbol,.instagram-symbol,
+  .lesson-detail>.eyebrow,.article-heading>.eyebrow,.article-toc>.eyebrow,
+  .next-reading>.eyebrow,.article-prose a,.legal-document-body a,
+  .fg-native-article .prose a,.text-accent,.text-accent-hover,
+  .text-clay,.text-sage,.text-marigold,.text-blue,
+  .ln-phase-glyph,.phase-band,.rank i,.live-dot,.club-star
+){filter:url('#cc-track-type')}
+
+/* Hover-only colored text: don't filter media or card contents as a side effect. */
+.field-guide :is(
+  .header nav a,.site-footer a,.text-link,.reading-link,.legal-back-link,
+  .card-link,[class*="hover:text-accent"],[class*="hover:text-clay"],
+  [class*="hover:text-marigold"],[class*="hover:text-sage"],[class*="hover:text-blue"]
+):hover:not(:has(img,video,iframe,.ln-button,.ln-button-outline)){
+  filter:url('#cc-track-type')
+}
+.field-guide :is(.resource-reading,.journal-card):hover h3,
+.field-guide :is(.resource-door,.journal-card):hover .reading-link{
+  filter:url('#cc-track-type')
+}
+
+/* Colored surfaces. Background-only grain leaves overlaid photos and labels crisp. */
+.field-guide :is(.brand-grain-surface,[class*="tone-bg-"],.training-tape,
+  .topic-filters button[aria-pressed="true"],.resource-nav a[aria-current]){
+  background-image:var(--brand-grain);background-size:200px 200px;background-blend-mode:overlay
+}
+
+/* All brand-button hover colors, including legacy pages. The repeated shell class
+   outranks older :is() shorthands whose footer branch raises their specificity. */
+:root .field-guide.field-guide:not(.fg-legacy-chrome) :is(.button,.btn-primary,.ln-button,.ln-button-outline,
+  .input-row button,main a[class*="bg-accent"],main button[class*="bg-accent"],
+  main a[class*="border-accent"],main button[class*="border-accent"]):hover,
+:root .field-guide.field-guide:not(.fg-legacy-chrome) .ln-card-paid:hover .ln-button-bone,
+:root .field-guide.field-guide:not(.fg-legacy-chrome) .ln-card-free:hover .ln-button-outline{
+  background-image:var(--brand-grain);background-size:200px 200px;background-blend-mode:overlay
+}
+/* Outlined clay labels retain grain even before hover. */
+.field-guide :is(.btn-primary,.ln-button-outline){filter:url('#cc-track-type')}
+
+/* Print and forced-color modes favor plain, high-contrast text. */
+@media print,(forced-colors:active){
+  .field-guide *{filter:none!important;background-image:none!important}
+}
