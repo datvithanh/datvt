@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { useEffect, type ReactNode } from 'react'
 import { Header } from '@/components/layout/Header'
+import { BrandTrackGrain } from '@/components/ui/BrandTrackGrain'
 import { Footer } from '@/components/layout/Footer'
 
 const legalRoutes = new Set(['/terms', '/privacy', '/refund-policy'])
@@ -22,5 +23,5 @@ export function SiteShell({ children }: { children: ReactNode }) {
   // are marked legacy-page so app/brand-v1-legacy.css can map their old tokens and utility classes onto the kit.
   const legacyLayout = !fieldGuide || pathname.startsWith('/articles/topics/')
   const pageClass = legacyLayout ? `resource-page legacy-page${pathname.startsWith('/courses/') ? ' course-page' : ''}` : legalRoutes.has(pathname) ? 'legal-page' : pathname === '/' ? 'updated-page home-page' : ['/programs','/bootcamp','/mini-bootcamp'].includes(pathname) ? 'updated-page program-page' : 'resource-page'
-  return <div className={`field-guide ${pageClass}`}><Header /><main id="main">{children}</main><Footer course={pathname === '/transmission-101'} /></div>
+  return <div className={`field-guide ${pageClass}`}><BrandTrackGrain /><Header /><main id="main">{children}</main><Footer course={pathname === '/transmission-101'} /></div>
 }

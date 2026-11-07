@@ -55,3 +55,13 @@ a crisp bone-colored number with a cross-line and short underline. Lane order fr
 (leftmost on the vertical drop) to inside is yellow 1, red 2, green 3, blue 4. Yellow is longest
 and blue shortest. The running-track grain, curve geometry, widths, and gaps are retained.
 Mobile keeps the existing cropped artwork. Phase descriptions retain 01–04 above their names.
+
+## Shared brand grain
+
+`app/brand-track-grain.css` applies track material to brand-colored text, glyphs, surfaces,
+and hover colors across modern and legacy routes. `BrandTrackGrain` defines a shared
+alpha-clipped SVG type filter with a reduced contrast range for legibility. Filled surfaces
+use the seeded 200px overlay tile; photos and videos are not filtered. Existing textured
+hero bands/leaves are not processed a second time. New colored roles can opt into
+`brand-grain` (type/glyph) or `brand-grain-surface` (background). Print and forced-color
+modes suppress decorative grain.

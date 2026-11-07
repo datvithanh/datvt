@@ -452,3 +452,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Shapes, colors, transparent veins/cutouts, icon sizes, text, and layout stay unchanged. No bitmap textures added.
 - Why: Dat, Nov 7, supplied the three-icon section and asked to make these track texture.
 - Provisional: none.
+
+### 2026-11-07 · Shared track-grain brand treatment (`home-04-lanes` only)
+- Brand-colored text, numbers, dates, glyphs, and interactive color changes now share fine running-track grain across the site's modern and legacy pages.
+- Colored backgrounds and button hover fills use the procedural overlay; type uses a gentler alpha-clipped version to retain clean letterforms. Includes all four brand colors.
+- Photos, videos, neutral body copy, and already-textured hero lanes/leaves stay unchanged; decorative grain is disabled for printing/forced colors.
+- Why: Dat, Nov 7, asked to extend track grain to all primary colors, including text and hover.
+- Provisional: none.
