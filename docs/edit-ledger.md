@@ -394,3 +394,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Uses procedural SVG noise and blending, without bitmap textures or extra lane stripes.
 - Why: Dat, Nov 7, supplied the running-track noise/blend treatment and preferred it over the frame's style.
 - Provisional: none.
+
+### 2026-11-07 · Track ends taper into stripes (`home-04-lanes` only)
+- Each lower colored lane ends in eight separated bars, thinning progressively toward its tip, inspired by the striped ends in Dat's Seoul 1988 reference.
+- The four colors, running-track grain, curves, lane spacing, and staggered tip positions stay unchanged. No spiral, Olympic rings, or new layout is added.
+- Phone artwork keeps its existing crop; desktop shows the new terminals beside the phases.
+- Why: Dat, Nov 7, asked to make the end of the track similar to the supplied Olympic logo.
+- Provisional: none.

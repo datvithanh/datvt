@@ -43,7 +43,15 @@ The older references (two bands, U-fold) are kept for history:
 The four hero lanes now use fine grayscale procedural grain blended with their solid colors,
 not the card frame's distressed printing. The seeded SVG filter uses fractal noise at 0.85,
 three octaves, and overlay blending clipped to the strokes. The edges stay clean and opaque;
-there is no displacement or paper-hole mask. Paths, widths, spacing, colors, and ends are unchanged.
+there is no displacement or paper-hole mask. Paths, widths, spacing, and colors are unchanged.
 The community divider uses `public/brand/home/rule-track.svg` as a tiny repeating background
 with subtle tonal grain. The Mini Bootcamp card retains its distressed frame. No bitmap texture,
 extra lane stripes, or filter on text, buttons, or the figure is introduced.
+
+## Striped track terminals (Dat, Nov 7)
+
+The four lower lane tips break into eight bars, progressively thinning from 13 to 1.5 stage
+units on a 20-unit pitch. Their full-width bars retain the track grain and the existing
+staggered endpoints; the original solid stroke stops just before the first bar. This adapts
+the striped terminal detail from Dat's Seoul 1988 reference, without changing the track to a
+spiral or adding Olympic symbols. The mobile art keeps its existing cropped composition.

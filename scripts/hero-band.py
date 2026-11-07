@@ -44,8 +44,19 @@ svg.append('''<defs>
 <g filter="url(#track-grain)">''')
 for (col,k),end in zip(lanes,ENDS):
     o=offset(k*PITCH)
-    d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{end:.1f}'
+    # Finish each staggered lane with separated bars that become thinner toward its tip.
+    # Inspired by the striped terminals in Dat's Seoul 1988 reference, not its spiral.
+    thicknesses = [13, 11, 9, 7, 5, 3.5, 2, 1.5]
+    pitch = 20
+    last_center = end - thicknesses[-1] / 2
+    first_center = last_center - pitch * (len(thicknesses) - 1)
+    solid_end = first_center - 15
+    d='M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in o)+f' V{solid_end:.2f}'
     svg.append(f'<path d="{d}" stroke="{col}"/>')
+    x = o[-1][0] - SW / 2
+    for i, thickness in enumerate(thicknesses):
+        y = first_center + i * pitch - thickness / 2
+        svg.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{SW}" height="{thickness}" fill="{col}" stroke="none"/>')
     print(col,'vertical x',round(o[-1][0],2),'left edge',round(o[-1][0]-SW/2,2),'level y',round(offset(k*PITCH)[pts.index((850,H))][1],2),'corner R',round(RC+k*PITCH,2))
 svg.append('</g></svg>')
 open(sys.argv[3] if len(sys.argv)>3 else 'bands.svg','w').write('\n'.join(svg)+'\n')
