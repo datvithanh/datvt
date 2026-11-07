@@ -62,7 +62,7 @@ export function HomeContent() {
         <span className="ln-card-eyebrow tone-sage">Free · 5 days</span>
         <span className="ln-card-title ln-card-title-sm">Want a taste first?</span>
         <span className="ln-card-text">Mini Bootcamp: five free days of live practice, {NEXT_MINI_DATES}.</span>
-        <span className="ln-button-outline">Save a spot <span aria-hidden="true">↗</span></span>
+        <span className="ln-button-outline">Explore Mini Bootcamp <span aria-hidden="true">↗</span></span>
       </Link>
     </div>
   </div>

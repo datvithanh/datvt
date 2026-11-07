@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { COHORT_NEXT_START_DISPLAY, COHORT_NEXT_YEAR, MINI_BOOTCAMP_NEXT_DISPLAY } from '@/lib/cohort'
 
 // Basecamp joins this list when it is announced. Dates come from lib/cohort so the menu rolls with each cohort.
@@ -12,14 +12,26 @@ const programs = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const menuButton = useRef<HTMLButtonElement>(null)
   const close = () => setOpen(false)
+  useEffect(() => {
+    if (!open) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      event.preventDefault()
+      setOpen(false)
+      menuButton.current?.focus()
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [open])
   return <>
     <a className="skip" href="#main">Skip to content</a>
     <header className="header wrap">
       <Link href="/" className="brand" aria-label="Contemplative Crossfit home" onClick={close}>
         <img className="brand-lockup" src="/brand/cc-lockup-stacked-ink.svg?v=1.1" width="449" height="100" alt="" />
       </Link>
-      <button className="menu-toggle" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>Menu <span aria-hidden="true">+</span></button>
+      <button ref={menuButton} className="menu-toggle" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>Menu <span aria-hidden="true">+</span></button>
       <nav id="navigation" className={open ? 'is-open' : ''} aria-label="Main navigation">
         <div className="nav-group">
           <Link className="nav-parent" href="/#ln-ways" onClick={close}>Programs<svg className="nav-caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></Link>

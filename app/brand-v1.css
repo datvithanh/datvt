@@ -16,6 +16,13 @@
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+3){--tone:#A63A2E;--tone-text:#A63A2E}
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) :is(.fit-cards article,.phase-lanes li,.approach-grid article):nth-child(4n+4){--tone:#4C6B54;--tone-text:#4C6B54}
 
+/* Training-phase colors match the homepage and numbered track (Dat, Nov 7).
+   Marigold's text variant stays darker than its artwork for readability. */
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) .phase-lanes li:nth-child(1){--tone:#D98F2B;--tone-text:#9a6418}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) .phase-lanes li:nth-child(2){--tone:#A63A2E;--tone-text:#A63A2E}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) .phase-lanes li:nth-child(3){--tone:#4C6B54;--tone-text:#4C6B54}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) .phase-lanes li:nth-child(4){--tone:#456B86;--tone-text:#456B86}
+
 /* Page titles are the same size as the homepage's section headlines ("Realization as a fitness", "Ways to train"). */
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h1{font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase;line-height:1;color:var(--ink);font-size:calc(56 * var(--ln-u));overflow-wrap:normal}
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(h1,h2,h3) em{color:inherit!important;font-style:normal}

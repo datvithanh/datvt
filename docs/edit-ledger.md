@@ -464,3 +464,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Renamed the fourth phase under Twelve weeks / Four phases on /bootcamp from Realization to Integration, matching the homepage. Its description is unchanged.
 - Why: Dat, Nov 7, selected Integration to resolve the audit's naming mismatch.
 - Provisional: none.
+
+### 2026-11-07 · Clear Mini CTA, Escape dismissal, matching phase colors (`home-04-lanes` only)
+- The homepage Mini Bootcamp action now says Explore Mini Bootcamp, accurately describing its destination while registration is closed.
+- Escape closes the expanded mobile navigation and returns focus to Menu. Normal toggle/link dismissal remains unchanged.
+- Bootcamp phase colors now match home and the numbered track: Absorption yellow, Purification red, Recognition green, Integration blue. Fit-card colors are unchanged; the existing darker yellow text variant is retained.
+- Why: Dat, Nov 7, authorized fixes to QA findings 2 and 3 and selected the homepage phase-color mapping for Bootcamp too.
+- Provisional: the separate contrast finding is not addressed by this change.
