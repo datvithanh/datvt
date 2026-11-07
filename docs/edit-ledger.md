@@ -401,3 +401,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Phone artwork keeps its existing crop; desktop shows the new terminals beside the phases.
 - Why: Dat, Nov 7, asked to make the end of the track similar to the supplied Olympic logo.
 - Provisional: none.
+
+### 2026-11-07 · Numbered finish-line tips replace stripes (`home-04-lanes` only)
+- The lower lane tips are solid again, with light 1–4 lane numbers, a cross-line above, and a short underline, following Dat's follow-up finish-line photo.
+- Replaces the immediately preceding striped-terminal interpretation. Lane colors, grain, widths, curves, spacing, and staggered endpoints stay unchanged.
+- Why: Dat, Nov 7, supplied a close-up of numbered running-track finish boxes.
+- Provisional: none.

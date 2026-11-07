@@ -48,10 +48,10 @@ The community divider uses `public/brand/home/rule-track.svg` as a tiny repeatin
 with subtle tonal grain. The Mini Bootcamp card retains its distressed frame. No bitmap texture,
 extra lane stripes, or filter on text, buttons, or the figure is introduced.
 
-## Striped track terminals (Dat, Nov 7)
+## Numbered finish-line terminals (Dat, Nov 7)
 
-The four lower lane tips break into eight bars, progressively thinning from 13 to 1.5 stage
-units on a 20-unit pitch. Their full-width bars retain the track grain and the existing
-staggered endpoints; the original solid stroke stops just before the first bar. This adapts
-the striped terminal detail from Dat's Seoul 1988 reference, without changing the track to a
-spiral or adding Olympic symbols. The mobile art keeps its existing cropped composition.
+Dat's follow-up reference replaced the striped-tip interpretation with numbered track ends.
+The lower tips stay solid and staggered, with upright bone-colored numbers 1–4 from left to
+right, a cross-line above each number, and a short underline below. Markings sit outside the
+rubber-grain filter to stay crisp. Lane widths, colors, curves, and endpoint positions remain
+unchanged. Mobile keeps the existing cropped artwork.
