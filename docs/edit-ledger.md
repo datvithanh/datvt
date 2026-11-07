@@ -433,3 +433,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Stores the exact supplied link in lib/cohort.ts. Mini Bootcamp registration and newsletter signup stay unchanged.
 - Why: Dat, Nov 7, supplied https://s.zoom.us/m/bPlPelXHc as the Cohort 11 registration link.
 - Provisional: none. No application was filled or submitted during verification.
+
+### 2026-11-07 · Solid track ends, lane 1 on the outside (`home-04-lanes` only)
+- Removed the Olympic-inspired stripe tails; solid numbered finish boxes remain.
+- Reordered the lanes from outer/leftmost to inner/rightmost: yellow 1, red 2, green 3, blue 4. The outer yellow lane is longest, blue shortest.
+- Keeps running-track grain, curve geometry, widths, spacing, and the 01–04 phase labels. Cohort 11 application links stay unchanged.
+- Why: Dat, Nov 7, preferred the version without the Olympic element and specified lane 1 on the outside/left.
+- Provisional: none.
