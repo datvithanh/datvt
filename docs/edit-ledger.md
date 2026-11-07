@@ -380,3 +380,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The hero paths, colors, spacing, and staggered ends are unchanged. Text, buttons, and the figure remain untouched.
 - Why: Dat, Nov 7, supplied the textured card reference and asked to use that texture for the lines too.
 - Provisional: none.
+
+### 2026-11-07 · Programs points to Ways to train (`home-04-lanes` only)
+- Clicking Programs now goes straight to the homepage's Ways to train section, including from other pages and the mobile menu. Individual Bootcamp submenu links are unchanged.
+- The old /programs URL permanently redirects to that section rather than showing a separate overview. It is no longer listed in the sitemap.
+- The section heading clears the floating header when reached by its anchor.
+- Why: Dat, Nov 7, asked not to keep Programs as a separate page.
+- Provisional: none.

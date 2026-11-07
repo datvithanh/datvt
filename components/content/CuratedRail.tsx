@@ -12,7 +12,7 @@ export function CuratedRail({ dissertation }: { dissertation: FeedItem | null })
   return (
     <aside className="flex flex-col gap-6">
       <h2 className="font-heading text-sm uppercase tracking-[0.2em] text-accent border-b border-border-subtle pb-3">
-        <Link href="/programs" className="hover:text-text-primary transition-colors">Programs</Link>
+        <Link href="/#ln-ways" className="hover:text-text-primary transition-colors">Programs</Link>
       </h2>
       {/* The coaching call now runs as "Coaching Season" in the Events section. */}
       <RailCard

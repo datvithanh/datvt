@@ -98,6 +98,8 @@
 .field-guide .ln-divider img{width:40px;height:40px}
 .ln-divider+.ln-section,.ln-hero+.ln-section{border-top:0}
 .ln-ways .ln-wrap{padding-top:0}
+/* Keep the Programs anchor clear of the floating header on desktop and phones. */
+#ln-ways{scroll-margin-top:96px}
 @media(max-width:900px){.ln-divider{padding:4px 20px;gap:22px}.field-guide .ln-divider img{width:32px;height:32px}}
 .ln-wrap{max-width:1280px;margin:0 auto;padding:100px 40px;display:flex;flex-direction:column;gap:40px}
 .field-guide .ln-section h2{font:800 64px/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
