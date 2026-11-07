@@ -9,10 +9,10 @@ import { NEXT_COHORT_START, NEXT_MINI_DATES } from '@/lib/field-guide'
 // rounded 90° corner on the left margin and drops down beside the phases. See docs/design/README.md.
 
 const phases = [
-  { name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption' },
-  { name: 'Purification', text: 'Patterns met fully begin to unwind, freeing you to choose anew.', tone: 'clay', glyph: 'purification' },
-  { name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition' },
-  { name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration' },
+  { n: '01', name: 'Absorption', text: 'Attention steadies, and your patterns start to show in real time.', tone: 'marigold', glyph: 'absorption' },
+  { n: '02', name: 'Purification', text: 'Patterns met fully begin to unwind, freeing you to choose anew.', tone: 'clay', glyph: 'purification' },
+  { n: '03', name: 'Recognition', text: 'You see how a self is being constructed, directly rather than conceptually.', tone: 'sage', glyph: 'recognition' },
+  { n: '04', name: 'Integration', text: 'Land insight into your life, bring your practice beyond the\u00a0cushion.', tone: 'blue', glyph: 'integration' },
 ]
 
 const stories = [
@@ -39,9 +39,9 @@ export function HomeContent() {
     </div>
     <h2 className="ln-phases-title">Realization as a fitness</h2>
     <ol className="ln-phases">
-      {phases.map(p => <li key={p.name} className={`tone-${p.tone}`}>
+      {phases.map(p => <li key={p.n} className={`tone-${p.tone}`}>
         <img className="ln-phase-glyph" src={`/brand/home/glyph-${p.glyph}.svg`} alt="" width="48" height="48" />
-        <div><h3>{p.name}</h3>
+        <div><span className="ln-num">{p.n}</span><h3>{p.name}</h3>
         <p>{p.text}</p></div>
       </li>)}
     </ol>

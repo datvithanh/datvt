@@ -419,3 +419,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Removed the duplicate 01–04 labels above Absorption, Purification, Recognition, and Integration on the homepage. Names, icons, and descriptions are unchanged.
 - Why: Dat, Nov 7, specified the color-number order and asked to remove numbers from the elements.
 - Provisional: none.
+
+### 2026-11-07 · Keep phase numbers as well (`home-04-lanes` only)
+- Restored 01–04 above Absorption, Purification, Recognition, and Integration, following Dat's correction to leave those numbers in place.
+- Track numbering remains yellow 1, red 2, green 3, blue 4; numbered finish markings and tapering stripes stay combined.
+- Original phase layout and clearance below the track are retained.
+- Why: Dat, Nov 7, corrected the request to keep numbers on the phase elements.
+- Provisional: none.

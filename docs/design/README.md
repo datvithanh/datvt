@@ -56,4 +56,4 @@ thin toward each staggered tip. Markings sit outside the rubber-grain filter to 
 Lane widths, colors, curves, and overall endpoint positions remain unchanged. Mobile keeps
 the existing cropped artwork.
 
-The phase descriptions no longer repeat 01–04 above their names; numbering lives on the track.
+The phase descriptions retain 01–04 above their names, matching the track numbers by color.
