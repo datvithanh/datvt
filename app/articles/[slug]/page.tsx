@@ -191,6 +191,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </aside>
       <div className="article-prose">{body}</div>
     </div>
-    
+
   </article>
 }

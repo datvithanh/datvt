@@ -51,6 +51,6 @@ export function MediaContent() {
         </section>
       </aside>
     </div>
-    
+
   </>
 }

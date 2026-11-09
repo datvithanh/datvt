@@ -17,6 +17,6 @@ export function ResourcesContent() {
         </Link>)}</div>
       </section>
     </div>
-    
+
   </>
 }

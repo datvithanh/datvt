@@ -476,3 +476,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Removed lane numbers 1–4 and the white starting/underline marks from the homepage track. Colored lanes, curve geometry, endpoint lengths and rubber grain are unchanged. Phase labels 01–04 remain.
 - Why: Dat, Nov 7, requested a temporary Netlify review and clarified removal of both the numbers and lines.
 - Provisional: this is the temporary preview only; canonical production is not changed.
+
+### 2026-11-09 · Sync from cc `main` (`home-04-lanes` only)
+- Brought over the one change `mindtraining-cc/cc` had that this branch didn't: the three "Apply for Cohort 11" buttons on /bootcamp open the application survey in a new tab (`target="_blank" rel="noopener noreferrer"`, from cc PR #30).
+- Restored `public/images/cc-emblem.png` (CC's author photo in `content/team/cc.mdx`) and `public/brand/cc-logo-guide.svg`, which cc kept and this branch had dropped. The newer `scripts/check-public-site.py` from cc now passes here (34 pages, 23 articles).
+- Kept as they are on purpose: this preview's Netlify and `noindex` settings (`netlify.toml`, `next.config.ts`, `app/layout.tsx`); the docs (ledger, handoff, design notes, decisions); "Crossfit" with a lowercase f in four docs where cc still has "CrossFit".
+- After this commit the website code and assets match cc `main` (`2dce30d`) apart from those items. New work continues here and Dat ports it to cc.
+- Why: Dat, Nov 9: "cont to work in datvt. ill do the porting."
