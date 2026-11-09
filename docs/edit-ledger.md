@@ -483,3 +483,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Kept as they are on purpose: this preview's Netlify and `noindex` settings (`netlify.toml`, `next.config.ts`, `app/layout.tsx`); the docs (ledger, handoff, design notes, decisions); "Crossfit" with a lowercase f in four docs where cc still has "CrossFit".
 - After this commit the website code and assets match cc `main` (`2dce30d`) apart from those items. New work continues here and Dat ports it to cc.
 - Why: Dat, Nov 9: "cont to work in datvt. ill do the porting."
+
+### 2026-11-09 · Bootcamp hero eyebrow: drop "12 weeks" (`home-04-lanes` only)
+- The line above "ILLUMINATION BOOTCAMP" now reads "PAID PROGRAM · LIVE ONLINE" (was "… · 12 WEEKS"). The length still appears in the "Next cohort: January 25, 2027 · 12 weeks" line below it.
+- Why: Dat, Nov 9.
