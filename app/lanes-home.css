@@ -229,3 +229,10 @@
 /* Homepage body text: one size, the hero lede's (22 units desktop, 18px phones). Dat, Nov 6 */
 .field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:calc(22 * var(--ln-u));line-height:1.5}
 @media(max-width:900px){.field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:18px}}
+
+/* "Ways to train" Bootcamp card (Dat, Nov 9): clay red with a minimal grain instead of ink. Bone type on clay is
+   5.4:1; the eyebrow goes bone (marigold on clay would be 2.4:1) and the divider becomes a faint bone rule. */
+:root .field-guide .ln-card.ln-card-paid{background:url('/brand/home/card-grain.svg') 0 0/240px 240px,var(--clay)}
+:root .field-guide .ln-card-paid .ln-card-eyebrow{color:var(--bone)}
+:root .field-guide .ln-card-paid .ln-card-text{color:var(--bone)}
+:root .field-guide .ln-card-paid .ln-card-foot{border-top-color:rgba(242,236,220,.38)}

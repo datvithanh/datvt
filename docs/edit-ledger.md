@@ -487,3 +487,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-09 · Bootcamp hero eyebrow: drop "12 weeks" (`home-04-lanes` only)
 - The line above "ILLUMINATION BOOTCAMP" now reads "PAID PROGRAM · LIVE ONLINE" (was "… · 12 WEEKS"). The length still appears in the "Next cohort: January 25, 2027 · 12 weeks" line below it.
 - Why: Dat, Nov 9.
+
+### 2026-11-09 · Homepage: Bootcamp card in clay red with a light grain (`home-04-lanes` only)
+- The "Illumination Bootcamp" card under "Ways to train" is now clay red (`--clay` #A63A2E) instead of ink. It has a minimal print grain (`public/brand/home/card-grain.svg`: a soft dark grain plus sparse pale specks), drawn over the flat color so the brand red stays the base. It follows Dat's reference card, without the bands.
+- The eyebrow "PAID · 12 WEEKS · LIVE ONLINE" is bone (marigold on clay would be 2.4:1). The description is bone too, and the rule above "Explore" is a faint bone line. Bone on clay is 5.4:1.
+- The "Explore" button stays bone with ink text and still turns marigold on hover.
+- Why: Dat, Nov 9.
