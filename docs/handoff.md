@@ -2,6 +2,18 @@
 
 Paste this into a new thread to pick up the work. The owner is Dat. Communication style: Dat sends short requests, often with screenshots. Do the work, verify it, push, and report briefly.
 
+## Production vs this repo (updated Nov 9)
+
+- **Production (mindtraining.cc)** is the Netlify site `contemplativecrossfit`, built from
+  `mindtraining-cc/cc` → `projects/cc-content-site/`, branch `main`. Pushing there goes live at once.
+  The 04 Lanes redesign was ported there on Nov 7 (cc PRs #28, #29).
+- **Work continues here in `datvt` on `home-04-lanes`. Dat ports it to cc.** Don't push to cc.
+- On Nov 9 this branch was synced with cc `main` (`2dce30d`): website code and assets match. The
+  only intended differences are this preview's Netlify, noindex and asset-origin settings
+  (`netlify.toml`, `next.config.ts`, `app/layout.tsx`) and the docs.
+- Before porting, Dat can diff `cc/projects/cc-content-site` against this repo; everything in the
+  ledger after the "Sync from cc main" entry is new since the last port.
+
 ## Where things live
 
 - **Repo:** `datvithanh/datvt` (GitHub). This is the root Next.js app for mindtraining.cc (Contemplative Crossfit, "CC").
