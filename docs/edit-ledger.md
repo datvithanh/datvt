@@ -493,3 +493,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The eyebrow "PAID · 12 WEEKS · LIVE ONLINE" is bone (marigold on clay would be 2.4:1). The description is bone too, and the rule above "Explore" is a faint bone line. Bone on clay is 5.4:1.
 - The "Explore" button stays bone with ink text and still turns marigold on hover.
 - Why: Dat, Nov 9.
+
+### 2026-11-12 · Homepage cards: side column, dates under the text; heading; Bootcamp hero play button (`home-04-lanes` only)
+- **Clay Bootcamp card: side column.** The right 30% now carries two bone track lanes with a thin clay gap. They come in from the right edge, turn one rounded corner and run down off the bottom, with grain printed into them (`public/brand/home/card-side-track.svg`), after Dat's "Middle of the day" track card. The text, rule and button keep to the left of the column. On phones (≤ 900 px) the column is hidden.
+- **Card dates.** Both cards now show their date in Plex under the body text, as on the Bootcamp and Mini Bootcamp pages.
+  - Bootcamp: "Next cohort: January 25, 2027 · 12 weeks" in bone. The "Starts January 25, 2027" beside the button is gone, and the eyebrow is now "PAID · LIVE ONLINE".
+  - Mini Bootcamp: the text is "Mini Bootcamp: five free days of live practice." followed by "Next run: December 14–18, 2026", with the date in clay.
+  - A date never splits across lines.
+- **Community heading.** It now reads "YOU'VE FOUND THE MAPS / FIND YOUR PEOPLE" on two lines (was three). The heading block is a single column now that the list beside it is gone.
+- **Bootcamp hero video.** The play button is the bone corner disc used on the story cards (40 px, bottom-right, ink on hover); it was a brown disc over the middle face.
+- Why: Dat, Nov 12.

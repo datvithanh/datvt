@@ -123,7 +123,7 @@
 :root .field-guide.home-page .ln-card.ln-card-free .ln-button-outline{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);box-shadow:none}
 
 .ln-community .ln-wrap{gap:48px}
-.ln-community-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.ln-community-head{display:block}
 .ln-community-body{display:flex;flex-direction:column;gap:14px;justify-self:end;text-align:left}
 @media(max-width:900px){.ln-community-body{justify-self:start}}
 .field-guide .ln-h2-accent{color:var(--clay)}
@@ -236,3 +236,14 @@
 :root .field-guide .ln-card-paid .ln-card-eyebrow{color:var(--bone)}
 :root .field-guide .ln-card-paid .ln-card-text{color:var(--bone)}
 :root .field-guide .ln-card-paid .ln-card-foot{border-top-color:rgba(242,236,220,.38)}
+
+/* Card dates under the body text, as on the Bootcamp and Mini Bootcamp pages (Dat, Nov 12): Plex, date in clay. */
+.field-guide .ln-card-date{font:400 15px/1.4 'CC Plex',monospace;letter-spacing:0;color:var(--ink);margin-top:-4px}
+.field-guide .ln-card-date-value{color:var(--clay);white-space:nowrap}
+:root .field-guide .ln-card-paid .ln-card-date{color:rgba(242,236,220,.82)}
+:root .field-guide .ln-card-paid .ln-card-date-value{color:var(--bone)}
+/* Side column on the clay card (Dat, Nov 12): the right 30% carries two bone track lanes that turn one corner and bleed
+   off the right and bottom edges; the text, rule and button keep to the left of it. Phones drop the column. */
+:root .field-guide .ln-card.ln-card-paid{padding-right:calc(30% + 32px)}
+.field-guide .ln-card-side{position:absolute;top:0;right:0;bottom:0;width:30%;background:url('/brand/home/card-side-track.svg') right top/100% auto no-repeat;pointer-events:none}
+@media(max-width:900px){:root .field-guide .ln-card.ln-card-paid{padding-right:28px}.field-guide .ln-card-side{display:none}}

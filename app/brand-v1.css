@@ -117,10 +117,10 @@
 
 /* Bootcamp participant stories: same treatment as the homepage stories (Dat, Nov 6). Bone play disc in the bottom-right
    corner, off the face; quotes in Archivo Regular italic at the body size; names in Plex caps. */
-:root .field-guide:not(.fg-legacy-chrome) .face-stories .face-thumb .play-mark{left:auto;top:auto;right:14px;bottom:14px;width:40px;height:40px;margin:0;border-radius:50%;background:var(--bone);box-shadow:0 2px 8px rgba(14,14,12,.22);transform:none;transition:background .15s}
-:root .field-guide:not(.fg-legacy-chrome) .face-stories .face-thumb .play-mark:after{left:15px;top:12px;border-width:8px 0 8px 12px;border-color:transparent transparent transparent var(--ink)}
-:root .field-guide:not(.fg-legacy-chrome) .face-stories .face-thumb:is(:hover,:focus-visible) .play-mark{background:var(--ink);transform:none}
-:root .field-guide:not(.fg-legacy-chrome) .face-stories .face-thumb:is(:hover,:focus-visible) .play-mark:after{border-left-color:var(--bone)}
+:root .field-guide:not(.fg-legacy-chrome) :is(.face-stories .face-thumb,.faces-film-play) .play-mark{left:auto;top:auto;right:14px;bottom:14px;width:40px;height:40px;margin:0;border-radius:50%;background:var(--bone);box-shadow:0 2px 8px rgba(14,14,12,.22);transform:none;transition:background .15s}
+:root .field-guide:not(.fg-legacy-chrome) :is(.face-stories .face-thumb,.faces-film-play) .play-mark:after{left:15px;top:12px;border-width:8px 0 8px 12px;border-color:transparent transparent transparent var(--ink)}
+:root .field-guide:not(.fg-legacy-chrome) :is(.face-stories .face-thumb,.faces-film-play):is(:hover,:focus-visible) .play-mark{background:var(--ink);transform:none}
+:root .field-guide:not(.fg-legacy-chrome) :is(.face-stories .face-thumb,.faces-film-play):is(:hover,:focus-visible) .play-mark:after{border-left-color:var(--bone)}
 :root .field-guide:not(.fg-legacy-chrome) .face-stories .person-story blockquote{font:italic 400 calc(22 * var(--ln-u))/1.5 'CC Archivo',Arial,sans-serif;letter-spacing:0;margin:0 0 16px;flex:none}
 :root .field-guide:not(.fg-legacy-chrome) main .face-stories .person-story figcaption{font:400 13px/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase;padding-top:0}
 :root .field-guide:not(.fg-legacy-chrome) .face-stories .person-story figcaption span{font-weight:400}
