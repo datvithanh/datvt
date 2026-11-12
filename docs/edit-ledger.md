@@ -520,3 +520,18 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Repeat tile: `CC_key-column-O4-tile_bone.svg`, the same unit in bone, padded to that pitch.
 - The text keeps 112 px clear on the right (72 px on phones). "12 weeks" in the eyebrow no longer splits across lines.
 - Why: Dat, Nov 12: "this is the key column unit".
+
+### 2026-11-12 · One type system for the whole site (`home-04-lanes` only)
+- New `app/type.css` defines every text role once and maps the site's elements onto those roles (`docs/type-system.md`). Distinct text styles across 11 key pages went from 47 to 20 on desktop and from 47 to 19 on phones (`scripts/check-type.mjs`).
+- Changes visitors will notice:
+  - Page titles on every page except the homepage are bigger than section headlines: 64 px at 1440 × 900 (was 52 px), 39 px on phones.
+  - Body text is one size everywhere: about 18 px at 1440 × 900, 17 px on phones. Homepage body comes down from 21 px; other pages go up from 16 px.
+  - Story quotes match body text.
+  - FAQ questions, essay titles, lesson headings and legal headings share one minor-title size.
+  - The homepage card titles now scale with the window like everything else.
+  - Plex labels settle on eyebrow 14 px (13 px on phones), data 15 px and caption 13 px. Article dates and tags are data.
+  - Footer small print and the phone "Menu" button come up to 13 px.
+  - Bold inside article and lesson text is regular weight; the Bootcamp schedule times are SemiBold.
+  - Long headings break into balanced lines.
+- `!important` was dropped from the older size rules in `brand-v1.css` and `brand-v1-legacy.css` that `type.css` now owns.
+- Why: Dat, Nov 12, after the hierarchy audit; decisions: page-title role ("make sure the sizing isn't too large"), minor-title role, one body size, eyebrow 14 / data 15.

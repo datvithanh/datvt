@@ -74,8 +74,8 @@
 /* Phones. */
 @media(max-width:900px){
   :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h1{font-size:clamp(30px,9vw,48px);hyphens:auto;overflow-wrap:break-word}
-  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h2{font-size:clamp(34px,9vw,48px)!important}
-  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.legal-document-body h2,.past-media-item h3,.show-episode h3,.resource-reading h3,.lesson-summary-copy strong){font-size:20px!important}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h2{font-size:clamp(34px,9vw,48px)}
+  :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.legal-document-body h2,.past-media-item h3,.show-episode h3,.resource-reading h3,.lesson-summary-copy strong){font-size:20px}
   :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.journal-card-copy,.instagram-panel,.legal-document-body,.prose,.media-section-heading,.course-discovery-copy) h2,
   :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main h3{font-size:24px}
   :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(.flyer-offer h3,.journal-card:first-child .journal-card-copy h2){font-size:32px}
@@ -87,7 +87,7 @@
 
 /* Older components inside these pages (article meta, tag chips, tables, video badges, event dates): raise to the 13 px floor. */
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main :is(time,th,.event-date,.px-2,span.block,span.absolute){font-family:'CC Plex',monospace;font-size:13px;letter-spacing:.02em}
-:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .event-date{font-size:15px!important}
+:root .field-guide:not(.fg-legacy-chrome):not(.home-page) main .event-date{font-size:15px}
 :root .field-guide:not(.fg-legacy-chrome):not(.home-page) main nav a{font:400 13px/1.5 'CC Plex',monospace;letter-spacing:.02em}
 
 /* Cards that used to carry their own ink (blue-black) take the kit ink. */
