@@ -509,3 +509,14 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The next-cohort lines below them now carry only the date: "Next cohort: January 25, 2027".
 - This reverses the Nov 9 and Nov 12 moves of "12 weeks" into the date line.
 - Why: Dat, Nov 12.
+
+### 2026-11-12 · Clay Bootcamp card: the key column replaces the track graphic (`home-04-lanes` only)
+- The side column on the homepage Bootcamp card is now the CC key column: Dat's O4 key unit stacked down the right side in bone.
+  - Size: 26 px wide and 36 px in from the top, right and bottom edges; 20 px wide on phones, where it now stays.
+  - Spacing: units sit on the 9-unit pitch of Dat's ×4 file and are never cut off; any spare height is spread evenly between them.
+- It replaces the bone track graphic from earlier on Nov 12, which was a misreading of "side column"; that file is deleted.
+- Files:
+  - Dat's sources: `public/brand/key-column/CC_key-column-O4-unit_clay_v1.svg` and `CC_key-column-O4-x4_clay_v1.svg`.
+  - Repeat tile: `CC_key-column-O4-tile_bone.svg`, the same unit in bone, padded to that pitch.
+- The text keeps 112 px clear on the right (72 px on phones). "12 weeks" in the eyebrow no longer splits across lines.
+- Why: Dat, Nov 12: "this is the key column unit".
