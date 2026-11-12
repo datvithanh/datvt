@@ -53,10 +53,10 @@ export function HomeContent() {
     <h2 id="ln-ways">Ways to train</h2>
     <div className="ln-ways-grid">
       <Link className="ln-card ln-card-paid" href="/bootcamp">
-        <span className="ln-card-eyebrow tone-marigold">Paid · Live online</span>
+        <span className="ln-card-eyebrow tone-marigold">Paid · Live online · 12 weeks</span>
         <span className="ln-card-title">Illumination Bootcamp</span>
         <span className="ln-card-text">Twelve weeks of intensive training for practitioners ready for transmission and relational feedback.</span>
-        <span className="ln-card-date">Next cohort: <span className="ln-card-date-value">{NEXT_COHORT_START}</span> · 12 weeks</span>
+        <span className="ln-card-date">Next cohort: <span className="ln-card-date-value">{NEXT_COHORT_START}</span></span>
         <span className="ln-card-foot"><span className="ln-button ln-button-bone">Explore <span aria-hidden="true">↗</span></span></span>
         <span className="ln-card-side" aria-hidden="true" />
       </Link>

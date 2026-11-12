@@ -503,3 +503,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - **Community heading.** It now reads "YOU'VE FOUND THE MAPS / FIND YOUR PEOPLE" on two lines (was three). The heading block is a single column now that the list beside it is gone.
 - **Bootcamp hero video.** The play button is the bone corner disc used on the story cards (40 px, bottom-right, ink on hover); it was a brown disc over the middle face.
 - Why: Dat, Nov 12.
+
+### 2026-11-12 · "12 weeks" back in the eyebrows (`home-04-lanes` only)
+- Bootcamp hero eyebrow: "PAID PROGRAM · LIVE ONLINE · 12 WEEKS". Homepage Bootcamp card eyebrow: "PAID · LIVE ONLINE · 12 WEEKS".
+- The next-cohort lines below them now carry only the date: "Next cohort: January 25, 2027".
+- This reverses the Nov 9 and Nov 12 moves of "12 weeks" into the date line.
+- Why: Dat, Nov 12.
