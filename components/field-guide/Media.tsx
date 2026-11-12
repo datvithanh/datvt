@@ -17,7 +17,7 @@ export function MediaContent() {
   const [featured, ...earlier] = showEpisodes
   return <>
     <section className="resource-intro conversation-intro wrap">
-      <h1 className="resource-title">Media<br /><em>In conversation</em></h1>
+      <h1 className="resource-title">Media <em>in conversation</em></h1>
       <p className="resource-deck">The BDSM show, past YouTube conversations, and observations from the CC community on Instagram.</p>
     </section>
     <div className="media-columns wrap">

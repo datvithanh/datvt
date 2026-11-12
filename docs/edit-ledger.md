@@ -535,3 +535,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Long headings break into balanced lines.
 - `!important` was dropped from the older size rules in `brand-v1.css` and `brand-v1-legacy.css` that `type.css` now owns.
 - Why: Dat, Nov 12, after the hierarchy audit; decisions: page-title role ("make sure the sizing isn't too large"), minor-title role, one body size, eyebrow 14 / data 15.
+
+### 2026-11-12 · Media title without the forced break (`home-04-lanes` only)
+- The /media title is now one line, "MEDIA IN CONVERSATION", at 1440 × 900 and two lines on phones. The hard line break after "Media" is gone; it had been splitting the title into "MEDIA / IN / CONVERSATION" on phones.
+- Why: Dat, Nov 12.
