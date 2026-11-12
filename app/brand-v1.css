@@ -125,3 +125,17 @@
 :root .field-guide:not(.fg-legacy-chrome) main .face-stories .person-story figcaption{font:400 13px/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase;padding-top:0}
 :root .field-guide:not(.fg-legacy-chrome) .face-stories .person-story figcaption span{font-weight:400}
 @media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) .face-stories .person-story blockquote{font-size:18px}}
+
+/* Bootcamp section tabs (components/field-guide/BootcampTabs.tsx), after the Coaching bar (Dat, Nov 12): a full-width
+   strip that sticks under the header (73 px, 62 px on phones), tabs evenly spaced across the content width, the current
+   section in clay with a 2 px underline, and the Apply jump as an outlined clay button on the right. */
+.field-guide .program-tabs{position:sticky;top:73px;z-index:39;background:rgba(242,236,220,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-block:1px solid var(--line);margin-bottom:3.5rem}
+.field-guide .program-tabs-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;overflow-x:auto;scrollbar-width:none}
+.field-guide .program-tabs-inner::-webkit-scrollbar{display:none}
+.field-guide .program-tabs-inner a:not(.program-tabs-cta){padding:18px 0 16px;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--muted,#52594e);white-space:nowrap;text-decoration:none;transition:color .15s,border-color .15s}
+.field-guide .program-tabs-inner a:not(.program-tabs-cta):hover{color:var(--ink)}
+.field-guide .program-tabs-inner a[aria-current="true"]:not(.program-tabs-cta){color:var(--clay);border-bottom-color:var(--clay)}
+.field-guide .program-tabs-cta{flex:none;padding:8px 18px;border:2px solid var(--clay);color:var(--clay);font:600 15px/1.2 'CC Archivo',Arial,sans-serif;white-space:nowrap;text-decoration:none;transition:background .15s,color .15s}
+.field-guide .program-tabs-cta:hover,.field-guide .program-tabs-cta[aria-current="true"]{background:var(--clay);color:var(--bone)}
+.field-guide.program-page main :is(#stories,#details,#schedule,#tuition,#application,#faq){scroll-margin-top:150px}
+@media(max-width:900px){.field-guide .program-tabs{top:62px;margin-bottom:2rem}.field-guide .program-tabs-inner{gap:20px}.field-guide .program-tabs-inner a:not(.program-tabs-cta){padding:15px 0 13px}.field-guide .program-tabs-cta{padding:6px 12px;font-size:14px}.field-guide.program-page main :is(#stories,#details,#schedule,#tuition,#application,#faq){scroll-margin-top:120px}}

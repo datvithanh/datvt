@@ -549,3 +549,14 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Provisional: "Lives Transformed" stays until Dat picks wording. The writing guide rules out "transform" language; suggested "300+ practitioners trained", which needs the 300+ figure confirmed.
 - **Media section titles:** "The BDSM show", "Past media" and "On Instagram" on /media are now subsections, matching "Free courses" on /resources: Archivo SemiBold, sentence case, 41 px (32 px on phones). They were caps ExtraBold section headlines.
 - Why: Dat, Nov 12.
+
+### 2026-11-12 · Bootcamp: sticky section tabs, like Coaching's (`home-04-lanes` only)
+- The row of section links on /bootcamp is now a tab bar (`components/field-guide/BootcampTabs.tsx`) modeled on the Coaching page's.
+  - It sticks under the header while you scroll (73 px on desktop, 62 px on phones), on a translucent bone strip with a hairline above and below.
+  - Tabs: STORIES · COURSE DETAILS · SCHEDULE · TUITION · FAQ, evenly spaced across the content width in the eyebrow role (Plex Medium 14 px caps). The current section's tab turns clay with a 2 px underline as you scroll.
+  - "Apply" moved out of the tabs into an outlined clay button on the right, like Coaching's "Get Notified". It jumps to the application section and fills clay on hover.
+  - Each tab lands its section just below the bar. On phones the bar scrolls sideways, as on Coaching.
+  - "Participant stories" is shortened to "Stories" to match Coaching.
+- The Coaching, Embodiment and other sticky tab bars also use the eyebrow role now: Coaching's were Plex Regular 13 px.
+- The Coaching page stays unlinked from the site navigation, as Dat asked.
+- Why: Dat, Nov 12.

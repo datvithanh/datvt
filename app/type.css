@@ -127,6 +127,17 @@
   .field-guide main :is(.fineprint,.form-status,.course-signup-note,small):not(.lesson-summary-copy small):not(.story-note),
   .field-guide .site-footer :is(.form-status,.fineprint)
 ){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:400!important;font-size:var(--t-fine)!important;line-height:1.5;letter-spacing:0!important;text-transform:none}
+/* Tab bars (Bootcamp, Coaching and the other sticky section bars) use the eyebrow role. After caption, because some
+   of their links carry tiny Tailwind sizes that the caption rule also matches. */
+:root:root:root:root:root:root:root :where(
+  .field-guide main .program-tabs-inner a:not(.program-tabs-cta),
+  .field-guide main .sticky nav a:not(.btn-primary)
+){font-family:'CC Plex',monospace!important;font-weight:500!important;font-size:var(--t-eyebrow)!important;line-height:1.3;letter-spacing:.12em!important;text-transform:uppercase}
+
+/* The Apply button in the Bootcamp tab bar is a compact button: Archivo SemiBold, not the nav-link Plex. */
+:root:root:root:root:root:root:root :where(.field-guide main .program-tabs-cta){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:15px!important;line-height:1.2;letter-spacing:0!important;text-transform:none}
+@media(max-width:900px){:root:root:root:root:root:root:root :where(.field-guide main .program-tabs-cta){font-size:14px!important}}
+
 /* Footer small text keeps its own font and case; it only comes up to the 13 px floor. */
 :root:root:root:root:root:root:root :where(
   .field-guide .site-footer :is(.footer-company,.footer-company *,.footer-legal a,.footer-identity p,.footer-destinations a,.footer-social a)
