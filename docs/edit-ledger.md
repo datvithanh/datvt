@@ -539,3 +539,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-12 · Media title without the forced break (`home-04-lanes` only)
 - The /media title is now one line, "MEDIA IN CONVERSATION", at 1440 × 900 and two lines on phones. The hard line break after "Media" is gone; it had been splitting the title into "MEDIA / IN / CONVERSATION" on phones.
 - Why: Dat, Nov 12.
+
+### 2026-11-12 · Coaching stats; Media section titles as subsections (`home-04-lanes` only)
+- **Coaching stats** (/coaching, Stories tab):
+  - The numbers in the stats banner are now large ExtraBold figures in clay, the same treatment as the "$2,450" tuition price (52 px at 1440 × 900, 35 px on phones). They were 13 px. The labels under them are Plex captions.
+  - The banner is three even columns on phones, so nothing runs off the box.
+  - "8 Cohorts Completed" is now "9".
+  - These stats are hard-coded in `components/bootcamp/Testimonials.tsx`, not tied to `lib/cohort.ts`.
+  - Provisional: "Lives Transformed" stays until Dat picks wording. The writing guide rules out "transform" language; suggested "300+ practitioners trained", which needs the 300+ figure confirmed.
+- **Media section titles:** "The BDSM show", "Past media" and "On Instagram" on /media are now subsections, matching "Free courses" on /resources: Archivo SemiBold, sentence case, 41 px (32 px on phones). They were caps ExtraBold section headlines.
+- Why: Dat, Nov 12.

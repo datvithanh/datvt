@@ -12,7 +12,7 @@ window, and they never go below the phone size. Phones (≤ 900 px) are fixed. N
 | Display | 108u | 55 px | Archivo 800 caps | Homepage hero only ("LIVE IN PRACTICE") |
 | Page title | 68u (64 px at 1440) | clamp(36, 10vw, 56) | Archivo 800 caps | The `h1` of every other page |
 | Section headline | 56u | clamp(34, 9vw, 48) | Archivo 800 caps | Section titles |
-| Card title / subsection | 44u | 32 px | Archivo 600 | Feature card titles, subsections (Five days of training, Free courses) |
+| Card title / subsection | 44u | 32 px | Archivo 600 | Feature card titles, subsections (Five days of training, Free courses, the Media page sections) |
 | Subhead | 30u | 24 px | Archivo 600 | Item and phase titles |
 | Minor title | 22u (min 19) | 19 px | Archivo 600 | FAQ questions, essay titles, lesson headings, legal headings |
 | Lede | 22u (min 18) | 18 px | Archivo 400 | The intro paragraph under a title |
@@ -35,7 +35,7 @@ Differences from the Typography Guide (Nov 12, Dat):
 - Weights are limited to 400, 400 italic, 600 and 800: bold inside article and lesson text is now regular,
   and the Bootcamp schedule times are 600.
 - Footer small print comes up to 13 px.
-- Kept as exceptions: the tuition price ("$2,450", section size), course outline numbers (data).
+- Kept as exceptions: the tuition price ("$2,450") and the Coaching stat figures (section size, ExtraBold), course outline numbers (data).
 
 Check: `node scripts/check-type.mjs` with the site running. It lists every distinct text style per width.
 Nov 12 after this change: 20 at 1440 px, 19 at 390 px (was 47 / 47).

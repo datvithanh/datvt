@@ -75,7 +75,8 @@
   .field-guide main .journal-card:first-child .journal-card-copy h2,
   .field-guide main :is(.resource-course,.resource-blog)>h2,
   .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *),
-  .field-guide main :is(#mini-week-title,.mini-next>h2)
+  .field-guide main :is(#mini-week-title,.mini-next>h2),
+  .field-guide main :is(#bdsm-heading,#past-media-heading,#instagram-heading)
 ){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-card)!important;line-height:1.08;letter-spacing:0!important;text-transform:none;text-wrap:balance}
 
 /* Minor title */
@@ -138,6 +139,9 @@
 ){font-size:var(--btn-font)!important}
 /* Exceptions kept on purpose */
 :root:root:root:root:root:root:root :where(.field-guide main .tuition-price){font-size:var(--t-section)!important;line-height:1}   /* the price reads as a figure */
+/* Stat figures (Coaching stats banner) get the price's treatment; their labels are captions. */
+:root:root:root:root:root:root:root :where(.field-guide main .stat-figure){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;font-size:var(--t-section)!important;line-height:1;letter-spacing:-.02em!important;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.field-guide main .stat-label){font-family:'CC Plex',monospace!important;font-weight:400!important;font-size:var(--t-caption)!important;line-height:1.4;letter-spacing:.08em!important;text-transform:uppercase;margin-top:10px}
 :root:root:root:root:root:root:root :where(.field-guide main dl dt){font-size:var(--t-body)!important}
 :root:root:root:root:root:root:root :where(.field-guide main span.flex-shrink-0.w-10){font-family:'CC Plex',monospace!important;font-size:var(--t-data)!important;letter-spacing:0!important}   /* course outline numbers are data */
 :root:root:root:root:root:root:root :where(.field-guide .menu-toggle){font-size:var(--t-caption)!important}
