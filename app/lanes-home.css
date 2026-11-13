@@ -230,21 +230,22 @@
 .field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:calc(22 * var(--ln-u));line-height:1.5}
 @media(max-width:900px){.field-guide .ln-card-text,.field-guide .ln-card-free .ln-card-text,:root .field-guide:not(.fg-legacy-chrome) .site-footer .footer-newsletter>div:not(.fg-kit-form)>p{font-size:18px}}
 
-/* "Ways to train" Bootcamp card (Dat, Nov 9): clay red with a minimal grain instead of ink. Bone type on clay is
-   5.4:1; the eyebrow goes bone (marigold on clay would be 2.4:1) and the divider becomes a faint bone rule. */
-:root .field-guide .ln-card.ln-card-paid{background:url('/brand/home/card-grain.svg') 0 0/240px 240px,var(--clay)}
-:root .field-guide .ln-card-paid .ln-card-eyebrow{color:var(--bone)}
+/* "Ways to train" Bootcamp card (Dat, Nov 14): ink with a minimal grain, replacing clay (red read as a warning; ink
+   keeps the paid card first in the hierarchy next to the bone Mini Bootcamp card). Eyebrow and date in marigold (7.3:1
+   on ink), body in bone, no divider above the button. */
+:root .field-guide .ln-card.ln-card-paid{background:url('/brand/home/card-grain.svg') 0 0/240px 240px,var(--ink)}
+:root .field-guide .ln-card-paid .ln-card-eyebrow{color:var(--marigold)}
 :root .field-guide .ln-card-paid .ln-card-text{color:var(--bone)}
-:root .field-guide .ln-card-paid .ln-card-foot{border-top-color:rgba(242,236,220,.38)}
+:root .field-guide .ln-card-paid .ln-card-foot{border-top-color:transparent}
 
 /* Card dates under the body text, as on the Bootcamp and Mini Bootcamp pages (Dat, Nov 12): Plex, date in clay. */
 .field-guide .ln-card-date{font:400 15px/1.4 'CC Plex',monospace;letter-spacing:0;color:var(--ink);margin-top:-4px}
 .field-guide .ln-card-date-value{color:var(--clay);white-space:nowrap}
-:root .field-guide .ln-card-paid .ln-card-date{color:rgba(242,236,220,.82)}
-:root .field-guide .ln-card-paid .ln-card-date-value{color:var(--bone)}
-/* Side column on the clay card (Dat, Nov 12): the CC key column (O4 unit, public/brand/key-column/) in bone, stacked
-   down the right side on the unit's 9-unit pitch; `space` keeps every unit whole and spreads any spare height between
-   them. The text, rule and button keep clear of it. */
-:root .field-guide .ln-card.ln-card-paid{padding-right:112px}
-.field-guide .ln-card-side{position:absolute;top:36px;bottom:36px;right:36px;width:26px;background:url('/brand/key-column/CC_key-column-O4-tile_bone.svg') center top/26px auto space no-repeat;background-repeat:no-repeat space;pointer-events:none}
-@media(max-width:900px){:root .field-guide .ln-card.ln-card-paid{padding-right:72px}.field-guide .ln-card-side{top:24px;bottom:24px;right:22px;width:20px;background-size:20px auto}}
+:root .field-guide .ln-card-paid .ln-card-date{color:rgba(242,236,220,.75)}
+:root .field-guide .ln-card-paid .ln-card-date-value{color:var(--marigold)}
+/* Side column on the ink card (Dat, Nov 14): the CC key column in worn clay, 54 px wide, 44 px in from the left edge,
+   running the full height of the card and cut off by its top and bottom edges like a band through it. The worn tile
+   (card-key-column-worn.png) is 8 linked pairs and repeats seamlessly. Text keeps clear of it on the left. */
+:root .field-guide .ln-card.ln-card-paid{padding-left:144px;padding-right:44px}
+.field-guide .ln-card-side{position:absolute;top:0;bottom:0;left:44px;right:auto;width:54px;background:url('/brand/home/card-key-column-worn.png') center -40px/54px auto repeat-y;pointer-events:none}
+@media(max-width:900px){:root .field-guide .ln-card.ln-card-paid{padding-left:64px;padding-right:20px}.field-guide .ln-card-side{left:16px;width:30px;background-size:30px auto;background-position:center -22px}}

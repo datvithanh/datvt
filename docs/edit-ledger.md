@@ -569,3 +569,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Both sections now share one set of row styles (`:is(.mini-week,.course-details)` in `lanes-home.css` and `type.css`).
 - Provisional: the labels "Daily / Daily / Ongoing" are mine, following Mini's "Daily / Closing"; Dat to confirm.
 - Why: Dat, Nov 13.
+
+### 2026-11-14 · Ink Bootcamp card with a worn clay key column (`home-04-lanes` only)
+- The homepage Bootcamp card ("Ways to train") is now ink with the same light grain, replacing clay. The Mini Bootcamp card is unchanged.
+  - Eyebrow and the cohort date are marigold; body text is bone; "Next cohort:" is bone at 75%. The faint rule above the button is gone.
+- The side column moves to the left and becomes a worn clay key column: 54 px wide, 44 px in from the left edge, running the full height of the card and cut off by its top and bottom edges. Text starts 144 px in.
+  - Phones: 30 px wide, 16 px in; text starts 64 px in.
+  - New file: `public/brand/home/card-key-column-worn.png`, 8 linked pairs of the O4 key in worn clay, repeating seamlessly. The bone key-column tile is no longer used here.
+- Why: Dat, Nov 14. Red as the base read as danger, and the paid card needed to stay first in the hierarchy next to the bone Mini Bootcamp card; picked from mockups (ink, worn column, left, full height, 54 px).
