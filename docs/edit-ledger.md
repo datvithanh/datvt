@@ -560,3 +560,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The Coaching, Embodiment and other sticky tab bars also use the eyebrow role now: Coaching's were Plex Regular 13 px.
 - The Coaching page stays unlinked from the site navigation, as Dat asked.
 - Why: Dat, Nov 12.
+
+### 2026-11-13 · Bootcamp course details in the Mini Bootcamp row format (`home-04-lanes` only)
+- The three items under "When insight meets the rest of your life" on /bootcamp now use the leaf rows from Mini Bootcamp's "Five days of training". Each has a textured leaf on the left, a small Plex label in its color above the title, then the description. The colored top rules are gone.
+  - Direct transmission: blue soft-lance leaf, "Daily".
+  - Live reflection: marigold soft-lance leaf, "Daily".
+  - Many-on-one support: clay nested leaf, "Ongoing".
+- Both sections now share one set of row styles (`:is(.mini-week,.course-details)` in `lanes-home.css` and `type.css`).
+- Provisional: the labels "Daily / Daily / Ongoing" are mine, following Mini's "Daily / Closing"; Dat to confirm.
+- Why: Dat, Nov 13.

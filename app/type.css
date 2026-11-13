@@ -41,7 +41,7 @@
 /* Body */
 :root:root:root:root:root:root:root :where(
   .field-guide main :is(p,li,dd,td),
-  .field-guide .ln-phases p,.field-guide .ln-card-text,.field-guide .mini-week .mw-row p,
+  .field-guide .ln-phases p,.field-guide .ln-card-text,.field-guide :is(.mini-week,.course-details) .mw-row p,
   .field-guide .site-footer .footer-newsletter>div:not(.fg-kit-form)>p
 ){font-size:var(--t-body)!important;line-height:1.5}
 
@@ -65,7 +65,7 @@
 /* Subhead */
 :root:root:root:root:root:root:root :where(
   .field-guide:not(.home-page) main h3,
-  .field-guide .ln-card-title-sm,.field-guide .mini-week .mw-row h3
+  .field-guide .ln-card-title-sm,.field-guide :is(.mini-week,.course-details) .mw-row h3
 ){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-subhead)!important;line-height:1.15;letter-spacing:0!important;text-transform:none}
 
 /* Card title / subsection */
@@ -99,7 +99,7 @@
 /* Eyebrow */
 :root:root:root:root:root:root:root :where(
   .field-guide main :is(.eyebrow,.program-type,.fit-label,.timezone-label,.journal-results,.legal-document-date),
-  .field-guide .ln-card-eyebrow,.field-guide .ln-num,.field-guide .mini-week .mw-label,
+  .field-guide .ln-card-eyebrow,.field-guide .ln-num,.field-guide :is(.mini-week,.course-details) .mw-label,
   .field-guide.legacy-page main :is(p,span,div,a,label).uppercase:is(.text-xs,.text-\[10px\],.text-\[11px\],.text-\[9px\],.text-\[12px\],.text-sm),
   .field-guide.legacy-page main h2:is(.text-xs,.text-sm)
 ){font-family:'CC Plex',monospace!important;font-weight:500!important;font-size:var(--t-eyebrow)!important;line-height:1.3;letter-spacing:.12em!important;text-transform:uppercase}
