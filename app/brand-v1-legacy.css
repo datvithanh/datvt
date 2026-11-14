@@ -1,0 +1,150 @@
+/* Brand v1 for components built on the previous site (Tailwind utilities on globals.css tokens): the pages under
+   .legacy-page (Team, Coaching, Embodiment, courses, videos, essays, …) and the few old components inside
+   field-guide pages. Their colours come from --bg-*, --text-*, --border*, --accent; their fonts from utility
+   classes with Rubik / Courier Prime inlined. Both are mapped onto the kit here, light only (the old dark mode
+   followed the system setting). Type sizes follow the CC Website Typography Guide; brand-v1.css sets the roles.
+   Loaded last. */
+
+/* Tokens, on every field-guide page (old components inside new pages used to inherit the dark-mode values). */
+:root .field-guide{
+  --bg-primary:#F2ECDC;--bg-secondary:#EBE4D2;--bg-tertiary:#E3DAC4;--bg-surface:#F8F4EA;
+  --text-primary:#0E0E0C;--text-secondary:#2C2A26;--text-muted:#5A564D;
+  --border:rgba(14,14,12,.22);--border-subtle:rgba(14,14,12,.12);
+  --accent:#A63A2E;--accent-muted:rgba(166,58,46,.08);--accent-hover:#8A2F25;
+  --silver:#4A4740;--silver-hover:#0E0E0C;--selection-bg:#D98F2B;--selection-text:#0E0E0C;
+  --font-heading:'CC Archivo',Arial,sans-serif;--font-body:'CC Archivo',Arial,sans-serif;--font-sans:'CC Archivo',Arial,sans-serif;
+  --shadow-soft:0 2px 8px rgba(14,14,12,.08);--shadow-medium:0 6px 14px rgba(14,14,12,.12);--shadow-glow:none
+}
+
+/* Font utilities had Rubik and Courier Prime inlined. */
+:root .field-guide :is(.font-heading,.font-sans,.font-body){font-family:'CC Archivo',Arial,sans-serif}
+:root .field-guide .font-mono{font-family:'CC Plex',monospace}
+
+/* Legacy pages: the page background and the old body font. */
+:root .field-guide.legacy-page{background:#F2ECDC;color:var(--ink)}
+:root .field-guide.legacy-page main{font-family:'CC Archivo',Arial,sans-serif;color:var(--ink)}
+
+/* Headings: brand-v1.css gives h1 display, h2 section headline, h3 subhead. Legacy pages use h3 for list and card
+   titles, so theirs sit a step smaller; h4 is a small subhead. */
+:root .field-guide.legacy-page main h3{font-size:calc(26 * var(--ln-u));line-height:1.2}
+:root .field-guide.legacy-page main h4{font:600 18px/1.25 'CC Archivo',Arial,sans-serif;letter-spacing:0;text-transform:none;color:var(--ink)}
+
+/* Body: 17 px on these denser pages; the old xs/sm utility text maps to the caption and small-body sizes. */
+:root .field-guide.legacy-page main :is(p,li,dd,td){font-size:max(15px,calc(17 * var(--ln-u)));line-height:1.55}
+:root .field-guide.legacy-page main :is(p,li,span,a,div,time).text-sm{font-size:15px;line-height:1.5}
+:root .field-guide.legacy-page main :is(p,li,span,a,div,time):is(.text-xs,.text-\[10px\],.text-\[11px\],.text-\[9px\],.text-\[12px\]){font-size:13px;line-height:1.45}
+
+/* Small uppercase labels set in the old heading font are eyebrows: Plex Mono Medium caps. */
+:root .field-guide.legacy-page main :is(p,span,div,a,label).uppercase:is(.text-xs,.text-\[10px\],.text-\[11px\],.text-\[9px\],.text-\[12px\],.text-sm){font-family:'CC Plex',monospace;font-weight:500;letter-spacing:.12em}
+
+/* Buttons. Filled accent buttons become the primary (ink fill, bone text); outlined accent buttons become the
+   secondary (clay outline, clay text). Both take the button type: Archivo SemiBold, sentence case. */
+:root .field-guide.legacy-page main :is(a,button)[class*="bg-accent"]:not([class*="bg-accent-muted"]):not([class*="hover:bg-accent"]){background:var(--ink);color:var(--bone);border-color:var(--ink);box-shadow:0 6px 14px rgba(14,14,12,.18)}
+:root .field-guide.legacy-page main :is(a,button)[class*="bg-accent"]:not([class*="bg-accent-muted"]):not([class*="hover:bg-accent"]):hover{background:var(--clay);border-color:var(--clay);color:var(--bone)}
+:root .field-guide.legacy-page main :is(a,button)[class*="border-accent"]:not(.text-left){border-color:var(--clay);color:var(--clay);border-radius:0}
+:root .field-guide.legacy-page main :is(a,button)[class*="border-accent"]:not(.text-left):hover{background:var(--clay);color:var(--bone)}
+:root .field-guide.legacy-page main :is(a,button):is([class*="bg-accent"],[class*="border-accent"]):is(.uppercase,.font-heading):not(.text-left){font-family:'CC Archivo',Arial,sans-serif;font-weight:600;font-size:17px;letter-spacing:0;text-transform:none}
+
+/* Inputs on legacy forms. */
+:root .field-guide.legacy-page main :is(input,textarea,select){font-family:'CC Archivo',Arial,sans-serif;font-size:17px;background:#F8F4EA;color:var(--ink);border-color:rgba(14,14,12,.3);border-radius:0}
+
+/* Rounded corners and soft glows were the old look; the kit is square. */
+:root .field-guide.legacy-page main :is(.rounded,.rounded-sm,.rounded-md,.rounded-lg,.rounded-xl){border-radius:0}
+
+/* Headings the old code set small (text-xs / text-sm group labels: Browse, Search, Collections, Watch next, Lessons,
+   "Albert in the feed", video groups) are eyebrows, not section headlines. */
+:root .field-guide.legacy-page main h2:is(.text-xs,.text-sm){font-family:'CC Plex',monospace!important;font-weight:500!important;font-size:14px;letter-spacing:.12em!important;line-height:1.3;text-transform:uppercase}
+/* Section headlines match the homepage's (56 units) and wrap long words on phones. */
+:root .field-guide.legacy-page main h2:not(.text-xs):not(.text-sm){font-size:calc(56 * var(--ln-u))}
+@media(max-width:900px){:root .field-guide.legacy-page main h2:not(.text-xs):not(.text-sm){font-size:clamp(30px,9vw,48px);hyphens:auto;overflow-wrap:break-word}}
+
+/* Tiny labels (0.6–0.65 rem eyebrows, author chips, breadcrumbs): up to the 13 px floor in Plex. */
+:root .field-guide.legacy-page main :is(span,a,p,div,time):is([class*="text-[0.6"],[class*="text-[0.5"],[class*="text-[0.7"]){font-family:'CC Plex',monospace;font-size:13px;letter-spacing:.1em}
+:root .field-guide.legacy-page main nav span,:root .field-guide.legacy-page main nav a{font-size:13px}
+:root .field-guide.legacy-page main span.text-text-secondary{font-size:13px}
+
+/* The old outlined .btn-primary becomes the clay secondary button. */
+:root .field-guide.legacy-page .btn-primary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--clay);border:2px solid var(--clay);border-radius:0;font:600 17px/1.2 'CC Archivo',Arial,sans-serif!important;letter-spacing:0;text-transform:none;padding:13px 22px}
+:root .field-guide.legacy-page .btn-primary:hover{background:var(--clay);color:var(--bone);border-color:var(--clay)}
+:root .field-guide.legacy-page main nav .btn-primary{font-size:15px!important;padding:7px 16px}
+
+/* Section tab bars (Coaching, Embodiment, lessons) stick just under the floating header (73 px; 62 px on phones). */
+:root .field-guide.legacy-page main .sticky.top-16{top:73px;z-index:30;background:rgba(242,236,220,.92)}
+@media(max-width:760px){:root .field-guide.legacy-page main .sticky.top-16{top:62px}}
+/* Tabs in those bars: one face, Plex Medium caps; the active tab is clay. */
+:root .field-guide.legacy-page main .sticky nav a:not(.btn-primary){font:500 13px/1.3 'CC Plex',monospace;letter-spacing:.1em;text-transform:uppercase}
+/* List and card titles a step smaller on phones. */
+@media(max-width:900px){:root .field-guide.legacy-page main h3{font-size:19px}}
+
+/* Page edges (Dat, Nov 4): every page's content lines up with the header's, 1200 px wide inside 40 px margins
+   (20 px on phones), the same as the homepage. The old .wrap was 1024 px; Tailwind pages centred their own
+   max-w-* columns. Outer columns now fill the frame; any narrower column inside starts at the left edge. */
+:root .field-guide main .wrap{width:min(1200px,calc(100% - 80px));max-width:none;margin-inline:auto}
+:root .field-guide.legacy-page main [class*="max-w-"].mx-auto{width:min(1200px,calc(100% - 80px));max-width:none;margin-inline:auto;padding-inline:0}
+:root .field-guide.legacy-page main [class*="max-w-"].mx-auto [class*="max-w-"].mx-auto{width:auto;max-width:revert-layer;margin-left:0;margin-right:auto}
+@media(max-width:900px){
+  :root .field-guide main .wrap,
+  :root .field-guide.legacy-page main [class*="max-w-"].mx-auto{width:calc(100% - 40px)}
+  :root .field-guide.legacy-page main [class*="max-w-"].mx-auto [class*="max-w-"].mx-auto{width:auto}
+}
+/* Centred text on the older pages is left-aligned, like the rest of the site. */
+:root .field-guide.legacy-page main .text-center{text-align:left}
+:root .field-guide.legacy-page main :is(.items-center.flex-col,.justify-center.flex-col){align-items:flex-start}
+/* Legal pages: the document spans the frame; its reading column starts at the left edge. */
+:root .field-guide:not(.fg-legacy-chrome) .legal-document{width:min(1200px,calc(100% - 80px));max-width:none}
+:root .field-guide:not(.fg-legacy-chrome) .legal-document-inner{max-width:46rem;margin-left:0;margin-right:auto;padding-inline:0}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) .legal-document{width:calc(100% - 40px)}}
+
+/* Header "Join the Bootcamp" (Dat, Nov 4): a secondary button, ink outline and ink text, no fill, so the page's
+   own primary buttons keep the top of the hierarchy. Hover fills it ink. */
+:root .field-guide:not(.fg-legacy-chrome) .header nav .nav-cta{background:transparent;color:var(--ink);border:2px solid var(--ink);box-shadow:none;padding:calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px)}
+:root .field-guide:not(.fg-legacy-chrome) .header nav .nav-cta:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+/* Lesson infographics stay inside the page edges (they used to bleed 10 px past the text column). */
+:root .field-guide main .lesson-content .infographic-bleed{margin-inline:0}
+
+/* Articles (Notes from practice): each essay image fills its frame, cropped from the centre (was letterboxed). */
+:root .field-guide main .journal-image{background:transparent;border-radius:0}
+:root .field-guide main .journal-image img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+:root .field-guide main .featured-reading .journal-image{height:100%}
+:root .field-guide main .featured-reading .journal-image img{aspect-ratio:auto;min-height:100%;height:100%}
+@media(max-width:760px){:root .field-guide main :is(.journal-image img,.featured-reading .journal-image img){aspect-ratio:16/9;height:auto}}
+
+/* Articles: the essay count is for screen readers only (it announces filter results); not shown. */
+:root .field-guide main .journal-results{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0}
+
+/* Resources: "Free courses" and "Notes from practice" sit one level under the page title: card-title role
+   (Archivo SemiBold, sentence case, 44 units; 32 px on phones). */
+:root .field-guide:not(.fg-legacy-chrome) main :is(.resource-course,.resource-blog)>h2{font-weight:600!important;letter-spacing:-.01em!important;text-transform:none;line-height:1.08;font-size:calc(44 * var(--ln-u))}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) main :is(.resource-course,.resource-blog)>h2{font-size:32px}}
+
+/* FAQ accordions (Bootcamp, Coaching, Embodiment): questions sit one level under subheads, Archivo SemiBold at
+   20 units in sentence case (17 px on phones); answers are body text. */
+:root .field-guide main button[aria-expanded] > h3{font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;letter-spacing:0!important;text-transform:none;line-height:1.3;font-size:max(17px,calc(20 * var(--ln-u)))}
+:root .field-guide main button[aria-expanded] + div p{font-size:max(15px,calc(17 * var(--ln-u)));line-height:1.6;max-width:68ch}
+@media(max-width:900px){:root .field-guide main button[aria-expanded] > h3{font-size:17px}}
+
+/* Mini Bootcamp: "Next run:" in ink, the date in clay. */
+:root .field-guide main .event-date .event-date-value{color:var(--clay)}
+
+/* Course pages (Dat, Nov 5): three levels. 1 the page title (display); 2 section headings ("Before you begin",
+   "The five lessons", "Reading material"): Archivo SemiBold, sentence case, 44 units; 3 headings inside the lesson
+   text ("Welcome", "What is transmission?"): SemiBold, 26 units. The reading column is left-aligned. */
+:root .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *){font-weight:600!important;letter-spacing:-.01em!important;text-transform:none;line-height:1.1;font-size:calc(44 * var(--ln-u))}
+:root .field-guide.course-page main .prose :is(h2,h3){font-weight:600!important;letter-spacing:0!important;text-transform:none;line-height:1.2;font-size:max(20px,calc(26 * var(--ln-u)));margin-top:1.8em}
+:root .field-guide.course-page main .prose{margin-left:0;margin-right:auto}
+@media(max-width:900px){
+  :root .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *){font-size:30px}
+  :root .field-guide.course-page main .prose :is(h2,h3){font-size:21px}
+}
+
+/* List and row titles the old code set at text-sm / text-base (video rows, discussion rooms): subhead at 20 units. */
+:root .field-guide.legacy-page main h3:is(.text-sm,.text-base,.text-xs){font-size:max(17px,calc(20 * var(--ln-u)));line-height:1.25}
+/* Lesson header: the subtitle sits a clear step under the title. */
+:root .field-guide.legacy-page main header h1 + p{margin-top:12px}
+
+/* Breadcrumbs: every part (links, the current page, the "/" separators) in IBM Plex Mono caps. */
+:root .field-guide main nav[aria-label="Breadcrumb"],:root .field-guide main nav[aria-label="Breadcrumb"] :is(a,span){font-family:'CC Plex',monospace;font-weight:400;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+
+/* Mini Bootcamp: the section headings sit one level under the page title (card-title role, as on Resources). */
+:root .field-guide:not(.fg-legacy-chrome) main :is(#mini-week-title,.mini-next>h2){font-weight:600;letter-spacing:-.01em;text-transform:none;line-height:1.08;font-size:calc(44 * var(--ln-u))}
+@media(max-width:900px){:root .field-guide:not(.fg-legacy-chrome) main :is(#mini-week-title,.mini-next>h2){font-size:32px}}

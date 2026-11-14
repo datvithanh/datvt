@@ -31,10 +31,10 @@ export function TestimonialGrid() {
 
       {/* Stats banner */}
       <div className="mt-14 p-6 border border-border/40 rounded-sm">
-        <div className="flex justify-center gap-12 font-heading text-sm uppercase tracking-wider text-center">
-          <div><span className="text-3xl text-accent block">8</span><span className="text-text-muted text-xs mt-1 block">Cohorts Completed</span></div>
-          <div><span className="text-3xl text-accent block">300+</span><span className="text-text-muted text-xs mt-1 block">Lives Transformed</span></div>
-          <div><span className="text-3xl text-accent block">90%</span><span className="text-text-muted text-xs mt-1 block">Completion Rate</span></div>
+        <div className="grid grid-cols-3 gap-4 md:flex md:justify-center md:gap-12 font-heading text-sm uppercase tracking-wider text-center">
+          <div><span className="stat-figure text-accent block">9</span><span className="stat-label text-text-muted text-xs mt-1 block">Cohorts Completed</span></div>
+          <div><span className="stat-figure text-accent block">300+</span><span className="stat-label text-text-muted text-xs mt-1 block">Lives Transformed</span></div>
+          <div><span className="stat-figure text-accent block">90%</span><span className="stat-label text-text-muted text-xs mt-1 block">Completion Rate</span></div>
         </div>
       </div>
     </>

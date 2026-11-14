@@ -9,6 +9,7 @@ export const COHORT_LABEL = 'Cohort 10'
 export const COHORT_START = '2026-09-21' // Monday of week 1 (local time)
 export const COHORT_START_DISPLAY = 'September 21' // human-facing start, used for the pre-start label
 export const COHORT_NEXT_LABEL = 'Cohort 11' // the next cohort, for the CTA
+export const COHORT_NEXT_APPLICATION_URL = 'https://s.zoom.us/m/bPlPelXHc' // Cohort 11 application; update per cohort
 export const COHORT_NEXT_START_DISPLAY = 'January 25' // next cohort start, for the CTA
 export const COHORT_NEXT_END_DISPLAY = 'April 17' // next cohort last day (Saturday of week 12, same shape as Cohorts 9 and 10 — confirm with Khan)
 export const COHORT_NEXT_YEAR = '2027' // year of the next cohort, for full date ranges

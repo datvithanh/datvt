@@ -1,0 +1,177 @@
+/* ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   CC type system: the single source for every text role on the site (Dat, Nov 12).
+   Sizes live only in the tokens below; the role rules map elements to a role. Older stylesheets still set some
+   fonts, but every size here wins, so to change a role, change its token. Loaded last (app/layout.tsx).
+
+   Desktop sizes scale with the window through --ln-u (one unit of the 1280 × 860 homepage stage, ≈ 0.94 px at
+   1440 × 900) and never drop below the phone size. Phones (≤ 900 px) use fixed sizes. Nothing goes below 13 px.
+   See docs/type-system.md for the role list and the reasoning.
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────── */
+
+:root .field-guide{
+  --t-page:max(44px,calc(68 * var(--ln-u)));      /* Page title: one per page (except the homepage, which uses Display) */
+  --t-section:max(34px,calc(56 * var(--ln-u)));   /* Section headline */
+  --t-card:max(32px,calc(44 * var(--ln-u)));      /* Card title / subsection */
+  --t-subhead:max(24px,calc(30 * var(--ln-u)));   /* Subhead: item and phase titles */
+  --t-minor:max(19px,calc(22 * var(--ln-u)));     /* Minor title: FAQ questions, essay titles, lesson headings */
+  --t-lede:max(18px,calc(22 * var(--ln-u)));      /* Lede: the intro paragraph */
+  --t-body:max(17px,calc(19 * var(--ln-u)));      /* Body: all running text */
+  --t-quote:var(--t-body);                        /* Quote: body size, italic */
+  --t-eyebrow:14px;                               /* Eyebrow: Plex caps label above a title */
+  --t-data:15px;                                  /* Data: dates, numbers, text links */
+  --t-caption:13px;                               /* Caption / meta: names, form labels, breadcrumbs */
+  --t-fine:13px;                                  /* Fine print: consent, legal, footer small text */
+}
+@media(max-width:900px){
+  :root .field-guide{
+    --t-page:clamp(36px,10vw,56px);
+    --t-section:clamp(34px,9vw,48px);
+    --t-card:32px;
+    --t-subhead:24px;
+    --t-minor:19px;
+    --t-lede:18px;
+    --t-body:17px;
+    --t-eyebrow:13px;
+  }
+}
+
+/* Role rules. All share one specificity (:root ×7 + :where, above every older !important rule), so later roles win where an element matches two:
+   body → lede → quote → section → subhead → card → minor → page → eyebrow → data → caption → fine. */
+
+/* Body */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(p,li,dd,td),
+  .field-guide .ln-phases p,.field-guide .ln-card-text,.field-guide :is(.mini-week,.course-details) .mw-row p,
+  .field-guide .site-footer .footer-newsletter>div:not(.fg-kit-form)>p
+){font-size:var(--t-body)!important;line-height:1.5}
+
+/* Lede */
+:root:root:root:root:root:root:root :where(
+  .field-guide .ln-lede,
+  .field-guide main :is(.program-lead,.resource-deck,.programs-overview-deck,.article-deck,.hero-description,.updated-intro .large-copy)
+){font-size:var(--t-lede)!important;line-height:1.5}
+
+/* Quote */
+:root:root:root:root:root:root:root :where(
+  .field-guide main blockquote,.field-guide .ln-stories blockquote
+){font-family:'CC Archivo',Arial,sans-serif!important;font-style:italic;font-weight:400!important;font-size:var(--t-quote)!important;line-height:1.5;letter-spacing:0}
+
+/* Section headline */
+:root:root:root:root:root:root:root :where(
+  .field-guide:not(.home-page) main h2,
+  .field-guide .ln-section h2,.field-guide .site-footer .footer-newsletter h2
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;font-size:var(--t-section)!important;line-height:1;letter-spacing:-.02em!important;text-transform:uppercase;text-wrap:balance}
+
+/* Subhead */
+:root:root:root:root:root:root:root :where(
+  .field-guide:not(.home-page) main h3,
+  .field-guide .ln-card-title-sm,.field-guide :is(.mini-week,.course-details) .mw-row h3
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-subhead)!important;line-height:1.15;letter-spacing:0!important;text-transform:none}
+
+/* Card title / subsection */
+:root:root:root:root:root:root:root :where(
+  .field-guide .ln-card-title:not(.ln-card-title-sm),
+  .field-guide main .flyer-offer h3,
+  .field-guide main .journal-card:first-child .journal-card-copy h2,
+  .field-guide main :is(.resource-course,.resource-blog)>h2,
+  .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *),
+  .field-guide main :is(#mini-week-title,.mini-next>h2),
+  .field-guide main :is(#bdsm-heading,#past-media-heading,#instagram-heading)
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-card)!important;line-height:1.08;letter-spacing:0!important;text-transform:none;text-wrap:balance}
+
+/* Minor title */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(.legal-document-body h2,.past-media-item h3,.show-episode h3,.resource-reading h3,.lesson-summary-copy strong),
+  .field-guide main .journal-card:not(:first-child) .journal-card-copy h2,
+  .field-guide main button[aria-expanded]>h3,
+  .field-guide.course-page main .prose :is(h2,h3),
+  .field-guide main .article-prose :is(h2,h3),
+  .field-guide.legacy-page main h3:is(.text-sm,.text-base,.text-xs),
+  .field-guide.legacy-page main h4
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-minor)!important;line-height:1.25;letter-spacing:0!important;text-transform:none}
+
+/* Page title */
+:root:root:root:root:root:root:root :where(
+  .field-guide:not(.home-page) main h1
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;font-size:var(--t-page)!important;line-height:1;letter-spacing:-.02em!important;text-transform:uppercase;text-wrap:balance}
+:root:root:root:root:root:root:root :where(.field-guide main h1 em){font-size:inherit!important}
+
+/* Eyebrow */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(.eyebrow,.program-type,.fit-label,.timezone-label,.journal-results,.legal-document-date),
+  .field-guide .ln-card-eyebrow,.field-guide .ln-num,.field-guide :is(.mini-week,.course-details) .mw-label,
+  .field-guide.legacy-page main :is(p,span,div,a,label).uppercase:is(.text-xs,.text-\[10px\],.text-\[11px\],.text-\[9px\],.text-\[12px\],.text-sm),
+  .field-guide.legacy-page main h2:is(.text-xs,.text-sm)
+){font-family:'CC Plex',monospace!important;font-weight:500!important;font-size:var(--t-eyebrow)!important;line-height:1.3;letter-spacing:.12em!important;text-transform:uppercase}
+
+/* Data */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(.fit-index,.phase-index,.lesson-n,.reading-number,.flyer-offer-end,.event-date,.cohort-stamp strong,.cohort-stamp span,.tuition-term,.course-meta,.course-meta span,.text-link,.reading-link,.legal-back-link),
+  .field-guide .ln-card-date,
+  .field-guide main .article-heading :is(time,a.px-2),
+  .field-guide main .lesson-outline .lesson-summary-copy small
+){font-family:'CC Plex',monospace!important;font-weight:400!important;font-size:var(--t-data)!important;line-height:1.4;letter-spacing:0!important;text-transform:none}
+
+/* Caption / meta */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(figcaption,label,.story-note,.topic-filters button,.journal-search label),
+  .field-guide .ln-stories figcaption,
+  .field-guide main nav[aria-label="Breadcrumb"],.field-guide main nav[aria-label="Breadcrumb"] :is(a,span),
+  .field-guide .site-footer label,
+  .field-guide.legacy-page main :is(span,a,p,div,time):is([class*="text-[0.6"],[class*="text-[0.5"],[class*="text-[0.7"]),
+  .field-guide main [class*="text-[10px]"]
+){font-family:'CC Plex',monospace!important;font-weight:400!important;font-size:var(--t-caption)!important;line-height:1.4;letter-spacing:.08em!important;text-transform:uppercase}
+
+/* Fine print */
+:root:root:root:root:root:root:root :where(
+  .field-guide main :is(.fineprint,.form-status,.course-signup-note,small):not(.lesson-summary-copy small):not(.story-note),
+  .field-guide .site-footer :is(.form-status,.fineprint)
+){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:400!important;font-size:var(--t-fine)!important;line-height:1.5;letter-spacing:0!important;text-transform:none}
+/* Tab bars (Bootcamp, Coaching and the other sticky section bars) use the eyebrow role. After caption, because some
+   of their links carry tiny Tailwind sizes that the caption rule also matches. */
+:root:root:root:root:root:root:root :where(
+  .field-guide main .program-tabs-inner a:not(.program-tabs-cta),
+  .field-guide main .sticky nav a:not(.btn-primary)
+){font-family:'CC Plex',monospace!important;font-weight:500!important;font-size:var(--t-eyebrow)!important;line-height:1.3;letter-spacing:.12em!important;text-transform:uppercase}
+
+/* The Apply button in the Bootcamp tab bar is a compact button: Archivo SemiBold, not the nav-link Plex. */
+:root:root:root:root:root:root:root :where(.field-guide main .program-tabs-cta){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:15px!important;line-height:1.2;letter-spacing:0!important;text-transform:none}
+@media(max-width:900px){:root:root:root:root:root:root:root :where(.field-guide main .program-tabs-cta){font-size:14px!important}}
+
+/* Footer small text keeps its own font and case; it only comes up to the 13 px floor. */
+:root:root:root:root:root:root:root :where(
+  .field-guide .site-footer :is(.footer-company,.footer-company *,.footer-legal a,.footer-identity p,.footer-destinations a,.footer-social a)
+){font-size:var(--t-fine)!important}
+
+/* Button / nav: the shared button size (--btn-font, set with the button tokens in lanes-home.css). */
+:root:root:root:root:root:root:root :where(
+  .field-guide main .program-sections a,
+  .field-guide.legacy-page main .btn-primary:not(nav .btn-primary)
+){font-size:var(--btn-font)!important}
+/* Exceptions kept on purpose */
+:root:root:root:root:root:root:root :where(.field-guide main .tuition-price){font-size:var(--t-section)!important;line-height:1}   /* the price reads as a figure */
+/* Stat figures (Coaching stats banner) get the price's treatment; their labels are captions. */
+:root:root:root:root:root:root:root :where(.field-guide main .stat-figure){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:800!important;font-size:var(--t-section)!important;line-height:1;letter-spacing:-.02em!important;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.field-guide main .stat-label){font-family:'CC Plex',monospace!important;font-weight:400!important;font-size:var(--t-caption)!important;line-height:1.4;letter-spacing:.08em!important;text-transform:uppercase;margin-top:10px}
+:root:root:root:root:root:root:root :where(.field-guide main dl dt){font-size:var(--t-body)!important}
+:root:root:root:root:root:root:root :where(.field-guide main span.flex-shrink-0.w-10){font-family:'CC Plex',monospace!important;font-size:var(--t-data)!important;letter-spacing:0!important}   /* course outline numbers are data */
+:root:root:root:root:root:root:root :where(.field-guide .menu-toggle){font-size:var(--t-caption)!important}
+
+/* Weights: the guide allows 400, 400 italic, 600 and 800. */
+:root:root:root:root:root:root:root :where(.field-guide main :is(.prose,.article-prose) :is(strong,b)){font-weight:400!important}  /* no bold for emphasis in body */
+:root:root:root:root:root:root:root :where(.field-guide main :is(.prose,.article-prose) em){font-weight:400!important}
+:root:root:root:root:root:root:root :where(.field-guide main .schedule-times strong){font-weight:600!important}
+
+/* Role classes for new markup: put the role on the element instead of writing a size. */
+:root:root:root:root:root:root:root :where(.t-page){font:800 var(--t-page)/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.t-section){font:800 var(--t-section)/1 'CC Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.t-card){font:600 var(--t-card)/1.08 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-subhead){font:600 var(--t-subhead)/1.15 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-minor){font:600 var(--t-minor)/1.25 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-lede){font:400 var(--t-lede)/1.5 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-body){font:400 var(--t-body)/1.5 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-quote){font:italic 400 var(--t-quote)/1.5 'CC Archivo',Arial,sans-serif}
+:root:root:root:root:root:root:root :where(.t-eyebrow){font:500 var(--t-eyebrow)/1.3 'CC Plex',monospace;letter-spacing:.12em;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.t-data){font:400 var(--t-data)/1.4 'CC Plex',monospace}
+:root:root:root:root:root:root:root :where(.t-caption){font:400 var(--t-caption)/1.4 'CC Plex',monospace;letter-spacing:.08em;text-transform:uppercase}
+:root:root:root:root:root:root:root :where(.t-fine){font:400 var(--t-fine)/1.5 'CC Archivo',Arial,sans-serif}

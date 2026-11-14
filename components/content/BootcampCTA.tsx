@@ -6,7 +6,7 @@ const BENEFITS = [
 ]
 
 export function BootcampCTA({
-  heading = 'So How Does This Survive Your Day?',
+  heading = 'So how does this survive your day?',
   intro,
 }: {
   heading?: string
