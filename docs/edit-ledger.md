@@ -577,3 +577,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Phones: 30 px wide, 16 px in; text starts 64 px in.
   - New file: `public/brand/home/card-key-column-worn.png`, 8 linked pairs of the O4 key in worn clay, repeating seamlessly. The bone key-column tile is no longer used here.
 - Why: Dat, Nov 14. Red as the base read as danger, and the paid card needed to stay first in the hierarchy next to the bone Mini Bootcamp card; picked from mockups (ink, worn column, left, full height, 54 px).
+
+### 2026-11-14 · Bootcamp: section order after the stories (`home-04-lanes` only)
+- On /bootcamp, after "You've found the maps", the three blocks now run in this order:
+  1. "Sophisticated on the cushion / Reactive by noon"
+  2. "Twelve weeks / Four phases"
+  3. "When insight meets the rest of your life"
+- They used to run 3, 2, 1. Schedule, tuition, application and FAQ follow as before.
+- The "Course details" tab still jumps to "When insight meets…".
+- Why: Dat, Nov 14.
