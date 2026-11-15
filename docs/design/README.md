@@ -38,6 +38,9 @@ The older references (two bands, U-fold) are kept for history:
   - From y 486 the field disperses irregularly, never quite emptying, and ends at 955 above the
     phase boxes. As the glyphs fall they take the colour of the phase box below them.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
+  - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
+    settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in
+    `scripts/hero-glyph-field/`. The CSS scales and places the image, so re-render only to change the field itself.
 - Phases: four boxes across the content width, outlined in the phase colour, the glyph set into
   a gap in the top line at the top left. The title sits inside the dispersing field.
 - Earlier art, no longer used on the page: `bands.svg` (regenerate with `scripts/hero-band.py`) and

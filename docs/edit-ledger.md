@@ -631,3 +631,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Phones show the same 1.2× field, still centered on the figure.
 - Known limit: the image is a finished raster. A different glyph size from the figure's would need the generator, which isn't in the repo.
 - Why: Dat, Nov 15.
+
+### 2026-11-15 · Hero glyph field generator committed (`home-04-lanes` only)
+- No visible change. `scripts/hero-glyph-field.py` now generates `public/brand/home/hero-glyph-field.webp`; it reproduces the current image exactly.
+- Settings are at the top of the script: figure position and size, glyph pitch and size, dispersal start/end and minimum density, colour amounts, figure strength, ring width and the no-clay crown.
+- Inputs are in `scripts/hero-glyph-field/`: the 20 glyph SVGs, and the figure's silhouette and 16-bit shading map. Needs numpy, scipy, Pillow and cairosvg.
+- Why: Dat, Nov 15, so the field can be re-rendered rather than only scaled and shifted in CSS.
+- Provisional: the silhouette is traced from a reference image Dat supplied; confirm its licence before launch.
