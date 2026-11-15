@@ -607,3 +607,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The page title "ILLUMINATION BOOTCAMP" stays the caps page title.
 - Rule: `.field-guide main:has(.bootcamp-hero) h2` in the card / subsection role (`app/type.css`).
 - Why: Dat, Nov 15 ("try changing the bootcamp page headings to this hierarchy").
+
+### 2026-11-15 · Mini Bootcamp description (`home-04-lanes` only)
+- The /mini-bootcamp hero text now reads "Experience a week of Bootcamp training for free. Get a taste of the same live sessions, mentors and support, whether you later join the Bootcamp or simply want to explore." It was "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore."
+- Why: Dat, Nov 15 (wording settled in chat).
