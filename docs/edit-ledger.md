@@ -664,3 +664,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Reverted the warp trial (`e610688`). The figure, glyph sizes and colors are back to the earlier Nov 15 version (`2ad122f`: figure 624 units, glyphs 11.7 on a 19.8 grid, head under the Programs / Resources gap). There is no warp and no swell. The varying glyph sizes had changed the figure's shape.
 - The only change kept from the trial: no field glyphs behind "LIVE IN PRACTICE", the lede and the button. The cleared area is now a single clean rectangle (stage x to 720, y to 510; `COPY_CLEAR` in `scripts/hero-glyph-field.py`), not the stepped, ragged shape of the trial. The figure's own glyphs are never cleared, so its arm and knee still reach into the lower-right corner of that rectangle.
 - Why: Dat, Nov 15 ("bring it back to the previous version while just cutting off the field from being in the background of live in practice… uniform shape of clearance").
+
+### 2026-11-15 · Hero: head under Resources / Media; straight cut at the figure's knee (`home-04-lanes` only)
+- On desktop, the figure's head now sits under the gap between "Resources" and "Media" (was Programs / Resources). Measured within 0.3 px at 1024, 1280, 1440 and 1920.
+- The cleared area is now one straight vertical cut through the figure's leftmost point, the tip of its knee: no field glyphs to the left of it, from the top of the field to the bottom. That empties the whole left side, including the lower-left dispersal. Set by `COPY_CLEAR` in `scripts/hero-glyph-field.py`.
+- Known: the cut moves with the figure while the headline scales differently. It sits 60 to 190 px clear of "PRACTICE" from 1180 to 1440 px wide, but falls 19 px inside it at 1024 and 10 px inside at 1920.
+- Provisional: a look for Dat to review.
+- Why: Dat, Nov 15.

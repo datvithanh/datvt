@@ -35,10 +35,9 @@ RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
 RING=41                   # width of each colour ring around the heart
 CROWN=96                  # no clay within this many units of the top of the head
 SEED=7
-# Copy area (Nov 15): one clean rectangle with no field glyphs behind "LIVE IN PRACTICE", the lede and the button
-# (x0, y0, x1, y1 in stage units, from the page at 1440 x 900: headline to x 676, button to y 471, padded).
-# The figure's own glyphs are never cleared, so its shape stays whole.
-COPY_CLEAR=(-480,0,720,510)
+# Clear side (Nov 15): no field glyphs left of a straight vertical line through the figure's leftmost point (the tip
+# of its knee, x 495), from the top of the field to the bottom. (x0, y0, x1, y1 in the image's stage units.)
+COPY_CLEAR=(-480,0,495,HU)
 # ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 DX=-XL

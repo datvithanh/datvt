@@ -58,10 +58,11 @@
 /* Glyph field (Dat, Nov 15): public/brand/home/hero-glyph-field.webp is drawn in stage units, x −480 to 1760 and
    y 0 to 1000 at 2 px per unit, so it overhangs both sides for wide screens. The figure is centred at x 840; the
    field disperses from y 486 and ends at 955, just above the phase boxes. */
-/* Glyph field at 1x (Dat, Nov 15): figure and glyphs were enlarged 20% in scripts/hero-glyph-field.py; the image covers
-   stage x −480 to 1760 and y 0 to 1150. Desktop puts the head (image x 840) under the gap between Programs and
-   Resources: that gap's centre sits min(100vw,1280px) − 180 px − 328.6 units from the stage, so left = that − 1320 units. */
-.field-guide .ln-art .ln-field{left:calc(min(100vw,1280px) - 180px - 1648.6 * var(--u));top:0;width:calc(2240 * var(--u));height:calc(1150 * var(--u))}
+/* Glyph field at 1x (Dat, Nov 15): the image covers stage x −480 to 1760 and y 0 to 1150 (scripts/hero-glyph-field.py).
+   Desktop puts the head (image x 840) under the gap between Resources and Media. The Programs / Resources gap sits
+   min(100vw,1280px) − 180 px − 328.6 units from the stage, and the Resources / Media gap 94.84 units + 40 px further right,
+   so left = min(100vw,1280px) − 140 px − 233.76 units − 1320 units. */
+.field-guide .ln-art .ln-field{left:calc(min(100vw,1280px) - 140px - 1553.76 * var(--u));top:0;width:calc(2240 * var(--u));height:calc(1150 * var(--u))}
 
 /* Desktop: the stage also scales with screen height. It is anchored so the copy stays on the 40 px content margin. */
 @media(min-width:901px){

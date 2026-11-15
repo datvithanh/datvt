@@ -38,9 +38,9 @@ The older references (two bands, U-fold) are kept for history:
     and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
   - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
     phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
-  - Copy area (Nov 15): one clean rectangle (`COPY_CLEAR`, stage x up to 720, y up to 510) has no field glyphs behind
-    the headline, lede and button. The figure's own glyphs are never cleared, so its shape stays whole. (A trial with
-    warp, swell and larger glyphs was reverted the same day: the size changes distorted the figure.)
+  - Clear side (Nov 15): no field glyphs left of one straight vertical line through the figure's leftmost point
+    (the knee tip, image x 495), top to bottom (`COPY_CLEAR`). On desktop the head sits under the gap between
+    Resources and Media. Known: at 1024 and 1920 wide the line falls 10–20 px inside the end of "PRACTICE".
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in
