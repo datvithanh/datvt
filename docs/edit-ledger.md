@@ -611,3 +611,15 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-15 · Mini Bootcamp description (`home-04-lanes` only)
 - The /mini-bootcamp hero text now reads "Experience a week of Bootcamp training for free. Get a taste of the same live sessions, mentors and support, whether you later join the Bootcamp or simply want to explore." It was "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore."
 - Why: Dat, Nov 15 (wording settled in chat).
+
+### 2026-11-15 · Homepage hero: glyph field, rainbow figure, boxed phases (`home-04-lanes` only)
+- The hero's four lanes and glyph figure are replaced by a glyph field: the 20 CC glyphs printed in ink across the whole hero, lighter behind the copy.
+  - A seated figure sits in the field right of the copy. Its glyphs follow its shading and are coloured in rings from the heart (marigold, clay, sage, blue), with no clay at the crown.
+  - Scattered field glyphs take phase colours, more of them lower down.
+  - Below the figure the field disperses irregularly across the full width, with a sparse minimum so no area empties, and runs behind "Realization as a fitness". Falling glyphs take the colour of the phase box below them.
+  - One image: `public/brand/home/hero-glyph-field.webp` (660 KB). On phones it becomes a band under the copy, centred on the figure and fading out.
+- "Realization as a fitness" moves to the left content margin and up into the field.
+- The four phases sit in boxes across the content width (one column on phones), each outlined in its phase colour, with its glyph set into a gap at the top left and the text left-aligned. Text sizes stay on the type-system roles.
+- `bands.svg` and `hero-figure.svg` stay in the repo but are no longer used on the page.
+- Provisional: the figure's outline was traced from a reference image Dat supplied; confirm the image's licence before this goes live.
+- Why: Dat, Nov 15, from the glyph-field mockups (rain dispersal, rings figure, legend boxes at 2.5 px in the phase colours).

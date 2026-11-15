@@ -28,15 +28,20 @@ The older references (two bands, U-fold) are kept for history:
 
 ## How the hero is built
 
-- `components/field-guide/Home.tsx` and `app/lanes-home.css`. The hero is a 1280 × 1490-unit stage;
-  `--u` is one unit in px, so bands, figure and copy scale together (down to 900 px wide; below
-  that the copy and phases stack and the art becomes a cropped band; phone layout is provisional).
-- `public/brand/home/bands.svg`, drawn under the figure. Its viewBox is `-1300 -200 3880 1700` in
-  stage units, so SVG coordinates are stage coordinates. The entry runs far off the right edge for
-  wide screens. Regenerate it with `scripts/hero-band.py`; the centreline, corner radius and lane
-  ends are set at the top of the script.
-- `public/brand/home/hero-figure.svg`: seated figure built from the v1 CC glyphs, glyph-like marks
-  along the contour, dots outside, and a faint bone glow.
+- `components/field-guide/Home.tsx` and `app/lanes-home.css`. The hero is a 1280 × 1290-unit stage;
+  `--u` is one unit in px, so the field, copy and phases scale together (down to 900 px wide; below
+  that the copy and phases stack and the field becomes a band centred on the figure).
+- Glyph field (Nov 15): `public/brand/home/hero-glyph-field.webp`, one image of the 20 CC glyphs at
+  2 px per stage unit, covering stage x −480 to 1760 and y 0 to 1000 so it overhangs wide screens.
+  - The seated figure is centred at x 840: its glyphs follow its shading and take marigold, clay, sage
+    and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
+  - From y 486 the field disperses irregularly, never quite emptying, and ends at 955 above the
+    phase boxes. As the glyphs fall they take the colour of the phase box below them.
+  - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
+- Phases: four boxes across the content width, outlined in the phase colour, the glyph set into
+  a gap in the top line at the top left. The title sits inside the dispersing field.
+- Earlier art, no longer used on the page: `bands.svg` (regenerate with `scripts/hero-band.py`) and
+  `hero-figure.svg`.
 
 ## Running-track lines (Dat, Nov 7)
 
