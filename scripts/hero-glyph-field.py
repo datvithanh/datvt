@@ -4,7 +4,7 @@
 # Needs: pip install numpy scipy pillow cairosvg   (about 5 s; the output is deterministic for the same inputs)
 #
 # Everything is in hero-stage units (1 unit = 1 px at 1280 wide) and rendered at S px per unit. The image covers
-# stage x XL..XL+WU and y 0..HU; app/lanes-home.css places and scales it (it is currently shown 1.2x, about the head).
+# stage x XL..XL+WU and y 0..HU; app/lanes-home.css places it at 1x, with the head under the Programs / Resources gap.
 # Inputs in scripts/hero-glyph-field/:
 #   glyphs/       the 20 CC glyphs (bone SVGs from the brand asset pack); only their shape is used
 #   silhouette.png  the seated figure's outline (white on black), traced from a reference image Dat supplied (Nov 12):
@@ -20,11 +20,11 @@ QUALITY=82
 
 # ── Settings ────────────────────────────────────────────────────────────────────────────────────────────────
 S=2                       # px per stage unit
-XL,WU,HU=-480,2240,1000   # image extent in stage units (overhangs both sides for wide screens)
-CX,TOP,HT=840,26,520      # figure: centre x, top of head, height
-SP,GS=16.5,9.75           # glyph grid pitch and glyph size
-DTOP_OFFSET=60            # dispersal starts this far above the seat line (TOP+HT)
-DBOT=955                  # dispersal ends here (just above the phase boxes)
+XL,WU,HU=-480,2240,1150   # image extent in stage units (overhangs both sides for wide screens)
+CX,TOP,HT=840,26,624      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
+SP,GS=19.8,11.7           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
+DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+HT)
+DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
 BX0,BXW=40,300            # phase box columns: falling glyphs take the colour of the column below them
 FIELD_COLOUR=0.55         # share of field glyphs that take a phase colour (rising towards the bottom)
@@ -32,8 +32,8 @@ FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = in
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=2.3                  # overall darkness of the field
 RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
-RING=34                   # width of each colour ring around the heart
-CROWN=80                  # no clay within this many units of the top of the head
+RING=41                   # width of each colour ring around the heart
+CROWN=96                  # no clay within this many units of the top of the head
 SEED=7
 # ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 

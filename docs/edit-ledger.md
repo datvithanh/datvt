@@ -638,3 +638,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Inputs are in `scripts/hero-glyph-field/`: the 20 glyph SVGs, and the figure's silhouette and 16-bit shading map. Needs numpy, scipy, Pillow and cairosvg.
 - Why: Dat, Nov 15, so the field can be re-rendered rather than only scaled and shifted in CSS.
 - Provisional: the silhouette is traced from a reference image Dat supplied; confirm its licence before launch.
+
+### 2026-11-15 · Glyph field regenerated: figure and glyphs 20% larger (`home-04-lanes` only)
+- Re-rendered `public/brand/home/hero-glyph-field.webp` with `scripts/hero-glyph-field.py` instead of scaling the old image in CSS. This replaces the CSS 1.2× scaling from earlier today.
+  - Figure height 520 → 624 units. Glyph size 9.75 → 11.7, grid pitch 16.5 → 19.8.
+  - Color-ring width, crown and dispersal start scaled to match.
+  - The dispersal now ends at 1100, just above the phase boxes, which stay at 1110. The image is 4480 × 2300 (stage y 0 to 1150).
+  - With the old settings the script reproduced the previous image exactly before the change.
+- `app/lanes-home.css` shows the image at 1× and keeps the head under the gap between Programs and Resources: within 0.5 px at 1024, 1280, 1440 and 1920.
+- Phones show the same field centered on the figure, with a slightly taller band (820 units).
+- Why: Dat, Nov 15 ("there should be script pushed for the hero image. can you adjust that instead?").

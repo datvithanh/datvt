@@ -28,19 +28,20 @@ The older references (two bands, U-fold) are kept for history:
 
 ## How the hero is built
 
-- `components/field-guide/Home.tsx` and `app/lanes-home.css`. The hero is a 1280 × 1290-unit stage;
+- `components/field-guide/Home.tsx` and `app/lanes-home.css`. The hero is a 1280 × 1440-unit stage;
   `--u` is one unit in px, so the field, copy and phases scale together (down to 900 px wide; below
   that the copy and phases stack and the field becomes a band centred on the figure).
 - Glyph field (Nov 15): `public/brand/home/hero-glyph-field.webp`, one image of the 20 CC glyphs at
-  2 px per stage unit, covering stage x −480 to 1760 and y 0 to 1000 so it overhangs wide screens.
-  - The seated figure is centred at x 840: its glyphs follow its shading and take marigold, clay, sage
+  2 px per stage unit, covering stage x −480 to 1760 and y 0 to 1150 so it overhangs wide screens. It is shown
+  at 1×; on desktop the head sits under the gap between Programs and Resources at every width.
+  - The seated figure (624 units tall, glyphs 11.7 on a 19.8 grid since Nov 15; was 520, 9.75, 16.5) is centred at x 840: its glyphs follow its shading and take marigold, clay, sage
     and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
-  - From y 486 the field disperses irregularly, never quite emptying, and ends at 955 above the
-    phase boxes. As the glyphs fall they take the colour of the phase box below them.
+  - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
+    phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in
-    `scripts/hero-glyph-field/`. The CSS scales and places the image, so re-render only to change the field itself.
+    `scripts/hero-glyph-field/`. The CSS only places the image, so re-render to change the field itself.
 - Phases: four boxes across the content width, outlined in the phase colour, the glyph set into
   a gap in the top line at the top left. The title sits inside the dispersing field.
 - Earlier art, no longer used on the page: `bands.svg` (regenerate with `scripts/hero-band.py`) and

@@ -30,7 +30,7 @@ export function HomeContent() {
 <section className="ln-hero" aria-labelledby="ln-hero-title">
   <div className="ln-stage">
     <div className="ln-art" aria-hidden="true">
-      <img className="ln-field" src="/brand/home/hero-glyph-field.webp" alt="" width="4480" height="2000" fetchPriority="high" />
+      <img className="ln-field" src="/brand/home/hero-glyph-field.webp" alt="" width="4480" height="2300" fetchPriority="high" />
     </div>
     <div className="ln-copy">
       <h1 id="ln-hero-title">Live in<br />practice</h1>
