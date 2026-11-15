@@ -586,3 +586,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - They used to run 3, 2, 1. Schedule, tuition, application and FAQ follow as before.
 - The "Course details" tab still jumps to "When insight meets…".
 - Why: Dat, Nov 14.
+
+### 2026-11-15 · Bootcamp: section order restored (`home-04-lanes` only)
+- Reverts the Nov 14 swap. After the stories, /bootcamp runs again:
+  1. "When insight meets the rest of your life"
+  2. "Twelve weeks / Four phases"
+  3. "Sophisticated on the cushion / Reactive by noon"
+- Why: Dat, Nov 15.
