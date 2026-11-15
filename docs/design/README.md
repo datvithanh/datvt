@@ -38,9 +38,11 @@ The older references (two bands, U-fold) are kept for history:
     and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
   - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
     phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
-  - Clear side (Nov 15): no field glyphs left of one straight vertical line through the figure's leftmost point
-    (the knee tip, image x 495), top to bottom (`COPY_CLEAR`). On desktop the head sits under the gap between
-    Resources and Media. Known: at 1024 and 1920 wide the line falls 10–20 px inside the end of "PRACTICE".
+  - Fades and warp (Nov 15): the full field is back (no cut). On desktop a feathered bone panel behind the copy
+    (`.ln-copy::before` in `app/lanes-home.css`) fades the field out evenly around "LIVE IN PRACTICE", the lede and the
+    button. It is drawn with the copy, so it fits at every width. A mask fades the field's bottom into the next
+    section. In the script, field glyphs (never the figure's own) bend slightly around the figure: `WARP`, `WARP_SIGMA`,
+    `WARP_TWIST`.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in

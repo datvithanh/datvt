@@ -248,3 +248,13 @@
 :root .field-guide .ln-card.ln-card-paid{padding-left:144px;padding-right:44px}
 .field-guide .ln-card-side{position:absolute;top:0;bottom:0;left:44px;right:auto;width:54px;background:url('/brand/home/card-key-column-worn.png') center -40px/54px auto repeat-y;pointer-events:none}
 @media(max-width:900px){:root .field-guide .ln-card.ln-card-paid{padding-left:64px;padding-right:20px}.field-guide .ln-card-side{left:16px;width:30px;background-size:30px auto;background-position:center -22px}}
+
+/* Hero fades (Dat, Nov 15). Desktop only; on phones the field already sits below the copy and fades out.
+   - Copy: a feathered bone panel behind "LIVE IN PRACTICE", the lede and the button, one even blur all round, so the
+     field fades out around the whole block. It is drawn in stage units with the copy, so it fits at every width.
+   - Bottom: the field fades out from just below the figure into the "Realization as a fitness" section. */
+@media(min-width:901px){
+  .field-guide .ln-copy{z-index:2}
+  .field-guide .ln-copy::before{content:"";position:absolute;z-index:-1;top:calc(-44 * var(--u));bottom:calc(-52 * var(--u));left:calc(-400 * var(--u));right:calc(-48 * var(--u));background:var(--bone);filter:blur(calc(34 * var(--u)));pointer-events:none}
+  .field-guide .ln-art .ln-field{-webkit-mask-image:linear-gradient(#000 60%,transparent 97%);mask-image:linear-gradient(#000 60%,transparent 97%)}
+}

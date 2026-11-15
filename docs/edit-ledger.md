@@ -671,3 +671,14 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Known: the cut moves with the figure while the headline scales differently. It sits 60 to 190 px clear of "PRACTICE" from 1180 to 1440 px wide, but falls 19 px inside it at 1024 and 10 px inside at 1920.
 - Provisional: a look for Dat to review.
 - Why: Dat, Nov 15.
+
+### 2026-11-15 · Hero: full field back, fades around the copy and into the next section, slight warp (`home-04-lanes` only)
+- The glyph field is whole again. The straight cut at the knee is gone, and the head stays under the Resources / Media gap.
+- The field fades out around the block of "LIVE IN PRACTICE", the lede and the button.
+  - It is one feathered bone panel behind the copy, with an even soft edge (about 34 units of blur) all round.
+  - It is drawn in CSS with the copy, so it stays fitted to the text at every width.
+- The bottom of the field fades out from just below the figure into the "Realization as a fitness" section (a CSS mask).
+- Slight warp: background glyphs near the figure's outline are pushed outward by up to 8 units, with a small twist, so the field bends around the body. The figure's own glyphs don't move, so its shape is unchanged. Settings `WARP`, `WARP_SIGMA` and `WARP_TWIST` in `scripts/hero-glyph-field.py`.
+- Desktop only for the two fades; on phones the field already sits below the copy.
+- Provisional: a look for Dat to review.
+- Why: Dat, Nov 15.

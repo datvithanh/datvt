@@ -35,9 +35,11 @@ RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
 RING=41                   # width of each colour ring around the heart
 CROWN=96                  # no clay within this many units of the top of the head
 SEED=7
-# Clear side (Nov 15): no field glyphs left of a straight vertical line through the figure's leftmost point (the tip
-# of its knee, x 495), from the top of the field to the bottom. (x0, y0, x1, y1 in the image's stage units.)
-COPY_CLEAR=(-480,0,495,HU)
+# Warp (Nov 15): the field bends slightly around the figure. Only field glyphs move; the figure's own glyphs stay put,
+# so its shape is exact. Near the outline they are pushed outward with a small twist.
+WARP_SIGMA=34             # how far from the outline the bend reaches (units)
+WARP=8                    # largest push (units)
+WARP_TWIST=0.5            # share of the push turned along the outline
 # ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 DX=-XL
@@ -57,6 +59,13 @@ Tn=nd.gaussian_filter(Tf,4*S)/np.maximum(nd.gaussian_filter(W8,4*S),1e-3)
 Bf=0.22+0.78*np.clip(Tn,0,1)**0.9; d_in=nd.distance_transform_edt(Mf>0.5)/S; Bf=np.clip(Bf+0.2*np.exp(-(d_in/4.0)**2),0,1)
 gd=os.path.join(IN,'glyphs'); files=sorted(f for f in os.listdir(gd) if f.endswith('.svg'))
 n=P(GS); gl=[np.asarray(Image.open(io.BytesIO(cairosvg.svg2png(url=f'{gd}/{f}',output_width=n,output_height=n))).convert('RGBA'),np.float32)[...,3]/255 for f in files]
+# Warp field: the blurred figure mask's gradient points inward; outside the figure, glyphs move the other way.
+Dm=nd.gaussian_filter(M,WARP_SIGMA*S); gy,gx=np.gradient(Dm); gmax=np.hypot(gx,gy).max() or 1
+def warp(x,y):
+    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1)
+    if M[i,k]>0.5: return 0.0,0.0
+    ox,oy=-gx[i,k]/gmax,-gy[i,k]/gmax
+    return WARP*(ox-WARP_TWIST*oy),WARP*(oy+WARP_TWIST*ox)
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -67,15 +76,14 @@ HX,HY=CX,TOP+0.40*HT
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for x in np.arange(XL-SP,XL+WU+SP,SP)+(SP/2 if j%2 else 0):
         g=gl[rng.integers(20)]; u=rng.random(); col=None
-        x0c,y0c,x1c,y1c=COPY_CLEAR
-        if x0c<=x<=x1c and y0c<=y<=y1c and M[min(P(y),H_-1),min(max(P(x+DX),0),W_-1)]<=0.5: continue
+        wx,wy=warp(x,y)
         if y>=DTOP:
             t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
             edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)
             p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
             if u>p: continue
             if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
-        X=P(x+DX)-n//2; Y=P(y)-n//2
+        X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
         if col:
             Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
