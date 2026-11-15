@@ -76,7 +76,8 @@
   .field-guide main :is(.resource-course,.resource-blog)>h2,
   .field-guide.course-page main h2:not(.text-xs):not(.text-sm):not(.prose *),
   .field-guide main :is(#mini-week-title,.mini-next>h2),
-  .field-guide main :is(#bdsm-heading,#past-media-heading,#instagram-heading)
+  .field-guide main :is(#bdsm-heading,#past-media-heading,#instagram-heading),
+  .field-guide main:has(.bootcamp-hero) h2
 ){font-family:'CC Archivo',Arial,sans-serif!important;font-weight:600!important;font-size:var(--t-card)!important;line-height:1.08;letter-spacing:0!important;text-transform:none;text-wrap:balance}
 
 /* Minor title */

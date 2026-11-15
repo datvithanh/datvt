@@ -593,3 +593,17 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   2. "Twelve weeks / Four phases"
   3. "Sophisticated on the cushion / Reactive by noon"
 - Why: Dat, Nov 15.
+
+### 2026-11-15 · Bootcamp section headings as subsections (`home-04-lanes` only)
+- Every section heading on /bootcamp now uses the subsection style of Mini Bootcamp's "Five days of training": Archivo SemiBold, sentence case, 41 px at 1440 × 900 and 32 px on phones. They were caps ExtraBold section headlines. The headings:
+  - "You've found the maps / Find your people"
+  - "When insight meets the rest of your life"
+  - "Twelve weeks / Four phases"
+  - "Sophisticated on the cushion / Reactive by noon"
+  - "Make room for the practice"
+  - "Four components / One container"
+  - "Honest about fit"
+  - "FAQ"
+- The page title "ILLUMINATION BOOTCAMP" stays the caps page title.
+- Rule: `.field-guide main:has(.bootcamp-hero) h2` in the card / subsection role (`app/type.css`).
+- Why: Dat, Nov 15 ("try changing the bootcamp page headings to this hierarchy").
