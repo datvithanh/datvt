@@ -648,3 +648,14 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - `app/lanes-home.css` shows the image at 1× and keeps the head under the gap between Programs and Resources: within 0.5 px at 1024, 1280, 1440 and 1920.
 - Phones show the same field centered on the figure, with a slightly taller band (820 units).
 - Why: Dat, Nov 15 ("there should be script pushed for the hero image. can you adjust that instead?").
+
+### 2026-11-15 · Hero glyph field: clear copy, warp around the figure (trial) (`home-04-lanes` only)
+- Regenerated `hero-glyph-field.webp` with new settings in `scripts/hero-glyph-field.py`, after Dat's dark reference. The reference set the structure only; nothing was traced from it.
+  - **Copy kept clear:** no glyphs behind "LIVE IN PRACTICE", the lede or the button. The field starts to the right of the headline and continues below the button.
+  - **Head clears the header:** it starts 80 units down, about 75 px below the header at 1440 × 900.
+  - **Glyphs larger and sparser:** 15 on a 28-unit grid (were 11.7 on 19.8).
+  - **The figure stands out:** the background field is lighter and mostly neutral, the figure's glyphs are stronger, and a faint warm shaded body sits behind them.
+  - **Warp:** the grid bends around the figure. Glyphs near the outline are pushed outward with a twist, up to 26 units, and glyphs inside the body swell up to about 1.36×.
+- All of these are named settings at the top of the script.
+- Provisional: a trial for Dat's review.
+- Why: Dat, Nov 15.

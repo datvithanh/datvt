@@ -38,6 +38,11 @@ The older references (two bands, U-fold) are kept for history:
     and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
   - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
     phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
+  - Nov 15 trial (Dat's dark reference, used for structure only): no glyphs behind the hero copy (`COPY_CLEAR`),
+    the head starts 80 units down so it clears the header, glyphs 15 on a 28 grid, and the grid warps around the
+    figure: glyphs near the outline are pushed outward with a twist (`WARP`, `WARP_SIGMA`, `WARP_TWIST`), glyphs
+    inside swell (`SWELL`), and a faint shaded body sits behind them (`FIG_FILL`). The field is lighter and mostly
+    neutral so the figure reads.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in
