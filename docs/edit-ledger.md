@@ -623,3 +623,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - `bands.svg` and `hero-figure.svg` stay in the repo but are no longer used on the page.
 - Provisional: the figure's outline was traced from a reference image Dat supplied; confirm the image's licence before this goes live.
 - Why: Dat, Nov 15, from the glyph-field mockups (rain dispersal, rings figure, legend boxes at 2.5 px in the phase colours).
+
+### 2026-11-15 · Homepage glyph field 20% larger, head under Programs / Resources (`home-04-lanes` only)
+- The hero's glyph field (`hero-glyph-field.webp`) is shown 1.2× larger, scaled about the figure's head, so every glyph and the figure grow 20%. Rule: `.ln-field` in `app/lanes-home.css`.
+- On desktop, the head sits under the gap between "Programs" and "Resources" at every width. Measured within 0.5 px at 1024, 1280, 1440 and 1920.
+- "Realization as a fitness" and the phase boxes move down 150 units (about 140 px at 1440 × 900), so the dispersing glyphs still end just above the boxes. The title sits at the same point in the dispersal as before.
+- Phones show the same 1.2× field, still centered on the figure.
+- Known limit: the image is a finished raster. A different glyph size from the figure's would need the generator, which isn't in the repo.
+- Why: Dat, Nov 15.
