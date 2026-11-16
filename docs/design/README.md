@@ -38,11 +38,13 @@ The older references (two bands, U-fold) are kept for history:
     and blue in rings from the heart, with no clay at the crown. The field is lighter behind the copy.
   - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
     phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
-  - Fades and warp (Nov 15): the full field is back (no cut). On desktop a feathered bone panel behind the copy
-    (`.ln-copy::before` in `app/lanes-home.css`) fades the field out evenly around "LIVE IN PRACTICE", the lede and the
-    button. It is drawn with the copy, so it fits at every width. A mask fades the field's bottom into the next
-    section. In the script, field glyphs (never the figure's own) bend slightly around the figure: `WARP`, `WARP_SIGMA`,
-    `WARP_TWIST`.
+  - Figure clarity (Nov 16): color only inside the figure (`FIELD_COLOUR` 0); a halo of lighter glyphs just outside the
+    outline (`HALO`, `HALO_MIN`); the figure's shading darkens its glyphs toward ink (`SHADE_MIN`, `SHADE_DARK`,
+    `SHADE_GAMMA`); the grid has a column on the figure's center line. Field glyphs (never the figure's) bend slightly
+    around it (`WARP`). Below the figure the field is an even grid (`DISPERSE` False; True restores the old irregular
+    dispersal with phase-colored falling glyphs).
+  - Fades (desktop, `app/lanes-home.css`): a bone panel behind the copy, solid past the text and then fading in a
+    straight line to the right and below; the field's bottom fades out in a straight line before the phases title.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in

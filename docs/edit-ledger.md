@@ -682,3 +682,16 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Desktop only for the two fades; on phones the field already sits below the copy.
 - Provisional: a look for Dat to review.
 - Why: Dat, Nov 15.
+
+### 2026-11-16 · Hero figure made clearer; clean fades (`home-04-lanes` only)
+- **Figure.** It now stands apart from the field:
+  - Only the figure's glyphs are colored; the background field is neutral.
+  - A halo of lighter glyphs sits just outside its outline.
+  - Its shading shows: glyphs darken toward ink in the deeper areas, so the head, arms and lap read.
+  - The grid is centered on the figure, so the head and shoulders are symmetric.
+  - Glyph sizes and the figure's shape are unchanged; the slight warp of the surrounding field stays.
+- **Bottom transition.** The ragged, colored falling glyphs are gone. Below the figure the field is an even neutral grid that fades out in a straight line and is gone before "Realization as a fitness". Nothing crosses the heading or the phase boxes.
+- **Fade around the copy.** The blurred patch is replaced by a clean rectangle: fully clear behind "LIVE IN PRACTICE", the lede and the button, then a straight, even fade to the right and below.
+- Settings are in `scripts/hero-glyph-field.py` (`HALO`, `SHADE_*`, `DISPERSE`) and `app/lanes-home.css`.
+- Provisional: for Dat's review.
+- Why: Dat, Nov 16.

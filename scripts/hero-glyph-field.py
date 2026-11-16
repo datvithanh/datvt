@@ -27,7 +27,7 @@ DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+H
 DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
 BX0,BXW=40,300            # phase box columns: falling glyphs take the colour of the column below them
-FIELD_COLOUR=0.55         # share of field glyphs that take a phase colour (rising towards the bottom)
+FIELD_COLOUR=0.0          # share of field glyphs that take a phase colour (rising towards the bottom)
 FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = invisible)
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=2.3                  # overall darkness of the field
@@ -40,6 +40,15 @@ SEED=7
 WARP_SIGMA=34             # how far from the outline the bend reaches (units)
 WARP=8                    # largest push (units)
 WARP_TWIST=0.5            # share of the push turned along the outline
+# Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
+# the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
+HALO=30                   # width of the halo outside the outline (units)
+HALO_MIN=0.12             # field strength at the outline (1 = no halo)
+SHADE_MIN=0.85            # glyph strength in the figure's lightest shading (0..1)
+SHADE_DARK=0.38           # how far deep shading darkens the figure's colours towards ink
+SHADE_GAMMA=1.1           # contrast of the shading (higher = more modelling)
+DISPERSE=False            # False: the field stays an even grid below the figure (the page fades it out); True: the old
+                          # irregular dispersal with phase-coloured falling glyphs
 # ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 DX=-XL
@@ -74,10 +83,10 @@ CI=np.zeros((H_,W_,3),np.float32)+np.array([30,29,26.],np.float32); AC=np.zeros(
 A=np.zeros((H_,W_),np.float32); Cg=np.zeros((H_,W_,3),np.float32); Cw=np.zeros((H_,W_),np.float32)
 HX,HY=CX,TOP+0.40*HT
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
-    for x in np.arange(XL-SP,XL+WU+SP,SP)+(SP/2 if j%2 else 0):
+    for x in np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)+(SP/2 if j%2 else 0):   # a column on the figure's axis
         g=gl[rng.integers(20)]; u=rng.random(); col=None
         wx,wy=warp(x,y)
-        if y>=DTOP:
+        if DISPERSE and y>=DTOP:
             t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
             edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)
             p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
@@ -99,9 +108,14 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
 left=0.45+0.55*ss((xs_-380)/360)
-B=np.clip((0.17*left*(1-M)+(0.17+FIG_STRENGTH*(Bf-0.17))*M)*0.85*GAIN,0,1)
+halo=HALO_MIN+(1-HALO_MIN)*ss(nd.distance_transform_edt(Mf<=0.5)/S/HALO)
+B=np.clip((0.17*left*halo*(1-M)+(0.17+FIG_STRENGTH*(Bf-0.17))*M)*0.85*GAIN,0,1)
 BONE=np.array([242,236,220.])
 amt=np.clip(A*B*np.where(AC>0.05,np.where(M>0.5,FIG_COLOUR_BOOST*1.9,1.9),1.0),0,1)
+# Shading models the body: figure glyphs are at least SHADE_MIN strong, and darken towards ink where the tone is deep.
+sh=np.clip(Bf,0,1)**SHADE_GAMMA
+amt=np.where(M>0.5,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
+CI=np.where((M>0.5)[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
 c=BONE+amt[...,None]*(CI-BONE)
 colr=Cg/np.maximum(Cw[...,None],1e-3); a=Cw*RAIN_ALPHA; c=c*(1-a[...,None])+colr*a[...,None]
 im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))
