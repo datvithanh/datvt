@@ -35,11 +35,11 @@ RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
 RING=41                   # width of each colour ring around the heart
 CROWN=96                  # no clay within this many units of the top of the head
 SEED=7
-# Warp (Nov 15): the field bends slightly around the figure. Only field glyphs move; the figure's own glyphs stay put,
-# so its shape is exact. Near the outline they are pushed outward with a small twist.
-WARP_SIGMA=70             # how far from the outline the bend reaches (units)
-WARP=20                   # largest push (units)
-WARP_TWIST=0.35           # share of the push turned along the outline
+# Warp (Nov 17): the field bends around the figure. Only field glyphs move; the figure's own glyphs stay put.
+WARP=16                   # largest push (units)
+WARP_REACH=40             # distance from the outline where the push peaks (units); it fades out beyond about 3x this
+WARP_TWIST=1.0            # share of the push along the outline (rows bend around the body)
+WARP_PULL=0.25            # share of the push towards the body (keeps the edge dense; no halo)
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
 # the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
 HALO=30                   # width of the halo outside the outline (units)
@@ -68,13 +68,19 @@ Tn=nd.gaussian_filter(Tf,4*S)/np.maximum(nd.gaussian_filter(W8,4*S),1e-3)
 Bf=0.22+0.78*np.clip(Tn,0,1)**0.9; d_in=nd.distance_transform_edt(Mf>0.5)/S; Bf=np.clip(Bf+0.2*np.exp(-(d_in/4.0)**2),0,1)
 gd=os.path.join(IN,'glyphs'); files=sorted(f for f in os.listdir(gd) if f.endswith('.svg'))
 n=P(GS); gl=[np.asarray(Image.open(io.BytesIO(cairosvg.svg2png(url=f'{gd}/{f}',output_width=n,output_height=n))).convert('RGBA'),np.float32)[...,3]/255 for f in files]
-# Warp field: the blurred figure mask's gradient points inward; outside the figure, glyphs move the other way.
-Dm=nd.gaussian_filter(M,WARP_SIGMA*S); gy,gx=np.gradient(Dm); gmax=np.hypot(gx,gy).max() or 1
+# Warp field (Nov 17): distortion with no gap at the outline. d = distance outside the figure (units); the push is zero
+# at the outline, peaks WARP_REACH out and fades beyond, so glyphs touching the body stay put. It runs mostly along
+# the outline (rows bend around the body, WARP_TWIST), with a small pull towards it (WARP_PULL) that keeps the field
+# dense at the edge instead of opening a halo.
+d_out=nd.distance_transform_edt(Mf<=0.5)/S; ds=nd.gaussian_filter(d_out,6*S); gy,gx=np.gradient(ds); gn=np.hypot(gx,gy)+1e-6
 def warp(x,y):
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1)
-    if M[i,k]>0.5: return 0.0,0.0
-    ox,oy=-gx[i,k]/gmax,-gy[i,k]/gmax
-    return WARP*(ox-WARP_TWIST*oy),WARP*(oy+WARP_TWIST*ox)
+    d=d_out[i,k]
+    if d<=0: return 0.0,0.0
+    f=WARP*(d/WARP_REACH)*np.exp(1-d/WARP_REACH)
+    nx,ny=gx[i,k]/gn[i,k],gy[i,k]/gn[i,k]          # outward normal
+    tx,ty=-ny,nx                                   # along the outline
+    return f*(WARP_TWIST*tx-WARP_PULL*nx),f*(WARP_TWIST*ty-WARP_PULL*ny)
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -93,7 +99,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             if u>p: continue
             if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
         X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
-        if (wx or wy) and Mf[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.15: continue   # a pushed field glyph never lands on the body
+        if (wx or wy) and Mf[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5: continue   # a pushed field glyph never lands on the body
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
         if col:
             Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
@@ -115,8 +121,9 @@ BONE=np.array([242,236,220.])
 amt=np.clip(A*B*np.where(AC>0.05,np.where(M>0.5,FIG_COLOUR_BOOST*1.9,1.9),1.0),0,1)
 # Shading models the body: figure glyphs are at least SHADE_MIN strong, and darken towards ink where the tone is deep.
 sh=np.clip(Bf,0,1)**SHADE_GAMMA
-amt=np.where(M>0.5,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
-CI=np.where((M>0.5)[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
+FG=(M>0.5)&(AC>0.05)   # the figure's own glyph pixels (field glyphs overlapping the edge keep the field's look)
+amt=np.where(FG,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
+CI=np.where(FG[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
 c=BONE+amt[...,None]*(CI-BONE)
 colr=Cg/np.maximum(Cw[...,None],1e-3); a=Cw*RAIN_ALPHA; c=c*(1-a[...,None])+colr*a[...,None]
 im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))

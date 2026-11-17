@@ -702,3 +702,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Only background glyphs move. The figure's own glyphs keep their places and size, so its shape doesn't change. Any background glyph that would be pushed onto the body is dropped, so nothing overlaps it.
 - Settings: `HALO_MIN` 1 (off), `WARP` 20, `WARP_SIGMA` 70, `WARP_TWIST` 0.35 in `scripts/hero-glyph-field.py`.
 - Why: Dat, Nov 17 ("i don't like the halo, can it be distortion extending out from the figure instead?").
+
+### 2026-11-17 · Hero figure: distortion without the halo it was making (`home-04-lanes` only)
+- The Nov 17 distortion pushed field glyphs away from the body, which left an empty ring that still read as a halo. Measured: field density right next to the outline was 4.4%, against about 10% elsewhere.
+- The field now bends around the figure instead. The push is zero at the outline, peaks about 40 units out and fades beyond that. It runs mostly along the outline, so the rows curve around the body, with a small pull toward it.
+- Density next to the body now matches the rest of the field (12% within 15 units, 9–10% further out), so there is no halo.
+- Fixed: background glyphs that partly overlap the body's edge no longer pick up the figure's dark shading. They had shown up as small dark fragments along the outline.
+- Settings: `WARP` 16, `WARP_REACH` 40, `WARP_TWIST` 1, `WARP_PULL` 0.25 in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("it still looks like there's a halo").
