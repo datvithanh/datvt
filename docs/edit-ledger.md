@@ -756,3 +756,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - **Waterfall shape.** The single curve is replaced by straight drops with notched ledges stepping out to the left: beside the copy, below the button, then two more steps to the bottom-left edge. The corners are softly rounded and the edge is cleaner than the first stepped version (`hero-field-shape.svg`).
 - Provisional: committed locally only. Dat asked not to push until he says so.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero: back to the larger-figure version, shading only (pushed) (`home-04-lanes` only)
+- The hero goes back to the version from commit `533bcd0`:
+  - figure 22% larger, all 20 glyphs on a straight grid, 3D bending of the figure glyphs
+  - smooth waterfall curve ending past the left margin
+  - field fade at 70% to 87%
+- The outline is off (`OUTLINE` 0); the soft body shading stays (`BODY_SHADE` 0.05).
+- Undone from later trials: the magnet pull toward the outline and the notched waterfall (`6079da4`). Kept: the generator's `FIGURE_OUT` export (`5a6d0a2`), which doesn't change the page.
+- The band version with the glyph figure stays on the local branch `bands-glyph-figure`, not pushed.
+- Why: Dat, Nov 17 ("go back to this exact version and push, just shading no outline").

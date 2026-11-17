@@ -55,13 +55,9 @@ SQUASH_MIN=0.18           # thinnest a glyph gets at the outline (share of its w
 TILT=0.22                 # extra shear of a glyph along the slope (0 = squash only)
 SKIRT=34                  # the sheet slopes down from the body into the field over this distance (units): field glyphs
 SKIRT_DROP=0.55           #   there squash and tilt too; SKIRT_DROP is the slope at the outline relative to the body's edge
-# Magnet (Nov 17): inside the figure, glyphs are drawn towards the outline, so more of them sit where the body turns away
-# and the 3D squash shows. A glyph d units inside the edge (d < MAGNET_D) moves out to MAGNET_D * (d/MAGNET_D)**MAGNET_P.
-MAGNET_D=60               # depth from the outline that the pull reaches (units)
-MAGNET_P=1.7              # strength: 1 = none, higher = glyphs crowd closer to the edge
 # Figure definition (Nov 17): a very faint ink outline along the silhouette, and soft shading of the body itself from the
 # shading map (darker where the form turns away), so the shape reads between the glyphs.
-OUTLINE=0.09              # strength of the outline (0..1 of ink)
+OUTLINE=0.0               # strength of the outline (0..1 of ink); Nov 17: off, shading only
 OUTLINE_W=1.4             # its width (units)
 BODY_SHADE=0.05           # strength of the body shading (0..1 of ink)
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
@@ -108,12 +104,6 @@ d_fld=nd.distance_transform_edt(~fm)/S                       # the skirt: the sh
 hb=hb+(~fm)*SKIRT_DROP*SKIRT*np.exp(-d_fld/SKIRT)
 hb=nd.gaussian_filter(hb,3*S)
 hby,hbx=np.gradient(hb); hbx*=S; hby*=S; nzb=1/np.sqrt(1+hbx**2+hby**2)
-dby,dbx=np.gradient(nd.gaussian_filter(d_body,3*S)); dbn=np.hypot(dbx,dby)+1e-6   # points inwards
-def magnet(x,y):
-    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); d=d_body[i,k]
-    if d<=0 or d>=MAGNET_D: return 0.0,0.0
-    sh=d-MAGNET_D*(d/MAGNET_D)**MAGNET_P                                       # how far to move out
-    return -sh*dbx[i,k]/dbn[i,k],-sh*dby[i,k]/dbn[i,k]
 def body_glyph(g,x,y):
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1)
     f=max(SQUASH_MIN,float(nzb[i,k]))
@@ -152,8 +142,6 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
             if u>p: continue
             if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
-        if not col and M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5:
-            mx,my=magnet(x+wx,y+wy); wx+=mx; wy+=my
         X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
         if col:
@@ -182,14 +170,6 @@ amt=np.where(FG,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
 CI=np.where(FG[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
 # Emboss: slopes facing the light (top left) get lighter glyphs, slopes facing away darker ones.
 lit=-(hx*-0.55+hy*-0.83)/gmax; amt=np.clip(amt*(1+EMBOSS*np.clip(lit*2.2,-1,1)),0,1)
-# Figure only (Nov 17): FIGURE_OUT=path also saves the figure's own glyphs on a transparent background, cropped to
-# the figure: no outline, no body shading, no field. Used to put this figure on the band version of the hero.
-if os.environ.get('FIGURE_OUT'):
-    fa=np.where(FG,np.clip(amt,0,1),0.0); fa=np.where(fa>0.02,fa,0)
-    ys_,xs_=np.nonzero(fa); m_=P(6); y0_,y1_,x0_,x1_=max(ys_.min()-m_,0),ys_.max()+m_,max(xs_.min()-m_,0),xs_.max()+m_
-    rgba=np.dstack([np.clip(CI,0,255),fa*255])[y0_:y1_+1,x0_:x1_+1].round().astype(np.uint8)
-    Image.fromarray(rgba,'RGBA').save(os.environ['FIGURE_OUT'],quality=90,method=6)
-    print('figure only:',os.environ['FIGURE_OUT'],rgba.shape[1],'x',rgba.shape[0],'px; stage x %.1f..%.1f, y %.1f..%.1f'%(x0_/S+XL,x1_/S+XL,y0_/S,y1_/S))
 INKC=np.array([30,29,26.])
 bod=nd.gaussian_filter(Mf,1.5*S)*(1-np.clip(Bf,0,1))**1.2                    # deeper tone = more shade
 dline=np.abs(nd.distance_transform_edt(Mf>0.5)-nd.distance_transform_edt(Mf<=0.5))/S
