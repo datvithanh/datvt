@@ -735,3 +735,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The clear zone behind the copy is removed, since glyphs behind the text are fine. The field is now an even strength everywhere (`left=1.0` in the generator).
 - Provisional: committed locally only. Dat asked not to push until he says so.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: one smooth curve instead of steps (local, not pushed) (`home-04-lanes` only)
+- The waterfall shape is now a single smooth curve. It drops straight down beside "PRACTICE" and the lede, then sweeps out in one long arc to the bottom left. The steps and ledges are gone.
+- The edge is tighter and cleaner: less roughening and a narrower feather (`hero-field-shape.svg`).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17 ("how about one smooth curve instead of steps?").

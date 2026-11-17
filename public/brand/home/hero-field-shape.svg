@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-700 -50 3200 1250" width="3200" height="1250" preserveAspectRatio="none">
-  <!-- Hero glyph field shape (Dat, Nov 17): the field fills the area right of a cascading line, like a waterfall that
-       drops past the copy and steps out to the left. Stage units; app/lanes-home.css positions it. White = field shown.
+  <!-- Hero glyph field shape (Dat, Nov 17): the field fills the area right of one smooth curve, like a waterfall that
+       drops past the copy and sweeps out to the bottom left (Nov 17: one curve instead of steps). Stage units; app/lanes-home.css positions it. White = field shown.
        The edge is roughened and feathered so it reads as natural, not cut. -->
   <filter id="edge" x="-10%" y="-10%" width="120%" height="120%">
     <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="11" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="46" xChannelSelector="R" yChannelSelector="G" result="d"/>
-    <feGaussianBlur in="d" stdDeviation="16"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feGaussianBlur in="d" stdDeviation="9"/>
   </filter>
-  <path d="M493,-40 C493.0,-30.7 494.2,-16.8 493,16 C491.8,48.8 487.7,83.7 486,157 C484.3,230.3 493.8,395.0 483,456 C472.2,517.0 455.7,507.0 421,523 C386.3,539.0 302.5,527.5 275,552 C247.5,576.5 283.5,648.5 256,670 C228.5,691.5 141.3,644.8 110,681 C78.7,717.2 77.7,800.5 68,887 C58.3,973.5 54.7,1147.8 52,1200 L2550,1300 L2550,-60 Z" fill="#fff" filter="url(#edge)"/>
+  <path d="M500,-60 L500,40 C500,430 470,560 330,660 C190,760 70,900 40,1210 L2550,1210 L2550,-60 Z" fill="#fff" filter="url(#edge)"/>
 </svg>
