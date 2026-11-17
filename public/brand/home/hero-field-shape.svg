@@ -7,5 +7,5 @@
     <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G" result="d"/>
     <feGaussianBlur in="d" stdDeviation="9"/>
   </filter>
-  <path d="M500,-60 L500,40 C500,430 470,560 330,660 C190,760 70,900 40,1210 L2550,1210 L2550,-60 Z" fill="#fff" filter="url(#edge)"/>
+  <path d="M500,-60 L500,40 C500,430 470,560 330,660 C150,770 -120,930 -220,1210 L2550,1210 L2550,-60 Z" fill="#fff" filter="url(#edge)"/>
 </svg>

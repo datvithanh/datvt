@@ -261,8 +261,8 @@
      1200) and placed against the stage, so the shape keeps its place beside the copy at every width; it is intersected
      with the fade towards the next section. The field box sits at min(100vw,1280px) − 140 px − 1553.76 units. */
   .field-guide .ln-art .ln-field{
-    -webkit-mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 62%,transparent 81%);
-    mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 62%,transparent 81%);
+    -webkit-mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 70%,transparent 87%);
+    mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 70%,transparent 87%);
     -webkit-mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
     -webkit-mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;
     -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}

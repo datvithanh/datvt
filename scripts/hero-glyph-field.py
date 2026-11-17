@@ -21,7 +21,7 @@ QUALITY=82
 # ── Settings ────────────────────────────────────────────────────────────────────────────────────────────────
 S=2                       # px per stage unit
 XL,WU,HU=-480,2240,1150   # image extent in stage units (overhangs both sides for wide screens)
-CX,TOP,HT=840,26,624      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
+CX,TOP,HT=840,26,760      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
 SP,GS=32.2,17.5           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
 DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+HT)
 DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
@@ -32,15 +32,15 @@ FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = in
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=1.6                  # overall darkness of the field
 RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
-RING=41                   # width of each colour ring around the heart
-CROWN=96                  # no clay within this many units of the top of the head
+RING=50                   # width of each colour ring around the heart
+CROWN=117                 # no clay within this many units of the top of the head
 SEED=7
 # Relief (Nov 17, after Dat's dark reference): the figure is a raised surface under the grid. Every glyph, field and
 # figure alike, is shifted by that surface, so rows arch up over the body and fold at its edges, like a grid draped
 # over it; light from the top left shades the slopes. Glyph sizes never change, and figure membership is tested at
 # each glyph's shifted position, so the outline stays exact.
 RELIEF_SOFT=44            # softness of the surface's edge (units): smaller = sharper fold at the outline
-RELIEF_LIFT=24            # how far the grid lifts over the body (units, upwards)
+RELIEF_LIFT=30            # how far the grid lifts over the body (units, upwards)
 RELIEF_SWELL=0.07         # how much the grid widens over the body, from its centre line (share of the distance)
 RELIEF_FOLD=0             # extra pull of the grid into the edge (units): rows bunch at the outline
 EMBOSS=0.55               # light and shadow on the slopes (0 = none)
@@ -49,12 +49,17 @@ EMBOSS=0.55               # light and shadow on the slopes (0 = none)
 # far the surface turns away from the viewer (foreshortening) and tilted with it: full size on the flat parts, thin
 # slivers at the outline. Field glyphs stay flat.
 GLYPH_3D=True             # Nov 17 trial, off: set True to bend the figure glyphs (not on the site yet)
-BODY_ROUND=95             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
+BODY_ROUND=90             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
 BODY_FORM=0.45            # how much the shading map shapes the inner forms (arms, legs)
 SQUASH_MIN=0.18           # thinnest a glyph gets at the outline (share of its width)
 TILT=0.22                 # extra shear of a glyph along the slope (0 = squash only)
 SKIRT=34                  # the sheet slopes down from the body into the field over this distance (units): field glyphs
 SKIRT_DROP=0.55           #   there squash and tilt too; SKIRT_DROP is the slope at the outline relative to the body's edge
+# Figure definition (Nov 17): a very faint ink outline along the silhouette, and soft shading of the body itself from the
+# shading map (darker where the form turns away), so the shape reads between the glyphs.
+OUTLINE=0.09              # strength of the outline (0..1 of ink)
+OUTLINE_W=1.4             # its width (units)
+BODY_SHADE=0.05           # strength of the body shading (0..1 of ink)
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
 # the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
 HALO=30                   # width of the halo outside the outline (units)
@@ -165,7 +170,13 @@ amt=np.where(FG,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
 CI=np.where(FG[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
 # Emboss: slopes facing the light (top left) get lighter glyphs, slopes facing away darker ones.
 lit=-(hx*-0.55+hy*-0.83)/gmax; amt=np.clip(amt*(1+EMBOSS*np.clip(lit*2.2,-1,1)),0,1)
-c=BONE+amt[...,None]*(CI-BONE)
+INKC=np.array([30,29,26.])
+bod=nd.gaussian_filter(Mf,1.5*S)*(1-np.clip(Bf,0,1))**1.2                    # deeper tone = more shade
+dline=np.abs(nd.distance_transform_edt(Mf>0.5)-nd.distance_transform_edt(Mf<=0.5))/S
+line=np.exp(-(dline/OUTLINE_W)**2)
+under=np.clip(BODY_SHADE*bod+OUTLINE*line,0,1)
+BG=BONE[None,None,:]+under[...,None]*(INKC-BONE)                               # the paper under the glyphs
+c=BG+amt[...,None]*(CI-BG)
 colr=Cg/np.maximum(Cw[...,None],1e-3); a=Cw*RAIN_ALPHA; c=c*(1-a[...,None])+colr*a[...,None]
 im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))
 im.save(OUT,quality=QUALITY,method=6); print(OUT, im.size, os.path.getsize(OUT),'bytes')

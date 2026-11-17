@@ -741,3 +741,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The edge is tighter and cleaner: less roughening and a narrower feather (`hero-field-shape.svg`).
 - Provisional: committed locally only. Dat asked not to push until he says so.
 - Why: Dat, Nov 17 ("how about one smooth curve instead of steps?").
+
+### 2026-11-17 · Hero figure: larger for more detail; faint outline and body shading; curve ends further left (local, not pushed) (`home-04-lanes` only)
+- The figure is 22% larger (`HT` 624 → 760 units) with the glyphs unchanged in size, so about half again as many glyphs draw it. The neck, hands and knees read again. The head stays under the Resources / Media gap.
+  - The color rings, crown and 3D settings are scaled to match: `RING` 50, `CROWN` 117, `BODY_ROUND` 90, `RELIEF_LIFT` 30.
+- A very faint ink outline traces the silhouette (`OUTLINE` 0.09, `OUTLINE_W` 1.4 units). Soft shading inside the body follows its shading map (`BODY_SHADE` 0.05), so the form reads between the glyphs.
+- The waterfall curve now ends further left, sweeping off the page past the left margin.
+- The field's fade into the next section moves down (70% → 87% of the field, was 62% → 81%) so it doesn't cut into the larger figure's base. As a result, faint glyphs now reach behind "REALIZATION AS A FITNESS".
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
