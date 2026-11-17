@@ -22,7 +22,7 @@ QUALITY=82
 S=2                       # px per stage unit
 XL,WU,HU=-480,2240,1150   # image extent in stage units (overhangs both sides for wide screens)
 CX,TOP,HT=840,26,624      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
-SP,GS=24.75,14.6          # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
+SP,GS=32.2,19.0           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
 DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+HT)
 DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
@@ -30,7 +30,7 @@ BX0,BXW=40,300            # phase box columns: falling glyphs take the colour of
 FIELD_COLOUR=0.0          # share of field glyphs that take a phase colour (rising towards the bottom)
 FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = invisible)
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
-GAIN=2.3                  # overall darkness of the field
+GAIN=1.6                  # overall darkness of the field
 RAIN_ALPHA=0.75           # opacity of the falling coloured glyphs
 RING=41                   # width of each colour ring around the heart
 CROWN=96                  # no clay within this many units of the top of the head
