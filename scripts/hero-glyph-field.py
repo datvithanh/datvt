@@ -22,7 +22,7 @@ QUALITY=82
 S=2                       # px per stage unit
 XL,WU,HU=-480,2240,1150   # image extent in stage units (overhangs both sides for wide screens)
 CX,TOP,HT=840,26,624      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
-SP,GS=19.8,11.7           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
+SP,GS=24.75,14.6          # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
 DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+HT)
 DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
@@ -48,11 +48,13 @@ EMBOSS=0.55               # light and shadow on the slopes (0 = none)
 # into a rounded form (with the shading map adding the inner forms), and each glyph is squashed along the slope by how
 # far the surface turns away from the viewer (foreshortening) and tilted with it: full size on the flat parts, thin
 # slivers at the outline. Field glyphs stay flat.
-GLYPH_3D=False            # Nov 17 trial, off: set True to bend the figure glyphs (not on the site yet)
-BODY_ROUND=55             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
+GLYPH_3D=True             # Nov 17 trial, off: set True to bend the figure glyphs (not on the site yet)
+BODY_ROUND=95             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
 BODY_FORM=0.45            # how much the shading map shapes the inner forms (arms, legs)
-SQUASH_MIN=0.22           # thinnest a glyph gets at the outline (share of its width)
-TILT=0.18                 # extra shear of a glyph along the slope (0 = squash only)
+SQUASH_MIN=0.18           # thinnest a glyph gets at the outline (share of its width)
+TILT=0.22                 # extra shear of a glyph along the slope (0 = squash only)
+SKIRT=34                  # the sheet slopes down from the body into the field over this distance (units): field glyphs
+SKIRT_DROP=0.55           #   there squash and tilt too; SKIRT_DROP is the slope at the outline relative to the body's edge
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
 # the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
 HALO=30                   # width of the halo outside the outline (units)
@@ -92,7 +94,10 @@ d_body=nd.distance_transform_edt(Mf>0.5)/S
 prof=np.sqrt(np.clip(1-(1-np.clip(d_body/BODY_ROUND,0,1))**2,0,1))
 form=nd.gaussian_filter(Tf,10*S)/np.maximum(nd.gaussian_filter(W8,10*S),1e-3); fm=Mf>0.5
 form=np.clip((form-np.percentile(form[fm],10))/(np.percentile(form[fm],90)-np.percentile(form[fm],10)+1e-6),0,1)
-hb=nd.gaussian_filter(BODY_ROUND*prof*((1-BODY_FORM)+BODY_FORM*form)*fm,3*S)
+hb=BODY_ROUND*prof*((1-BODY_FORM)+BODY_FORM*form)*fm
+d_fld=nd.distance_transform_edt(~fm)/S                       # the skirt: the sheet falls from the outline into the field
+hb=hb+(~fm)*SKIRT_DROP*SKIRT*np.exp(-d_fld/SKIRT)
+hb=nd.gaussian_filter(hb,3*S)
 hby,hbx=np.gradient(hb); hbx*=S; hby*=S; nzb=1/np.sqrt(1+hbx**2+hby**2)
 def body_glyph(g,x,y):
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1)
@@ -126,7 +131,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         if col:
             Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
         inside=M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5; acc=None   # tested where the glyph lands
-        if inside and GLYPH_3D: g=body_glyph(g,x+wx,y+wy)
+        if GLYPH_3D and (inside or d_fld[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]<4*SKIRT): g=body_glyph(g,x+wx,y+wy)
         A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
         if inside:
             r=np.hypot(x-HX,(y-HY)*0.8)+np.random.normal(0,7); acc=PC[int(r//RING)%4]

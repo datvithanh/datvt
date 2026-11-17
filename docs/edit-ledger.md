@@ -720,3 +720,11 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The Nov 17 sideways bend of the background only is replaced.
 - Settings: `RELIEF_SOFT` 44, `RELIEF_LIFT` 24, `RELIEF_SWELL` 0.07, `RELIEF_FOLD` 0 and `EMBOSS` 0.55, in `scripts/hero-glyph-field.py`.
 - Why: Dat, Nov 17 ("re-do it to make it more like this, where it bends to emphasize the figure. the field folds around the figure").
+
+### 2026-11-17 · Hero figure: glyphs bend in 3D; larger glyphs (local, not pushed) (`home-04-lanes` only)
+- `GLYPH_3D` on in `scripts/hero-glyph-field.py`. Each glyph is squashed and tilted by the slope of an inflated body under it: full size where the body faces the viewer, thin slivers toward the outline.
+  - `BODY_ROUND` 95 sets how far in from the outline the body rounds over. `SQUASH_MIN` 0.18 and `TILT` 0.22 set how thin and how tilted the glyphs get.
+  - Field glyphs just outside the outline squash too, as the sheet falls away from the body (`SKIRT` 34, `SKIRT_DROP` 0.55).
+- All glyphs and their spacing are 25% larger: `SP,GS` 24.75 / 14.6, was 19.8 / 11.7. The figure's size, position and outline are unchanged.
+- Provisional: committed locally only. Dat asked not to push until he has reviewed it.
+- Why: Dat, Nov 17.
