@@ -22,7 +22,7 @@ QUALITY=82
 S=2                       # px per stage unit
 XL,WU,HU=-480,2240,1150   # image extent in stage units (overhangs both sides for wide screens)
 CX,TOP,HT=840,26,624      # figure: centre x, top of head, height (Nov 15: +20%, was 520)
-SP,GS=32.2,19.0           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
+SP,GS=32.2,17.5           # glyph grid pitch and glyph size (Nov 15: +20%, was 16.5, 9.75)
 DTOP_OFFSET=72            # dispersal starts this far above the seat line (TOP+HT)
 DBOT=1100                 # dispersal ends here (just above the phase boxes, which start at 1110)
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
@@ -116,9 +116,20 @@ def quarter(x): return int(np.clip((x-BX0+np.random.normal(0,22))//BXW,0,3))
 CI=np.zeros((H_,W_,3),np.float32)+np.array([30,29,26.],np.float32); AC=np.zeros((H_,W_),np.float32)
 A=np.zeros((H_,W_),np.float32); Cg=np.zeros((H_,W_,3),np.float32); Cw=np.zeros((H_,W_),np.float32)
 HX,HY=CX,TOP+0.40*HT
+# Glyph choice (Nov 17): every glyph is used evenly. Each row deals from shuffled decks of all glyphs, never repeating the
+# glyph to its left or the one above it.
+_deck=[]; _above={}; _left=[None]
+def pick(j,ci):
+    if ci==0: _left[0]=None
+    bad={_left[0],_above.get(ci)}
+    while True:
+        for t,k in enumerate(_deck):
+            if k not in bad:
+                _deck.pop(t); _left[0]=k; _above[ci]=k; return int(k)
+        _deck.extend(rng.permutation(len(gl)).tolist())      # deal a fresh deck of all glyphs
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
-    for x in np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)+(SP/2 if j%2 else 0):   # a column on the figure's axis
-        g=gl[rng.integers(20)]; u=rng.random(); col=None
+    for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
+        g=gl[pick(j,ci)]; u=rng.random(); col=None
         wx,wy=warp(x,y)
         if DISPERSE and y>=DTOP:
             t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
