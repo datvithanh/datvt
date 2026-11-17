@@ -256,7 +256,14 @@
    - Bottom: the field is an even grid that fades out in a straight line below the figure, gone before the phases title. */
 @media(min-width:901px){
   .field-guide .ln-copy{z-index:2}
-  .field-guide .ln-copy::before{content:"";position:absolute;z-index:-1;top:calc(-60 * var(--u));bottom:calc(-120 * var(--u));left:calc(-600 * var(--u));right:calc(-130 * var(--u));background:var(--bone);pointer-events:none;
-    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 110 * var(--u)),transparent),linear-gradient(to bottom,#000 calc(100% - 100 * var(--u)),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 110 * var(--u)),transparent),linear-gradient(to bottom,#000 calc(100% - 100 * var(--u)),transparent);-webkit-mask-composite:source-in;mask-composite:intersect}
-  .field-guide .ln-art .ln-field{-webkit-mask-image:linear-gradient(#000 62%,transparent 81%);mask-image:linear-gradient(#000 62%,transparent 81%)}
+  /* No clear zone behind the copy (Dat, Nov 17: "text is ok to have glyphs behind"); the waterfall shape alone sets the field. */
+  /* Waterfall shape (Dat, Nov 17): public/brand/home/hero-field-shape.svg is drawn in stage units (x −700 to 2500, y −50 to
+     1200) and placed against the stage, so the shape keeps its place beside the copy at every width; it is intersected
+     with the fade towards the next section. The field box sits at min(100vw,1280px) − 140 px − 1553.76 units. */
+  .field-guide .ln-art .ln-field{
+    -webkit-mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 62%,transparent 81%);
+    mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 62%,transparent 81%);
+    -webkit-mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
+    -webkit-mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
 }

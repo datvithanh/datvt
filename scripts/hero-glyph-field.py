@@ -153,7 +153,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         if acc:
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
-left=0.45+0.55*ss((xs_-380)/360)
+left=1.0   # Nov 17: even field; the waterfall mask in app/lanes-home.css sets its shape (was lighter towards the copy)
 halo=HALO_MIN+(1-HALO_MIN)*ss(nd.distance_transform_edt(Mf<=0.5)/S/HALO)
 B=np.clip((0.17*left*halo*(1-M)+(0.17+FIG_STRENGTH*(Bf-0.17))*M)*0.85*GAIN,0,1)
 BONE=np.array([242,236,220.])

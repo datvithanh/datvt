@@ -728,3 +728,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - All glyphs and their spacing are 25% larger: `SP,GS` 24.75 / 14.6, was 19.8 / 11.7. The figure's size, position and outline are unchanged.
 - Provisional: committed locally only. Dat asked not to push until he has reviewed it.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: waterfall shape from Dat's guide line (local, not pushed) (`home-04-lanes` only)
+- The field's overall shape follows the line Dat drew. It drops straight down beside the headline and button, then steps out to the left in a few ledges and runs off the bottom of the hero. The field fills everything to the right of the line.
+- The line is one smooth curve with a lightly roughened, feathered edge (`public/brand/home/hero-field-shape.svg`, in stage units). It is applied as a CSS mask in `app/lanes-home.css`, together with the fade into the next section, so it keeps its place beside the copy at every width.
+- The clear zone behind the copy is removed, since glyphs behind the text are fine. The field is now an even strength everywhere (`left=1.0` in the generator).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
