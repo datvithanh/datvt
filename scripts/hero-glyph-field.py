@@ -44,6 +44,15 @@ RELIEF_LIFT=24            # how far the grid lifts over the body (units, upwards
 RELIEF_SWELL=0.07         # how much the grid widens over the body, from its centre line (share of the distance)
 RELIEF_FOLD=0             # extra pull of the grid into the edge (units): rows bunch at the outline
 EMBOSS=0.55               # light and shadow on the slopes (0 = none)
+# Glyphs on the 3D body (Nov 17): each figure glyph is bent by the surface under it. The body is the silhouette inflated
+# into a rounded form (with the shading map adding the inner forms), and each glyph is squashed along the slope by how
+# far the surface turns away from the viewer (foreshortening) and tilted with it: full size on the flat parts, thin
+# slivers at the outline. Field glyphs stay flat.
+GLYPH_3D=False            # Nov 17 trial, off: set True to bend the figure glyphs (not on the site yet)
+BODY_ROUND=55             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
+BODY_FORM=0.45            # how much the shading map shapes the inner forms (arms, legs)
+SQUASH_MIN=0.22           # thinnest a glyph gets at the outline (share of its width)
+TILT=0.18                 # extra shear of a glyph along the slope (0 = squash only)
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
 # the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
 HALO=30                   # width of the halo outside the outline (units)
@@ -78,6 +87,23 @@ hy,hx=np.gradient(Hs); hy*=S; hx*=S; gmax=np.hypot(hx,hy).max() or 1
 def warp(x,y):
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); h=Hs[i,k]
     return RELIEF_SWELL*h*(x-CX)+RELIEF_FOLD*hx[i,k]/gmax, -RELIEF_LIFT*h+RELIEF_FOLD*hy[i,k]/gmax
+# 3D body for the glyph shapes: inflated silhouette plus inner forms; nzb = how much each point faces the viewer.
+d_body=nd.distance_transform_edt(Mf>0.5)/S
+prof=np.sqrt(np.clip(1-(1-np.clip(d_body/BODY_ROUND,0,1))**2,0,1))
+form=nd.gaussian_filter(Tf,10*S)/np.maximum(nd.gaussian_filter(W8,10*S),1e-3); fm=Mf>0.5
+form=np.clip((form-np.percentile(form[fm],10))/(np.percentile(form[fm],90)-np.percentile(form[fm],10)+1e-6),0,1)
+hb=nd.gaussian_filter(BODY_ROUND*prof*((1-BODY_FORM)+BODY_FORM*form)*fm,3*S)
+hby,hbx=np.gradient(hb); hbx*=S; hby*=S; nzb=1/np.sqrt(1+hbx**2+hby**2)
+def body_glyph(g,x,y):
+    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1)
+    f=max(SQUASH_MIN,float(nzb[i,k]))
+    if f>0.985: return g
+    th=np.arctan2(hby[i,k],hbx[i,k]); c,s_=np.cos(th),np.sin(th)
+    R=np.array([[c,-s_],[s_,c]])                                  # columns: slope direction, along the contour (x,y)
+    Mx=R@np.array([[f,TILT*(1-f)],[0,1]])@R.T                     # glyph -> screen: squash along the slope, slight shear
+    Mx=Mx[::-1,::-1]                                              # to (row, col) order
+    inv=np.linalg.inv(Mx); n_=g.shape[0]; cc=np.array([(n_-1)/2,(n_-1)/2])
+    return nd.affine_transform(g,inv,offset=cc-inv@cc,order=1,mode='constant',cval=0)
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -99,8 +125,9 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
         if col:
             Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
-        A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
         inside=M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5; acc=None   # tested where the glyph lands
+        if inside and GLYPH_3D: g=body_glyph(g,x+wx,y+wy)
+        A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
         if inside:
             r=np.hypot(x-HX,(y-HY)*0.8)+np.random.normal(0,7); acc=PC[int(r//RING)%4]
             if acc=='clay' and y<TOP+CROWN: acc='marigold'
