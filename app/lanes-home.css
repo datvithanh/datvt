@@ -261,10 +261,35 @@
      cuts the field crisply at x 500 (through the CE of "PRACTICE") down to the figure's leftmost point; below that the
      image spreads out sparsely by itself. It is placed against the stage, so the cut keeps its place beside the copy at
      every width. The field box sits at min(100vw,1280px) − 140 px − 1553.76 units. */
+  /* The cut sits at stage x 500, snapped to the nearest gap between two glyph columns (grid pitch 32.2 units, a column
+     at field x 1320) so it never slices a glyph; it stays between the C and E. --fcut is where the mask starts. */
+  .ln-hero{--fcut:calc(round(nearest,140px - min(100vw,1280px) + 717.66 * var(--u),32.2 * var(--u)) + 136.1 * var(--u))}
   .field-guide .ln-art .ln-field{
     -webkit-mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
     mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
     -webkit-mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
-    -webkit-mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;mask-position:calc(853.76 * var(--u) + 140px - min(100vw,1280px)) calc(-50 * var(--u)),0 0;
+    -webkit-mask-position:var(--fcut) calc(-50 * var(--u)),0 0;mask-position:var(--fcut) calc(-50 * var(--u)),0 0;
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
+}
+/* Section colours (Dat, Nov 17): some field glyphs take the colour of the phase box below them. The glyphs
+   are picked in public/brand/home/hero-glyph-field-tint.webp (scripts/hero-glyph-field.py, FIELD_SPLIT), which masks
+   four colour columns drawn over the field. The columns split at the gaps between the phase boxes, measured from the
+   stage like the boxes, and snapped to the gap between two glyph columns (grid pitch 32.2 units, a column at field
+   x 1320) so no glyph is cut in two. Desktop only; phones keep the grey field. */
+.ln-field-tint{display:none}
+@media(min-width:901px){
+  .field-guide .ln-art .ln-field-tint{
+    --fl:calc(min(100vw,1280px) - 140px - 1553.76 * var(--u));
+    --pw:calc((min(100vw,1280px) - 80px - 66 * var(--u)) / 4);
+    --g1:calc(round(nearest,40 * var(--u) + var(--pw) + 11 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
+    --g2:calc(round(nearest,40 * var(--u) + 2 * var(--pw) + 33 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
+    --g3:calc(round(nearest,40 * var(--u) + 3 * var(--pw) + 55 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
+    display:block;position:absolute;pointer-events:none;left:var(--fl);top:0;width:calc(2240 * var(--u));height:calc(1150 * var(--u));
+    background:linear-gradient(90deg,var(--marigold) var(--g1),var(--clay) var(--g1) var(--g2),var(--sage) var(--g2) var(--g3),var(--mblue) var(--g3));
+    opacity:var(--tint,.7);
+    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
+    -webkit-mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
+    -webkit-mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;
     -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
 }

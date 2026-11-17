@@ -792,3 +792,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The figure and the field to the right of the line are unchanged. The thinning below the figure is unchanged too.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 17 ("a more solid line up till the left-most side of the figure, that cuts through CE, then sparse spread").
+
+### 2026-11-17 · Hero field: whole up to the CE cut at every screen size, section colours toward the bottom (local, not pushed) (`home-04-lanes` only)
+- **Whole field up to the cut.** Above knee height, the glyph field is now whole all the way to the crisp cut through "CE" at every screen size. On shorter screens there used to be a band of sparse glyphs between the cut and the full field. The image is whole above y 580; the mask's fade-in below the cut is now 615–645.
+- **No half glyphs on the edge.** The cut is snapped to the nearest gap between two glyph columns (within 16 units of x 500), so it stays in "CE" and never slices a glyph.
+- **Section colours (option B).** As the field breaks up toward the bottom, glyphs take the colour of the phase box below them: marigold, clay, sage and blue in four columns that split at the gaps between the boxes. The top of the field stays grey, so the figure is still the one coloured shape. Glyph positions are unchanged.
+  - The colour is a separate overlay: `hero-glyph-field-tint.webp` masks four colour columns (`.ln-field-tint` in `app/lanes-home.css`). The overlay is needed because the field is placed against the header and the boxes against the stage, so colour baked into the image would drift off the boxes as the screen size changes.
+  - The splits are snapped to gaps between glyph columns. Settings: `FIELD_SPLIT`, `SPLIT_FROM` 430, `SPLIT_TO` 820 in `scripts/hero-glyph-field.py`.
+  - Desktop only; phones keep the grey field (their phases are stacked).
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17 ("lets have the whole unified field fill up the boxed area, and then B").

@@ -28,6 +28,13 @@ DBOT=1100                 # dispersal ends here (just above the phase boxes, whi
 FLOOR=0.22                # minimum density through the dispersal, so no area empties
 BX0,BXW=40,300            # phase box columns: falling glyphs take the colour of the column below them
 FIELD_COLOUR=0.0          # share of field glyphs that take a phase colour (rising towards the bottom)
+# Section colours (Dat, Nov 17): field glyphs are picked to take the colour of the phase box below them. The image
+# can't do the colouring itself (the field is placed against the header, the boxes against the stage, so they slide
+# against each other with screen size), so the picked glyphs go to a second image, TINT_OUT, which the page uses as a
+# mask over four colour columns placed against the boxes (app/lanes-home.css, .ln-field-tint). Positions don't change.
+# SPLIT_FROM..SPLIT_TO ramps the share of picked glyphs down the field (equal = the whole field).
+FIELD_SPLIT=float(os.environ.get('FIELD_SPLIT','1'))
+SPLIT_FROM=float(os.environ.get('SPLIT_FROM','430')); SPLIT_TO=float(os.environ.get('SPLIT_TO','820'))   # Dat, Nov 17: option B
 FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = invisible)
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=1.6                  # overall darkness of the field
@@ -141,6 +148,7 @@ _im=Image.new('L',(W_,H_),0); ImageDraw.Draw(_im).polygon(_poly,fill=255); FM=np
 dE=(nd.distance_transform_edt(FM)-nd.distance_transform_edt(~FM))/S
 _eg=nd.gaussian_filter(dE,4*S); eGy,eGx=np.gradient(_eg); eGn=np.hypot(eGx,eGy)+1e-6        # points into the field
 _rs=np.random.default_rng(99)
+_rc=np.random.default_rng(7)   # section colours (own stream, so nothing else moves)
 _nc=nd.gaussian_filter(_rs.normal(size=(int(HU/8)+2,int(WU/8)+2)),2.2); _nc/=_nc.std()
 def clump(x,y): return _nc[min(int(y/8),_nc.shape[0]-1),min(max(int((x-XL)/8),0),_nc.shape[1]-1)]
 def fragment(x,y,u):
@@ -149,8 +157,8 @@ def fragment(x,y,u):
     if e>=EDGE_BAND: pe=1.0; te=0.0
     elif e>=0: te=1-e/EDGE_BAND; te=te*te*(3-2*te); pe=1-(1-EDGE_KEEP)*te
     else: te=1.0; pe=EDGE_KEEP*np.exp(e/EDGE_OUT)
-    wsol=np.clip((SOLID_TO-y)/60,0,1) if e>=0 else 0.0       # inside the line, 1 well above SOLID_TO: no break-up there (the CSS cut);
-                                                             # outside it the field is sparse at every height, so the CSS fade-in shows no full rows
+    wsol=np.clip((SOLID_TO-y)/30,0,1)                        # whole above SOLID_TO − 30 on both sides of the line: the page's CSS cut
+                                                             # through "CE" is the only edge there at every screen size (Dat, Nov 17)
     pe=pe+(1-pe)*wsol; te=te*(1-wsol)
     tb=np.clip((y-(TOP+HT+BOTTOM_START))/BOTTOM_LEN,0,1); tb=tb*tb*(3-2*tb); pb=1-(1-BOTTOM_KEEP)*tb
     p=pe*pb
@@ -164,6 +172,7 @@ COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,10
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
 def quarter(x): return int(np.clip((x-BX0+np.random.normal(0,22))//BXW,0,3))
 CI=np.zeros((H_,W_,3),np.float32)+np.array([30,29,26.],np.float32); AC=np.zeros((H_,W_),np.float32)
+TA=np.zeros((H_,W_),np.float32)   # glyphs picked for section colour
 A=np.zeros((H_,W_),np.float32); Cg=np.zeros((H_,W_,3),np.float32); Cw=np.zeros((H_,W_),np.float32)
 HX,HY=CX,TOP+0.40*HT
 # Glyph choice (Nov 17): every glyph is used evenly. Each row deals from shuffled decks of all glyphs, never repeating the
@@ -204,6 +213,9 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         elif y<BASE+10:
             prog=np.clip((y+70)/(BASE+80),0,1)
             if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
+        if FIELD_SPLIT and not inside and acc is None:
+            w=ss((y-SPLIT_FROM)/(SPLIT_TO-SPLIT_FROM)) if SPLIT_TO>SPLIT_FROM else 1.0
+            if _rc.random()<w*FIELD_SPLIT: TA[Y:Y+n,X:X+n]=np.maximum(TA[Y:Y+n,X:X+n],g)
         if acc:
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
@@ -229,3 +241,8 @@ c=BG+amt[...,None]*(CI-BG)
 colr=Cg/np.maximum(Cw[...,None],1e-3); a=Cw*RAIN_ALPHA; c=c*(1-a[...,None])+colr*a[...,None]
 im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))
 im.save(OUT,quality=QUALITY,method=6); print(OUT, im.size, os.path.getsize(OUT),'bytes')
+if FIELD_SPLIT:
+    TINT_OUT=os.environ.get('TINT_OUT',os.path.join(os.path.dirname(OUT),'hero-glyph-field-tint.webp'))
+    ta=(np.clip(TA,0,1)*255).round().astype(np.uint8)
+    Image.fromarray(np.dstack([np.full_like(ta,255)]*3+[ta])).save(TINT_OUT,quality=60,alpha_quality=90,method=6)
+    print(TINT_OUT, os.path.getsize(TINT_OUT),'bytes')

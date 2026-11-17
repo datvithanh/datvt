@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-700 -50 3200 1250" width="3200" height="1250" preserveAspectRatio="none">
   <!-- Hero glyph field edge (Dat, Nov 17), stage units. A crisp vertical cut at x 500 (between the C and E of
-       "PRACTICE") from the top down to the figure's leftmost point (y about 624); below that the field is open and the
+       "PRACTICE") from the top down to the figure's leftmost point (y about 615; the image is whole above it at every screen size); below that the field is open and the
        image itself spreads out sparsely (scripts/hero-glyph-field.py, EDGE_*). Opaque = field shown. -->
   <defs><linearGradient id="in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient></defs>
   <rect x="500" y="-50" width="2000" height="1250" fill="#fff"/>
-  <rect x="-700" y="560" width="1200" height="90" fill="url(#in)"/>
-  <rect x="-700" y="650" width="1200" height="550" fill="#fff"/>
+  <rect x="-700" y="615" width="1200" height="30" fill="url(#in)"/>
+  <rect x="-700" y="645" width="1200" height="555" fill="#fff"/>
 </svg>
