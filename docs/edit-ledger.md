@@ -766,3 +766,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Undone from later trials: the magnet pull toward the outline and the notched waterfall (`6079da4`). Kept: the generator's `FIGURE_OUT` export (`5a6d0a2`), which doesn't change the page.
 - The band version with the glyph figure stays on the local branch `bands-glyph-figure`, not pushed.
 - Why: Dat, Nov 17 ("go back to this exact version and push, just shading no outline").
+
+### 2026-11-17 · Hero: stronger 3D and distortion; field disperses below the figure (local, not pushed) (`home-04-lanes` only)
+- **Stronger 3D.** The body is deeper (`BODY_DEPTH` 1.6), so glyphs start turning away further in from the outline. They get thinner (`SQUASH_MIN` 0.12) and tilt more (`TILT` 0.32). The field next to the body squashes over a wider band (`SKIRT` 46, `SKIRT_DROP` 0.8).
+- **Stronger distortion.** The grid lifts and widens more over the body, with a firmer edge: `RELIEF_LIFT` 44, `RELIEF_SWELL` 0.11, `RELIEF_SOFT` 38. Light and shade on the slopes are stronger (`EMBOSS` 0.75).
+- **Gentle dispersal.** Below the figure, field glyphs thin out, loosen and drift slightly downward toward "Realization as a fitness". It starts earlier toward the lower left, where the field reaches furthest down.
+  - About 12% of glyphs remain at the end of the dispersal, over roughly 330 units (`SCATTER_*`).
+  - The figure's own glyphs are untouched.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17.
