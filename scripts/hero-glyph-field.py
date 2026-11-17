@@ -39,11 +39,11 @@ SEED=7
 # figure alike, is shifted by that surface, so rows arch up over the body and fold at its edges, like a grid draped
 # over it; light from the top left shades the slopes. Glyph sizes never change, and figure membership is tested at
 # each glyph's shifted position, so the outline stays exact.
-RELIEF_SOFT=38            # softness of the surface's edge (units): smaller = sharper fold at the outline
-RELIEF_LIFT=44            # how far the grid lifts over the body (units, upwards)
-RELIEF_SWELL=0.11         # how much the grid widens over the body, from its centre line (share of the distance)
+RELIEF_SOFT=44            # softness of the surface's edge (units): smaller = sharper fold at the outline
+RELIEF_LIFT=30            # how far the grid lifts over the body (units, upwards)
+RELIEF_SWELL=0.07         # how much the grid widens over the body, from its centre line (share of the distance)
 RELIEF_FOLD=0             # extra pull of the grid into the edge (units): rows bunch at the outline
-EMBOSS=0.75               # light and shadow on the slopes (0 = none)
+EMBOSS=0.55               # light and shadow on the slopes (0 = none)
 # Glyphs on the 3D body (Nov 17): each figure glyph is bent by the surface under it. The body is the silhouette inflated
 # into a rounded form (with the shading map adding the inner forms), and each glyph is squashed along the slope by how
 # far the surface turns away from the viewer (foreshortening) and tilted with it: full size on the flat parts, thin
@@ -51,18 +51,10 @@ EMBOSS=0.75               # light and shadow on the slopes (0 = none)
 GLYPH_3D=True             # Nov 17 trial, off: set True to bend the figure glyphs (not on the site yet)
 BODY_ROUND=90             # how far in from the outline the body rounds over (units): larger = rounder, more squashing
 BODY_FORM=0.45            # how much the shading map shapes the inner forms (arms, legs)
-BODY_DEPTH=1.6             # how deep the body is relative to how far it rounds over: higher = glyphs turn away sooner (Nov 17)
-# Gentle dispersal (Nov 17): below the figure, field glyphs thin out, loosen and drift down towards the next section,
-# starting a little earlier on the left. Only field glyphs; the figure is untouched.
-SCATTER_START=40          # starts this far below the seat line (units); earlier by SCATTER_LEFT towards the left edge
-SCATTER_LEFT=160          #   (units earlier at stage x 0 than under the figure)
-SCATTER_LEN=330           # distance over which the field thins out (units)
-SCATTER_KEEP=0.12         # share of glyphs left at the end
-SCATTER_DRIFT=16          # how far glyphs wander from their place at the end (units, mostly downwards)
-SQUASH_MIN=0.12           # thinnest a glyph gets at the outline (share of its width)
-TILT=0.32                 # extra shear of a glyph along the slope (0 = squash only)
-SKIRT=46                  # the sheet slopes down from the body into the field over this distance (units): field glyphs
-SKIRT_DROP=0.8            #   there squash and tilt too; SKIRT_DROP is the slope at the outline relative to the body's edge
+SQUASH_MIN=0.18           # thinnest a glyph gets at the outline (share of its width)
+TILT=0.22                 # extra shear of a glyph along the slope (0 = squash only)
+SKIRT=34                  # the sheet slopes down from the body into the field over this distance (units): field glyphs
+SKIRT_DROP=0.55           #   there squash and tilt too; SKIRT_DROP is the slope at the outline relative to the body's edge
 # Figure definition (Nov 17): a very faint ink outline along the silhouette, and soft shading of the body itself from the
 # shading map (darker where the form turns away), so the shape reads between the glyphs.
 OUTLINE=0.0               # strength of the outline (0..1 of ink); Nov 17: off, shading only
@@ -107,7 +99,7 @@ d_body=nd.distance_transform_edt(Mf>0.5)/S
 prof=np.sqrt(np.clip(1-(1-np.clip(d_body/BODY_ROUND,0,1))**2,0,1))
 form=nd.gaussian_filter(Tf,10*S)/np.maximum(nd.gaussian_filter(W8,10*S),1e-3); fm=Mf>0.5
 form=np.clip((form-np.percentile(form[fm],10))/(np.percentile(form[fm],90)-np.percentile(form[fm],10)+1e-6),0,1)
-hb=BODY_DEPTH*BODY_ROUND*prof*((1-BODY_FORM)+BODY_FORM*form)*fm
+hb=BODY_ROUND*prof*((1-BODY_FORM)+BODY_FORM*form)*fm
 d_fld=nd.distance_transform_edt(~fm)/S                       # the skirt: the sheet falls from the outline into the field
 hb=hb+(~fm)*SKIRT_DROP*SKIRT*np.exp(-d_fld/SKIRT)
 hb=nd.gaussian_filter(hb,3*S)
@@ -144,13 +136,6 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
         g=gl[pick(j,ci)]; u=rng.random(); col=None
         wx,wy=warp(x,y)
-        if not DISPERSE:
-            yl,xl=y+wy,x+wx
-            st=BASE+SCATTER_START-SCATTER_LEFT*np.clip((CX-xl)/CX,0,1)
-            if yl>st and not M[min(max(P(yl),0),H_-1),min(max(P(xl+DX),0),W_-1)]>0.5:
-                t=np.clip((yl-st)/SCATTER_LEN,0,1); t=t*t*(3-2*t)
-                if u>1-(1-SCATTER_KEEP)*t: continue
-                wx+=np.random.normal(0,SCATTER_DRIFT*0.45*t); wy+=abs(np.random.normal(0,SCATTER_DRIFT*t))
         if DISPERSE and y>=DTOP:
             t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
             edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)

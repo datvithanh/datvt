@@ -767,11 +767,7 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The band version with the glyph figure stays on the local branch `bands-glyph-figure`, not pushed.
 - Why: Dat, Nov 17 ("go back to this exact version and push, just shading no outline").
 
-### 2026-11-17 · Hero: stronger 3D and distortion; field disperses below the figure (local, not pushed) (`home-04-lanes` only)
-- **Stronger 3D.** The body is deeper (`BODY_DEPTH` 1.6), so glyphs start turning away further in from the outline. They get thinner (`SQUASH_MIN` 0.12) and tilt more (`TILT` 0.32). The field next to the body squashes over a wider band (`SKIRT` 46, `SKIRT_DROP` 0.8).
-- **Stronger distortion.** The grid lifts and widens more over the body, with a firmer edge: `RELIEF_LIFT` 44, `RELIEF_SWELL` 0.11, `RELIEF_SOFT` 38. Light and shade on the slopes are stronger (`EMBOSS` 0.75).
-- **Gentle dispersal.** Below the figure, field glyphs thin out, loosen and drift slightly downward toward "Realization as a fitness". It starts earlier toward the lower left, where the field reaches furthest down.
-  - About 12% of glyphs remain at the end of the dispersal, over roughly 330 units (`SCATTER_*`).
-  - The figure's own glyphs are untouched.
-- Provisional: committed locally; waiting for Dat's go-ahead to push.
+### 2026-11-17 · Hero: reverted to the previous version (`home-04-lanes` only)
+- Reverts `4d31dd7` (stronger 3D, stronger distortion, gentle dispersal). The hero image and generator are back to `ae6eda4`.
+- Two variants were rendered locally for review: 3D only and distortion only. Neither is on the site.
 - Why: Dat, Nov 17.
