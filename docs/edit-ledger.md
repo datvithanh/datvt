@@ -695,3 +695,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Settings are in `scripts/hero-glyph-field.py` (`HALO`, `SHADE_*`, `DISPERSE`) and `app/lanes-home.css`.
 - Provisional: for Dat's review.
 - Why: Dat, Nov 16.
+
+### 2026-11-17 · Hero figure: distortion instead of a halo (`home-04-lanes` only)
+- The halo of lighter glyphs around the figure is gone; the field keeps its full strength right up to the body.
+- In its place, the field distorts around the figure. Background rows bend and sweep outward around its outline, reaching about 70 units out (pushes up to 20 units, with a slight twist).
+- Only background glyphs move. The figure's own glyphs keep their places and size, so its shape doesn't change. Any background glyph that would be pushed onto the body is dropped, so nothing overlaps it.
+- Settings: `HALO_MIN` 1 (off), `WARP` 20, `WARP_SIGMA` 70, `WARP_TWIST` 0.35 in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("i don't like the halo, can it be distortion extending out from the figure instead?").

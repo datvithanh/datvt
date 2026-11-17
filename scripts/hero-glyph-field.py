@@ -37,13 +37,13 @@ CROWN=96                  # no clay within this many units of the top of the hea
 SEED=7
 # Warp (Nov 15): the field bends slightly around the figure. Only field glyphs move; the figure's own glyphs stay put,
 # so its shape is exact. Near the outline they are pushed outward with a small twist.
-WARP_SIGMA=34             # how far from the outline the bend reaches (units)
-WARP=8                    # largest push (units)
-WARP_TWIST=0.5            # share of the push turned along the outline
+WARP_SIGMA=70             # how far from the outline the bend reaches (units)
+WARP=20                   # largest push (units)
+WARP_TWIST=0.35           # share of the push turned along the outline
 # Figure clarity (Nov 16): colour only inside the figure (FIELD_COLOUR 0), a quiet halo of lighter glyphs just outside
 # the outline, the figure's shading carried by glyph strength, and the grid centred on the figure's axis.
 HALO=30                   # width of the halo outside the outline (units)
-HALO_MIN=0.12             # field strength at the outline (1 = no halo)
+HALO_MIN=1.0              # field strength at the outline (1 = no halo; Nov 17: off, replaced by the warp)
 SHADE_MIN=0.85            # glyph strength in the figure's lightest shading (0..1)
 SHADE_DARK=0.38           # how far deep shading darkens the figure's colours towards ink
 SHADE_GAMMA=1.1           # contrast of the shading (higher = more modelling)
@@ -93,6 +93,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             if u>p: continue
             if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
         X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
+        if (wx or wy) and Mf[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.15: continue   # a pushed field glyph never lands on the body
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
         if col:
             Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
