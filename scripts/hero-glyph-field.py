@@ -69,6 +69,21 @@ SHADE_DARK=0.38           # how far deep shading darkens the figure's colours to
 SHADE_GAMMA=1.1           # contrast of the shading (higher = more modelling)
 DISPERSE=False            # False: the field stays an even grid below the figure (the page fades it out); True: the old
                           # irregular dispersal with phase-coloured falling glyphs
+# Fragmenting edges (Nov 17): the field breaks up along the waterfall line on its left and below the figure, instead of
+# being cut by a mask. Near the edge glyphs thin out in uneven clumps, a few stragglers wander past it, and the rest
+# drift outwards. Only field glyphs; the figure is untouched. The line is the waterfall curve in stage units, placed as on
+# the page at 1440 px wide (stage x = image x + EDGE_SHIFT); it shifts by under 100 units at other widths.
+EDGE_PATH=[(500,-60),(500,40),('C',(500,430),(470,560),(330,660)),('C',(150,770),(-120,930),(-220,1210))]
+EDGE_SHIFT=141.5
+EDGE_BAND=230             # how far inside the line the field starts to break up (units)
+EDGE_OUT=110              # how far past the line stragglers reach (units)
+EDGE_KEEP=0.30            # share of glyphs left right at the line
+EDGE_DRIFT=26             # how far glyphs drift outwards at the line (units)
+CLUMP=0.35                # unevenness of the break-up (0 = even thinning)
+BOTTOM_START=-10          # the bottom break-up starts this far below the seat line (units)
+BOTTOM_LEN=230            # and runs over this distance
+BOTTOM_KEEP=0.05          # share of glyphs left at its end
+BOTTOM_DRIFT=22           # how far glyphs drift downwards at its end (units)
 # ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 DX=-XL
@@ -114,6 +129,32 @@ def body_glyph(g,x,y):
     Mx=Mx[::-1,::-1]                                              # to (row, col) order
     inv=np.linalg.inv(Mx); n_=g.shape[0]; cc=np.array([(n_-1)/2,(n_-1)/2])
     return nd.affine_transform(g,inv,offset=cc-inv@cc,order=1,mode='constant',cval=0)
+# Waterfall line -> signed distance from it (units, + inside the field), on the image grid.
+from PIL import ImageDraw
+def _bez(p0,p1,p2,p3,k=40): return [tuple((1-t)**3*np.array(p0)+3*(1-t)**2*t*np.array(p1)+3*(1-t)*t*t*np.array(p2)+t**3*np.array(p3)) for t in np.linspace(0,1,k)[1:]]
+_pts=[EDGE_PATH[0]]
+for seg in EDGE_PATH[1:]:
+    _pts+= _bez(_pts[-1],*seg[1:]) if seg[0]=='C' else [seg]
+_poly=[(P(x-EDGE_SHIFT+DX),P(y)) for x,y in _pts]+[(W_+P(200),P(HU+200)),(W_+P(200),-P(200))]
+_im=Image.new('L',(W_,H_),0); ImageDraw.Draw(_im).polygon(_poly,fill=255); FM=np.asarray(_im)>127
+dE=(nd.distance_transform_edt(FM)-nd.distance_transform_edt(~FM))/S
+_eg=nd.gaussian_filter(dE,4*S); eGy,eGx=np.gradient(_eg); eGn=np.hypot(eGx,eGy)+1e-6        # points into the field
+_rs=np.random.default_rng(99)
+_nc=nd.gaussian_filter(_rs.normal(size=(int(HU/8)+2,int(WU/8)+2)),2.2); _nc/=_nc.std()
+def clump(x,y): return _nc[min(int(y/8),_nc.shape[0]-1),min(max(int((x-XL)/8),0),_nc.shape[1]-1)]
+def fragment(x,y,u):
+    # -> (keep, dx, dy) for a field glyph landing at (x,y)
+    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); e=dE[i,k]
+    if e>=EDGE_BAND: pe=1.0; te=0.0
+    elif e>=0: te=1-e/EDGE_BAND; te=te*te*(3-2*te); pe=1-(1-EDGE_KEEP)*te
+    else: te=1.0; pe=EDGE_KEEP*np.exp(e/EDGE_OUT)
+    tb=np.clip((y-(TOP+HT+BOTTOM_START))/BOTTOM_LEN,0,1); tb=tb*tb*(3-2*tb); pb=1-(1-BOTTOM_KEEP)*tb
+    p=pe*pb
+    if p<1: p=np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1)
+    if u>p: return False,0.0,0.0
+    dx=-EDGE_DRIFT*te*eGx[i,k]/eGn[i,k]+_rs.normal(0,0.3*EDGE_DRIFT*te+0.3*BOTTOM_DRIFT*tb)
+    dy=-EDGE_DRIFT*te*eGy[i,k]/eGn[i,k]+abs(_rs.normal(0,BOTTOM_DRIFT*tb))
+    return True,dx,dy
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -136,6 +177,10 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
         g=gl[pick(j,ci)]; u=rng.random(); col=None
         wx,wy=warp(x,y)
+        if not M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5:
+            _keep,_dx,_dy=fragment(x+wx,y+wy,u)
+            if not _keep: continue
+            wx+=_dx; wy+=_dy
         if DISPERSE and y>=DTOP:
             t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
             edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)

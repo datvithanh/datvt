@@ -775,3 +775,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 ### 2026-11-17 · Hero: layered bend reverted (`home-04-lanes` only)
 - Reverts `7196060`. The hero is back to the previously pushed version (`fb0973e`, same image as `ae6eda4`): a single bend (`RELIEF_SOFT` 44, `RELIEF_LIFT` 30).
 - Why: Dat, Nov 17 ("revert to the last pushed version, I dont like this latest change").
+
+### 2026-11-17 · Hero field: fragmenting edges on the left and below the figure (local, not pushed) (`home-04-lanes` only)
+- **Left edge.** The field now fragments and disperses along the waterfall line instead of being cut by a soft CSS mask.
+  - Approaching the line, glyphs thin out in uneven clumps and drift outward. A few stragglers scatter past it toward the copy.
+  - Settings `EDGE_*` and `CLUMP` in `scripts/hero-glyph-field.py`. The line is the same waterfall curve, drawn into the image as placed at 1440 px wide.
+- **Below the figure.** The field thins out from the seat line over about 230 units, drifting down and fading to sparse stragglers above "Realization as a fitness" (`BOTTOM_*`).
+- `hero-field-shape.svg` is no longer used as a mask. The CSS only fades the image's last rows.
+- Only background glyphs are affected; the figure is unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17.
