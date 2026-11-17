@@ -182,6 +182,14 @@ amt=np.where(FG,A*(SHADE_MIN+(1-SHADE_MIN)*sh),amt)
 CI=np.where(FG[...,None],CI*(1-SHADE_DARK*sh[...,None]),CI)
 # Emboss: slopes facing the light (top left) get lighter glyphs, slopes facing away darker ones.
 lit=-(hx*-0.55+hy*-0.83)/gmax; amt=np.clip(amt*(1+EMBOSS*np.clip(lit*2.2,-1,1)),0,1)
+# Figure only (Nov 17): FIGURE_OUT=path also saves the figure's own glyphs on a transparent background, cropped to
+# the figure: no outline, no body shading, no field. Used to put this figure on the band version of the hero.
+if os.environ.get('FIGURE_OUT'):
+    fa=np.where(FG,np.clip(amt,0,1),0.0); fa=np.where(fa>0.02,fa,0)
+    ys_,xs_=np.nonzero(fa); m_=P(6); y0_,y1_,x0_,x1_=max(ys_.min()-m_,0),ys_.max()+m_,max(xs_.min()-m_,0),xs_.max()+m_
+    rgba=np.dstack([np.clip(CI,0,255),fa*255])[y0_:y1_+1,x0_:x1_+1].round().astype(np.uint8)
+    Image.fromarray(rgba,'RGBA').save(os.environ['FIGURE_OUT'],quality=90,method=6)
+    print('figure only:',os.environ['FIGURE_OUT'],rgba.shape[1],'x',rgba.shape[0],'px; stage x %.1f..%.1f, y %.1f..%.1f'%(x0_/S+XL,x1_/S+XL,y0_/S,y1_/S))
 INKC=np.array([30,29,26.])
 bod=nd.gaussian_filter(Mf,1.5*S)*(1-np.clip(Bf,0,1))**1.2                    # deeper tone = more shade
 dline=np.abs(nd.distance_transform_edt(Mf>0.5)-nd.distance_transform_edt(Mf<=0.5))/S
