@@ -39,9 +39,9 @@ The older references (two bands, U-fold) are kept for history:
   - From y 578 the field disperses irregularly, never quite emptying, and ends at 1100 above the
     phase boxes (from 1110; the title sits at 960). As the glyphs fall they take the colour of the phase box below them.
   - Figure clarity (Nov 16): color only inside the figure (`FIELD_COLOUR` 0); no halo (Nov 17: `HALO_MIN` 1); the figure's shading darkens its glyphs toward ink (`SHADE_MIN`, `SHADE_DARK`,
-    `SHADE_GAMMA`); the grid has a column on the figure's center line. Field glyphs (never the figure's) bend and sweep
-    outward around it, reaching about 70 units out (`WARP` 20, `WARP_SIGMA` 70, `WARP_TWIST`); a pushed glyph that would
-    land on the body is dropped. Below the figure the field is an even grid (`DISPERSE` False; True restores the old irregular
+    `SHADE_GAMMA`); the grid has a column on the figure's center line. Field glyphs (never the figure's) bend around it without
+    leaving a gap: the push is zero at the outline, peaks 40 units out and runs mostly along the outline with a small
+    pull towards the body (`WARP` 16, `WARP_REACH`, `WARP_TWIST`, `WARP_PULL`). Below the figure the field is an even grid (`DISPERSE` False; True restores the old irregular
     dispersal with phase-colored falling glyphs).
   - Fades (desktop, `app/lanes-home.css`): a bone panel behind the copy, solid past the text and then fading in a
     straight line to the right and below; the field's bottom fades out in a straight line before the phases title.
