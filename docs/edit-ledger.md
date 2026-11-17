@@ -785,3 +785,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Only background glyphs are affected; the figure is unchanged.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: solid left edge through "CE", then a sparse spread (local, not pushed) (`home-04-lanes` only)
+- **Above the knee.** The field's left edge is a crisp vertical line between the C and E of "PRACTICE", running from the top down to the figure's leftmost point (stage y about 610). The cut is a CSS mask in stage units (`hero-field-shape.svg` again), so it stays between C and E at every desktop width.
+- **Below that.** The field opens out to the left into sparse, clumped stragglers. These are drawn into the image (`EDGE_PATH`, `SOLID_TO` in `scripts/hero-glyph-field.py`). Left of the line, the image is sparse at every height, so the mask's short fade-in never shows a full row.
+- The figure and the field to the right of the line are unchanged. The thinning below the figure is unchanged too.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17 ("a more solid line up till the left-most side of the figure, that cuts through CE, then sparse spread").

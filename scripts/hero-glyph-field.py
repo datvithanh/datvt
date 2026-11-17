@@ -73,7 +73,8 @@ DISPERSE=False            # False: the field stays an even grid below the figure
 # being cut by a mask. Near the edge glyphs thin out in uneven clumps, a few stragglers wander past it, and the rest
 # drift outwards. Only field glyphs; the figure is untouched. The line is the waterfall curve in stage units, placed as on
 # the page at 1440 px wide (stage x = image x + EDGE_SHIFT); it shifts by under 100 units at other widths.
-EDGE_PATH=[(500,-60),(500,40),('C',(500,430),(470,560),(330,660)),('C',(150,770),(-120,930),(-220,1210))]
+EDGE_PATH=[(500,-60),(500,560),('C',(500,700),(330,780),(150,880)),('C',(20,960),(-120,1060),(-220,1210))]
+SOLID_TO=610              # above this (stage y) the page's CSS cuts the field crisply at x 500; the image keeps it whole
 EDGE_SHIFT=141.5
 EDGE_BAND=230             # how far inside the line the field starts to break up (units)
 EDGE_OUT=110              # how far past the line stragglers reach (units)
@@ -148,6 +149,9 @@ def fragment(x,y,u):
     if e>=EDGE_BAND: pe=1.0; te=0.0
     elif e>=0: te=1-e/EDGE_BAND; te=te*te*(3-2*te); pe=1-(1-EDGE_KEEP)*te
     else: te=1.0; pe=EDGE_KEEP*np.exp(e/EDGE_OUT)
+    wsol=np.clip((SOLID_TO-y)/60,0,1) if e>=0 else 0.0       # inside the line, 1 well above SOLID_TO: no break-up there (the CSS cut);
+                                                             # outside it the field is sparse at every height, so the CSS fade-in shows no full rows
+    pe=pe+(1-pe)*wsol; te=te*(1-wsol)
     tb=np.clip((y-(TOP+HT+BOTTOM_START))/BOTTOM_LEN,0,1); tb=tb*tb*(3-2*tb); pb=1-(1-BOTTOM_KEEP)*tb
     p=pe*pb
     if p<1: p=np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1)
