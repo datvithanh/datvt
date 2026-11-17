@@ -46,6 +46,10 @@ The older references (two bands, U-fold) are kept for history:
     dispersal with phase-colored falling glyphs).
   - Fades (desktop, `app/lanes-home.css`): a bone panel behind the copy, solid past the text and then fading in a
     straight line to the right and below; the field's bottom fades out in a straight line before the phases title.
+  - Bend (Nov 17): two layered relief surfaces. A crisp one close to the body (`RELIEF_SOFT` 36, `RELIEF_LIFT` 34) and a
+    wide one reaching about twice as far (`RELIEF_SOFT_WIDE` 100, `RELIEF_LIFT_WIDE` 28, `RELIEF_SWELL_WIDE` 0.05), so the
+    bend is stronger and spreads further while the outline stays crisp. `FIG_GLYPH_SCALE` (default 1) can give the figure
+    its own finer grid.
   - The figure outline was traced from a reference image (Dat, Nov 12); confirm its licence before launch.
   - Regenerate it with `python3 scripts/hero-glyph-field.py` (needs numpy, scipy, Pillow, cairosvg). The
     settings are at the top of the script; its inputs (glyphs, figure silhouette and shading) are in

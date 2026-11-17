@@ -39,10 +39,16 @@ SEED=7
 # figure alike, is shifted by that surface, so rows arch up over the body and fold at its edges, like a grid draped
 # over it; light from the top left shades the slopes. Glyph sizes never change, and figure membership is tested at
 # each glyph's shifted position, so the outline stays exact.
-RELIEF_SOFT=44            # softness of the surface's edge (units): smaller = sharper fold at the outline
-RELIEF_LIFT=30            # how far the grid lifts over the body (units, upwards)
+RELIEF_SOFT=36            # softness of the surface's edge (units): smaller = sharper fold at the outline
+RELIEF_LIFT=34            # how far the grid lifts over the body (units, upwards)
 RELIEF_SWELL=0.07         # how much the grid widens over the body, from its centre line (share of the distance)
 RELIEF_FOLD=0             # extra pull of the grid into the edge (units): rows bunch at the outline
+FIG_GLYPH_SCALE=1.0       # glyph size and pitch inside the figure, relative to the field (1 = same grid)
+# Wide bend (Nov 17): a second, broader surface layered on the crisp one above, so the bend reaches further into the
+# field and is stronger overall while the edge stays crisp.
+RELIEF_SOFT_WIDE=100      # how far the wide bend reaches (units)
+RELIEF_LIFT_WIDE=28       # how far it lifts the grid (units, upwards), added to RELIEF_LIFT
+RELIEF_SWELL_WIDE=0.05    # how much it widens the grid, added to RELIEF_SWELL
 EMBOSS=0.55               # light and shadow on the slopes (0 = none)
 # Glyphs on the 3D body (Nov 17): each figure glyph is bent by the surface under it. The body is the silhouette inflated
 # into a rounded form (with the shading map adding the inner forms), and each glyph is squashed along the slope by how
@@ -89,11 +95,13 @@ Bf=0.22+0.78*np.clip(Tn,0,1)**0.9; d_in=nd.distance_transform_edt(Mf>0.5)/S; Bf=
 gd=os.path.join(IN,'glyphs'); files=sorted(f for f in os.listdir(gd) if f.endswith('.svg'))
 n=P(GS); gl=[np.asarray(Image.open(io.BytesIO(cairosvg.svg2png(url=f'{gd}/{f}',output_width=n,output_height=n))).convert('RGBA'),np.float32)[...,3]/255 for f in files]
 # Relief surface: Hs (0..1) is the figure softened at its edge, with a little of its inner shading for form.
-Hs=nd.gaussian_filter(M,RELIEF_SOFT*S); Hs=Hs*(0.85+0.15*nd.gaussian_filter(np.clip(Tn,0,1),8*S))
+_form=0.85+0.15*nd.gaussian_filter(np.clip(Tn,0,1),8*S)
+Hs1=nd.gaussian_filter(M,RELIEF_SOFT*S)*_form; Hs2=nd.gaussian_filter(M,RELIEF_SOFT_WIDE*S)*_form
+Hs=(RELIEF_LIFT*Hs1+RELIEF_LIFT_WIDE*Hs2)/max(RELIEF_LIFT+RELIEF_LIFT_WIDE,1e-6)   # combined surface, for the light
 hy,hx=np.gradient(Hs); hy*=S; hx*=S; gmax=np.hypot(hx,hy).max() or 1
 def warp(x,y):
-    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); h=Hs[i,k]
-    return RELIEF_SWELL*h*(x-CX)+RELIEF_FOLD*hx[i,k]/gmax, -RELIEF_LIFT*h+RELIEF_FOLD*hy[i,k]/gmax
+    i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); h1=Hs1[i,k]; h2=Hs2[i,k]
+    return (RELIEF_SWELL*h1+RELIEF_SWELL_WIDE*h2)*(x-CX)+RELIEF_FOLD*hx[i,k]/gmax, -(RELIEF_LIFT*h1+RELIEF_LIFT_WIDE*h2)+RELIEF_FOLD*hy[i,k]/gmax
 # 3D body for the glyph shapes: inflated silhouette plus inner forms; nzb = how much each point faces the viewer.
 d_body=nd.distance_transform_edt(Mf>0.5)/S
 prof=np.sqrt(np.clip(1-(1-np.clip(d_body/BODY_ROUND,0,1))**2,0,1))
@@ -132,31 +140,41 @@ def pick(j,ci):
             if k not in bad:
                 _deck.pop(t); _left[0]=k; _above[ci]=k; return int(k)
         _deck.extend(rng.permutation(len(gl)).tolist())      # deal a fresh deck of all glyphs
-for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
-    for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
-        g=gl[pick(j,ci)]; u=rng.random(); col=None
-        wx,wy=warp(x,y)
-        if DISPERSE and y>=DTOP:
-            t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
-            edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)
-            p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
-            if u>p: continue
-            if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
-        X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
-        if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
-        if col:
-            Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
-        inside=M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5; acc=None   # tested where the glyph lands
-        if GLYPH_3D and (inside or d_fld[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]<4*SKIRT): g=body_glyph(g,x+wx,y+wy)
-        A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
-        if inside:
-            r=np.hypot(x-HX,(y-HY)*0.8)+np.random.normal(0,7); acc=PC[int(r//RING)%4]
-            if acc=='clay' and y<TOP+CROWN: acc='marigold'
-        elif y<BASE+10:
-            prog=np.clip((y+70)/(BASE+80),0,1)
-            if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
-        if acc:
-            mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
+# Figure glyph scale (Nov 17): below 1, the figure gets its own finer grid of smaller glyphs (pitch and size times this),
+# drawn in a second pass, while the field keeps its glyphs. 1 = one grid for everything.
+_passes=[(SP,gl,'all')]
+if FIG_GLYPH_SCALE<0.999:
+    _nf=P(GS*FIG_GLYPH_SCALE)
+    _glf=[np.asarray(Image.open(io.BytesIO(cairosvg.svg2png(url=f'{gd}/{f}',output_width=_nf,output_height=_nf))).convert('RGBA'),np.float32)[...,3]/255 for f in files]
+    _passes=[(SP,gl,'field'),(SP*FIG_GLYPH_SCALE,_glf,'figure')]
+for psp,pgl,mode in _passes:
+    n=pgl[0].shape[0]; _deck.clear(); _above.clear(); _left[0]=None
+    for j,y in enumerate(np.arange(-psp,HU+psp,psp)):
+        for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-psp))/psp)*psp,XL+WU+psp,psp)):   # straight rows and columns, a column on the figure's axis
+            g=pgl[pick(j,ci)]; u=rng.random(); col=None
+            wx,wy=warp(x,y)
+            if DISPERSE and y>=DTOP:
+                t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
+                edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)
+                p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
+                if u>p: continue
+                if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
+            X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
+            if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
+            if col:
+                Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
+            inside=M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5; acc=None   # tested where the glyph lands
+            if (mode=='field' and inside) or (mode=='figure' and not inside): continue
+            if GLYPH_3D and (inside or d_fld[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]<4*SKIRT): g=body_glyph(g,x+wx,y+wy)
+            A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
+            if inside:
+                r=np.hypot(x-HX,(y-HY)*0.8)+np.random.normal(0,7); acc=PC[int(r//RING)%4]
+                if acc=='clay' and y<TOP+CROWN: acc='marigold'
+            elif y<BASE+10:
+                prog=np.clip((y+70)/(BASE+80),0,1)
+                if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
+            if acc:
+                mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
 left=1.0   # Nov 17: even field; the waterfall mask in app/lanes-home.css sets its shape (was lighter towards the copy)
 halo=HALO_MIN+(1-HALO_MIN)*ss(nd.distance_transform_edt(Mf<=0.5)/S/HALO)

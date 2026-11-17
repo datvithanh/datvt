@@ -771,3 +771,12 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Reverts `4d31dd7` (stronger 3D, stronger distortion, gentle dispersal). The hero image and generator are back to `ae6eda4`.
 - Two variants were rendered locally for review: 3D only and distortion only. Neither is on the site.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero: stronger, wider bend with a crisp edge (pushed) (`home-04-lanes` only)
+- The bend around the figure is now two layered surfaces:
+  - a crisp one close to the body: `RELIEF_SOFT` 36, `RELIEF_LIFT` 34 (were 44 and 30);
+  - a wide one reaching about twice as far: `RELIEF_SOFT_WIDE` 100, `RELIEF_LIFT_WIDE` 28, `RELIEF_SWELL_WIDE` 0.05.
+- The rows start curving well out in the field and arch harder over the head and shoulders, while the body's outline stays as sharp as before.
+- The figure keeps its size: 760 units tall, glyphs 17.5 on a 32.2 grid. The 20%-smaller trials (finer figure grid, or everything 10% smaller) were not used.
+- New `FIG_GLYPH_SCALE` setting: default 1, which leaves the output unchanged.
+- Why: Dat, Nov 17 ("go back to … the one where you said you layered two bends instead of one" and push).
