@@ -750,3 +750,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The field's fade into the next section moves down (70% → 87% of the field, was 62% → 81%) so it doesn't cut into the larger figure's base. As a result, faint glyphs now reach behind "REALIZATION AS A FITNESS".
 - Provisional: committed locally only. Dat asked not to push until he says so.
 - Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero figure: glyphs drawn to the outline; notched waterfall (local, not pushed) (`home-04-lanes` only)
+- **Magnet.** Inside the figure, glyphs are pulled toward the outline, so a ring of them sits right along the edge of the head, shoulders, arms, hands and legs, where the 3D squash is strongest. The figure's glyphs no longer follow the background grid. A glyph d units inside the edge (within 60 units) moves out to 60 × (d/60)^1.7 (`MAGNET_D`, `MAGNET_P` in `scripts/hero-glyph-field.py`).
+- **Waterfall shape.** The single curve is replaced by straight drops with notched ledges stepping out to the left: beside the copy, below the button, then two more steps to the bottom-left edge. The corners are softly rounded and the edge is cleaner than the first stepped version (`hero-field-shape.svg`).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
