@@ -710,3 +710,13 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Fixed: background glyphs that partly overlap the body's edge no longer pick up the figure's dark shading. They had shown up as small dark fragments along the outline.
 - Settings: `WARP` 16, `WARP_REACH` 40, `WARP_TWIST` 1, `WARP_PULL` 0.25 in `scripts/hero-glyph-field.py`.
 - Why: Dat, Nov 17 ("it still looks like there's a halo").
+
+### 2026-11-17 · Hero figure: the grid drapes over the body (`home-04-lanes` only)
+- The distortion is redone after Dat's dark reference, which set the effect only; nothing is traced from it.
+- The figure is now a raised surface under the glyph grid. Every glyph, background and figure alike, shifts with that surface, so the rows arch up over the head and shoulders and curve around the arms and knees, as if the grid were draped over the body.
+  - Light from the top left lightens the slopes facing it and darkens those facing away, giving the body relief.
+- Glyph sizes don't change. A glyph counts as part of the figure by where it lands, so the outline stays exact.
+- Density stays even right up to the body (11.2% within 15 units of the outline, about 10% further out), so there is no halo.
+- The Nov 17 sideways bend of the background only is replaced.
+- Settings: `RELIEF_SOFT` 44, `RELIEF_LIFT` 24, `RELIEF_SWELL` 0.07, `RELIEF_FOLD` 0 and `EMBOSS` 0.55, in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("re-do it to make it more like this, where it bends to emphasize the figure. the field folds around the figure").
