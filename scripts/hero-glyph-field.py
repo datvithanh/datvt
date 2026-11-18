@@ -173,7 +173,7 @@ COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,10
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
 def quarter(x): return int(np.clip((x-BX0+np.random.normal(0,22))//BXW,0,3))
 CI=np.zeros((H_,W_,3),np.float32)+np.array([30,29,26.],np.float32); AC=np.zeros((H_,W_),np.float32)
-TA=np.zeros((H_,W_),np.float32)   # glyphs picked for section colour
+TA=np.zeros((H_,W_),np.float32); TB=np.zeros((H_,W_),np.float32)   # glyphs picked for section colour, in two halves
 A=np.zeros((H_,W_),np.float32); Cg=np.zeros((H_,W_,3),np.float32); Cw=np.zeros((H_,W_),np.float32)
 HX,HY=CX,TOP+0.40*HT
 # Glyph choice (Nov 17): every glyph is used evenly. Each row deals from shuffled decks of all glyphs, never repeating the
@@ -215,7 +215,9 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             prog=np.clip((y+70)/(BASE+80),0,1)
             if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
         if FIELD_SPLIT and not inside and acc is None:
-            if _loose: TA[Y:Y+n,X:X+n]=np.maximum(TA[Y:Y+n,X:X+n],g)
+            if _loose:
+                T_=TA if _rc.random()<0.5 else TB          # two even halves: the page splits them at different places (marigold mix)
+                T_[Y:Y+n,X:X+n]=np.maximum(T_[Y:Y+n,X:X+n],g)
         if acc:
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
@@ -243,6 +245,7 @@ im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))
 im.save(OUT,quality=QUALITY,method=6); print(OUT, im.size, os.path.getsize(OUT),'bytes')
 if FIELD_SPLIT:
     TINT_OUT=os.environ.get('TINT_OUT',os.path.join(os.path.dirname(OUT),'hero-glyph-field-tint.webp'))
-    ta=(np.clip(TA,0,1)*255).round().astype(np.uint8)
-    Image.fromarray(np.dstack([np.full_like(ta,255)]*3+[ta])).save(TINT_OUT,quality=60,alpha_quality=90,method=6)
-    print(TINT_OUT, os.path.getsize(TINT_OUT),'bytes')
+    for T_,out in ((TA,TINT_OUT),(TB,TINT_OUT.replace('-tint','-tint-b'))):
+        ta=(np.clip(T_,0,1)*255).round().astype(np.uint8)
+        Image.fromarray(np.dstack([np.full_like(ta,255)]*3+[ta])).save(out,quality=60,alpha_quality=90,method=6)
+        print(out, os.path.getsize(out),'bytes')

@@ -281,9 +281,10 @@
   .field-guide .ln-art .ln-field-tint{
     --fl:calc(min(100vw,1280px) - 140px - 1553.76 * var(--u));
     --pw:calc((min(100vw,1280px) - 80px - 66 * var(--u)) / 4);
-    /* Nov 18 (Dat): marigold/clay splits halfway between the cut and the clay/sage split, so the field's leftmost
-       columns are always marigold; clay/sage and sage/blue stay at the gaps between boxes 2–3 and 3–4. */
-    --g1:calc(round(nearest,(var(--fcut) + 1200 * var(--u) + var(--g2)) / 2 - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
+    /* Marigold (Nov 18, Dat): solid under box 1; from there to halfway between the cut and the clay/sage split, half
+       the loose glyphs (hero-glyph-field-tint-b.webp, .ln-field-tint-b) stay marigold, so the leftmost columns carry
+       some marigold without it taking over. */
+    --g1:calc(round(nearest,40 * var(--u) + var(--pw) + 11 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
     --g2:calc(round(nearest,40 * var(--u) + 2 * var(--pw) + 33 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
     --g3:calc(round(nearest,40 * var(--u) + 3 * var(--pw) + 55 * var(--u) - var(--fl) - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
     display:block;position:absolute;pointer-events:none;left:var(--fl);top:0;width:calc(2240 * var(--u));height:calc(1150 * var(--u));
@@ -294,4 +295,8 @@
     -webkit-mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
     -webkit-mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;
     -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
+  .field-guide .ln-art .ln-field-tint-b{
+    --g1:calc(round(nearest,(var(--fcut) + 1200 * var(--u) + var(--g2)) / 2 - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
+    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%)}
 }

@@ -809,3 +809,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Glyph positions and the main field image are unchanged; only `hero-glyph-field-tint.webp` and the column CSS changed.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 18 ("can this block be uniform? and start including marigold on the left most columns").
+
+### 2026-11-18 · Hero field: less marigold (`home-04-lanes` only)
+- Marigold is solid only under box 1 again. From there to halfway between the cut and the clay/sage split, half the loose glyphs are marigold and half clay. The leftmost columns still carry some marigold without it taking over the left side.
+- How: the loose glyphs are split into two even random halves (`hero-glyph-field-tint.webp`, `hero-glyph-field-tint-b.webp`), each a mask over the colour columns with its own marigold/clay split (`.ln-field-tint`, `.ln-field-tint-b`). Positions, the grey field and the other splits are unchanged.
+- Why: Dat, Nov 18 ("there's too much marigold now").
