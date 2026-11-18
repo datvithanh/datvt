@@ -814,3 +814,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Marigold is solid only under box 1 again. From there to halfway between the cut and the clay/sage split, half the loose glyphs are marigold and half clay. The leftmost columns still carry some marigold without it taking over the left side.
 - How: the loose glyphs are split into two even random halves (`hero-glyph-field-tint.webp`, `hero-glyph-field-tint-b.webp`), each a mask over the colour columns with its own marigold/clay split (`.ln-field-tint`, `.ln-field-tint-b`). Positions, the grey field and the other splits are unchanged.
 - Why: Dat, Nov 18 ("there's too much marigold now").
+
+### 2026-11-18 · Hero field: a solid bottom-left corner, colour coming in lower (local, not pushed) (`home-04-lanes` only)
+- **Solid corner.** Below the end of the cut through "CE", the field no longer breaks up at once. It steps out into the corner one glyph row at a time, each row about 2.6 columns further left, for three rows. It stays on the grid there, then thins out over about 200 units. The steps sit in the gaps between glyph rows and columns, so no glyph is cut (`hero-field-shape.svg`). The thinning comes in with depth, so it looks the same at every screen size (`CORNER_RAMP` in `scripts/hero-glyph-field.py`). Glyphs drift off the grid more slowly than they thin out.
+- **Colour comes in progressively.** Glyphs right under the corner stay grey; the share that take their column's colour rises with how far they have come loose (`COL_GAMMA`).
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 18 ("add even more uniformity & solidity to the bottom left corner ... have the colours start lower into the corner progressively").

@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-700 -50 3200 1250" width="3200" height="1250" preserveAspectRatio="none">
-  <!-- Hero glyph field edge (Dat, Nov 17), stage units. A crisp vertical cut at x 500 (between the C and E of
-       "PRACTICE") from the top down to the figure's leftmost point (y about 615; the image is whole above it at every screen size); below that the field is open and the
-       image itself spreads out sparsely (scripts/hero-glyph-field.py, EDGE_*). Opaque = field shown. -->
-  <defs><linearGradient id="in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient></defs>
+  <!-- Hero glyph field edge (Dat, Nov 17-18), stage units. A crisp vertical cut at x 500 (through the CE of "PRACTICE")
+       from the top down to the figure's leftmost point (y about 628). Below that the field steps out into the
+       bottom-left corner, one glyph row at a time, about 2.6 glyph columns further left per row, for three rows; from
+       y 724 the corner is open and the image's own thinning takes over. The steps sit in the gaps between glyph
+       rows and columns (the page snaps x 500 to a column gap), so no glyph is cut. See scripts/hero-glyph-field.py,
+       CORNER_RAMP. Opaque = field shown. -->
   <rect x="500" y="-50" width="2000" height="1250" fill="#fff"/>
-  <rect x="-700" y="615" width="1200" height="30" fill="url(#in)"/>
-  <rect x="-700" y="645" width="1200" height="555" fill="#fff"/>
+  <rect x="403.4" y="627.9" width="156.6" height="32.4" fill="#fff"/>
+  <rect x="339.0" y="660.1" width="221.0" height="32.4" fill="#fff"/>
+  <rect x="242.4" y="692.3" width="317.6" height="32.4" fill="#fff"/>
+  <rect x="-700" y="724.5" width="1260" height="475.5" fill="#fff"/>
 </svg>

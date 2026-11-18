@@ -36,6 +36,12 @@ FIELD_COLOUR=0.0          # share of field glyphs that take a phase colour (risi
 # any bottom thinning) takes its colour; the whole field stays grey. No random mix of grey and coloured glyphs.
 FIELD_SPLIT=float(os.environ.get('FIELD_SPLIT','1'))
 LOOSE_EDGE=0.05           # how far into the edge break-up (0..1) a glyph counts as loose
+# Nov 18 (Dat, "more uniformity & solidity to the bottom left corner ... colours start lower ... progressively"): below the
+# cut's end the field stays nearly whole and on grid, then thins and drifts over CORNER_RAMP units, the same at every
+# screen size (the page's mask widens it into the corner on a soft diagonal). The share of coloured glyphs rises with
+# how far a glyph has come loose (COL_GAMMA > 1 = colour later).
+CORNER_RAMP=200
+COL_GAMMA=1.4
 FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = invisible)
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=1.6                  # overall darkness of the field
@@ -153,21 +159,23 @@ _rc=np.random.default_rng(7)   # section colours (own stream, so nothing else mo
 _nc=nd.gaussian_filter(_rs.normal(size=(int(HU/8)+2,int(WU/8)+2)),2.2); _nc/=_nc.std()
 def clump(x,y): return _nc[min(int(y/8),_nc.shape[0]-1),min(max(int((x-XL)/8),0),_nc.shape[1]-1)]
 def fragment(x,y,u):
-    # -> (keep, dx, dy, loose) for a field glyph landing at (x,y); loose = it is in the break-up
+    # -> (keep, dx, dy, loose) for a field glyph landing at (x,y); loose = how far it has come loose (0..1)
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); e=dE[i,k]
     if e>=EDGE_BAND: pe=1.0; te=0.0
     elif e>=0: te=1-e/EDGE_BAND; te=te*te*(3-2*te); pe=1-(1-EDGE_KEEP)*te
     else: te=1.0; pe=EDGE_KEEP*np.exp(e/EDGE_OUT)
-    wsol=np.clip((SOLID_TO-y)/30,0,1)                        # whole above SOLID_TO − 30 on both sides of the line: the page's CSS cut
-                                                             # through "CE" is the only edge there at every screen size (Dat, Nov 17)
+    wsol=1-ss((y-(SOLID_TO-30))/CORNER_RAMP)                 # whole above SOLID_TO − 30 on both sides of the line: the page's CSS cut
+                                                             # through "CE" is the only edge there at every screen size (Dat, Nov 17);
+                                                             # below it the break-up comes in over CORNER_RAMP (Nov 18)
+    td=te*ss((y-(SOLID_TO-30))/(2*CORNER_RAMP))                # drift comes in more slowly than the thinning: glyphs stay on grid
     pe=pe+(1-pe)*wsol; te=te*(1-wsol)
     tb=np.clip((y-(TOP+HT+BOTTOM_START))/BOTTOM_LEN,0,1); tb=tb*tb*(3-2*tb); pb=1-(1-BOTTOM_KEEP)*tb
     p=pe*pb
     if p<1: p=np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1)
     if u>p: return False,0.0,0.0,False
-    dx=-EDGE_DRIFT*te*eGx[i,k]/eGn[i,k]+_rs.normal(0,0.3*EDGE_DRIFT*te+0.3*BOTTOM_DRIFT*tb)
-    dy=-EDGE_DRIFT*te*eGy[i,k]/eGn[i,k]+abs(_rs.normal(0,BOTTOM_DRIFT*tb))
-    return True,dx,dy,bool(te>LOOSE_EDGE or tb>0)
+    dx=-EDGE_DRIFT*td*eGx[i,k]/eGn[i,k]+_rs.normal(0,0.3*EDGE_DRIFT*td+0.3*BOTTOM_DRIFT*tb)
+    dy=-EDGE_DRIFT*td*eGy[i,k]/eGn[i,k]+abs(_rs.normal(0,BOTTOM_DRIFT*tb))
+    lo=max(te,tb); return True,dx,dy,(lo if lo>LOOSE_EDGE or tb>0 else 0.0)
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -190,7 +198,7 @@ def pick(j,ci):
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
         g=gl[pick(j,ci)]; u=rng.random(); col=None
-        wx,wy=warp(x,y); _loose=False
+        wx,wy=warp(x,y); _loose=0.0
         if not M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5:
             _keep,_dx,_dy,_loose=fragment(x+wx,y+wy,u)
             if not _keep: continue
@@ -215,7 +223,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             prog=np.clip((y+70)/(BASE+80),0,1)
             if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
         if FIELD_SPLIT and not inside and acc is None:
-            if _loose:
+            if _loose and _rc.random()<_loose**COL_GAMMA:
                 T_=TA if _rc.random()<0.5 else TB          # two even halves: the page splits them at different places (marigold mix)
                 T_[Y:Y+n,X:X+n]=np.maximum(T_[Y:Y+n,X:X+n],g)
         if acc:
