@@ -802,3 +802,10 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Desktop only; phones keep the grey field (their phases are stacked).
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 17 ("lets have the whole unified field fill up the boxed area, and then B").
+
+### 2026-11-18 · Hero field: uniform colour in the break-up, marigold on the left (local, not pushed) (`home-04-lanes` only)
+- **Uniform.** No more random mix of grey and coloured glyphs. The whole field stays grey. Every glyph that has broken loose from it (along the edge below the cut, and in the thinning below the figure) takes its column's colour. Settings: `LOOSE_EDGE` in `scripts/hero-glyph-field.py`; the random `SPLIT_FROM`/`SPLIT_TO` ramp is removed.
+- **Marigold on the left.** The marigold/clay split now sits halfway between the cut through "CE" and the clay/sage split, snapped between glyph columns, so the leftmost columns are always marigold. Clay/sage and sage/blue still sit at the gaps between boxes 2–3 and 3–4.
+- Glyph positions and the main field image are unchanged; only `hero-glyph-field-tint.webp` and the column CSS changed.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 18 ("can this block be uniform? and start including marigold on the left most columns").

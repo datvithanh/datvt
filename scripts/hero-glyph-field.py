@@ -32,9 +32,10 @@ FIELD_COLOUR=0.0          # share of field glyphs that take a phase colour (risi
 # can't do the colouring itself (the field is placed against the header, the boxes against the stage, so they slide
 # against each other with screen size), so the picked glyphs go to a second image, TINT_OUT, which the page uses as a
 # mask over four colour columns placed against the boxes (app/lanes-home.css, .ln-field-tint). Positions don't change.
-# SPLIT_FROM..SPLIT_TO ramps the share of picked glyphs down the field (equal = the whole field).
+# Nov 18 (Dat, "uniform"): every glyph that has broken loose from the field (the edge and bottom break-up, LOOSE_EDGE /
+# any bottom thinning) takes its colour; the whole field stays grey. No random mix of grey and coloured glyphs.
 FIELD_SPLIT=float(os.environ.get('FIELD_SPLIT','1'))
-SPLIT_FROM=float(os.environ.get('SPLIT_FROM','430')); SPLIT_TO=float(os.environ.get('SPLIT_TO','820'))   # Dat, Nov 17: option B
+LOOSE_EDGE=0.05           # how far into the edge break-up (0..1) a glyph counts as loose
 FIG_STRENGTH=0.35         # how far the figure stands out from the field (0 = invisible)
 FIG_COLOUR_BOOST=1.5      # extra ink for the figure's coloured glyphs
 GAIN=1.6                  # overall darkness of the field
@@ -152,7 +153,7 @@ _rc=np.random.default_rng(7)   # section colours (own stream, so nothing else mo
 _nc=nd.gaussian_filter(_rs.normal(size=(int(HU/8)+2,int(WU/8)+2)),2.2); _nc/=_nc.std()
 def clump(x,y): return _nc[min(int(y/8),_nc.shape[0]-1),min(max(int((x-XL)/8),0),_nc.shape[1]-1)]
 def fragment(x,y,u):
-    # -> (keep, dx, dy) for a field glyph landing at (x,y)
+    # -> (keep, dx, dy, loose) for a field glyph landing at (x,y); loose = it is in the break-up
     i=min(max(P(y),0),H_-1); k=min(max(P(x+DX),0),W_-1); e=dE[i,k]
     if e>=EDGE_BAND: pe=1.0; te=0.0
     elif e>=0: te=1-e/EDGE_BAND; te=te*te*(3-2*te); pe=1-(1-EDGE_KEEP)*te
@@ -163,10 +164,10 @@ def fragment(x,y,u):
     tb=np.clip((y-(TOP+HT+BOTTOM_START))/BOTTOM_LEN,0,1); tb=tb*tb*(3-2*tb); pb=1-(1-BOTTOM_KEEP)*tb
     p=pe*pb
     if p<1: p=np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1)
-    if u>p: return False,0.0,0.0
+    if u>p: return False,0.0,0.0,False
     dx=-EDGE_DRIFT*te*eGx[i,k]/eGn[i,k]+_rs.normal(0,0.3*EDGE_DRIFT*te+0.3*BOTTOM_DRIFT*tb)
     dy=-EDGE_DRIFT*te*eGy[i,k]/eGn[i,k]+abs(_rs.normal(0,BOTTOM_DRIFT*tb))
-    return True,dx,dy
+    return True,dx,dy,bool(te>LOOSE_EDGE or tb>0)
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -189,9 +190,9 @@ def pick(j,ci):
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
         g=gl[pick(j,ci)]; u=rng.random(); col=None
-        wx,wy=warp(x,y)
+        wx,wy=warp(x,y); _loose=False
         if not M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5:
-            _keep,_dx,_dy=fragment(x+wx,y+wy,u)
+            _keep,_dx,_dy,_loose=fragment(x+wx,y+wy,u)
             if not _keep: continue
             wx+=_dx; wy+=_dy
         if DISPERSE and y>=DTOP:
@@ -214,8 +215,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
             prog=np.clip((y+70)/(BASE+80),0,1)
             if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
         if FIELD_SPLIT and not inside and acc is None:
-            w=ss((y-SPLIT_FROM)/(SPLIT_TO-SPLIT_FROM)) if SPLIT_TO>SPLIT_FROM else 1.0
-            if _rc.random()<w*FIELD_SPLIT: TA[Y:Y+n,X:X+n]=np.maximum(TA[Y:Y+n,X:X+n],g)
+            if _loose: TA[Y:Y+n,X:X+n]=np.maximum(TA[Y:Y+n,X:X+n],g)
         if acc:
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
