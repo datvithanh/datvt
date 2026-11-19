@@ -186,22 +186,24 @@ def fragment(x,y,u):
 # SPARSE_KEEP, thinning to the left of the old edge line (SIDE_OUT) and downwards below the rectangle (SPARSE_FALL to
 # SPARSE_END). Above SOLID_BOTTOM they only drift left and down, by under 6 units, so none crosses into the rectangle.
 SOLID_BOTTOM=853.3        # the gap between the glyph rows at y 837.2 and 869.4
-SPARSE_KEEP=0.42
-SIDE_OUT=260
-SPARSE_FALL=160
-SPARSE_END=0.04
+SPARSE_KEEP=0.7          # below the rectangle, at its edge
+SIDE_OUT=200
+SPARSE_FALL=200
+SPARSE_END=0.06
+LEFT_KEEP=0.2            # left of the cut, above the bottom edge (Nov 19: kept low and sparse)
+SPARSE_CLUMP=0.05        # less clumping than the old break-up: no big empty patches
 _rk=np.random.default_rng(11)
 def sparse(x,y,u):
     # -> (keep, dx, dy, loose) for a field glyph of the sparse layer landing at (x,y); loose (0..1) drives its colour
     i,k=min(max(P(y),0),H_-1),min(max(P(x+DX),0),W_-1); e=dE[i,k]
     hx=float(np.exp(min(e,0)/SIDE_OUT))
     t=ss((y-SOLID_BOTTOM)/SPARSE_FALL) if y>SOLID_BOTTOM else 0.0
-    p=(SPARSE_KEEP*(1-t)+SPARSE_END*t)*hx
-    p=float(np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1))
+    p=(LEFT_KEEP if y<SOLID_BOTTOM else SPARSE_KEEP*(1-t)+SPARSE_END*t)*hx
+    p=float(np.clip(p+SPARSE_CLUMP*clump(x,y)*min(p,1-p)*2,0,1))
     if u>p: return False,0.0,0.0,0.0
     if y<SOLID_BOTTOM: dx=-min(abs(_rk.normal(0,3)),6); dy=min(abs(_rk.normal(0,3)),6)
     else: dx=_rk.normal(0,4+8*t); dy=abs(_rk.normal(0,4+14*t))
-    lo=max(ss((y-776)/230), 1-hx, ss((y-600)/250) if e<0 else 0.0)
+    lo=max(ss((y-(SOLID_BOTTOM-40))/80), 1-hx, ss((y-600)/250) if e<0 else 0.0)   # most glyphs below the edge are coloured
     return True,dx,dy,lo
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']

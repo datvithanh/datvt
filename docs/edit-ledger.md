@@ -833,3 +833,9 @@ commits. Hashes below were backfilled for commits made before the ledger existed
   - Phones show the solid layer only; they only show the field down to y 820, so nothing changes there.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 19 ("make the field solid within the boundaries of the lines I've drawn ... make the glyph spread sparse below and to the left of it").
+
+### 2026-11-19 · Hero field: left spread kept low, fuller spread under the rectangle (local, not pushed) (`home-04-lanes` only)
+- **Left.** The spread left of the cut now starts only three rows above the rectangle's bottom edge (`hero-field-sparse.svg`, from y 756.7). It is sparser there (`LEFT_KEEP` 0.2) and thins out sooner to the left (`SIDE_OUT` 200).
+- **Below the rectangle.** The first rows under the edge are fuller (`SPARSE_KEEP` 0.7), the spread thins over 200 units, and it is much more even (`SPARSE_CLUMP` 0.05), so the green column no longer has a big empty patch. Most glyphs below the edge take their column's colour.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("too much spread on the left, keep it low and sparse ... not enough spread for green, theres a big untouched area").
