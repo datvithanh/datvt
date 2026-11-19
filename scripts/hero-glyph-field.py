@@ -186,10 +186,10 @@ def fragment(x,y,u):
 # SPARSE_KEEP, thinning to the left of the old edge line (SIDE_OUT) and downwards below the rectangle (SPARSE_FALL to
 # SPARSE_END). Above SOLID_BOTTOM they only drift left and down, by under 6 units, so none crosses into the rectangle.
 SOLID_BOTTOM=853.3        # the gap between the glyph rows at y 837.2 and 869.4
-SPARSE_KEEP=0.45         # below the rectangle, at its edge
+SPARSE_KEEP=0.225         # below the rectangle, at its edge
 SIDE_OUT=200
 SPARSE_FALL=300
-SPARSE_END=0.03
+SPARSE_END=0.015
 ASH_FADE=0.6             # Nov 19 (Dat, "like ashes"): falling glyphs fade unevenly, up to this much at the bottom
 LEFT_KEEP=0.2            # left of the cut, above the bottom edge (Nov 19: kept low and sparse)
 SPARSE_CLUMP=0.05        # less clumping than the old break-up: no big empty patches
