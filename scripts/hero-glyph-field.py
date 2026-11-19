@@ -186,10 +186,11 @@ def fragment(x,y,u):
 # SPARSE_KEEP, thinning to the left of the old edge line (SIDE_OUT) and downwards below the rectangle (SPARSE_FALL to
 # SPARSE_END). Above SOLID_BOTTOM they only drift left and down, by under 6 units, so none crosses into the rectangle.
 SOLID_BOTTOM=853.3        # the gap between the glyph rows at y 837.2 and 869.4
-SPARSE_KEEP=0.7          # below the rectangle, at its edge
+SPARSE_KEEP=0.45         # below the rectangle, at its edge
 SIDE_OUT=200
-SPARSE_FALL=200
-SPARSE_END=0.06
+SPARSE_FALL=300
+SPARSE_END=0.03
+ASH_FADE=0.6             # Nov 19 (Dat, "like ashes"): falling glyphs fade unevenly, up to this much at the bottom
 LEFT_KEEP=0.2            # left of the cut, above the bottom edge (Nov 19: kept low and sparse)
 SPARSE_CLUMP=0.05        # less clumping than the old break-up: no big empty patches
 _rk=np.random.default_rng(11)
@@ -202,9 +203,9 @@ def sparse(x,y,u):
     p=float(np.clip(p+SPARSE_CLUMP*clump(x,y)*min(p,1-p)*2,0,1))
     if u>p: return False,0.0,0.0,0.0
     if y<SOLID_BOTTOM: dx=-min(abs(_rk.normal(0,3)),6); dy=min(abs(_rk.normal(0,3)),6)
-    else: dx=_rk.normal(0,4+8*t); dy=abs(_rk.normal(0,4+14*t))
+    else: dx=_rk.normal(0,6+18*t); dy=abs(_rk.normal(0,6+24*t))   # ash: scattered well off the grid as it falls
     lo=max(ss((y-(SOLID_BOTTOM-40))/80), 1-hx, ss((y-600)/250) if e<0 else 0.0)   # most glyphs below the edge are coloured
-    return True,dx,dy,lo
+    return True,dx,dy,(lo,1-ASH_FADE*t*_rk.random())
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -246,6 +247,7 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         if LAYER=='sparse' and not M[at(x+wx,y+wy)]>0.5:
             _keep,_dx,_dy,lo=sparse(x+wx,y+wy,u)
             if not _keep: continue
+            lo,_f=lo; g=g*_f
             wx+=_dx; wy+=_dy
         X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue

@@ -839,3 +839,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - **Below the rectangle.** The first rows under the edge are fuller (`SPARSE_KEEP` 0.7), the spread thins over 200 units, and it is much more even (`SPARSE_CLUMP` 0.05), so the green column no longer has a big empty patch. Most glyphs below the edge take their column's colour.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 19 ("too much spread on the left, keep it low and sparse ... not enough spread for green, theres a big untouched area").
+
+### 2026-11-19 · Hero field: the spread falls like ash (local, not pushed) (`home-04-lanes` only)
+- Below the solid rectangle the spread is sparser (`SPARSE_KEEP` 0.45, thinning over 300 units to 0.03). Glyphs scatter well off the grid as they fall, and fade unevenly, up to 60% lighter toward the bottom (`ASH_FADE`). The left spread and the rectangle are unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("make this more sparse and spread? kind of like ashes").
