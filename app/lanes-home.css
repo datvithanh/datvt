@@ -257,19 +257,23 @@
 @media(min-width:901px){
   .field-guide .ln-copy{z-index:2}
   /* No clear zone behind the copy (Dat, Nov 17: "text is ok to have glyphs behind"); the waterfall shape alone sets the field. */
-  /* Field edge (Dat, Nov 17): public/brand/home/hero-field-shape.svg, in stage units (x −700 to 2500, y −50 to 1200),
-     cuts the field crisply at x 500 (through the CE of "PRACTICE") down to the figure's leftmost point; below that the
-     image spreads out sparsely by itself. It is placed against the stage, so the cut keeps its place beside the copy at
-     every width. The field box sits at min(100vw,1280px) − 140 px − 1553.76 units. */
+  /* Field shape (Dat, Nov 19): two layers in stage units (x −700 to 2500, y −50 to 1200). hero-glyph-field.webp, the
+     whole field, shows inside a rectangle right of the cut through the CE of "PRACTICE" (x 500) and above y 853.3
+     (hero-field-solid.svg); hero-glyph-field-sparse.webp, the spread, shows below and left of it (hero-field-sparse.svg).
+     Both masks are placed against the stage, so the rectangle keeps its edges beside the copy and above the phases
+     title at every width. The field box sits at min(100vw,1280px) − 140 px − 1553.76 units. */
   /* The cut sits at stage x 500, snapped to the nearest gap between two glyph columns (grid pitch 32.2 units, a column
      at field x 1320) so it never slices a glyph; it stays between the C and E. --fcut is where the mask starts. */
   .ln-hero{--fcut:calc(round(nearest,140px - min(100vw,1280px) + 717.66 * var(--u),32.2 * var(--u)) + 136.1 * var(--u))}
   .field-guide .ln-art .ln-field{
-    -webkit-mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
-    mask-image:url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
+    -webkit-mask-image:url('/brand/home/hero-field-solid.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-field-solid.svg'),linear-gradient(#000 88%,transparent 99%);
     -webkit-mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
     -webkit-mask-position:var(--fcut) calc(-50 * var(--u)),0 0;mask-position:var(--fcut) calc(-50 * var(--u)),0 0;
     -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
+  .field-guide .ln-art .ln-field-sparse{
+    -webkit-mask-image:url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%)}
 }
 /* Section colours (Dat, Nov 17): glyphs breaking loose from the field take the colour of the phase box below them. The glyphs
    are picked in public/brand/home/hero-glyph-field-tint.webp (scripts/hero-glyph-field.py, FIELD_SPLIT), which masks
@@ -277,6 +281,7 @@
    stage like the boxes, and snapped to the gap between two glyph columns (grid pitch 32.2 units, a column at field
    x 1320) so no glyph is cut in two. Desktop only; phones keep the grey field. */
 .ln-field-tint{display:none}
+@media(max-width:900px){.field-guide .ln-art .ln-field-sparse{display:none}}
 @media(min-width:901px){
   .field-guide .ln-art .ln-field-tint{
     --fl:calc(min(100vw,1280px) - 140px - 1553.76 * var(--u));
@@ -290,13 +295,13 @@
     display:block;position:absolute;pointer-events:none;left:var(--fl);top:0;width:calc(2240 * var(--u));height:calc(1150 * var(--u));
     background:linear-gradient(90deg,var(--marigold) var(--g1),var(--clay) var(--g1) var(--g2),var(--sage) var(--g2) var(--g3),var(--mblue) var(--g3));
     opacity:var(--tint,.7);
-    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
-    mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
+    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-glyph-field-tint.webp'),url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%);
     -webkit-mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;mask-size:100% 100%,calc(3200 * var(--u)) calc(1250 * var(--u)),100% 100%;
     -webkit-mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;mask-position:0 0,var(--fcut) calc(-50 * var(--u)),0 0;
     -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
   .field-guide .ln-art .ln-field-tint-b{
     --g1:calc(round(nearest,(var(--fcut) + 1200 * var(--u) + var(--g2)) / 2 - 1336.1 * var(--u),32.2 * var(--u)) + 1336.1 * var(--u));
-    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%);
-    mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-shape.svg'),linear-gradient(#000 88%,transparent 99%)}
+    -webkit-mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%);
+    mask-image:url('/brand/home/hero-glyph-field-tint-b.webp'),url('/brand/home/hero-field-sparse.svg'),linear-gradient(#000 88%,transparent 99%)}
 }

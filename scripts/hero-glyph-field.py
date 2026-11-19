@@ -16,6 +16,10 @@ from scipy import ndimage as nd
 
 ROOT=os.path.dirname(os.path.abspath(__file__)); IN=os.path.join(ROOT,'hero-glyph-field')
 OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,'..','public','brand','home','hero-glyph-field.webp')
+LAYER=os.environ.get('LAYER','solid')     # Nov 19: solid (the whole field) or sparse (the spread below and left)
+if LAYER=='solid' and os.environ.get('ONLY')!='1':   # render the sparse layer too
+    import subprocess; subprocess.run([sys.executable,__file__]+sys.argv[1:],env={**os.environ,'LAYER':'sparse'},check=True)
+if LAYER=='sparse': OUT=OUT.replace('.webp','-sparse.webp')
 QUALITY=82
 
 # ── Settings ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -176,6 +180,29 @@ def fragment(x,y,u):
     dx=-EDGE_DRIFT*td*eGx[i,k]/eGn[i,k]+_rs.normal(0,0.3*EDGE_DRIFT*td+0.3*BOTTOM_DRIFT*tb)
     dy=-EDGE_DRIFT*td*eGy[i,k]/eGn[i,k]+abs(_rs.normal(0,BOTTOM_DRIFT*tb))
     lo=max(te,tb); return True,dx,dy,(lo if lo>LOOSE_EDGE or tb>0 else 0.0)
+# Two layers (Dat, Nov 19): the page shows the whole field (LAYER solid) inside a rectangle, right of the cut through
+# "CE" and above SOLID_BOTTOM, and this sparse layer (LAYER sparse) below and to the left of it. Both masks are placed
+# against the stage, so the rectangle keeps its edges at every screen size. The sparse layer: glyphs kept at
+# SPARSE_KEEP, thinning to the left of the old edge line (SIDE_OUT) and downwards below the rectangle (SPARSE_FALL to
+# SPARSE_END). Above SOLID_BOTTOM they only drift left and down, by under 6 units, so none crosses into the rectangle.
+SOLID_BOTTOM=853.3        # the gap between the glyph rows at y 837.2 and 869.4
+SPARSE_KEEP=0.42
+SIDE_OUT=260
+SPARSE_FALL=160
+SPARSE_END=0.04
+_rk=np.random.default_rng(11)
+def sparse(x,y,u):
+    # -> (keep, dx, dy, loose) for a field glyph of the sparse layer landing at (x,y); loose (0..1) drives its colour
+    i,k=min(max(P(y),0),H_-1),min(max(P(x+DX),0),W_-1); e=dE[i,k]
+    hx=float(np.exp(min(e,0)/SIDE_OUT))
+    t=ss((y-SOLID_BOTTOM)/SPARSE_FALL) if y>SOLID_BOTTOM else 0.0
+    p=(SPARSE_KEEP*(1-t)+SPARSE_END*t)*hx
+    p=float(np.clip(p+CLUMP*clump(x,y)*min(p,1-p)*2,0,1))
+    if u>p: return False,0.0,0.0,0.0
+    if y<SOLID_BOTTOM: dx=-min(abs(_rk.normal(0,3)),6); dy=min(abs(_rk.normal(0,3)),6)
+    else: dx=_rk.normal(0,4+8*t); dy=abs(_rk.normal(0,4+14*t))
+    lo=max(ss((y-776)/230), 1-hx, ss((y-600)/250) if e<0 else 0.0)
+    return True,dx,dy,lo
 rng=np.random.default_rng(SEED); np.random.seed(3)
 COL={'marigold':(217,143,43),'clay':(166,58,46),'sage':(76,107,84),'blue':(69,107,134)}; PC=['marigold','clay','sage','blue']
 def ss(t): t=np.clip(t,0,1); return t*t*(3-2*t)
@@ -195,37 +222,40 @@ def pick(j,ci):
             if k not in bad:
                 _deck.pop(t); _left[0]=k; _above[ci]=k; return int(k)
         _deck.extend(rng.permutation(len(gl)).tolist())      # deal a fresh deck of all glyphs
+def at(x,y): return min(max(P(y),0),H_-1),min(max(P(x+DX),0),W_-1)
 for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
     for ci,x in enumerate(np.arange(CX-np.ceil((CX-(XL-SP))/SP)*SP,XL+WU+SP,SP)):   # straight rows and columns, a column on the figure's axis
-        g=gl[pick(j,ci)]; u=rng.random(); col=None
-        wx,wy=warp(x,y); _loose=0.0
-        if not M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5:
-            _keep,_dx,_dy,_loose=fragment(x+wx,y+wy,u)
+        g=gl[pick(j,ci)]; u=rng.random()
+        wx,wy=warp(x,y)
+        # The previous single-layer break-up (fragment), run only so the random numbers the figure's colours draw on
+        # stay exactly as they were (Nov 19): it decides nothing that is drawn.
+        okeep=True; ox,oy=wx,wy
+        if not M[at(x+wx,y+wy)]>0.5:
+            okeep,_dx,_dy,_=fragment(x+wx,y+wy,u)
+            if okeep: ox+=_dx; oy+=_dy
+        OX=P(x+ox+DX)-n//2; OY=P(y+oy)-n//2
+        okeep=okeep and not (OX<0 or OY<0 or OX+n>W_ or OY+n>H_)
+        oin=okeep and M[at(x+ox,y+oy)]>0.5
+        rn=np.random.normal(0,7) if oin else None
+        if okeep and not oin and y<BASE+10: np.random.random()
+        # This layer.
+        lo=0.0
+        if LAYER=='solid' and y>SOLID_BOTTOM+20 and not M[at(x+wx,y+wy)]>0.5: continue   # never shown: saves bytes
+        if LAYER=='sparse' and not M[at(x+wx,y+wy)]>0.5:
+            _keep,_dx,_dy,lo=sparse(x+wx,y+wy,u)
             if not _keep: continue
             wx+=_dx; wy+=_dy
-        if DISPERSE and y>=DTOP:
-            t=np.clip((y-DTOP)/(DBOT-DTOP),0,1)
-            edge=0.5+0.22*np.sin(x/97+1.3)+0.14*np.sin(x/41+0.4)+0.08*np.sin(x/23+2.1)
-            p=np.clip(1-ss((t-edge*0.8)/0.55),0,1)*(1-0.5*t); p=max(p,FLOOR*(1-0.6*t)); p*=1-ss((y-(DBOT-30))/50)
-            if u>p: continue
-            if np.random.random()<ss((t-0.05)/0.45): col=PC[quarter(x)]
         X=P(x+wx+DX)-n//2; Y=P(y+wy)-n//2
         if X<0 or Y<0 or X+n>W_ or Y+n>H_: continue
-        if col:
-            Cg[Y:Y+n,X:X+n]+=g[...,None]*np.array(COL[col],np.float32); Cw[Y:Y+n,X:X+n]=np.maximum(Cw[Y:Y+n,X:X+n],g); continue
-        inside=M[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]>0.5; acc=None   # tested where the glyph lands
-        if GLYPH_3D and (inside or d_fld[min(max(P(y+wy),0),H_-1),min(max(P(x+wx+DX),0),W_-1)]<4*SKIRT): g=body_glyph(g,x+wx,y+wy)
+        inside=M[at(x+wx,y+wy)]>0.5; acc=None   # tested where the glyph lands
+        if GLYPH_3D and (inside or d_fld[at(x+wx,y+wy)]<4*SKIRT): g=body_glyph(g,x+wx,y+wy)
         A[Y:Y+n,X:X+n]=np.maximum(A[Y:Y+n,X:X+n],g)
         if inside:
-            r=np.hypot(x-HX,(y-HY)*0.8)+np.random.normal(0,7); acc=PC[int(r//RING)%4]
+            r=np.hypot(x-HX,(y-HY)*0.8)+(rn if rn is not None else _rk.normal(0,7)); acc=PC[int(r//RING)%4]
             if acc=='clay' and y<TOP+CROWN: acc='marigold'
-        elif y<BASE+10:
-            prog=np.clip((y+70)/(BASE+80),0,1)
-            if np.random.random()<FIELD_COLOUR*(0.15+0.85*prog**1.5): acc=PC[quarter(x)]
-        if FIELD_SPLIT and not inside and acc is None:
-            if _loose and _rc.random()<_loose**COL_GAMMA:
-                T_=TA if _rc.random()<0.5 else TB          # two even halves: the page splits them at different places (marigold mix)
-                T_[Y:Y+n,X:X+n]=np.maximum(T_[Y:Y+n,X:X+n],g)
+        elif FIELD_SPLIT and LAYER=='sparse' and lo and _rc.random()<lo**COL_GAMMA:
+            T_=TA if _rc.random()<0.5 else TB          # two even halves: the page splits them at different places (marigold mix)
+            T_[Y:Y+n,X:X+n]=np.maximum(T_[Y:Y+n,X:X+n],g)
         if acc:
             mk=g>0.05; CI[Y:Y+n,X:X+n][mk]=np.array(COL[acc],np.float32); AC[Y:Y+n,X:X+n]=np.maximum(AC[Y:Y+n,X:X+n],g)
 yy,xx=np.mgrid[0:H_,0:W_].astype(np.float32)/S; xs_=xx-DX
@@ -251,7 +281,7 @@ c=BG+amt[...,None]*(CI-BG)
 colr=Cg/np.maximum(Cw[...,None],1e-3); a=Cw*RAIN_ALPHA; c=c*(1-a[...,None])+colr*a[...,None]
 im=Image.fromarray(c.round().clip(0,255).astype(np.uint8))
 im.save(OUT,quality=QUALITY,method=6); print(OUT, im.size, os.path.getsize(OUT),'bytes')
-if FIELD_SPLIT:
+if FIELD_SPLIT and LAYER=='sparse':
     TINT_OUT=os.environ.get('TINT_OUT',os.path.join(os.path.dirname(OUT),'hero-glyph-field-tint.webp'))
     for T_,out in ((TA,TINT_OUT),(TB,TINT_OUT.replace('-tint','-tint-b'))):
         ta=(np.clip(T_,0,1)*255).round().astype(np.uint8)

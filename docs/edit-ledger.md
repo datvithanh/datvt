@@ -820,3 +820,16 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - **Colour comes in progressively.** Glyphs right under the corner stay grey; the share that take their column's colour rises with how far they have come loose (`COL_GAMMA`).
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 18 ("add even more uniformity & solidity to the bottom left corner ... have the colours start lower into the corner progressively").
+
+### 2026-11-19 · Hero field: a solid rectangle, sparse spread below and to the left (local, not pushed) (`home-04-lanes` only)
+- **Solid rectangle.** The glyph field is now whole inside the lines Dat drew: right of the cut through "CE" and down to a crisp bottom edge at stage y 853 (the gap between two glyph rows, about 100 units above "Realization as a fitness"). It holds at every screen size; nothing inside it thins out.
+- **Sparse spread outside it.** Below the bottom edge, and left of the cut from the figure's knee down, glyphs are kept sparsely. They thin out to the left and quickly toward the title, and only drift away from the rectangle, so none is cut at its edges. Colour works as before: grey near the rectangle, the column colours further out.
+- **How.** The field is now two images, each masked against the stage:
+  - `hero-glyph-field.webp` is the whole field, shown inside `hero-field-solid.svg`.
+  - `hero-glyph-field-sparse.webp` is the spread, shown inside `hero-field-sparse.svg`.
+  - `scripts/hero-glyph-field.py` renders both: `LAYER`, `SOLID_BOTTOM`, `SPARSE_*`, `SIDE_OUT`.
+  - The figure is pixel-identical to before.
+  - `hero-field-shape.svg` and the stepped corner are gone.
+  - Phones show the solid layer only; they only show the field down to y 820, so nothing changes there.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("make the field solid within the boundaries of the lines I've drawn ... make the glyph spread sparse below and to the left of it").

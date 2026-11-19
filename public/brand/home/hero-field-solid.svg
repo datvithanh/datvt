@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-700 -50 3200 1250" width="3200" height="1250" preserveAspectRatio="none">
+  <!-- Hero glyph field, solid layer (Dat, Nov 19), stage units: the whole field shows inside this rectangle, right of
+       the cut through the CE of "PRACTICE" (x 500, snapped by the page to a gap between glyph columns) and above y 853.3
+       (the gap between two glyph rows). Opaque = shown. Its complement is hero-field-sparse.svg. -->
+  <rect x="500" y="-50" width="2000" height="903.3" fill="#fff"/>
+</svg>

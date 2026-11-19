@@ -31,6 +31,7 @@ export function HomeContent() {
   <div className="ln-stage">
     <div className="ln-art" aria-hidden="true">
       <img className="ln-field" src="/brand/home/hero-glyph-field.webp" alt="" width="4480" height="2300" fetchPriority="high" />
+      <img className="ln-field ln-field-sparse" src="/brand/home/hero-glyph-field-sparse.webp" alt="" width="4480" height="2300" />
       <div className="ln-field-tint" />
       <div className="ln-field-tint ln-field-tint-b" />
     </div>
