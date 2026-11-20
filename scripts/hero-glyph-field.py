@@ -194,6 +194,11 @@ ASH_FADE=0.6             # Nov 19 (Dat, "like ashes"): falling glyphs fade uneve
 LEFT_KEEP=0.2            # left of the cut, above the bottom edge (Nov 19: kept low and sparse)
 SPARSE_CLUMP=0.05        # less clumping than the old break-up: no big empty patches
 _rk=np.random.default_rng(11)
+# Nov 20 (Dat): inside the rectangle the bottom three glyph rows (y 772.8, 805, 837.2) fragment gradually: about 5%,
+# 30% and 55% of their glyphs gone, the rest loosened by up to 4 units.
+FRAG_TOP=756.7
+FRAG_LOSS=0.6
+_rf=np.random.default_rng(13)
 def sparse(x,y,u):
     # -> (keep, dx, dy, loose) for a field glyph of the sparse layer landing at (x,y); loose (0..1) drives its colour
     i,k=min(max(P(y),0),H_-1),min(max(P(x+DX),0),W_-1); e=dE[i,k]
@@ -244,6 +249,10 @@ for j,y in enumerate(np.arange(-SP,HU+SP,SP)):
         # This layer.
         lo=0.0
         if LAYER=='solid' and y>SOLID_BOTTOM+20 and not M[at(x+wx,y+wy)]>0.5: continue   # never shown: saves bytes
+        if LAYER=='solid' and FRAG_TOP<y<SOLID_BOTTOM and not M[at(x+wx,y+wy)]>0.5:   # Nov 20: the last rows start to come apart
+            tf=ss((y-FRAG_TOP)/(SOLID_BOTTOM-FRAG_TOP))
+            if _rf.random()>1-FRAG_LOSS*tf: continue
+            wx+=float(np.clip(_rf.normal(0,2.5*tf),-4,4)); wy+=float(np.clip(_rf.normal(0,2.5*tf),-4,4))   # small: never crosses the rectangle's edges
         if LAYER=='sparse' and not M[at(x+wx,y+wy)]>0.5:
             _keep,_dx,_dy,lo=sparse(x+wx,y+wy,u)
             if not _keep: continue

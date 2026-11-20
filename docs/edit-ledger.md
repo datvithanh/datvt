@@ -849,3 +849,8 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The spread below the solid rectangle keeps half as many glyphs (`SPARSE_KEEP` 0.225, `SPARSE_END` 0.015); the scatter and fade are unchanged.
 - Provisional: committed locally; waiting for Dat's go-ahead to push.
 - Why: Dat, Nov 19 ("i want it 50% sparser").
+
+### 2026-11-20 · Hero field: the solid rectangle's bottom rows fragment gradually (local, not pushed) (`home-04-lanes` only)
+- Inside the solid rectangle, the bottom three glyph rows now start to come apart: about 5%, 30% and 55% of their glyphs are gone, top row to bottom. The rest are loosened by up to 4 units, so none crosses the rectangle's edges. This leads into the sparse spread below (`FRAG_TOP`, `FRAG_LOSS` in `scripts/hero-glyph-field.py`). The figure is unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 20 ("add fragmentation happening gradually in the last (bottom) 2-3 rows").
