@@ -17,7 +17,9 @@
 .field-guide:not(.fg-legacy-chrome) .button:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--paper);filter:none}
 .field-guide:not(.fg-legacy-chrome) :is(.text-link,.header nav a):hover{color:var(--orange)}
 .field-guide:not(.fg-legacy-chrome) .text-link{border-color:var(--gold-line)}
-.field-guide:not(.fg-legacy-chrome) .nav-submenu{background:#ece3cf url('/brand/bone-paper.webp');background-size:720px auto}
+/* Fine running-track grain overlays bone; no paper image on the Programs dropdown. */
+.field-guide:not(.fg-legacy-chrome) .nav-submenu{background:var(--bone,#F2ECDC) url('/brand/track-grain.svg') repeat;background-size:200px 200px;background-blend-mode:overlay}
+.field-guide .nav-item-date{color:var(--clay,#A63A2E);font-weight:500}
 @media(max-width:760px){.field-guide:not(.fg-legacy-chrome) .nav-submenu{background:none}}
 
 /* Surfaces: paper with a fine ink rule, not colour slabs and tinted bands. */

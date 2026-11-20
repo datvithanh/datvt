@@ -137,6 +137,18 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - The "04 Lanes" homepage is preserved unchanged on branch `home-04-lanes` (commit `cb88ce9`), including its `docs/design/` notes and references. Its ledger entry above is kept as written.
 - Why: Dat, Nov 4: revert it and keep it on a separate branch.
 
+### 2026-11-04 · "04 Lanes" homepage re-applied on `home-04-lanes` for preview
+- This branch carries the "04 Lanes" homepage (`cb88ce9`) on top of the current `v4`, so it can be previewed and worked on through a draft pull request without changing the main preview. `v4` itself still has the previous homepage.
+- Why: Dat, Nov 4: preview and keep working on the lanes branch.
+
+### 2026-11-04 · Lanes homepage: floating header, no hero eyebrow (`home-04-lanes` only)
+- The homepage header now floats: it stays pinned to the top on a full-width bone bar while scrolling, with a soft shadow that fades in once the page moves. Its ends sit on the same margins as the homepage sections (1280 px max width, 40 px sides; 20 px on phones), so the lockup lines up with the hero text and "Join the Bootcamp" with the right edge of the content. The Programs dropdown and the phone menu are not clipped.
+- Removed the "REALISATION FITNESS" eyebrow above "LIVE IN PRACTICE".
+- Why: Dat, Nov 4. Preview: https://deploy-preview-1--poetic-tapioca-bc92a4.netlify.app
+
+### 2026-11-04 · Lanes homepage: hero scales to the screen height (`home-04-lanes` only)
+- On desktop the whole first section now scales with the screen's height as well as its width, so the bottom of the first screen always lands just past the lower band's bend down (about 885 of the hero's 1490 units): the bend peeks in and hints at the phases below. "LIVE IN PRACTICE" stays on the 40 px content margin, in line with the header lockup. Phones keep their stacked layout.
+- Why: Dat, Nov 4: "make the whole first section smaller so the bend leading down is slightly visible."
 ### 2026-11-04 · Lockup v1.1: smaller wordmark
 - The header lockup's wordmark is 23% smaller against the mask (cap height 0.23 of the mask, was 0.30; mask-to-type gap 0.16, was 0.18), so the mask leads. The mask stays 56 px tall on desktop and 40 px on mobile, so the lockup is now about 251 × 56 px (was 310 × 56). Same change in the bone lockup and the social preview card.
 - Why: Dat, Nov 4: the text was "too big"; picked option B of three.
@@ -145,8 +157,700 @@ commits. Hashes below were backfilled for commits made before the ledger existed
 - Archivo has no diagonal-arrow glyphs (U+2196–2199), so iOS fell back to the colour ↗ emoji on buttons and links. Those four characters now come from IBM Plex Mono Medium (already loaded by the site) through a `unicode-range` face on the "CC Archivo" family. All 25 arrows site-wide are covered with no markup change; checked that every arrow on Home, Bootcamp and Resources renders from the web font, not a system fallback.
 - Why: Dat, Nov 4 (arrows showing as emoji on iPhone).
 
+### 2026-11-04 · Lanes homepage: header 30% thinner, lockup v1.1 cache-busted (`home-04-lanes` only)
+- The homepage header is 30% thinner: 73 px on desktop (was 104) and 62 px on phones (was 88). The lockup is 44 px / 36 px tall (was 56 / 40) to keep the kit's 0.25 H clear space; "Join the Bootcamp" fits inside the bar. The phone menu now hangs from the bar's bottom edge, anchor links and the hero's fold sizing account for the new height. Other pages keep the 104 px header.
+- The header lockup URL carries `?v=1.1` so browsers that cached the old lockup fetch the smaller-wordmark v1.1 file (already on this branch since the `v4` merge).
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: one button style (`home-04-lanes` only)
+- Every homepage button now follows the hero "Explore the Bootcamp" button: Archivo SemiBold, 19 units (scales with the hero; 17 px on phones), 18 × 28 units of padding, square corners, soft shadow, 14 px gap before the arrow. Ink with bone text on bone backgrounds ("Explore the Bootcamp", "Save a spot", header "Join the Bootcamp", which were outlined before); bone with ink text on black ("Explore" on the Bootcamp card, "Join the mailing list" in the footer). Hover: clay on ink buttons, marigold on bone ones.
+- The header links (Programs, Resources, Media) use the same type size. The phone menu keeps its own size.
+- Why: Dat, Nov 4.
+### 2026-11-04 · Lanes homepage: worn-press key frame on the Mini Bootcamp card (`home-04-lanes` only)
+- In "Ways to train", the Mini Bootcamp card's black outline is replaced by the O3 stepped-key border in clay with a worn-press print treatment (rails stay straight; uneven ink and small drop-outs). It is a 9-slice border image (`public/brand/home/card-frame-worn.png`), so the four key corners keep their size and the rails repeat to fit the card on any screen.
+- The clay O3 corner key inside the black Illumination Bootcamp card is removed (and its asset `key-corner-o3-clay.svg`).
+- Why: Dat, Nov 4: worn press "as a frame for this block… dont use it for the outer block"; "remove the corner key border within the illumination bootcamp as well."
+
+### 2026-11-04 · Lanes homepage: phases in a 2×2 grid with glyphs (`home-04-lanes` only)
+- "Realisation as a fitness" now shows the four phases in two rows of two (Absorption · Purification, then Recognition · Integration). The lower band's lanes turn into the rows in pairs on shared, concentric curves: marigold and clay into the first row, sage and blue into the second.
+- Each phase has its glyph in its lane colour: Contact (Absorption), Flame (Purification, new glyph 19), Wisdom (Recognition), Integration (new glyph 20). Descriptions wrap within their column; the hero stage is 120 units shorter (1370) since the phases take less height. Phones keep the single list, now with the glyphs.
+- Why: Dat, Nov 4: reorganise the section into pairs with glyphs; approved the mock ("yep this is good push it").
+
+### 2026-11-04 · Lanes homepage: hero alignment, secondary button (`home-04-lanes` only)
+- The figure's head now sits under the gap between "Programs" and "Resources" in the header, at every desktop size (the head is the middle of the figure art; the gap's offset from the right margin was measured as 368.6 units + 100 px).
+- "REALISATION AS A FITNESS" and the first phases column start where "PRACTICE" ends (572 units); the lower bands slide right by the same 112 units so their lanes still meet the glyphs. The two phase columns now run to the right content margin. Each phase's body text runs the full column width (glyph 40 units, body 17 units), so no phase takes more than two lines.
+- "Save a spot" on the Mini Bootcamp card is a secondary button in the card's lower-right corner: clay outline, no fill, clay text, same type and size as the primary; it fills clay on hover.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: one heading style (`home-04-lanes` only)
+- "Realisation as a fitness", "Ways to train", "You've found the maps. Find your people." and "Stay close to the practice." now share one style: Archivo ExtraBold (800) caps at the phases-title size (56 units, scaling with the hero; 34–48 px fluid on phones), line height 1, letter-spacing −0.02em. Before, all four rendered SemiBold (600) because a site-wide `.field-guide h2` rule forces 600 with `!important`, and their sizes differed (52.5 / 64 / 64 / 56 px at 1440 × 900). Other pages keep their headings.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: community transition and reformatted community intro (`home-04-lanes` only)
+- Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above the heading is removed.
+- The heading sets on two lines: "YOU'VE FOUND THE MAPS." / "FIND YOUR PEOPLE." The intro is now a lead-in line plus a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The clay italic line sits beside the list.
 ### 2026-11-04 · Videos play on the page; marigold selection and focus
 - Every participant video now plays in place: the Bootcamp hero film, the six Bootcamp story thumbnails and the homepage story images are click-to-play posters that swap for a youtube-nocookie embed in the same box (`components/ui/InlineVideo.tsx`). The separate "Watch their story" / "Watch the full story" links are removed; each poster is the one control ("Play Kristen's story", …). The footer link to the YouTube channel stays.
 - Selected text is ink on marigold (was a near-invisible light-on-beige highlight inherited from the old site).
 - Focus outlines on links, buttons, fields and video posters are marigold; the email field's red (clay) focus box read as an error.
 - Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: stories play in place (`home-04-lanes` only)
+- The three homepage story images (Kristen, Ryan, James) are click-to-play posters with a play mark; the video plays in the same 4:3 box. Their "Watch their story" links are removed. Brings in the `v4` inline-video, marigold selection and marigold focus changes.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Undo the community transition and intro change (`home-04-lanes` only)
+- Reverts `e2b609d` and `9d71016` (the community-glyph divider, which went up with it by mistake under a "mock, not pushed" message): the community section is back to the version before them (thick rule above, Community glyph above the heading, one-paragraph intro). The `e2b609d` entry above is kept as written; both changes are held as a local mock for review.
+- Why: Dat, Nov 4: pushed before he had approved it; "yeah undo".
+
+### 2026-11-04 · Lanes homepage: phases section rebuilt to the mock-up (`home-04-lanes` only)
+- "REALISATION AS A FITNESS" is one line, sitting just above the phases and starting at the glyph column. It keeps the section-headline size unless that would cross the right margin, then shrinks just enough to fit (full size at 1440 × 800; about 4% smaller at 1440 × 900, 14% at 1920 wide). Phones wrap it.
+- The rows are 120 units apart (tops 1040 and 1160, was 1200): the green and blue lanes in `bands-lower.svg` turn into row 2 forty units earlier (vertical ends 1180 → 1140, same arcs). The hero stage is 50 units shorter (1320).
+- "beyond the cushion": "the" and "cushion" are joined by a no-break space so "the" never ends a line.
+- Why: Dat, Nov 4 (mock-up of the section).
+
+### 2026-11-04 · Lanes homepage: community glyph transition (`home-04-lanes` only)
+- Between "Ways to train" and the community section, the thick black rule is replaced by a transition: hairline, the Community glyph (40 px, 32 px on phones), hairline. The Community glyph above "You've found the maps" is removed. The heading and intro are unchanged (their rework is still a mock).
+- Why: Dat, Nov 4: "push the border change first".
+
+### 2026-11-04 · Lanes homepage: all six participant stories (`home-04-lanes` only)
+- The homepage stories now show all six from the Bootcamp page: Kristen, Ryan and James as before, plus Adrian (mineral blue), Tom (clay) and John (marigold), with the same quotes as on Bootcamp. Two rows of three on desktop, stacked on phones; each plays in place. Their 1280 × 720 covers are added to `public/brand/stories/` (noted in its README).
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: community heading and intro reworked (`home-04-lanes` only)
+- The community heading sets on three lines with no full stops: "YOU'VE FOUND" / "THE MAPS" / "FIND YOUR PEOPLE", the last line in clay.
+- The intro is a lead-in, "CC is a community for serious contemplative training:", followed by a list with clay square bullets: guidance from teachers, structured daily practice, study that sharpens understanding, people who train alongside you. The block sits beside the heading, top-aligned, with its text left-aligned and its longest line ending on the right margin; on phones it drops below the heading.
+- The clay line "You bring the willingness. The training gives it somewhere to go." is removed.
+- Why: Dat, Nov 4, approved the mock ("push it yes").
+
+### 2026-11-04 · Lanes homepage: American spelling, no "More participant stories", top-aligned sign-up (`home-04-lanes` only)
+- "Realisation as a fitness" is now "Realization as a fitness" (American English, matching John's quote). A sweep of the homepage's rendered text, labels and metadata found no other British spellings.
+- The "More participant stories ↗" link under the stories is removed (all six stories are on the homepage now).
+- The footer sign-up band is top-aligned: "STAY CLOSE TO THE PRACTICE." and the form start at the same height (was bottom-aligned).
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Lanes homepage: card buttons on the left (`home-04-lanes` only)
+- "Ways to train": "Explore" now sits on the left of the Illumination Bootcamp card's footer with "Starts January 25, 2027" on the right; "Save a spot" sits bottom-left on the Mini Bootcamp card (still the clay secondary button).
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Brand v1 style on every field-guide page (`home-04-lanes` only)
+- The homepage's chrome now runs across Programs, Bootcamp, Mini Bootcamp, Resources, Media, Transmission 101, the Articles index and each article, and the Terms, Privacy and Refund pages: the floating thin header with the lockup, 19 px nav and "Join the Bootcamp" button; flat bone background; kit ink; the ink mailing-list footer.
+- Their text follows the CC Website Typography Guide (Claude Docs) through `app/brand-v1.css`: one display headline per page (ExtraBold caps; smaller for article and legal titles), section headlines ExtraBold caps 56 px, card titles and subheads SemiBold sentence case (30 / 44 px), lede 22 px, body 18–19 px (17 px in cards), quotes Archivo Medium Italic 21 px, eyebrows Plex Medium caps 14 px, data Plex 15 px, captions and labels Plex caps 13 px, fine print 13 px; nothing below 13 px. Buttons are the primary ink button (19 px, 18 × 28); text links are underlined Plex. Card accents use the kit lane colours (mineral blue, marigold, clay, sage). Headline halves are no longer orange.
+- Checked at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors.
+- Not yet restyled: the older pages built on the previous site (Team, Coaching, Embodiment, course library and lessons, Videos, Essays, Cohort, Spotlight, View), which keep their own body styles under the new header and footer.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Every remaining page rebuilt on brand v1 (`home-04-lanes` only)
+- The pages still built on the previous site now sit in the same shell as the rest (floating header, ink footer) and wear the kit: Team and each initiate page, Coaching, Embodiment, Cohort, Spotlight, View, Essays, Videos, the course library, Illumination 101 and its lessons, the Transmission 101 course, its lessons and debrief, the video library, each video and each playlist, article topic pages, and the lab page.
+- How: `SiteShell` renders them inside the field-guide wrapper (marked `legacy-page`; the old dark-mode theme toggle is gone from the footer), and `app/brand-v1-legacy.css` maps the old design tokens and utility classes onto the kit: bone and ink instead of charcoal and gold, Archivo and Plex Mono instead of Rubik and Courier Prime, square corners; filled accent buttons become the primary ink button and outlined ones (including the old `.btn-primary`) the clay secondary; small uppercase labels become Plex eyebrows; group labels (Browse, Search, Collections, Watch next, Lessons, video groups) are eyebrows rather than headlines; section headlines are 44 px on these denser pages; the sticky section tab bars sit under the 73 / 62 px header. The three section navs that forced a 10 px button size no longer do.
+- Footer sign-up heading: "Stay close to the practice" and "Get the free course" without the full stop.
+- Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, no heading overflow, no text under 13 px, no page errors; public-site, Kit form and video-manifest checks pass.
+- Why: Dat, Nov 4 ("rebuild every page"; remove the full stop).
+
+### 2026-11-04 · Other pages sized like the homepage; no full stops in headings; Resources in one column (`home-04-lanes` only)
+- Every page now uses the homepage's size unit (`--ln-u`, which scales with screen width and, on desktop, height), so type matches the homepage at any screen size: page titles and section headlines are the size of "Realization as a fitness" / "Ways to train" (56 units: 53 px at 1440 × 900, 46 px at 1440 × 800), subheads 30 units (28 px), body 17 units (16 px, never under 15), ledes 22 units; on phones the homepage's 35 px headlines, 24 px subheads, 17 px body. Before, other pages had 72–80 px titles, 56 px headlines and 18 px body at every size.
+- Full stops removed from all 25 h1–h3 headings that had them (e.g. "Ways to train", "Illumination Bootcamp", "You've found the maps / Find your people", "Common questions", "Notes from practice").
+- The footer's "Join the mailing list" is the homepage's bone button on every page (other pages were turning it ink on ink).
+- Resources: the Transmission 101 card runs the full content width (image and copy side by side); "Notes from practice" sits under it with the six essays three across (two on tablets, one on phones). "Free courses" and "Notes from practice" are section headlines.
+- Checked all 32 routes at 1440 × 900 and 390 × 844: no sideways scroll, heading overflow, sub-13 px text or page errors.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · Every page on the header's edges; outlined header button; tidier Resources and Articles (`home-04-lanes` only)
+- Every page's content now lines up with the header: 1200 px wide inside 40 px side margins (20 px on phones), the same frame as the homepage. Before, the field-guide pages sat in a 1024 px column and the older pages in Tailwind columns from 608 to 1024 px, centred. On the older pages the outer column fills the frame, narrower inner columns start at the left edge, and centred text is left-aligned. Legal pages keep a 46 rem reading column, left-aligned. Topic pages (/articles/topics/…) are treated as older pages. Lesson infographics no longer bleed 10 px past the edges. Checked all 32 routes at 1440 and 390 wide.
+- Header "Join the Bootcamp" is a secondary button: ink outline, ink text, no fill (fills ink on hover), so page buttons keep the top of the hierarchy.
+- The "Ready to train?" band is removed from Resources, Media, Articles and every article (the header carries the CTA).
+- Articles: each essay image fills its frame (cover crop, no grey bands); the "Read the article" links are gone (the card is the link); the "23 essays to explore" count is hidden (kept for screen readers, which announce it when filtering).
+- Resources: "Free courses" and "Notes from practice" drop a level, to card titles (SemiBold, sentence case, 44 units; 32 px on phones), under the page title.
+- Why: Dat, Nov 4.
+
+### 2026-11-04 · FAQ title and question size (`home-04-lanes` only)
+- Bootcamp's "Common questions" heading is now "FAQ".
+- FAQ questions drop one level: Archivo SemiBold, sentence case, 20 units (about 19 px at 1440 × 900; 17 px on phones), down from the 28 px subhead size; answers are body text with a 68-character measure. Applies to every page that uses the FAQ accordion.
+- Why: Dat, Nov 4.
+
+### 2026-11-05 · Mini Bootcamp hero copy (`home-04-lanes` only)
+- Title "A taste of the training" → "MINI BOOTCAMP"; the small "Mini Bootcamp" line under it is removed.
+- Description is now "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore." (was "Meet CC by practicing with us…").
+- Date line is "Next run: December 14–18, 2026" with the date in clay red (was "December 14–18, 2026 · Live online").
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Course pages: left-aligned, three heading levels (`home-04-lanes` only)
+- Course pages (Transmission 101 course, lessons and debrief; Illumination 101 and its lessons; course videos) are marked `course-page`. Their reading text (`.prose`) now starts at the left page edge instead of sitting in a centred column.
+- Heading levels: 1 the page title ("STAYING PRESENT"); 2 section headings ("Before you begin", "The five lessons", "Reading material", "Go back through it", "So how does this survive your day?") in Archivo SemiBold, sentence case, 44 units (41 px at 1440 × 900, 30 px on phones); 3 headings inside the lesson text ("Welcome", "What Is Transmission?") SemiBold 26 units (24 px; 21 px on phones). Those page-level section headings were changed to sentence case in the code; headings inside the lesson MDX keep their original wording.
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Spacing restored on older components; Plex breadcrumbs (`home-04-lanes` only)
+- A base field-guide reset (`h1, h2, h3, p, figure { margin: 0 }`) was overriding the Tailwind spacing classes (`mt-3`, `mb-6`, …) on every page rebuilt from the previous site, so titles, subtitles, section intros and paragraphs sat flush against each other (e.g. the lesson subtitle under "THE ACT OF LEAVING", the intro under "Discussion"). The reset no longer applies on those pages, and on the other pages it skips elements that carry their own margin classes (fixes Mini Bootcamp's "Watch next" titles touching their meta line).
+- Video and discussion row titles (text-sm/base) are 20 units (≈19 px at 1440 × 900).
+- Breadcrumbs are IBM Plex Mono throughout (the current page and the "/" separators were Archivo).
+- Checked all 32 routes at 1440 and 390 wide for headings sitting under 6 px from the text below and for overlapping text (closed accordions excluded): none left except the intentional name/role pair on Team cards.
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Mini Bootcamp: clips section removed (`home-04-lanes` only)
+- "A taste of the practice" (the Transmission 101 clip player and "Watch next" row) is removed from the Mini Bootcamp page; those clips belong to the email-walled Transmission 101 course. The component file stays in the repo, unused.
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Mini Bootcamp: duplicate intro removed (`home-04-lanes` only)
+- The "Enter together" section no longer repeats "A free introduction to the practice and the community…"; the sentence stays as the hero description.
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Mini Bootcamp: "Five days of training" with leaves (`home-04-lanes` only)
+- The "Enter together" section on /mini-bootcamp is now "FIVE DAYS OF TRAINING": three items, each led by an upright leaf in its colour with a small Plex label above the title. Live meditation sessions (blue soft-lance leaf, "Daily"; was "Live daily sits", same body), Mentor-led discussions (marigold soft-lance leaf, "Daily"; was "Mentor breakouts", new body: "Share your meditation experience and be mirrored by CC mentors and other practitioners."), Community campfire (clay nested leaf, "Closing", same body). Three across on desktop, stacked on phones; the coloured top rules are gone.
+- Why: Dat, Nov 5, approved the mock.
+
+### 2026-11-05 · Mini Bootcamp: section headings one level down (`home-04-lanes` only)
+- "Five days of training" and the closing heading sit one level under "MINI BOOTCAMP": Archivo SemiBold, sentence case, 44 units (41 px at 1440 × 900; 32 px on phones), was ExtraBold caps at the title size.
+- "Begin exploring now" is now "Can't wait? Begin exploring now".
+- Why: Dat, Nov 5.
+
+### 2026-11-05 · Participant headshots; Tyson and Ryan join the stories (`home-04-lanes` only)
+- The story cards on the homepage and /bootcamp now use real headshots for Adrian, Tyson, Tom, John and Ryan instead of YouTube covers, each cropped with the face centered (4:3 on the homepage, 16:9 on Bootcamp).
+- Tyson replaces Kristen (video `tHBd3sCOjWk`, quote from the original testimonials). Ryan (`zcrvJoSpfYs`, stream-entry story) replaces James. The other Ryan (`NrObMSAiNQQ`) is now labelled "Ryan M." and keeps his YouTube cover.
+- Why: Dat, Nov 5, supplied the headshots.
+
+### 2026-11-05 · Stories: Taylor replaces Ryan M.; story photos in full colour (`home-04-lanes` only)
+- The "Ryan M." card on the homepage and /bootcamp is now Taylor, with his headshot (face centered), video `M4tPoR5-n40` and the quote "True realization is not the destruction of intelligence. It is the liberation and embodiment of intelligence."
+- Why: Dat, Nov 5.
+- The homepage story photos now show in full colour: the grayscale + colour-tint treatment is removed from the six story cards.
+- Why: Dat, Nov 5.
+
+### 2026-11-06 · Lanes homepage: story play button and lighter quotes (`home-04-lanes` only)
+- The play button on the participant story photos moves off the face: a small bone disc (40 px) with an ink triangle in the bottom-right corner, turning ink on hover. Was a brown 46 px disc in the centre, which covered the nose.
+- Story quotes are Archivo Regular 400 italic (was Medium 500 italic), 21 px on desktop and 19 px on phones (was 21 px everywhere), as in the typography guide.
+- Why: Dat, Nov 6: picked option B of three play buttons and Regular italic of two quote weights.
+
+### 2026-11-06 · Bootcamp hero: date line, wider video, no Phases shortcut (`home-04-lanes` only)
+- The hero now reads "Next cohort: January 25, 2027 · 12 weeks" under the description, with the date in clay, matching Mini Bootcamp's "Next run" line. The date strip under the video is gone.
+- "See the schedule" and the caption under the video are removed. On desktop the video is wider (about 616 px at 1440, was about 500) and its top lines up with the "Paid program" line.
+- The section shortcuts drop "Phases", since phases sit inside Course details.
+- Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: one body-text size; community list removed (`home-04-lanes` only)
+- Body text on the homepage now matches the hero line "Build a practice that can meet your life…": 22 units (about 21 px at 1440 × 900), 18 px on phones. This covers the two "Ways to train" card descriptions (were 20 px and 19 px) and the "Stay close to the practice" sign-up text in the footer (was 20 px; the footer is shared, so every page gets it).
+- Removed "CC is a community for serious contemplative training:" and its four-item list next to "You've found the maps / Find your people".
+- Provisional: the four phase descriptions under "Realization as a fitness" stay at 17 units. At the larger size they collide with the next row at 1024 px, because each row is pinned to where its colored line ends. Story quotes, fine print, labels and footer small print are unchanged. Waiting on Dat for both.
+- Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: story quotes at the body-text size (`home-04-lanes` only)
+- The italic quotes under the participant photos now use the same size as the rest of the homepage body text: 22 units (21 px at 1440 × 900, about 17.5 px in a 1440 × 780 window), 18 px on phones. They were a fixed 21 px (19 px on phones), so they looked bigger than the body text in shorter windows.
+- Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: lower band turns one 90° corner; no rule above "Ways to train" (`home-04-lanes` only)
+- The lower band (blue, sage, clay, marigold) now runs level under the figure and turns a single rounded right-angle corner, then drops straight down beside the phases. The lanes end flat and staggered, marigold shortest and blue longest. The old U-fold, the S-bend and the turns into each phase row are gone.
+- "Realization as a fitness" and its four phases move up. The gap from the band down to the title equals the gap from the end of the phase text down to "Ways to train" (100 units, 94 px at 1440 × 900). The black rule between the hero and "Ways to train" is removed.
+- The four phases now sit in a normal 2 × 2 grid, so a description that wraps to three lines pushes the second row down instead of running into it.
+- Why: Dat, Nov 6, with a mock-up of the corner.
+
+### 2026-11-06 · Homepage hero: one band (`home-04-lanes` only)
+- The hero has a single band. The second band that crossed behind "Explore the Bootcamp" and the figure is gone.
+- The band comes in from the upper right and sweeps down behind the figure, whose glow fades it as it passes. It runs level under the figure and turns one rounded right-angle corner at the left. Blue's outer edge lines up with the left edge of "LIVE IN PRACTICE".
+- The lanes keep an even spacing through every bend.
+- "Realization as a fitness" and the four phases move left to sit beside the lanes, with the title and glyphs starting 84 units right of the marigold lane, and run to the right margin. The 100-unit gaps above the title and above "Ways to train" are kept.
+- "04 Integration" no longer sits lower than "03 Recognition" when the description beside it wraps.
+- Why: Dat, Nov 6, with a rough sketch ("don't follow exactly") and a crop of the corner.
+
+### 2026-11-06 · Homepage phases: Mini Bootcamp row format, body-size text (`home-04-lanes` only)
+- Each of the four phases now uses the Mini Bootcamp row layout.
+  - The glyph sits in its own column, centered vertically on the text block (Mini Bootcamp's leaves sit at the top).
+  - A small colored Plex number ("01") sits above the title, then the description.
+- The descriptions use the page's body size: 22 units (21 px at 1440 × 900), 18 px on phones. They were 17 units.
+- The rows are 44 units apart.
+- On phones the colored rule down the left of each phase is gone, matching Mini Bootcamp.
+- The band's vertical lanes are 88 units longer, so blue still ends level with the bottom of the phases.
+- Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: band lanes run further down (`home-04-lanes` only)
+- The four vertical lanes beside the phases are 60 units longer. Blue now stops 40 units (about 38 px at 1440 × 900) above "Ways to train", and the others step up from it in 30-unit stages, marigold shortest.
+- Why: Dat, Nov 6, after the phases grew taller.
+
+### 2026-11-06 · Bootcamp stories: same treatment as the homepage (`home-04-lanes` only)
+- The six participant cards on /bootcamp now match the homepage's:
+  - a bone play disc in the bottom-right corner of each photo (ink on hover), not a brown one over the face;
+  - quotes in Archivo Regular italic at the body size (21 px at 1440 × 900, 18 px on phones);
+  - names in Plex caps, directly under each quote (they used to drop to the bottom of the row).
+- The Bootcamp photos keep their 16:9 frame.
+- Why: Dat, Nov 6.
+
+### 2026-11-06 · Homepage: new Purification line (`home-04-lanes` only)
+- The "02 Purification" phase on the homepage now reads "Patterns met fully begin to unwind, freeing you to choose anew." (was "Learn to meet your patterns as you hold and become them.").
+- Why: Dat, Nov 6.
+
+### 2026-11-07 · Homepage: worn-ink texture on the lines (`home-04-lanes` only)
+- The four colored hero lanes and the horizontal community divider now have irregular printed edges and fine paper flecks, echoing the Mini Bootcamp card frame in Dat's reference.
+- The hero paths, colors, spacing, and staggered ends are unchanged. Text, buttons, and the figure remain untouched.
+- Why: Dat, Nov 7, supplied the textured card reference and asked to use that texture for the lines too.
+- Provisional: none.
+
+### 2026-11-07 · Programs points to Ways to train (`home-04-lanes` only)
+- Clicking Programs now goes straight to the homepage's Ways to train section, including from other pages and the mobile menu. Individual Bootcamp submenu links are unchanged.
+- The old /programs URL permanently redirects to that section rather than showing a separate overview. It is no longer listed in the sitemap.
+- The section heading clears the floating header when reached by its anchor.
+- Why: Dat, Nov 7, asked not to keep Programs as a separate page.
+- Provisional: none.
+
+### 2026-11-07 · Lines use running-track grain (`home-04-lanes` only)
+- The colored hero lanes have fine rubber-like tonal grain and clean, solid edges, replacing the rough printed edges and paper holes. Their paths, colors, widths, spacing, and staggered ends are unchanged.
+- The horizontal divider also switches to fine tonal grain. The Mini Bootcamp card's frame stays unchanged.
+- Uses procedural SVG noise and blending, without bitmap textures or extra lane stripes.
+- Why: Dat, Nov 7, supplied the running-track noise/blend treatment and preferred it over the frame's style.
+- Provisional: none.
+
+### 2026-11-07 · Track ends taper into stripes (`home-04-lanes` only)
+- Each lower colored lane ends in eight separated bars, thinning progressively toward its tip, inspired by the striped ends in Dat's Seoul 1988 reference.
+- The four colors, running-track grain, curves, lane spacing, and staggered tip positions stay unchanged. No spiral, Olympic rings, or new layout is added.
+- Phone artwork keeps its existing crop; desktop shows the new terminals beside the phases.
+- Why: Dat, Nov 7, asked to make the end of the track similar to the supplied Olympic logo.
+- Provisional: none.
+
+### 2026-11-07 · Numbered finish-line tips replace stripes (`home-04-lanes` only)
+- The lower lane tips are solid again, with light 1–4 lane numbers, a cross-line above, and a short underline, following Dat's follow-up finish-line photo.
+- Replaces the immediately preceding striped-terminal interpretation. Lane colors, grain, widths, curves, spacing, and staggered endpoints stay unchanged.
+- Why: Dat, Nov 7, supplied a close-up of numbered running-track finish boxes.
+- Provisional: none.
+
+### 2026-11-07 · Combine numbers and striped track ends (`home-04-lanes` only)
+- Keeps both requested reference details: 1–4 finish markings on the solid lanes, followed by the progressively thinning stripes.
+- The colors, running-track grain, curves, lane widths, and overall staggered endpoint positions stay unchanged.
+- Why: Dat, Nov 7, clarified to add the numbered treatment as well, not replace the striped treatment.
+- Provisional: none.
+
+### 2026-11-07 · Track numbers follow phase colors (`home-04-lanes` only)
+- Track labels now map yellow to 1, red to 2, green to 3, and blue to 4. Numbered finish markings and tapering stripes both remain.
+- Removed the duplicate 01–04 labels above Absorption, Purification, Recognition, and Integration on the homepage. Names, icons, and descriptions are unchanged.
+- Why: Dat, Nov 7, specified the color-number order and asked to remove numbers from the elements.
+- Provisional: none.
+
+### 2026-11-07 · Keep phase numbers as well (`home-04-lanes` only)
+- Restored 01–04 above Absorption, Purification, Recognition, and Integration, following Dat's correction to leave those numbers in place.
+- Track numbering remains yellow 1, red 2, green 3, blue 4; numbered finish markings and tapering stripes stay combined.
+- Original phase layout and clearance below the track are retained.
+- Why: Dat, Nov 7, corrected the request to keep numbers on the phase elements.
+- Provisional: none.
+
+### 2026-11-07 · Connect Cohort 11 application (`home-04-lanes` only)
+- The Bootcamp hero, tuition card, and application section now offer Apply for Cohort 11 and open Dat's Zoom application, replacing the newsletter placeholder.
+- Application instructions match the verified destination: ten questions, about 30 uninterrupted minutes, followed by an invitation to schedule a brief Zoom introduction.
+- Stores the exact supplied link in lib/cohort.ts. Mini Bootcamp registration and newsletter signup stay unchanged.
+- Why: Dat, Nov 7, supplied https://s.zoom.us/m/bPlPelXHc as the Cohort 11 registration link.
+- Provisional: none. No application was filled or submitted during verification.
+
+### 2026-11-07 · Solid track ends, lane 1 on the outside (`home-04-lanes` only)
+- Removed the Olympic-inspired stripe tails; solid numbered finish boxes remain.
+- Reordered the lanes from outer/leftmost to inner/rightmost: yellow 1, red 2, green 3, blue 4. The outer yellow lane is longest, blue shortest.
+- Keeps running-track grain, curve geometry, widths, spacing, and the 01–04 phase labels. Cohort 11 application links stay unchanged.
+- Why: Dat, Nov 7, preferred the version without the Olympic element and specified lane 1 on the outside/left.
+- Provisional: none.
+
+### 2026-11-07 · Programs menu: track grain and red dates (`home-04-lanes` only)
+- The desktop Programs dropdown uses a tiny procedural running-track grain overlay on bone instead of the paper photograph.
+- January 25, 2027 and December 14–18 are highlighted in the brand's clay red; duration and Free labels stay muted. Phone menu retains its existing flat layout and also highlights dates.
+- Why: Dat, Nov 7, asked for track texture in the dropdown and red dates.
+- Provisional: none.
+
+### 2026-11-07 · Mini Bootcamp leaves use track grain (`home-04-lanes` only)
+- The blue, marigold, and clay leaf icons under Five days of training now use the same fine procedural running-track texture as the hero lanes.
+- Shapes, colors, transparent veins/cutouts, icon sizes, text, and layout stay unchanged. No bitmap textures added.
+- Why: Dat, Nov 7, supplied the three-icon section and asked to make these track texture.
+- Provisional: none.
+
+### 2026-11-07 · Shared track-grain brand treatment (`home-04-lanes` only)
+- Brand-colored text, numbers, dates, glyphs, and interactive color changes now share fine running-track grain across the site's modern and legacy pages.
+- Colored backgrounds and button hover fills use the procedural overlay; type uses a gentler alpha-clipped version to retain clean letterforms. Includes all four brand colors.
+- Photos, videos, neutral body copy, and already-textured hero lanes/leaves stay unchanged; decorative grain is disabled for printing/forced colors.
+- Why: Dat, Nov 7, asked to extend track grain to all primary colors, including text and hover.
+- Provisional: none.
+
+### 2026-11-07 · Bootcamp phase 04 is Integration (`home-04-lanes` only)
+- Renamed the fourth phase under Twelve weeks / Four phases on /bootcamp from Realization to Integration, matching the homepage. Its description is unchanged.
+- Why: Dat, Nov 7, selected Integration to resolve the audit's naming mismatch.
+- Provisional: none.
+
+### 2026-11-07 · Clear Mini CTA, Escape dismissal, matching phase colors (`home-04-lanes` only)
+- The homepage Mini Bootcamp action now says Explore Mini Bootcamp, accurately describing its destination while registration is closed.
+- Escape closes the expanded mobile navigation and returns focus to Menu. Normal toggle/link dismissal remains unchanged.
+- Bootcamp phase colors now match home and the numbered track: Absorption yellow, Purification red, Recognition green, Integration blue. Fit-card colors are unchanged; the existing darker yellow text variant is retained.
+- Why: Dat, Nov 7, authorized fixes to QA findings 2 and 3 and selected the homepage phase-color mapping for Bootcamp too.
+- Provisional: the separate contrast finding is not addressed by this change.
+
+### 2026-11-07 · Remove track starting numbers and marks (`home-04-lanes` only)
+- Removed lane numbers 1–4 and the white starting/underline marks from the homepage track. Colored lanes, curve geometry, endpoint lengths and rubber grain are unchanged. Phase labels 01–04 remain.
+- Why: Dat, Nov 7, requested a temporary Netlify review and clarified removal of both the numbers and lines.
+- Provisional: this is the temporary preview only; canonical production is not changed.
+
+### 2026-11-09 · Sync from cc `main` (`home-04-lanes` only)
+- Brought over the one change `mindtraining-cc/cc` had that this branch didn't: the three "Apply for Cohort 11" buttons on /bootcamp open the application survey in a new tab (`target="_blank" rel="noopener noreferrer"`, from cc PR #30).
+- Restored `public/images/cc-emblem.png` (CC's author photo in `content/team/cc.mdx`) and `public/brand/cc-logo-guide.svg`, which cc kept and this branch had dropped. The newer `scripts/check-public-site.py` from cc now passes here (34 pages, 23 articles).
+- Kept as they are on purpose: this preview's Netlify and `noindex` settings (`netlify.toml`, `next.config.ts`, `app/layout.tsx`); the docs (ledger, handoff, design notes, decisions); "Crossfit" with a lowercase f in four docs where cc still has "CrossFit".
+- After this commit the website code and assets match cc `main` (`2dce30d`) apart from those items. New work continues here and Dat ports it to cc.
+- Why: Dat, Nov 9: "cont to work in datvt. ill do the porting."
+
+### 2026-11-09 · Bootcamp hero eyebrow: drop "12 weeks" (`home-04-lanes` only)
+- The line above "ILLUMINATION BOOTCAMP" now reads "PAID PROGRAM · LIVE ONLINE" (was "… · 12 WEEKS"). The length still appears in the "Next cohort: January 25, 2027 · 12 weeks" line below it.
+- Why: Dat, Nov 9.
+
+### 2026-11-09 · Homepage: Bootcamp card in clay red with a light grain (`home-04-lanes` only)
+- The "Illumination Bootcamp" card under "Ways to train" is now clay red (`--clay` #A63A2E) instead of ink. It has a minimal print grain (`public/brand/home/card-grain.svg`: a soft dark grain plus sparse pale specks), drawn over the flat color so the brand red stays the base. It follows Dat's reference card, without the bands.
+- The eyebrow "PAID · 12 WEEKS · LIVE ONLINE" is bone (marigold on clay would be 2.4:1). The description is bone too, and the rule above "Explore" is a faint bone line. Bone on clay is 5.4:1.
+- The "Explore" button stays bone with ink text and still turns marigold on hover.
+- Why: Dat, Nov 9.
+
+### 2026-11-12 · Homepage cards: side column, dates under the text; heading; Bootcamp hero play button (`home-04-lanes` only)
+- **Clay Bootcamp card: side column.** The right 30% now carries two bone track lanes with a thin clay gap. They come in from the right edge, turn one rounded corner and run down off the bottom, with grain printed into them (`public/brand/home/card-side-track.svg`), after Dat's "Middle of the day" track card. The text, rule and button keep to the left of the column. On phones (≤ 900 px) the column is hidden.
+- **Card dates.** Both cards now show their date in Plex under the body text, as on the Bootcamp and Mini Bootcamp pages.
+  - Bootcamp: "Next cohort: January 25, 2027 · 12 weeks" in bone. The "Starts January 25, 2027" beside the button is gone, and the eyebrow is now "PAID · LIVE ONLINE".
+  - Mini Bootcamp: the text is "Mini Bootcamp: five free days of live practice." followed by "Next run: December 14–18, 2026", with the date in clay.
+  - A date never splits across lines.
+- **Community heading.** It now reads "YOU'VE FOUND THE MAPS / FIND YOUR PEOPLE" on two lines (was three). The heading block is a single column now that the list beside it is gone.
+- **Bootcamp hero video.** The play button is the bone corner disc used on the story cards (40 px, bottom-right, ink on hover); it was a brown disc over the middle face.
+- Why: Dat, Nov 12.
+
+### 2026-11-12 · "12 weeks" back in the eyebrows (`home-04-lanes` only)
+- Bootcamp hero eyebrow: "PAID PROGRAM · LIVE ONLINE · 12 WEEKS". Homepage Bootcamp card eyebrow: "PAID · LIVE ONLINE · 12 WEEKS".
+- The next-cohort lines below them now carry only the date: "Next cohort: January 25, 2027".
+- This reverses the Nov 9 and Nov 12 moves of "12 weeks" into the date line.
+- Why: Dat, Nov 12.
+
+### 2026-11-12 · Clay Bootcamp card: the key column replaces the track graphic (`home-04-lanes` only)
+- The side column on the homepage Bootcamp card is now the CC key column: Dat's O4 key unit stacked down the right side in bone.
+  - Size: 26 px wide and 36 px in from the top, right and bottom edges; 20 px wide on phones, where it now stays.
+  - Spacing: units sit on the 9-unit pitch of Dat's ×4 file and are never cut off; any spare height is spread evenly between them.
+- It replaces the bone track graphic from earlier on Nov 12, which was a misreading of "side column"; that file is deleted.
+- Files:
+  - Dat's sources: `public/brand/key-column/CC_key-column-O4-unit_clay_v1.svg` and `CC_key-column-O4-x4_clay_v1.svg`.
+  - Repeat tile: `CC_key-column-O4-tile_bone.svg`, the same unit in bone, padded to that pitch.
+- The text keeps 112 px clear on the right (72 px on phones). "12 weeks" in the eyebrow no longer splits across lines.
+- Why: Dat, Nov 12: "this is the key column unit".
+
+### 2026-11-12 · One type system for the whole site (`home-04-lanes` only)
+- New `app/type.css` defines every text role once and maps the site's elements onto those roles (`docs/type-system.md`). Distinct text styles across 11 key pages went from 47 to 20 on desktop and from 47 to 19 on phones (`scripts/check-type.mjs`).
+- Changes visitors will notice:
+  - Page titles on every page except the homepage are bigger than section headlines: 64 px at 1440 × 900 (was 52 px), 39 px on phones.
+  - Body text is one size everywhere: about 18 px at 1440 × 900, 17 px on phones. Homepage body comes down from 21 px; other pages go up from 16 px.
+  - Story quotes match body text.
+  - FAQ questions, essay titles, lesson headings and legal headings share one minor-title size.
+  - The homepage card titles now scale with the window like everything else.
+  - Plex labels settle on eyebrow 14 px (13 px on phones), data 15 px and caption 13 px. Article dates and tags are data.
+  - Footer small print and the phone "Menu" button come up to 13 px.
+  - Bold inside article and lesson text is regular weight; the Bootcamp schedule times are SemiBold.
+  - Long headings break into balanced lines.
+- `!important` was dropped from the older size rules in `brand-v1.css` and `brand-v1-legacy.css` that `type.css` now owns.
+- Why: Dat, Nov 12, after the hierarchy audit; decisions: page-title role ("make sure the sizing isn't too large"), minor-title role, one body size, eyebrow 14 / data 15.
+
+### 2026-11-12 · Media title without the forced break (`home-04-lanes` only)
+- The /media title is now one line, "MEDIA IN CONVERSATION", at 1440 × 900 and two lines on phones. The hard line break after "Media" is gone; it had been splitting the title into "MEDIA / IN / CONVERSATION" on phones.
+- Why: Dat, Nov 12.
+
+### 2026-11-12 · Coaching stats; Media section titles as subsections (`home-04-lanes` only)
+- **Coaching stats** (/coaching, Stories tab):
+  - The numbers in the stats banner are now large ExtraBold figures in clay, the same treatment as the "$2,450" tuition price (52 px at 1440 × 900, 35 px on phones). They were 13 px. The labels under them are Plex captions.
+  - The banner is three even columns on phones, so nothing runs off the box.
+  - "8 Cohorts Completed" is now "9".
+  - These stats are hard-coded in `components/bootcamp/Testimonials.tsx`, not tied to `lib/cohort.ts`.
+  - Provisional: "Lives Transformed" stays until Dat picks wording. The writing guide rules out "transform" language; suggested "300+ practitioners trained", which needs the 300+ figure confirmed.
+- **Media section titles:** "The BDSM show", "Past media" and "On Instagram" on /media are now subsections, matching "Free courses" on /resources: Archivo SemiBold, sentence case, 41 px (32 px on phones). They were caps ExtraBold section headlines.
+- Why: Dat, Nov 12.
+
+### 2026-11-12 · Bootcamp: sticky section tabs, like Coaching's (`home-04-lanes` only)
+- The row of section links on /bootcamp is now a tab bar (`components/field-guide/BootcampTabs.tsx`) modeled on the Coaching page's.
+  - It sticks under the header while you scroll (73 px on desktop, 62 px on phones), on a translucent bone strip with a hairline above and below.
+  - Tabs: STORIES · COURSE DETAILS · SCHEDULE · TUITION · FAQ, evenly spaced across the content width in the eyebrow role (Plex Medium 14 px caps). The current section's tab turns clay with a 2 px underline as you scroll.
+  - "Apply" moved out of the tabs into an outlined clay button on the right, like Coaching's "Get Notified". It jumps to the application section and fills clay on hover.
+  - Each tab lands its section just below the bar. On phones the bar scrolls sideways, as on Coaching.
+  - "Participant stories" is shortened to "Stories" to match Coaching.
+- The Coaching, Embodiment and other sticky tab bars also use the eyebrow role now: Coaching's were Plex Regular 13 px.
+- The Coaching page stays unlinked from the site navigation, as Dat asked.
+- Why: Dat, Nov 12.
+
+### 2026-11-13 · Bootcamp course details in the Mini Bootcamp row format (`home-04-lanes` only)
+- The three items under "When insight meets the rest of your life" on /bootcamp now use the leaf rows from Mini Bootcamp's "Five days of training". Each has a textured leaf on the left, a small Plex label in its color above the title, then the description. The colored top rules are gone.
+  - Direct transmission: blue soft-lance leaf, "Daily".
+  - Live reflection: marigold soft-lance leaf, "Daily".
+  - Many-on-one support: clay nested leaf, "Ongoing".
+- Both sections now share one set of row styles (`:is(.mini-week,.course-details)` in `lanes-home.css` and `type.css`).
+- Provisional: the labels "Daily / Daily / Ongoing" are mine, following Mini's "Daily / Closing"; Dat to confirm.
+- Why: Dat, Nov 13.
+
+### 2026-11-14 · Ink Bootcamp card with a worn clay key column (`home-04-lanes` only)
+- The homepage Bootcamp card ("Ways to train") is now ink with the same light grain, replacing clay. The Mini Bootcamp card is unchanged.
+  - Eyebrow and the cohort date are marigold; body text is bone; "Next cohort:" is bone at 75%. The faint rule above the button is gone.
+- The side column moves to the left and becomes a worn clay key column: 54 px wide, 44 px in from the left edge, running the full height of the card and cut off by its top and bottom edges. Text starts 144 px in.
+  - Phones: 30 px wide, 16 px in; text starts 64 px in.
+  - New file: `public/brand/home/card-key-column-worn.png`, 8 linked pairs of the O4 key in worn clay, repeating seamlessly. The bone key-column tile is no longer used here.
+- Why: Dat, Nov 14. Red as the base read as danger, and the paid card needed to stay first in the hierarchy next to the bone Mini Bootcamp card; picked from mockups (ink, worn column, left, full height, 54 px).
+
+### 2026-11-14 · Bootcamp: section order after the stories (`home-04-lanes` only)
+- On /bootcamp, after "You've found the maps", the three blocks now run in this order:
+  1. "Sophisticated on the cushion / Reactive by noon"
+  2. "Twelve weeks / Four phases"
+  3. "When insight meets the rest of your life"
+- They used to run 3, 2, 1. Schedule, tuition, application and FAQ follow as before.
+- The "Course details" tab still jumps to "When insight meets…".
+- Why: Dat, Nov 14.
+
+### 2026-11-15 · Bootcamp: section order restored (`home-04-lanes` only)
+- Reverts the Nov 14 swap. After the stories, /bootcamp runs again:
+  1. "When insight meets the rest of your life"
+  2. "Twelve weeks / Four phases"
+  3. "Sophisticated on the cushion / Reactive by noon"
+- Why: Dat, Nov 15.
+
+### 2026-11-15 · Bootcamp section headings as subsections (`home-04-lanes` only)
+- Every section heading on /bootcamp now uses the subsection style of Mini Bootcamp's "Five days of training": Archivo SemiBold, sentence case, 41 px at 1440 × 900 and 32 px on phones. They were caps ExtraBold section headlines. The headings:
+  - "You've found the maps / Find your people"
+  - "When insight meets the rest of your life"
+  - "Twelve weeks / Four phases"
+  - "Sophisticated on the cushion / Reactive by noon"
+  - "Make room for the practice"
+  - "Four components / One container"
+  - "Honest about fit"
+  - "FAQ"
+- The page title "ILLUMINATION BOOTCAMP" stays the caps page title.
+- Rule: `.field-guide main:has(.bootcamp-hero) h2` in the card / subsection role (`app/type.css`).
+- Why: Dat, Nov 15 ("try changing the bootcamp page headings to this hierarchy").
+
+### 2026-11-15 · Mini Bootcamp description (`home-04-lanes` only)
+- The /mini-bootcamp hero text now reads "Experience a week of Bootcamp training for free. Get a taste of the same live sessions, mentors and support, whether you later join the Bootcamp or simply want to explore." It was "A free introduction to the practice and the community, whether you later join the Bootcamp or simply want to explore."
+- Why: Dat, Nov 15 (wording settled in chat).
+
+### 2026-11-15 · Homepage hero: glyph field, rainbow figure, boxed phases (`home-04-lanes` only)
+- The hero's four lanes and glyph figure are replaced by a glyph field: the 20 CC glyphs printed in ink across the whole hero, lighter behind the copy.
+  - A seated figure sits in the field right of the copy. Its glyphs follow its shading and are coloured in rings from the heart (marigold, clay, sage, blue), with no clay at the crown.
+  - Scattered field glyphs take phase colours, more of them lower down.
+  - Below the figure the field disperses irregularly across the full width, with a sparse minimum so no area empties, and runs behind "Realization as a fitness". Falling glyphs take the colour of the phase box below them.
+  - One image: `public/brand/home/hero-glyph-field.webp` (660 KB). On phones it becomes a band under the copy, centred on the figure and fading out.
+- "Realization as a fitness" moves to the left content margin and up into the field.
+- The four phases sit in boxes across the content width (one column on phones), each outlined in its phase colour, with its glyph set into a gap at the top left and the text left-aligned. Text sizes stay on the type-system roles.
+- `bands.svg` and `hero-figure.svg` stay in the repo but are no longer used on the page.
+- Provisional: the figure's outline was traced from a reference image Dat supplied; confirm the image's licence before this goes live.
+- Why: Dat, Nov 15, from the glyph-field mockups (rain dispersal, rings figure, legend boxes at 2.5 px in the phase colours).
+
+### 2026-11-15 · Homepage glyph field 20% larger, head under Programs / Resources (`home-04-lanes` only)
+- The hero's glyph field (`hero-glyph-field.webp`) is shown 1.2× larger, scaled about the figure's head, so every glyph and the figure grow 20%. Rule: `.ln-field` in `app/lanes-home.css`.
+- On desktop, the head sits under the gap between "Programs" and "Resources" at every width. Measured within 0.5 px at 1024, 1280, 1440 and 1920.
+- "Realization as a fitness" and the phase boxes move down 150 units (about 140 px at 1440 × 900), so the dispersing glyphs still end just above the boxes. The title sits at the same point in the dispersal as before.
+- Phones show the same 1.2× field, still centered on the figure.
+- Known limit: the image is a finished raster. A different glyph size from the figure's would need the generator, which isn't in the repo.
+- Why: Dat, Nov 15.
+
+### 2026-11-15 · Hero glyph field generator committed (`home-04-lanes` only)
+- No visible change. `scripts/hero-glyph-field.py` now generates `public/brand/home/hero-glyph-field.webp`; it reproduces the current image exactly.
+- Settings are at the top of the script: figure position and size, glyph pitch and size, dispersal start/end and minimum density, colour amounts, figure strength, ring width and the no-clay crown.
+- Inputs are in `scripts/hero-glyph-field/`: the 20 glyph SVGs, and the figure's silhouette and 16-bit shading map. Needs numpy, scipy, Pillow and cairosvg.
+- Why: Dat, Nov 15, so the field can be re-rendered rather than only scaled and shifted in CSS.
+- Provisional: the silhouette is traced from a reference image Dat supplied; confirm its licence before launch.
+
+### 2026-11-15 · Glyph field regenerated: figure and glyphs 20% larger (`home-04-lanes` only)
+- Re-rendered `public/brand/home/hero-glyph-field.webp` with `scripts/hero-glyph-field.py` instead of scaling the old image in CSS. This replaces the CSS 1.2× scaling from earlier today.
+  - Figure height 520 → 624 units. Glyph size 9.75 → 11.7, grid pitch 16.5 → 19.8.
+  - Color-ring width, crown and dispersal start scaled to match.
+  - The dispersal now ends at 1100, just above the phase boxes, which stay at 1110. The image is 4480 × 2300 (stage y 0 to 1150).
+  - With the old settings the script reproduced the previous image exactly before the change.
+- `app/lanes-home.css` shows the image at 1× and keeps the head under the gap between Programs and Resources: within 0.5 px at 1024, 1280, 1440 and 1920.
+- Phones show the same field centered on the figure, with a slightly taller band (820 units).
+- Why: Dat, Nov 15 ("there should be script pushed for the hero image. can you adjust that instead?").
+
+### 2026-11-15 · Hero glyph field: clear copy, warp around the figure (trial) (`home-04-lanes` only)
+- Regenerated `hero-glyph-field.webp` with new settings in `scripts/hero-glyph-field.py`, after Dat's dark reference. The reference set the structure only; nothing was traced from it.
+  - **Copy kept clear:** no glyphs behind "LIVE IN PRACTICE", the lede or the button. The field starts to the right of the headline and continues below the button.
+  - **Head clears the header:** it starts 80 units down, about 75 px below the header at 1440 × 900.
+  - **Glyphs larger and sparser:** 15 on a 28-unit grid (were 11.7 on 19.8).
+  - **The figure stands out:** the background field is lighter and mostly neutral, the figure's glyphs are stronger, and a faint warm shaded body sits behind them.
+  - **Warp:** the grid bends around the figure. Glyphs near the outline are pushed outward with a twist, up to 26 units, and glyphs inside the body swell up to about 1.36×.
+- All of these are named settings at the top of the script.
+- Provisional: a trial for Dat's review.
+- Why: Dat, Nov 15.
+
+### 2026-11-15 · Hero glyph field: previous figure back, one clean rectangle behind the copy (`home-04-lanes` only)
+- Reverted the warp trial (`e610688`). The figure, glyph sizes and colors are back to the earlier Nov 15 version (`2ad122f`: figure 624 units, glyphs 11.7 on a 19.8 grid, head under the Programs / Resources gap). There is no warp and no swell. The varying glyph sizes had changed the figure's shape.
+- The only change kept from the trial: no field glyphs behind "LIVE IN PRACTICE", the lede and the button. The cleared area is now a single clean rectangle (stage x to 720, y to 510; `COPY_CLEAR` in `scripts/hero-glyph-field.py`), not the stepped, ragged shape of the trial. The figure's own glyphs are never cleared, so its arm and knee still reach into the lower-right corner of that rectangle.
+- Why: Dat, Nov 15 ("bring it back to the previous version while just cutting off the field from being in the background of live in practice… uniform shape of clearance").
+
+### 2026-11-15 · Hero: head under Resources / Media; straight cut at the figure's knee (`home-04-lanes` only)
+- On desktop, the figure's head now sits under the gap between "Resources" and "Media" (was Programs / Resources). Measured within 0.3 px at 1024, 1280, 1440 and 1920.
+- The cleared area is now one straight vertical cut through the figure's leftmost point, the tip of its knee: no field glyphs to the left of it, from the top of the field to the bottom. That empties the whole left side, including the lower-left dispersal. Set by `COPY_CLEAR` in `scripts/hero-glyph-field.py`.
+- Known: the cut moves with the figure while the headline scales differently. It sits 60 to 190 px clear of "PRACTICE" from 1180 to 1440 px wide, but falls 19 px inside it at 1024 and 10 px inside at 1920.
+- Provisional: a look for Dat to review.
+- Why: Dat, Nov 15.
+
+### 2026-11-15 · Hero: full field back, fades around the copy and into the next section, slight warp (`home-04-lanes` only)
+- The glyph field is whole again. The straight cut at the knee is gone, and the head stays under the Resources / Media gap.
+- The field fades out around the block of "LIVE IN PRACTICE", the lede and the button.
+  - It is one feathered bone panel behind the copy, with an even soft edge (about 34 units of blur) all round.
+  - It is drawn in CSS with the copy, so it stays fitted to the text at every width.
+- The bottom of the field fades out from just below the figure into the "Realization as a fitness" section (a CSS mask).
+- Slight warp: background glyphs near the figure's outline are pushed outward by up to 8 units, with a small twist, so the field bends around the body. The figure's own glyphs don't move, so its shape is unchanged. Settings `WARP`, `WARP_SIGMA` and `WARP_TWIST` in `scripts/hero-glyph-field.py`.
+- Desktop only for the two fades; on phones the field already sits below the copy.
+- Provisional: a look for Dat to review.
+- Why: Dat, Nov 15.
+
+### 2026-11-16 · Hero figure made clearer; clean fades (`home-04-lanes` only)
+- **Figure.** It now stands apart from the field:
+  - Only the figure's glyphs are colored; the background field is neutral.
+  - A halo of lighter glyphs sits just outside its outline.
+  - Its shading shows: glyphs darken toward ink in the deeper areas, so the head, arms and lap read.
+  - The grid is centered on the figure, so the head and shoulders are symmetric.
+  - Glyph sizes and the figure's shape are unchanged; the slight warp of the surrounding field stays.
+- **Bottom transition.** The ragged, colored falling glyphs are gone. Below the figure the field is an even neutral grid that fades out in a straight line and is gone before "Realization as a fitness". Nothing crosses the heading or the phase boxes.
+- **Fade around the copy.** The blurred patch is replaced by a clean rectangle: fully clear behind "LIVE IN PRACTICE", the lede and the button, then a straight, even fade to the right and below.
+- Settings are in `scripts/hero-glyph-field.py` (`HALO`, `SHADE_*`, `DISPERSE`) and `app/lanes-home.css`.
+- Provisional: for Dat's review.
+- Why: Dat, Nov 16.
+
+### 2026-11-17 · Hero figure: distortion instead of a halo (`home-04-lanes` only)
+- The halo of lighter glyphs around the figure is gone; the field keeps its full strength right up to the body.
+- In its place, the field distorts around the figure. Background rows bend and sweep outward around its outline, reaching about 70 units out (pushes up to 20 units, with a slight twist).
+- Only background glyphs move. The figure's own glyphs keep their places and size, so its shape doesn't change. Any background glyph that would be pushed onto the body is dropped, so nothing overlaps it.
+- Settings: `HALO_MIN` 1 (off), `WARP` 20, `WARP_SIGMA` 70, `WARP_TWIST` 0.35 in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("i don't like the halo, can it be distortion extending out from the figure instead?").
+
+### 2026-11-17 · Hero figure: distortion without the halo it was making (`home-04-lanes` only)
+- The Nov 17 distortion pushed field glyphs away from the body, which left an empty ring that still read as a halo. Measured: field density right next to the outline was 4.4%, against about 10% elsewhere.
+- The field now bends around the figure instead. The push is zero at the outline, peaks about 40 units out and fades beyond that. It runs mostly along the outline, so the rows curve around the body, with a small pull toward it.
+- Density next to the body now matches the rest of the field (12% within 15 units, 9–10% further out), so there is no halo.
+- Fixed: background glyphs that partly overlap the body's edge no longer pick up the figure's dark shading. They had shown up as small dark fragments along the outline.
+- Settings: `WARP` 16, `WARP_REACH` 40, `WARP_TWIST` 1, `WARP_PULL` 0.25 in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("it still looks like there's a halo").
+
+### 2026-11-17 · Hero figure: the grid drapes over the body (`home-04-lanes` only)
+- The distortion is redone after Dat's dark reference, which set the effect only; nothing is traced from it.
+- The figure is now a raised surface under the glyph grid. Every glyph, background and figure alike, shifts with that surface, so the rows arch up over the head and shoulders and curve around the arms and knees, as if the grid were draped over the body.
+  - Light from the top left lightens the slopes facing it and darkens those facing away, giving the body relief.
+- Glyph sizes don't change. A glyph counts as part of the figure by where it lands, so the outline stays exact.
+- Density stays even right up to the body (11.2% within 15 units of the outline, about 10% further out), so there is no halo.
+- The Nov 17 sideways bend of the background only is replaced.
+- Settings: `RELIEF_SOFT` 44, `RELIEF_LIFT` 24, `RELIEF_SWELL` 0.07, `RELIEF_FOLD` 0 and `EMBOSS` 0.55, in `scripts/hero-glyph-field.py`.
+- Why: Dat, Nov 17 ("re-do it to make it more like this, where it bends to emphasize the figure. the field folds around the figure").
+
+### 2026-11-17 · Hero figure: glyphs bend in 3D; larger glyphs (local, not pushed) (`home-04-lanes` only)
+- `GLYPH_3D` on in `scripts/hero-glyph-field.py`. Each glyph is squashed and tilted by the slope of an inflated body under it: full size where the body faces the viewer, thin slivers toward the outline.
+  - `BODY_ROUND` 95 sets how far in from the outline the body rounds over. `SQUASH_MIN` 0.18 and `TILT` 0.22 set how thin and how tilted the glyphs get.
+  - Field glyphs just outside the outline squash too, as the sheet falls away from the body (`SKIRT` 34, `SKIRT_DROP` 0.55).
+- All glyphs and their spacing are 25% larger: `SP,GS` 24.75 / 14.6, was 19.8 / 11.7. The figure's size, position and outline are unchanged.
+- Provisional: committed locally only. Dat asked not to push until he has reviewed it.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: waterfall shape from Dat's guide line (local, not pushed) (`home-04-lanes` only)
+- The field's overall shape follows the line Dat drew. It drops straight down beside the headline and button, then steps out to the left in a few ledges and runs off the bottom of the hero. The field fills everything to the right of the line.
+- The line is one smooth curve with a lightly roughened, feathered edge (`public/brand/home/hero-field-shape.svg`, in stage units). It is applied as a CSS mask in `app/lanes-home.css`, together with the fade into the next section, so it keeps its place beside the copy at every width.
+- The clear zone behind the copy is removed, since glyphs behind the text are fine. The field is now an even strength everywhere (`left=1.0` in the generator).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: one smooth curve instead of steps (local, not pushed) (`home-04-lanes` only)
+- The waterfall shape is now a single smooth curve. It drops straight down beside "PRACTICE" and the lede, then sweeps out in one long arc to the bottom left. The steps and ledges are gone.
+- The edge is tighter and cleaner: less roughening and a narrower feather (`hero-field-shape.svg`).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17 ("how about one smooth curve instead of steps?").
+
+### 2026-11-17 · Hero figure: larger for more detail; faint outline and body shading; curve ends further left (local, not pushed) (`home-04-lanes` only)
+- The figure is 22% larger (`HT` 624 → 760 units) with the glyphs unchanged in size, so about half again as many glyphs draw it. The neck, hands and knees read again. The head stays under the Resources / Media gap.
+  - The color rings, crown and 3D settings are scaled to match: `RING` 50, `CROWN` 117, `BODY_ROUND` 90, `RELIEF_LIFT` 30.
+- A very faint ink outline traces the silhouette (`OUTLINE` 0.09, `OUTLINE_W` 1.4 units). Soft shading inside the body follows its shading map (`BODY_SHADE` 0.05), so the form reads between the glyphs.
+- The waterfall curve now ends further left, sweeping off the page past the left margin.
+- The field's fade into the next section moves down (70% → 87% of the field, was 62% → 81%) so it doesn't cut into the larger figure's base. As a result, faint glyphs now reach behind "REALIZATION AS A FITNESS".
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero figure: glyphs drawn to the outline; notched waterfall (local, not pushed) (`home-04-lanes` only)
+- **Magnet.** Inside the figure, glyphs are pulled toward the outline, so a ring of them sits right along the edge of the head, shoulders, arms, hands and legs, where the 3D squash is strongest. The figure's glyphs no longer follow the background grid. A glyph d units inside the edge (within 60 units) moves out to 60 × (d/60)^1.7 (`MAGNET_D`, `MAGNET_P` in `scripts/hero-glyph-field.py`).
+- **Waterfall shape.** The single curve is replaced by straight drops with notched ledges stepping out to the left: beside the copy, below the button, then two more steps to the bottom-left edge. The corners are softly rounded and the edge is cleaner than the first stepped version (`hero-field-shape.svg`).
+- Provisional: committed locally only. Dat asked not to push until he says so.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero: back to the larger-figure version, shading only (pushed) (`home-04-lanes` only)
+- The hero goes back to the version from commit `533bcd0`:
+  - figure 22% larger, all 20 glyphs on a straight grid, 3D bending of the figure glyphs
+  - smooth waterfall curve ending past the left margin
+  - field fade at 70% to 87%
+- The outline is off (`OUTLINE` 0); the soft body shading stays (`BODY_SHADE` 0.05).
+- Undone from later trials: the magnet pull toward the outline and the notched waterfall (`6079da4`). Kept: the generator's `FIGURE_OUT` export (`5a6d0a2`), which doesn't change the page.
+- The band version with the glyph figure stays on the local branch `bands-glyph-figure`, not pushed.
+- Why: Dat, Nov 17 ("go back to this exact version and push, just shading no outline").
+
+### 2026-11-17 · Hero: reverted to the previous version (`home-04-lanes` only)
+- Reverts `4d31dd7` (stronger 3D, stronger distortion, gentle dispersal). The hero image and generator are back to `ae6eda4`.
+- Two variants were rendered locally for review: 3D only and distortion only. Neither is on the site.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero: layered bend reverted (`home-04-lanes` only)
+- Reverts `7196060`. The hero is back to the previously pushed version (`fb0973e`, same image as `ae6eda4`): a single bend (`RELIEF_SOFT` 44, `RELIEF_LIFT` 30).
+- Why: Dat, Nov 17 ("revert to the last pushed version, I dont like this latest change").
+
+### 2026-11-17 · Hero field: fragmenting edges on the left and below the figure (local, not pushed) (`home-04-lanes` only)
+- **Left edge.** The field now fragments and disperses along the waterfall line instead of being cut by a soft CSS mask.
+  - Approaching the line, glyphs thin out in uneven clumps and drift outward. A few stragglers scatter past it toward the copy.
+  - Settings `EDGE_*` and `CLUMP` in `scripts/hero-glyph-field.py`. The line is the same waterfall curve, drawn into the image as placed at 1440 px wide.
+- **Below the figure.** The field thins out from the seat line over about 230 units, drifting down and fading to sparse stragglers above "Realization as a fitness" (`BOTTOM_*`).
+- `hero-field-shape.svg` is no longer used as a mask. The CSS only fades the image's last rows.
+- Only background glyphs are affected; the figure is unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17.
+
+### 2026-11-17 · Hero field: solid left edge through "CE", then a sparse spread (local, not pushed) (`home-04-lanes` only)
+- **Above the knee.** The field's left edge is a crisp vertical line between the C and E of "PRACTICE", running from the top down to the figure's leftmost point (stage y about 610). The cut is a CSS mask in stage units (`hero-field-shape.svg` again), so it stays between C and E at every desktop width.
+- **Below that.** The field opens out to the left into sparse, clumped stragglers. These are drawn into the image (`EDGE_PATH`, `SOLID_TO` in `scripts/hero-glyph-field.py`). Left of the line, the image is sparse at every height, so the mask's short fade-in never shows a full row.
+- The figure and the field to the right of the line are unchanged. The thinning below the figure is unchanged too.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17 ("a more solid line up till the left-most side of the figure, that cuts through CE, then sparse spread").
+
+### 2026-11-17 · Hero field: whole up to the CE cut at every screen size, section colours toward the bottom (local, not pushed) (`home-04-lanes` only)
+- **Whole field up to the cut.** Above knee height, the glyph field is now whole all the way to the crisp cut through "CE" at every screen size. On shorter screens there used to be a band of sparse glyphs between the cut and the full field. The image is whole above y 580; the mask's fade-in below the cut is now 615–645.
+- **No half glyphs on the edge.** The cut is snapped to the nearest gap between two glyph columns (within 16 units of x 500), so it stays in "CE" and never slices a glyph.
+- **Section colours (option B).** As the field breaks up toward the bottom, glyphs take the colour of the phase box below them: marigold, clay, sage and blue in four columns that split at the gaps between the boxes. The top of the field stays grey, so the figure is still the one coloured shape. Glyph positions are unchanged.
+  - The colour is a separate overlay: `hero-glyph-field-tint.webp` masks four colour columns (`.ln-field-tint` in `app/lanes-home.css`). The overlay is needed because the field is placed against the header and the boxes against the stage, so colour baked into the image would drift off the boxes as the screen size changes.
+  - The splits are snapped to gaps between glyph columns. Settings: `FIELD_SPLIT`, `SPLIT_FROM` 430, `SPLIT_TO` 820 in `scripts/hero-glyph-field.py`.
+  - Desktop only; phones keep the grey field (their phases are stacked).
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 17 ("lets have the whole unified field fill up the boxed area, and then B").
+
+### 2026-11-18 · Hero field: uniform colour in the break-up, marigold on the left (local, not pushed) (`home-04-lanes` only)
+- **Uniform.** No more random mix of grey and coloured glyphs. The whole field stays grey. Every glyph that has broken loose from it (along the edge below the cut, and in the thinning below the figure) takes its column's colour. Settings: `LOOSE_EDGE` in `scripts/hero-glyph-field.py`; the random `SPLIT_FROM`/`SPLIT_TO` ramp is removed.
+- **Marigold on the left.** The marigold/clay split now sits halfway between the cut through "CE" and the clay/sage split, snapped between glyph columns, so the leftmost columns are always marigold. Clay/sage and sage/blue still sit at the gaps between boxes 2–3 and 3–4.
+- Glyph positions and the main field image are unchanged; only `hero-glyph-field-tint.webp` and the column CSS changed.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 18 ("can this block be uniform? and start including marigold on the left most columns").
+
+### 2026-11-18 · Hero field: less marigold (`home-04-lanes` only)
+- Marigold is solid only under box 1 again. From there to halfway between the cut and the clay/sage split, half the loose glyphs are marigold and half clay. The leftmost columns still carry some marigold without it taking over the left side.
+- How: the loose glyphs are split into two even random halves (`hero-glyph-field-tint.webp`, `hero-glyph-field-tint-b.webp`), each a mask over the colour columns with its own marigold/clay split (`.ln-field-tint`, `.ln-field-tint-b`). Positions, the grey field and the other splits are unchanged.
+- Why: Dat, Nov 18 ("there's too much marigold now").
+
+### 2026-11-18 · Hero field: a solid bottom-left corner, colour coming in lower (local, not pushed) (`home-04-lanes` only)
+- **Solid corner.** Below the end of the cut through "CE", the field no longer breaks up at once. It steps out into the corner one glyph row at a time, each row about 2.6 columns further left, for three rows. It stays on the grid there, then thins out over about 200 units. The steps sit in the gaps between glyph rows and columns, so no glyph is cut (`hero-field-shape.svg`). The thinning comes in with depth, so it looks the same at every screen size (`CORNER_RAMP` in `scripts/hero-glyph-field.py`). Glyphs drift off the grid more slowly than they thin out.
+- **Colour comes in progressively.** Glyphs right under the corner stay grey; the share that take their column's colour rises with how far they have come loose (`COL_GAMMA`).
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 18 ("add even more uniformity & solidity to the bottom left corner ... have the colours start lower into the corner progressively").
+
+### 2026-11-19 · Hero field: a solid rectangle, sparse spread below and to the left (local, not pushed) (`home-04-lanes` only)
+- **Solid rectangle.** The glyph field is now whole inside the lines Dat drew: right of the cut through "CE" and down to a crisp bottom edge at stage y 853 (the gap between two glyph rows, about 100 units above "Realization as a fitness"). It holds at every screen size; nothing inside it thins out.
+- **Sparse spread outside it.** Below the bottom edge, and left of the cut from the figure's knee down, glyphs are kept sparsely. They thin out to the left and quickly toward the title, and only drift away from the rectangle, so none is cut at its edges. Colour works as before: grey near the rectangle, the column colours further out.
+- **How.** The field is now two images, each masked against the stage:
+  - `hero-glyph-field.webp` is the whole field, shown inside `hero-field-solid.svg`.
+  - `hero-glyph-field-sparse.webp` is the spread, shown inside `hero-field-sparse.svg`.
+  - `scripts/hero-glyph-field.py` renders both: `LAYER`, `SOLID_BOTTOM`, `SPARSE_*`, `SIDE_OUT`.
+  - The figure is pixel-identical to before.
+  - `hero-field-shape.svg` and the stepped corner are gone.
+  - Phones show the solid layer only; they only show the field down to y 820, so nothing changes there.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("make the field solid within the boundaries of the lines I've drawn ... make the glyph spread sparse below and to the left of it").
+
+### 2026-11-19 · Hero field: left spread kept low, fuller spread under the rectangle (local, not pushed) (`home-04-lanes` only)
+- **Left.** The spread left of the cut now starts only three rows above the rectangle's bottom edge (`hero-field-sparse.svg`, from y 756.7). It is sparser there (`LEFT_KEEP` 0.2) and thins out sooner to the left (`SIDE_OUT` 200).
+- **Below the rectangle.** The first rows under the edge are fuller (`SPARSE_KEEP` 0.7), the spread thins over 200 units, and it is much more even (`SPARSE_CLUMP` 0.05), so the green column no longer has a big empty patch. Most glyphs below the edge take their column's colour.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("too much spread on the left, keep it low and sparse ... not enough spread for green, theres a big untouched area").
+
+### 2026-11-19 · Hero field: the spread falls like ash (local, not pushed) (`home-04-lanes` only)
+- Below the solid rectangle the spread is sparser (`SPARSE_KEEP` 0.45, thinning over 300 units to 0.03). Glyphs scatter well off the grid as they fall, and fade unevenly, up to 60% lighter toward the bottom (`ASH_FADE`). The left spread and the rectangle are unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("make this more sparse and spread? kind of like ashes").
+
+### 2026-11-19 · Hero field: ash spread 50% sparser (local, not pushed) (`home-04-lanes` only)
+- The spread below the solid rectangle keeps half as many glyphs (`SPARSE_KEEP` 0.225, `SPARSE_END` 0.015); the scatter and fade are unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 19 ("i want it 50% sparser").
+
+### 2026-11-20 · Hero field: the solid rectangle's bottom rows fragment gradually (local, not pushed) (`home-04-lanes` only)
+- Inside the solid rectangle, the bottom three glyph rows now start to come apart: about 5%, 30% and 55% of their glyphs are gone, top row to bottom. The rest are loosened by up to 4 units, so none crosses the rectangle's edges. This leads into the sparse spread below (`FRAG_TOP`, `FRAG_LOSS` in `scripts/hero-glyph-field.py`). The figure is unchanged.
+- Provisional: committed locally; waiting for Dat's go-ahead to push.
+- Why: Dat, Nov 20 ("add fragmentation happening gradually in the last (bottom) 2-3 rows").

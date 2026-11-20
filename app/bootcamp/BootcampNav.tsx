@@ -66,7 +66,7 @@ export function BootcampNav() {
         {/* Registration is closed — the button sends people to the free courses. */}
         <a
           href="/courses"
-          className="btn-primary px-3 sm:px-5 py-1.5 text-[0.65rem]! sm:text-xs! whitespace-nowrap shrink-0"
+          className="btn-primary px-3 sm:px-5 py-1.5 whitespace-nowrap shrink-0"
         >
           Free Courses
         </a>

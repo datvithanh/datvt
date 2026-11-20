@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { getAllArticles, getArticleBySlug, getAuthorProfile, getArticleFooter } from '@/lib/content'
 import { AuthorCard } from '@/components/content/AuthorCard'
 import { PostFooter } from '@/components/content/PostFooter'
-import { NextStep } from '@/components/field-guide/NextStep'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { InfographicImage } from '@/components/ui/InfographicImage'
 import { HoverAnimatedImage } from '@/components/content/HoverAnimatedImage'
@@ -192,6 +191,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </aside>
       <div className="article-prose">{body}</div>
     </div>
-    <NextStep />
+
   </article>
 }

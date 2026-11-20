@@ -56,7 +56,7 @@ export default function DebriefPage() {
           {/* 1. Reconsume */}
           <div className="mt-16 pt-12 border-t border-border-subtle">
             <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">
-              Go Back Through It
+              Go back through it
             </h2>
             <div className="prose mt-6">
               <p>
@@ -94,7 +94,7 @@ export default function DebriefPage() {
               seasons via SHOW_COACHING_CALL (lib/flags.ts). */}
           <div className="mt-16 pt-12 border-t border-border-subtle">
             <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">
-              Let Yourself Be Seen
+              Let yourself be seen
             </h2>
             <div className="prose mt-6">
               <p>

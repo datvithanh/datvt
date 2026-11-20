@@ -1,6 +1,5 @@
-import { ProgramsContent } from '@/components/field-guide/Programs'
-import { fieldGuideMetadata } from '@/lib/field-guide'
+import { permanentRedirect } from 'next/navigation'
 
-export const metadata = fieldGuideMetadata("/programs", "Programs", "Live contemplative training: Illumination Bootcamp and the free Mini Bootcamp.")
-
-export default function Page() { return <><ProgramsContent /></> }
+export default function Page() {
+  permanentRedirect('/#ln-ways')
+}

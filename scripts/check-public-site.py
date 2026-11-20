@@ -30,7 +30,7 @@ def read(path):
  with urlopen(BASE+path,timeout=45) as response:
   if os.environ.get('CC_ASSET_ORIGIN'):assert 'noindex' in response.headers.get('X-Robots-Tag','').lower(),(path,'temporary host must return noindex')
   return response.status,response.read().decode()
-public=['/','/programs','/bootcamp','/mini-bootcamp','/resources','/media','/transmission-101','/articles','/terms','/privacy','/refund-policy','/articles/topics/practice']
+public=['/','/bootcamp','/mini-bootcamp','/resources','/media','/transmission-101','/articles','/terms','/privacy','/refund-policy','/articles/topics/practice']
 articles=[p.stem for p in Path('content/articles').rglob('*.mdx')]
 paths=public+[f'/articles/{slug}' for slug in articles]
 results={}
@@ -76,12 +76,14 @@ assert 'for 12 weeks' in bootcamp and '1.5 to 2.5' not in bootcamp and '90-day c
 _,library=read('/courses/library');library_page=Page(library)
 assert 'noindex' in library_page.robots and 'nofollow' in library_page.robots
 _,sitemap=read('/sitemap.xml');assert '/courses/library' not in sitemap
+assert 'https://mindtraining.cc/programs<' not in sitemap
+assert 'ln-ways' in results['/'].ids
 for path in ['/resources','/media','/transmission-101']+[f'/articles/{slug}' for slug in articles]:assert 'https://mindtraining.cc'+path in sitemap,(path,'sitemap')
 _,robots=read('/robots.txt');assert 'https://mindtraining.cc/sitemap.xml' in robots
 class NoRedirect(HTTPRedirectHandler):
  def redirect_request(self,*args,**kwargs):return None
 opener=build_opener(NoRedirect)
-for old,target in [('/pricing','/bootcamp?tab=pricing'),('/ppw','/mini-bootcamp'),('/ppw-package-april-2026','/courses/transmission-101-staying-present'),('/clips/library/enlightenment-team-sport','/courses/videos/library/enlightenment-team-sport'),('/journal/the-solo-meditator-paradox','/articles/the-solo-meditator-paradox'),('/field-guide/resources','/resources'),('/courses','/resources')]:
+for old,target in [('/programs','/#ln-ways'),('/pricing','/bootcamp?tab=pricing'),('/ppw','/mini-bootcamp'),('/ppw-package-april-2026','/courses/transmission-101-staying-present'),('/clips/library/enlightenment-team-sport','/courses/videos/library/enlightenment-team-sport'),('/journal/the-solo-meditator-paradox','/articles/the-solo-meditator-paradox'),('/field-guide/resources','/resources'),('/courses','/resources')]:
  try:opener.open(BASE+old,timeout=30);raise AssertionError(('Missing redirect',old))
  except HTTPError as error:
   assert error.code in [301,302,307,308],(old,error.code)
@@ -89,4 +91,4 @@ for old,target in [('/pricing','/bootcamp?tab=pricing'),('/ppw','/mini-bootcamp'
 for path in ['/articles/not-a-real-article','/courses/videos/library/not-a-real-video']:
  try:read(path);raise AssertionError(('Missing 404',path))
  except HTTPError as error:assert error.code==404,(path,error.code)
-print(json.dumps({'checked_pages':len(paths),'articles':len(articles),'forms':'one each; optional name + email retained','course':'inline hero signup; full outline retained','aliases':'7 checked','unlisted_library':'noindex/nofollow; absent from sitemap','GA4':'deferred to client production-origin guard; tested separately','social_images':'OG and Twitter large images present and locally resolvable','anchors_assets_canonicals':'pass'},indent=2))
+print(json.dumps({'checked_pages':len(paths),'articles':len(articles),'forms':'one each; optional name + email retained','course':'inline hero signup; full outline retained','aliases':'8 checked','unlisted_library':'noindex/nofollow; absent from sitemap','GA4':'deferred to client production-origin guard; tested separately','social_images':'OG and Twitter large images present and locally resolvable','anchors_assets_canonicals':'pass'},indent=2))

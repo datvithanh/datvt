@@ -69,7 +69,7 @@ export default function PPWProjectLanding() {
           {/* Before You Begin — primer */}
           {primer && (
             <div className="mt-16 pt-12 border-t border-border-subtle">
-              <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">Before You Begin</h2>
+              <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">Before you begin</h2>
               <div className="prose mt-6">
                 <MDXRemote source={primer.content} />
               </div>
@@ -78,7 +78,7 @@ export default function PPWProjectLanding() {
 
           {/* The Five Lessons */}
           <div id="lessons" className="mt-16 pt-12 border-t border-border-subtle scroll-mt-24">
-            <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">The Five Lessons</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl text-text-primary uppercase tracking-wide">The five lessons</h2>
             <div className="mt-8 space-y-4">
               {lessons.map(lesson => (
                 <Link
